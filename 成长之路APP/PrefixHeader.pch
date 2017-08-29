@@ -29,6 +29,7 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h> //引入定位功能所有的头文件
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>   //引入检索功能所有的头文件
 #import <PYSearch.h>                                //搜索功能
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>     //区域头文件
 
 
 //ShareSDK

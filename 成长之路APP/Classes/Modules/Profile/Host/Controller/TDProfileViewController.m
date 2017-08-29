@@ -197,7 +197,7 @@
                         @[@"设置"]
                     ];
     }
-    return _titleArray;
+    return _imageArray;
 }
 
 

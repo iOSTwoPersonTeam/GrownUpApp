@@ -130,6 +130,9 @@
         [self.addGoodsAddressView getNewTitleAddress:info.name withDetailAddress:[NSString stringWithFormat:@"%@",info.address]];
         self.mapView.centerCoordinate =info.pt;
         DLog(@"%f--%f----%@",info.pt.latitude,info.pt.latitude,info.name);
+        
+        [self.mapView setRegion:BMKCoordinateRegionMake(info.pt, BMKCoordinateSpanMake(0.02, 0.02)) animated:YES];
+        
     };
     [self.navigationController pushViewController:searchAddressVC animated:YES];
 }

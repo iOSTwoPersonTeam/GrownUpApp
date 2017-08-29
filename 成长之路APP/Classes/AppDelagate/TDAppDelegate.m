@@ -31,10 +31,10 @@
     
     [self setMainWindow]; //设置主窗口
     [self setKeyboardManager]; //键盘管理
-    [self networkStatusChange]; //监测全局网络状况
+//    [self networkStatusChange]; //监测全局网络状况
     [self shardSDKBasedAPPlication]; //第三方登录和分享
     [self setBaiDuMapBaseInformation]; //百度地图基本配置
-    [self addAppIntroduction]; //添加引导页 首次安装之后显示广告页面
+//    [self addAppIntroduction]; //添加引导页 首次安装之后显示广告页面
 
     return YES;
 }

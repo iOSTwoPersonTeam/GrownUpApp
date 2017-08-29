@@ -29,8 +29,7 @@
     CGRect frame =self.view.frame;
     frame.size.height -=44+40;
     self.tableView.frame =frame;
-    
-//    self.loadModel.allItems =[NSMutableArray arrayWithArray:@[@"dsgds",@" gdgdsf",@"第三个发多少",@"发多少公司",@"的身高多少"]];
+
 }
 
 
