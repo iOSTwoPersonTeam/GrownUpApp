@@ -36,7 +36,6 @@
     [self setBaiDuMapBaseInformation]; //百度地图基本配置
     [self addAppIntroduction]; //添加引导页 首次安装之后显示广告页面
 
-    
     return YES;
 }
 
