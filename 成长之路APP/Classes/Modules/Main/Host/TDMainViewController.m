@@ -118,14 +118,6 @@
     NSLog(@"编辑--------");
 }
 
--(void)rightMap
-{
-    NSLog(@"地图--------");
-    TDBAddGoodsAddressViewController *mapVC =[[TDBAddGoodsAddressViewController alloc] init];
-    [self.navigationController pushViewController:mapVC animated:YES];
-}
-
-
 //TDMessageViewController
 -(void)leftRefresh
 {
@@ -160,7 +152,7 @@
         
         self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"内容"];
         self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(leftAdd)];
-        self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem leftBarButtonItemWithTitle:@"地图" titleColor:[UIColor redColor] target:self selector:@selector(rightMap)] ,[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(rightEdit)]];
+        self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(rightEdit)]];
         
     }
     else if (index ==2){

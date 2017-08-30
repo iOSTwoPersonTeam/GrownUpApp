@@ -123,7 +123,7 @@
 -(void)clickmakeSure
 {
     if (self.makeSureBlock) {
-        self.makeSureBlock();
+        self.makeSureBlock(self.titleAddressLabel.text);
     }
 
 }

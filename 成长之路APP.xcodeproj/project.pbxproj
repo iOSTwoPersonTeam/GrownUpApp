@@ -34,6 +34,8 @@
 		0457458A1F146770003F4F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045745891F146770003F4F2D /* Assets.xcassets */; };
 		045745981F146770003F4F2D /* ____APPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745971F146770003F4F2D /* ____APPTests.m */; };
 		045745A31F146770003F4F2D /* ____APPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745A21F146770003F4F2D /* ____APPUITests.m */; };
+		045D14C01F56589100640930 /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D14BF1F56589100640930 /* TDAddressProfileViewController.m */; };
+		045D14C61F56599400640930 /* TDAddressProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D14C51F56599400640930 /* TDAddressProfileView.m */; };
 		0464B9AF1F4C42EA00E15EB8 /* TDGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */; };
 		0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE5E1F4AE6CF0091137D /* TDLaunchAdManager.m */; };
 		046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A26B01F39660C0013406B /* HFStretchableTableHeaderView.m */; };
@@ -190,6 +192,10 @@
 		0457459E1F146770003F4F2D /* 成长之路APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "成长之路APPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045745A21F146770003F4F2D /* ____APPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____APPUITests.m"; sourceTree = "<group>"; };
 		045745A41F146770003F4F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045D14BE1F56589100640930 /* TDAddressProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAddressProfileViewController.h; sourceTree = "<group>"; };
+		045D14BF1F56589100640930 /* TDAddressProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileViewController.m; sourceTree = "<group>"; };
+		045D14C41F56599400640930 /* TDAddressProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAddressProfileView.h; sourceTree = "<group>"; };
+		045D14C51F56599400640930 /* TDAddressProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileView.m; sourceTree = "<group>"; };
 		0464B9AD1F4C42EA00E15EB8 /* TDGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGuidePageHUD.h; sourceTree = "<group>"; };
 		0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGuidePageHUD.m; sourceTree = "<group>"; };
 		0469EE5D1F4AE6CF0091137D /* TDLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdManager.h; sourceTree = "<group>"; };
@@ -534,6 +540,7 @@
 				04771A341F2B6B8E009E5649 /* Host */,
 				04E7D59D1F43F95B00E8D9DB /* UserInfo */,
 				04E7D5A41F444E7100E8D9DB /* Settings */,
+				045D14BA1F56580300640930 /* Address */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -785,6 +792,41 @@
 				045745A41F146770003F4F2D /* Info.plist */,
 			);
 			path = "成长之路APPUITests";
+			sourceTree = "<group>";
+		};
+		045D14BA1F56580300640930 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				045D14BB1F56580300640930 /* Controller */,
+				045D14BC1F56580300640930 /* Model */,
+				045D14BD1F56580300640930 /* Views */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		045D14BB1F56580300640930 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				045D14BE1F56589100640930 /* TDAddressProfileViewController.h */,
+				045D14BF1F56589100640930 /* TDAddressProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		045D14BC1F56580300640930 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		045D14BD1F56580300640930 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				045D14C41F56599400640930 /* TDAddressProfileView.h */,
+				045D14C51F56599400640930 /* TDAddressProfileView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0469EE5C1F4AE6B70091137D /* LaunchAdManager */ = {
@@ -1556,6 +1598,7 @@
 				046C58321F4AC7C10058364B /* ButtonGroupView.m in Sources */,
 				0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */,
 				0485A4CE1F414E9E00C2FA63 /* MBProgressHUD+MJ.m in Sources */,
+				045D14C01F56589100640930 /* TDAddressProfileViewController.m in Sources */,
 				04AB9E471F2AD1290031FD6E /* UIViewController+Additions.m in Sources */,
 				046C58101F4AC19A0058364B /* CYWebViewController.m in Sources */,
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
@@ -1582,6 +1625,7 @@
 				046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */,
 				04AB0C1C1F5016B700599CE0 /* ZJContentView.m in Sources */,
 				04AB0C1B1F5016B700599CE0 /* ZJCollectionView.m in Sources */,
+				045D14C61F56599400640930 /* TDAddressProfileView.m in Sources */,
 				0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */,
 				0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */,
 				046C58391F4AC7C10058364B /* ChineseToPinyinResource.m in Sources */,

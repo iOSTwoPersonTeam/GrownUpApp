@@ -11,7 +11,7 @@
 @interface TDBAddGoodsAddressView : UIView
 
 @property(nonatomic ,copy) void(^addAddressBlock)(); //选择地址
-@property(nonatomic ,copy) void(^makeSureBlock)(); //确认
+@property(nonatomic ,copy) void(^makeSureBlock)(NSString *detailAddress); //确认
 
 -(void)getNewTitleAddress:(NSString *)titleAddress withDetailAddress:(NSString *)detailAddress;
 

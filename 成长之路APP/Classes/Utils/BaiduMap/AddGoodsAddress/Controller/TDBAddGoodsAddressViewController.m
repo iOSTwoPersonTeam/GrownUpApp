@@ -138,10 +138,12 @@
 }
 
 //确认
--(void)clickMakeSure
+-(void)clickMakeSure:(NSString *)detailAddress
 {
     NSLog(@"确认----");
-
+    if (self.getAddressBlock) {
+        self.getAddressBlock(detailAddress ,self.mapView.centerCoordinate);
+    }
 }
 
 
@@ -222,8 +224,7 @@
 -(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
 {
     if (error == 0) {
-        self.currentDetailAddress =result.address;
-        self.currentCity =result.addressDetail.city;
+
         //展示结果
         [self.addGoodsAddressView getNewTitleAddress:result.address withDetailAddress:[NSString stringWithFormat:@"%@%@",result.addressDetail.streetName,result.addressDetail.streetNumber]];
     }
@@ -288,9 +289,9 @@
             
             [unself clickSelectAddress];  //选择地址
         };
-        _addGoodsAddressView.makeSureBlock = ^{
+        _addGoodsAddressView.makeSureBlock = ^(NSString *detailAddress){
           
-            [unself clickMakeSure];  //确认
+            [unself clickMakeSure:detailAddress];  //确认
         };
 
     }

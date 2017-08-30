@@ -10,9 +10,6 @@
 
 @interface TDBAddGoodsAddressViewController : TDRootViewController
 
-@property(nonatomic,strong)NSString *currentDetailAddress; //当前详细地理位置(经过反编码的)
-@property(nonatomic,strong)NSString *currentCity; //当前城市
-
-@property(nonatomic,strong)NSString *currentPositionString; //当前经纬度NSString
+@property(nonatomic, copy) void(^getAddressBlock)(NSString *detailAddress ,CLLocationCoordinate2D location);
 
 @end
