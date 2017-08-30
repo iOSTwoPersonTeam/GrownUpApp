@@ -10,6 +10,7 @@
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
 #import "TDBAddGoodsAddressView.h"
 #import "TDSearchAddressViewController.h"
+#import "BaiduMapManager.h"
 
 @interface TDBAddGoodsAddressViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
 
@@ -42,6 +43,19 @@
     self.isRelocation =NO;
     
     [self getLocation]; //根据位置定位
+    
+    [[BaiduMapManager shareLocationManager] getLocationWithLongitudeAndLatitude:_location succeed:^(BMKReverseGeoCodeResult *result) {
+        
+        NSLog(@"%@-------",result.address);
+        
+    } failure:^(BMKSearchErrorCode error) {
+        
+    }];
+    
+    [[BaiduMapManager shareLocationManager] getCurrentLocation:^(BMKReverseGeoCodeResult *result) {
+        
+        NSLog(@"%@-------",result.address);
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated

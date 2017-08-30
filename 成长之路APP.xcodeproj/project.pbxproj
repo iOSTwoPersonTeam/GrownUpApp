@@ -36,6 +36,7 @@
 		045745A31F146770003F4F2D /* ____APPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745A21F146770003F4F2D /* ____APPUITests.m */; };
 		045D14C01F56589100640930 /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D14BF1F56589100640930 /* TDAddressProfileViewController.m */; };
 		045D14C61F56599400640930 /* TDAddressProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D14C51F56599400640930 /* TDAddressProfileView.m */; };
+		045D14CE1F56F6CA00640930 /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 045D14CD1F56F6CA00640930 /* BaiduMapManager.m */; };
 		0464B9AF1F4C42EA00E15EB8 /* TDGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */; };
 		0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE5E1F4AE6CF0091137D /* TDLaunchAdManager.m */; };
 		046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A26B01F39660C0013406B /* HFStretchableTableHeaderView.m */; };
@@ -196,6 +197,8 @@
 		045D14BF1F56589100640930 /* TDAddressProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileViewController.m; sourceTree = "<group>"; };
 		045D14C41F56599400640930 /* TDAddressProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAddressProfileView.h; sourceTree = "<group>"; };
 		045D14C51F56599400640930 /* TDAddressProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileView.m; sourceTree = "<group>"; };
+		045D14CC1F56F6CA00640930 /* BaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapManager.h; sourceTree = "<group>"; };
+		045D14CD1F56F6CA00640930 /* BaiduMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapManager.m; sourceTree = "<group>"; };
 		0464B9AD1F4C42EA00E15EB8 /* TDGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGuidePageHUD.h; sourceTree = "<group>"; };
 		0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGuidePageHUD.m; sourceTree = "<group>"; };
 		0469EE5D1F4AE6CF0091137D /* TDLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdManager.h; sourceTree = "<group>"; };
@@ -829,6 +832,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		045D14CB1F56F6CA00640930 /* BaiduMapManager */ = {
+			isa = PBXGroup;
+			children = (
+				045D14CC1F56F6CA00640930 /* BaiduMapManager.h */,
+				045D14CD1F56F6CA00640930 /* BaiduMapManager.m */,
+			);
+			path = BaiduMapManager;
+			sourceTree = "<group>";
+		};
 		0469EE5C1F4AE6B70091137D /* LaunchAdManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1211,6 +1223,7 @@
 		04AF6CBF1F4D247400BE5D2B /* BaiduMap */ = {
 			isa = PBXGroup;
 			children = (
+				045D14CB1F56F6CA00640930 /* BaiduMapManager */,
 				04AB0BF71F4FF76100599CE0 /* SearchSelectAddress */,
 				048CF8281F4E5F81007CB475 /* AddGoodsAddress */,
 			);
@@ -1610,6 +1623,7 @@
 				046C58371F4AC7C10058364B /* CityListViewController.m in Sources */,
 				04771A201F2B6A2C009E5649 /* TDHomeDetailViewController.m in Sources */,
 				046C58331F4AC7C10058364B /* CityButton.m in Sources */,
+				045D14CE1F56F6CA00640930 /* BaiduMapManager.m in Sources */,
 				04AB0C1E1F5016B700599CE0 /* ZJScrollSegmentView.m in Sources */,
 				049041B51F4C35B6006C1601 /* DHGuidePageHUD.m in Sources */,
 				04771A331F2B6B66009E5649 /* TDContentViewController.m in Sources */,
