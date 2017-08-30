@@ -10,6 +10,8 @@
 
 @interface TDBAddGoodsAddressViewController : TDRootViewController
 
+@property(nonatomic, assign)CLLocationCoordinate2D location; //经纬度
+
 @property(nonatomic, copy) void(^getAddressBlock)(NSString *detailAddress ,CLLocationCoordinate2D location);
 
 @end
