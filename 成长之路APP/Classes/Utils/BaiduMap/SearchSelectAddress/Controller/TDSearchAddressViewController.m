@@ -12,6 +12,7 @@
 #import "TDHistoryAddressView.h"
 #import "TDSearchResultView.h"
 #import <BaiduMapAPI_Search/BMKPoiSearch.h>
+#import "BaiduMapManager.h"
 
 @interface TDSearchAddressViewController ()<ZJScrollPageViewDelegate,UISearchBarDelegate,BMKPoiSearchDelegate>
 
@@ -34,7 +35,6 @@
     [self customSearchBar];
     
     [self.view addSubview:self.scrollPageView]; //添加标题segment
-  
 
 }
 
@@ -59,7 +59,6 @@
 -(void)clickSelectCity
 {
 
-
 }
 
 //点击取消
@@ -82,21 +81,22 @@
 //点击搜索结果 在地图上获取相应的位置
 -(void)selectIndexPathWithLocation:(BMKPoiInfo *)info
 {
-    //详情
-    BMKPoiSearch *bMKPoiSearch =[[BMKPoiSearch alloc]init];
-    bMKPoiSearch.delegate = self;
-    BMKPoiDetailSearchOption *Detailoption=[BMKPoiDetailSearchOption new];
-    //详情搜索
-    Detailoption.poiUid =info.uid;
-    [bMKPoiSearch poiDetailSearch:Detailoption];
-    
+    [[BaiduMapManager shareLocationManager] getPoiDetailResultWithPoiUid:info.uid detailResult:^(BMKPoiDetailResult *detaiResult) {
+        
+        if (self.searchGetResultBlock) {
+            self.searchGetResultBlock(detaiResult);
+        }
+        [self cancelDidClick];
+        
+    } errorCode:^(BMKSearchErrorCode error) {
+        
+    }];
 }
 
 #pragma mark ---Delagate---
 #pragma mark ---ZJScrollPageViewDelegate
 -(NSInteger)numberOfChildViewControllers
 {
-    
     return 4;
 }
 
@@ -133,48 +133,20 @@
 
         [self.view bringSubviewToFront:self.historyAddressView];
     } else{
-    
-        BMKPoiSearch *bMKPoiSearch =[[BMKPoiSearch alloc]init];
-        bMKPoiSearch.delegate = self;
-        BMKCitySearchOption *option=[BMKCitySearchOption new];
-        //    城市内搜索
-        option.city =@"北京";
-        option.keyword  =searchText;
-        [bMKPoiSearch poiSearchInCity:option];
+       [self.view bringSubviewToFront:self.searchResultView];
         
-    [self.view bringSubviewToFront:self.searchResultView];
+        [[BaiduMapManager shareLocationManager] getPoiResultWithCity:@"北京" withSearchKeyword:searchText result:^(BMKPoiResult *result) {
+
+            [self.searchResultView getDataWithInfo:[NSMutableArray arrayWithArray:result.poiInfoList]];
+            
+        } errorCode:^(BMKSearchErrorCode error) {
+            
+        }];
     }
     
 }
-
-#pragma mark ---BMKPoiSearchDelegate (返回搜索结果)
-//检索结果列表
--(void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult* )poiResult errorCode:(BMKSearchErrorCode)errorCode
-{
-    NSMutableArray<BMKPoiInfo *> *arr =[NSMutableArray array];
-    [arr removeAllObjects];
-    
-    [arr addObjectsFromArray:poiResult.poiInfoList];
-    BMKPoiInfo *info =poiResult.poiInfoList[0];
-    NSLog(@"%f----%@---%@----",info.pt.latitude,info.address,info.name);
-    
-    [self.searchResultView getDataWithInfo:arr];
-    
-}
-
-//检索某个结果的详情
-- (void)onGetPoiDetailResult:(BMKPoiSearch*)searcher result:(BMKPoiDetailResult*)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
-{
-    DLog(@"%@-----%f------",poiDetailResult.address ,poiDetailResult.pt.latitude);
-    if (self.searchGetResultBlock) {
-        self.searchGetResultBlock(poiDetailResult);
-    }
-    [self cancelDidClick];
-}
-
 
 #pragma mark ---getter--
-
 -(UISearchBar *)customSearchBar
 {
     if (!_customSearchBar) {

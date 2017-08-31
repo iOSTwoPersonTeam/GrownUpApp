@@ -56,7 +56,7 @@
     [super viewWillDisappear:animated];
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
-    [[BaiduMapManager shareLocationManager] cancelMapDelagate]; //不用时候 奖代理为nil
+
 }
 
 
