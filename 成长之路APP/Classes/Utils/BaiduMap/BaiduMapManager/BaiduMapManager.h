@@ -10,13 +10,13 @@
 
 @interface BaiduMapManager : NSObject
 
-//地理编码结果返回
+//地理编码结果返回回调结果
 @property(nonatomic, copy) void(^geoCodeSucceed)(BMKReverseGeoCodeResult *result);
 @property(nonatomic, copy) void(^geoCodeError)(BMKSearchErrorCode error);
-
-//当前定位位置反编码
+//当前定位位置反编码回调结果
 @property(nonatomic, copy) void(^geoCodeCurrentLocation)(BMKReverseGeoCodeResult *result);
-
+//POI检索 回调结果
+@property(nonatomic, copy) void(^bmKPoiResult)(BMKPoiResult *result);
 
 +(BaiduMapManager *)shareLocationManager;
 
@@ -46,12 +46,21 @@
 -(void)getLocationWithLongitudeAndLatitude:(CLLocationCoordinate2D )mapLocation succeed:(void (^)(BMKReverseGeoCodeResult *result))succeed failure:(void (^)(BMKSearchErrorCode error))failure;
 
 /*
- *  根据经纬度获取周边检索信息
+ *  根据经纬度获取POI检索结果 获取检索列表和检索详情
+ */
+-(void)getPoiResultWithCity:(NSString *)cityName withSearchKayword:(NSString *)keyword result:(void (^)(BMKPoiResult *result))poiResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode;
+
+/*
+ *  根据经纬度获取POI检索结果
  */
 
 
 /*
- *  根据
+ *  根据经纬度获取POI检索结果
+ */
+
+/*
+ *  根据经纬度获取POI检索结果
  */
 
 

@@ -8,10 +8,13 @@
 
 #import "BaiduMapManager.h"
 
-@interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
+@interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate>
+@property(nonatomic,strong)BMKMapView *mapView; //地图
 @property (nonatomic, strong)BMKLocationService *locService; // 定位对象
 @property (nonatomic, strong)BMKGeoCodeSearch *geoSearcher; // 地理编码对象
-@property(nonatomic,strong)BMKMapView *mapView; //地图
+@property(nonatomic,strong)BMKPoiSearch *bMKPoiSearch; //搜索检索服务
+@property(nonatomic, copy)NSString *cityName; //检索城市
+@property(nonatomic, copy)NSString *keyword; //检索关键字
 
 @end
 
@@ -82,6 +85,23 @@
     };
 }
 
+#pragma mark ---根据经纬度获取POI检索结果 获取检索列表和检索详情--
+-(void)getPoiResultWithCity:(NSString *)cityName withSearchKayword:(NSString *)keyword result:(void (^)(BMKPoiResult *result))poiResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode
+{
+
+    BMKCitySearchOption *option=[BMKCitySearchOption new];
+    // 城市内搜索
+    option.city =cityName;
+    option.keyword  =keyword;
+    [self.bMKPoiSearch poiSearchInCity:option];
+    
+    self.bmKPoiResult = ^(BMKPoiResult *result) {
+        
+        poiResult(result);
+    };
+}
+
+
 /*
  地理反编码方法
  */
@@ -118,9 +138,7 @@
     }
     //地理反编码方法
     [self geoCodewithLocation:userLocation.location.coordinate];
-    
 }
-
 
 #pragma mark - BMKGeoCodeSearchDelegate
 //  接收反向地理编码结果
@@ -135,7 +153,6 @@
         if (self.geoCodeCurrentLocation) {
             self.geoCodeCurrentLocation(result);
         }
-        
     }
     else {
         NSLog(@"抱歉，未找到结果");
@@ -145,8 +162,20 @@
     }
 }
 
+#pragma mark ---BMKPoiSearchDelegate (返回搜索结果)
+//POI检索结果列表
+-(void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult* )poiResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    if (self.bmKPoiResult) {
+        self.bmKPoiResult(poiResult);
+    }
+
+}
+
+
 
 #pragma mark ---getter--
+//地理反编码
 -(BMKGeoCodeSearch *)geoSearcher
 {
     if (!_geoSearcher) {
@@ -157,6 +186,7 @@
     return _geoSearcher;
 }
 
+//定位服务
 -(BMKLocationService *)locService
 {
     if (!_locService) {
@@ -169,6 +199,17 @@
         _locService.desiredAccuracy = kCLLocationAccuracyNearestTenMeters; // 定位精度10m
     }
     return _locService;
+}
+
+//搜索检索服务
+-(BMKPoiSearch *)bMKPoiSearch
+{
+    if (!_bMKPoiSearch) {
+        
+        _bMKPoiSearch =[[BMKPoiSearch alloc]init];
+        _bMKPoiSearch.delegate = self;
+    }
+    return _bMKPoiSearch;
 }
 
 

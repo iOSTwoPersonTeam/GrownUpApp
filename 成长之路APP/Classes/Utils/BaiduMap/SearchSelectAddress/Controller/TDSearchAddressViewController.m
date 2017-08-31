@@ -155,6 +155,8 @@
     [arr removeAllObjects];
     
     [arr addObjectsFromArray:poiResult.poiInfoList];
+    BMKPoiInfo *info =poiResult.poiInfoList[0];
+    NSLog(@"%f----%@---%@----",info.pt.latitude,info.address,info.name);
     
     [self.searchResultView getDataWithInfo:arr];
     

@@ -40,6 +40,14 @@
     self.isRelocation =NO;
     [self getLocation]; //根据位置定位
     
+    [[BaiduMapManager shareLocationManager] getPoiResultWithCity:@"北京" withSearchKayword:@"北京" result:^(BMKPoiResult *result) {
+        
+        BMKPoiInfo *info =result.poiInfoList[5];
+        NSLog(@"%@---%@---%f--",info.address,info.name,info.pt.latitude);
+        
+    } errorCode:^(BMKSearchErrorCode error) {
+        
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -193,7 +201,6 @@
     }
     return _addGoodsAddressView;
 }
-
 //定位按钮
 -(UIButton *)locationButton
 {
@@ -219,7 +226,4 @@
     return _annotationImageView;
 }
 
-
 @end
-
-
