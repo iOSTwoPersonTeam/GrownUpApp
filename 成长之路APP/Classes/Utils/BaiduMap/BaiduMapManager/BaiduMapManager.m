@@ -13,8 +13,6 @@
 @property (nonatomic, strong)BMKLocationService *locService; // 定位对象
 @property (nonatomic, strong)BMKGeoCodeSearch *geoSearcher; // 地理编码对象
 @property(nonatomic,strong)BMKPoiSearch *bMKPoiSearch; //搜索检索服务
-@property(nonatomic, copy)NSString *cityName; //检索城市
-@property(nonatomic, copy)NSString *keyword; //检索关键字
 
 @end
 
@@ -85,20 +83,73 @@
     };
 }
 
-#pragma mark ---根据经纬度获取POI检索结果 获取检索列表和检索详情--
--(void)getPoiResultWithCity:(NSString *)cityName withSearchKayword:(NSString *)keyword result:(void (^)(BMKPoiResult *result))poiResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode
+#pragma mark ---根据经纬度获取POI检索结果 获取检索列表--
+-(void)getPoiResultWithCity:(NSString *)cityName withSearchKeyword:(NSString *)keyword result:(void (^)(BMKPoiResult *result))poiResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode
 {
-
+    //本地云检索参数信息类
     BMKCitySearchOption *option=[BMKCitySearchOption new];
     // 城市内搜索
     option.city =cityName;
     option.keyword  =keyword;
     [self.bMKPoiSearch poiSearchInCity:option];
     
-    self.bmKPoiResult = ^(BMKPoiResult *result) {
+    self.poiResultSucceed = ^(BMKPoiResult *result) {
         
         poiResult(result);
     };
+    self.poiResultError = ^(BMKSearchErrorCode error) {
+      
+        errorCode(error);
+    };
+}
+
+
+#pragma mark --- 根据经纬度获取POI检索详情结果----
+// poi的uid，从poi检索返回的BMKPoiResult结构中获取
+-(void)getPoiDetailResultWithPoiUid:(NSString *)poiUid detailResult:(void (^)(BMKPoiDetailResult *detaiResult))poiDetailResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode
+{
+  
+    BMKPoiDetailSearchOption *Detailoption=[BMKPoiDetailSearchOption new];
+    //详情搜索
+    Detailoption.poiUid =poiUid;
+    [self.bMKPoiSearch poiDetailSearch:Detailoption];
+    
+    self.poiDetailResultSucceed = ^(BMKPoiDetailResult *result) {
+        
+        poiDetailResult(result);
+    };
+    self.poiDetailResultError = ^(BMKSearchErrorCode error) {
+        
+        errorCode(error);
+    };
+}
+
+#pragma mark ---根据经纬度获取周边云检索结果 BMKNearbySearchOption
+-(void)getNearbyResultWithLocation:(CLLocationCoordinate2D )location withSearchKeyword:(NSString *)keyword resultSucceed:(void (^)(BMKPoiResult *nearbyResult))nearbyResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode
+{
+    //发起检索
+    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
+    option.pageCapacity = 10;
+    option.location = location;
+    option.keyword = keyword;
+    [self.bMKPoiSearch poiSearchNearBy:option];
+
+    self.poiResultSucceed = ^(BMKPoiResult *result) {
+        
+        nearbyResult(result);
+    };
+    self.poiResultError = ^(BMKSearchErrorCode error) {
+        
+        errorCode(error);
+    };
+
+}
+
+#pragma mark ---不用的时候需要置nil，否则影响内存的释放
+-(void)cancelMapDelagate
+{
+    self.bMKPoiSearch.delegate =nil;
+    self.geoSearcher.delegate =nil;
 }
 
 
@@ -163,15 +214,27 @@
 }
 
 #pragma mark ---BMKPoiSearchDelegate (返回搜索结果)
-//POI检索结果列表
+//POI检索结果列表  POI检索解锁 / 周边云检索结果
 -(void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult* )poiResult errorCode:(BMKSearchErrorCode)errorCode
 {
-    if (self.bmKPoiResult) {
-        self.bmKPoiResult(poiResult);
+    if (self.poiResultSucceed) {
+        self.poiResultSucceed(poiResult);
     }
-
+    if (self.poiResultError) {
+        self.poiResultError(errorCode);
+    }
 }
-
+//详情检索结果
+- (void)onGetPoiDetailResult:(BMKPoiSearch*)searcher result:(BMKPoiDetailResult*)poiDetailResult errorCode:(BMKSearchErrorCode)errorCode
+{
+    DLog(@"%@-----%f------",poiDetailResult.address ,poiDetailResult.pt.latitude);
+    if (self.poiDetailResultSucceed) {
+        self.poiDetailResultSucceed(poiDetailResult);
+    }
+    if (self.poiDetailResultError) {
+        self.poiDetailResultError(errorCode);
+    }
+}
 
 
 #pragma mark ---getter--

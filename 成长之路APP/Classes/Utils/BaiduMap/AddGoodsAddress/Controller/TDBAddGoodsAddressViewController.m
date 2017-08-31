@@ -39,15 +39,7 @@
     [self.view addSubview:self.annotationImageView]; //添加屏幕中心大头针
     self.isRelocation =NO;
     [self getLocation]; //根据位置定位
-    
-    [[BaiduMapManager shareLocationManager] getPoiResultWithCity:@"北京" withSearchKayword:@"北京" result:^(BMKPoiResult *result) {
-        
-        BMKPoiInfo *info =result.poiInfoList[5];
-        NSLog(@"%@---%@---%f--",info.address,info.name,info.pt.latitude);
-        
-    } errorCode:^(BMKSearchErrorCode error) {
-        
-    }];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -64,7 +56,7 @@
     [super viewWillDisappear:animated];
     [_mapView viewWillDisappear];
     _mapView.delegate = nil; // 不用时，置nil
-    
+    [[BaiduMapManager shareLocationManager] cancelMapDelagate]; //不用时候 奖代理为nil
 }
 
 

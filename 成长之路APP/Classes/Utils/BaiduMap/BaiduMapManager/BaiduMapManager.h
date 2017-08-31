@@ -15,8 +15,12 @@
 @property(nonatomic, copy) void(^geoCodeError)(BMKSearchErrorCode error);
 //当前定位位置反编码回调结果
 @property(nonatomic, copy) void(^geoCodeCurrentLocation)(BMKReverseGeoCodeResult *result);
-//POI检索 回调结果
-@property(nonatomic, copy) void(^bmKPoiResult)(BMKPoiResult *result);
+//POI检索 回调结果  周边云检索回调结果
+@property(nonatomic, copy) void(^poiResultSucceed)(BMKPoiResult *result);
+@property(nonatomic, copy) void(^poiResultError)(BMKSearchErrorCode error);
+//POI详情检索结果
+@property(nonatomic, copy) void(^poiDetailResultSucceed)(BMKPoiDetailResult *result);
+@property(nonatomic, copy) void(^poiDetailResultError)(BMKSearchErrorCode error);
 
 +(BaiduMapManager *)shareLocationManager;
 
@@ -46,27 +50,26 @@
 -(void)getLocationWithLongitudeAndLatitude:(CLLocationCoordinate2D )mapLocation succeed:(void (^)(BMKReverseGeoCodeResult *result))succeed failure:(void (^)(BMKSearchErrorCode error))failure;
 
 /*
- *  根据经纬度获取POI检索结果 获取检索列表和检索详情
+ *  根据经纬度获取POI检索结果 获取检索列表 本地云检索参数信息类
  */
--(void)getPoiResultWithCity:(NSString *)cityName withSearchKayword:(NSString *)keyword result:(void (^)(BMKPoiResult *result))poiResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode;
+-(void)getPoiResultWithCity:(NSString *)cityName withSearchKeyword:(NSString *)keyword result:(void (^)(BMKPoiResult *result))poiResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode;
 
 /*
- *  根据经纬度获取POI检索结果
+ *  根据经纬度获取POI检索详情结果
+ *  poi的uid，从poi检索返回的BMKPoiResult结构中获取
  */
+-(void)getPoiDetailResultWithPoiUid:(NSString *)poiUid detailResult:(void (^)(BMKPoiDetailResult *detaiResult))poiDetailResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode;
+
+/*
+ *  根据经纬度获取周边云检索结果 BMKNearbySearchOption
+ */
+-(void)getNearbyResultWithLocation:(CLLocationCoordinate2D )location withSearchKeyword:(NSString *)keyword resultSucceed:(void (^)(BMKPoiResult *nearbyResult))nearbyResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode;
 
 
 /*
- *  根据经纬度获取POI检索结果
+ *  不用的时候需要置nil，否则影响内存的释放
  */
-
-/*
- *  根据经纬度获取POI检索结果
- */
-
-
-
-
-
+-(void)cancelMapDelagate;
 
 
 
