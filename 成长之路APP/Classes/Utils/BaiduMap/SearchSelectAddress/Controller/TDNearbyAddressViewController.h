@@ -10,5 +10,6 @@
 #import "ZJScrollPageViewDelegate.h"
 
 @interface TDNearbyAddressViewController : TDRootTableViewController<ZJScrollPageViewChildVcDelegate>
+@property(nonatomic,assign)CLLocationCoordinate2D location;
 
 @end

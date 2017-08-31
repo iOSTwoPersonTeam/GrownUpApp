@@ -117,6 +117,7 @@
 {
     NSLog(@"选择地址----");
     TDSearchAddressViewController *searchAddressVC =[[TDSearchAddressViewController alloc] init];
+    searchAddressVC.location =_location;
     searchAddressVC.searchGetResultBlock = ^(BMKPoiDetailResult *info) {
         _searchResultInfo =info;
         //展示结果

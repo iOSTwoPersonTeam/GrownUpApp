@@ -10,6 +10,7 @@
 
 @interface TDSearchAddressViewController : TDRootViewController
 
+@property(nonatomic,assign)CLLocationCoordinate2D location;
 @property(nonatomic ,copy) void(^searchGetResultBlock)(BMKPoiDetailResult *info);
 
 @end

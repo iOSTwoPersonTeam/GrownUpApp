@@ -106,6 +106,7 @@
     
     if (!childVc) {
         childVc = [[TDNearbyAddressViewController<ZJScrollPageViewChildVcDelegate> alloc] init];
+        childVc.location =_location;
     }
     
     return childVc;
