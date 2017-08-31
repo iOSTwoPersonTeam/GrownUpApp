@@ -11,7 +11,7 @@
 @interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
 @property (nonatomic, strong)BMKLocationService *locService; // 定位对象
 @property (nonatomic, strong)BMKGeoCodeSearch *geoSearcher; // 地理编码对象
-
+@property(nonatomic,strong)BMKMapView *mapView; //地图
 
 @end
 
@@ -30,15 +30,15 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-
+        
     }
     return self;
 }
 
 #pragma mark ---开始定位
 - (void)startLocation {
-        //启动LocationService
-        [self.locService startUserLocationService];
+    //启动LocationService
+    [self.locService startUserLocationService];
 }
 
 #pragma mark -----停止定位
@@ -46,17 +46,23 @@
     [self.locService stopUserLocationService];
 }
 
-
-#pragma mark ---获取当前位置经纬度信息
+#pragma mark ---获取当前位置经纬度信息 不需要显示当前定位 只是获取当前经纬度
 -(void)getCurrentLocation:(void (^)(BMKReverseGeoCodeResult *result))location
 {
-    [self.locService startUserLocationService];
-    
-    self.geoCodeSucceed = ^(BMKReverseGeoCodeResult *result) {
-      
+    [self startLocation];
+    self.geoCodeCurrentLocation = ^(BMKReverseGeoCodeResult *result) {
         location(result);
     };
+}
 
+#pragma mark ---获取当前位置经纬度信息  通过mapView显示当前定位
+-(void)getCurrentMap:(BMKMapView *)mapView  regainCurrentLocation:(void (^)(BMKReverseGeoCodeResult *result))location
+{
+    _mapView =mapView;
+    [self startLocation];
+    self.geoCodeCurrentLocation = ^(BMKReverseGeoCodeResult *result) {
+        location(result);
+    };
 }
 
 
@@ -77,11 +83,11 @@
 }
 
 /*
-   地理反编码方法
+ 地理反编码方法
  */
 -(void)geoCodewithLocation:(CLLocationCoordinate2D )mapLocation
 {
-
+    
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
     pt = (CLLocationCoordinate2D){(float)mapLocation.latitude, (float)mapLocation.longitude};
     BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
@@ -95,7 +101,7 @@
     {
         //        NSLog(@"反geo检索发送失败");
     }
-
+    
 }
 
 
@@ -106,10 +112,13 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
-
+    if (_mapView) {
+        
+        [_mapView updateLocationData:userLocation];
+    }
     //地理反编码方法
     [self geoCodewithLocation:userLocation.location.coordinate];
-
+    
 }
 
 
@@ -122,6 +131,9 @@
         //      在此处理正常结果
         if (self.geoCodeSucceed) {
             self.geoCodeSucceed(result);
+        }
+        if (self.geoCodeCurrentLocation) {
+            self.geoCodeCurrentLocation(result);
         }
         
     }

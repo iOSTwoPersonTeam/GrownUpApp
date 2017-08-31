@@ -14,6 +14,8 @@
 @property(nonatomic, copy) void(^geoCodeSucceed)(BMKReverseGeoCodeResult *result);
 @property(nonatomic, copy) void(^geoCodeError)(BMKSearchErrorCode error);
 
+//当前定位位置反编码
+@property(nonatomic, copy) void(^geoCodeCurrentLocation)(BMKReverseGeoCodeResult *result);
 
 
 +(BaiduMapManager *)shareLocationManager;
@@ -29,9 +31,14 @@
 -(void)stopLocation;
 
 /*
- *  获取当前位置经纬度
+ *  获取当前位置经纬度 只是定位 不需要显示地图当前定位
  */
 -(void)getCurrentLocation:(void (^)(BMKReverseGeoCodeResult *result))location;
+
+/*
+ *  获取当前位置经纬度 通过传入一个BMKMapView 进行当前位置定位
+ */
+-(void)getCurrentMap:(BMKMapView *)mapView  regainCurrentLocation:(void (^)(BMKReverseGeoCodeResult *result))location;
 
 /*
  *  根据传入经纬度,进行地理反编码得到具体信息
