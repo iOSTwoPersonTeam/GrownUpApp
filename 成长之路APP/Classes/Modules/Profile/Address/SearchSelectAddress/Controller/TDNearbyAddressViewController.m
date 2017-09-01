@@ -38,14 +38,28 @@
 - (void)zj_viewWillAppearForIndex:(NSInteger)index
 {
     NSArray *keywordArray =@[@"公司",@"写字楼",@"小区",@"学校"];
-    [[BaiduMapManager shareLocationManager] getNearbyResultWithLocation:_location withSearchKeyword:keywordArray[index] resultSucceed:^(BMKPoiResult *nearbyResult) {
+    if (index ==0) {
         
-        self.dataArray =[NSMutableArray arrayWithArray:nearbyResult.poiInfoList];
-        [self.tableView reloadData];
+        [[BaiduMapManager shareLocationManager] getPoiResultWithCity:@"北京" withSearchKeyword:@"商场" result:^(BMKPoiResult *result) {
+            
+            self.dataArray =[NSMutableArray arrayWithArray:result.poiInfoList];
+            [self.tableView reloadData];
+        } errorCode:^(BMKSearchErrorCode error) {
+            
+        }];
         
-    } errorCode:^(BMKSearchErrorCode error) {
-        
-    }];
+    } else{
+    
+        [[BaiduMapManager shareLocationManager] getNearbyResultWithLocation:_location withSearchKeyword:keywordArray[index] resultSucceed:^(BMKPoiResult *nearbyResult) {
+            
+            self.dataArray =[NSMutableArray arrayWithArray:nearbyResult.poiInfoList];
+            [self.tableView reloadData];
+            
+        } errorCode:^(BMKSearchErrorCode error) {
+            
+        }];
+    }
+
 
 }
 

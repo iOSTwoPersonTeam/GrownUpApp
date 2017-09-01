@@ -193,7 +193,7 @@
 
 #pragma mark - BMKGeoCodeSearchDelegate
 //  接收反向地理编码结果
--(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:
+-(void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:
 (BMKReverseGeoCodeResult *)result
                         errorCode:(BMKSearchErrorCode)error{
     if (error == BMK_SEARCH_NO_ERROR) {
