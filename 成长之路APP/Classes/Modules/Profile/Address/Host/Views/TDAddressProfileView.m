@@ -111,7 +111,7 @@
     if (!_elmTitleLabel) {
         UILabel *elmTitleLabel =[[UILabel alloc] init];
         elmTitleLabel.backgroundColor =[UIColor whiteColor];
-        elmTitleLabel.text =@"北京天安门城楼";
+        elmTitleLabel.text =@"北京天安门城楼-饿了么";
         [self addSubview:elmTitleLabel];
         elmTitleLabel.userInteractionEnabled =YES;
         UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickelmAddress)];
@@ -143,7 +143,7 @@
     if (!_mtwmTitleLabel) {
         UILabel *mtwmTitleLabel =[[UILabel alloc] init];
         mtwmTitleLabel.backgroundColor =[UIColor whiteColor];
-        mtwmTitleLabel.text =@"北京海淀安河桥北";
+        mtwmTitleLabel.text =@"北京海淀安河桥北--美团外卖";
         [self addSubview:mtwmTitleLabel];
         _mtwmTitleLabel =mtwmTitleLabel;
         mtwmTitleLabel.userInteractionEnabled =YES;
