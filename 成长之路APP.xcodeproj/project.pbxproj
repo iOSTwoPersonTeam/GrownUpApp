@@ -31,13 +31,6 @@
 		045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E51F58EEEA001FD38B /* TDAddressProfileViewController.m */; };
 		045263EB1F58EEEA001FD38B /* TDAddressProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E91F58EEEA001FD38B /* TDAddressProfileView.m */; };
 		0452640B1F58EFF3001FD38B /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452640A1F58EFF3001FD38B /* BaiduMapManager.m */; };
-		045264241F58FFB3001FD38B /* TDBAddGoodsAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264101F58FFB3001FD38B /* TDBAddGoodsAddressViewController.m */; };
-		045264251F58FFB3001FD38B /* TDBAddGoodsAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264141F58FFB3001FD38B /* TDBAddGoodsAddressView.m */; };
-		045264261F58FFB3001FD38B /* TDNearbyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264181F58FFB3001FD38B /* TDNearbyAddressViewController.m */; };
-		045264271F58FFB3001FD38B /* TDSearchAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452641A1F58FFB3001FD38B /* TDSearchAddressViewController.m */; };
-		045264281F58FFB3001FD38B /* TDHistoryAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452641E1F58FFB3001FD38B /* TDHistoryAddressView.m */; };
-		045264291F58FFB3001FD38B /* TDNearbyAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264201F58FFB3001FD38B /* TDNearbyAddressTableViewCell.m */; };
-		0452642A1F58FFB3001FD38B /* TDSearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264221F58FFB3001FD38B /* TDSearchResultView.m */; };
 		045264301F590101001FD38B /* TDMTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452642F1F590101001FD38B /* TDMTMapViewController.m */; };
 		045264331F593243001FD38B /* TDNearbyAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264321F593243001FD38B /* TDNearbyAddressView.m */; };
 		045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264351F594894001FD38B /* TDNearbyTableViewCell.m */; };
@@ -45,6 +38,13 @@
 		0457458A1F146770003F4F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045745891F146770003F4F2D /* Assets.xcassets */; };
 		045745981F146770003F4F2D /* ____APPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745971F146770003F4F2D /* ____APPTests.m */; };
 		045745A31F146770003F4F2D /* ____APPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745A21F146770003F4F2D /* ____APPUITests.m */; };
+		045EA5591F598F6500B0A704 /* TDBAddGoodsAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA54A1F598F6500B0A704 /* TDBAddGoodsAddressViewController.m */; };
+		045EA55A1F598F6500B0A704 /* TDNearbyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA54C1F598F6500B0A704 /* TDNearbyAddressViewController.m */; };
+		045EA55B1F598F6500B0A704 /* TDSearchAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA54E1F598F6500B0A704 /* TDSearchAddressViewController.m */; };
+		045EA55C1F598F6500B0A704 /* TDBAddGoodsAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5521F598F6500B0A704 /* TDBAddGoodsAddressView.m */; };
+		045EA55D1F598F6500B0A704 /* TDHistoryAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5541F598F6500B0A704 /* TDHistoryAddressView.m */; };
+		045EA55E1F598F6500B0A704 /* TDNearbyAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5561F598F6500B0A704 /* TDNearbyAddressTableViewCell.m */; };
+		045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5581F598F6500B0A704 /* TDSearchResultView.m */; };
 		0464B9AF1F4C42EA00E15EB8 /* TDGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */; };
 		0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE5E1F4AE6CF0091137D /* TDLaunchAdManager.m */; };
 		046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A26B01F39660C0013406B /* HFStretchableTableHeaderView.m */; };
@@ -188,20 +188,6 @@
 		045263E91F58EEEA001FD38B /* TDAddressProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileView.m; sourceTree = "<group>"; };
 		045264091F58EFF3001FD38B /* BaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapManager.h; sourceTree = "<group>"; };
 		0452640A1F58EFF3001FD38B /* BaiduMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapManager.m; sourceTree = "<group>"; };
-		0452640F1F58FFB3001FD38B /* TDBAddGoodsAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBAddGoodsAddressViewController.h; sourceTree = "<group>"; };
-		045264101F58FFB3001FD38B /* TDBAddGoodsAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBAddGoodsAddressViewController.m; sourceTree = "<group>"; };
-		045264131F58FFB3001FD38B /* TDBAddGoodsAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBAddGoodsAddressView.h; sourceTree = "<group>"; };
-		045264141F58FFB3001FD38B /* TDBAddGoodsAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBAddGoodsAddressView.m; sourceTree = "<group>"; };
-		045264171F58FFB3001FD38B /* TDNearbyAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressViewController.h; sourceTree = "<group>"; };
-		045264181F58FFB3001FD38B /* TDNearbyAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDNearbyAddressViewController.m; sourceTree = "<group>"; };
-		045264191F58FFB3001FD38B /* TDSearchAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchAddressViewController.h; sourceTree = "<group>"; };
-		0452641A1F58FFB3001FD38B /* TDSearchAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchAddressViewController.m; sourceTree = "<group>"; };
-		0452641D1F58FFB3001FD38B /* TDHistoryAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHistoryAddressView.h; sourceTree = "<group>"; };
-		0452641E1F58FFB3001FD38B /* TDHistoryAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHistoryAddressView.m; sourceTree = "<group>"; };
-		0452641F1F58FFB3001FD38B /* TDNearbyAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressTableViewCell.h; sourceTree = "<group>"; };
-		045264201F58FFB3001FD38B /* TDNearbyAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDNearbyAddressTableViewCell.m; sourceTree = "<group>"; };
-		045264211F58FFB3001FD38B /* TDSearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchResultView.h; sourceTree = "<group>"; };
-		045264221F58FFB3001FD38B /* TDSearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchResultView.m; sourceTree = "<group>"; };
 		0452642E1F590101001FD38B /* TDMTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMTMapViewController.h; sourceTree = "<group>"; };
 		0452642F1F590101001FD38B /* TDMTMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMTMapViewController.m; sourceTree = "<group>"; };
 		045264311F593243001FD38B /* TDNearbyAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressView.h; sourceTree = "<group>"; };
@@ -218,6 +204,20 @@
 		0457459E1F146770003F4F2D /* 成长之路APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "成长之路APPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045745A21F146770003F4F2D /* ____APPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____APPUITests.m"; sourceTree = "<group>"; };
 		045745A41F146770003F4F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045EA5491F598F6500B0A704 /* TDBAddGoodsAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBAddGoodsAddressViewController.h; sourceTree = "<group>"; };
+		045EA54A1F598F6500B0A704 /* TDBAddGoodsAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBAddGoodsAddressViewController.m; sourceTree = "<group>"; };
+		045EA54B1F598F6500B0A704 /* TDNearbyAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressViewController.h; sourceTree = "<group>"; };
+		045EA54C1F598F6500B0A704 /* TDNearbyAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDNearbyAddressViewController.m; sourceTree = "<group>"; };
+		045EA54D1F598F6500B0A704 /* TDSearchAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchAddressViewController.h; sourceTree = "<group>"; };
+		045EA54E1F598F6500B0A704 /* TDSearchAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchAddressViewController.m; sourceTree = "<group>"; };
+		045EA5511F598F6500B0A704 /* TDBAddGoodsAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBAddGoodsAddressView.h; sourceTree = "<group>"; };
+		045EA5521F598F6500B0A704 /* TDBAddGoodsAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBAddGoodsAddressView.m; sourceTree = "<group>"; };
+		045EA5531F598F6500B0A704 /* TDHistoryAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHistoryAddressView.h; sourceTree = "<group>"; };
+		045EA5541F598F6500B0A704 /* TDHistoryAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHistoryAddressView.m; sourceTree = "<group>"; };
+		045EA5551F598F6500B0A704 /* TDNearbyAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressTableViewCell.h; sourceTree = "<group>"; };
+		045EA5561F598F6500B0A704 /* TDNearbyAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDNearbyAddressTableViewCell.m; sourceTree = "<group>"; };
+		045EA5571F598F6500B0A704 /* TDSearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchResultView.h; sourceTree = "<group>"; };
+		045EA5581F598F6500B0A704 /* TDSearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchResultView.m; sourceTree = "<group>"; };
 		0464B9AD1F4C42EA00E15EB8 /* TDGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGuidePageHUD.h; sourceTree = "<group>"; };
 		0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGuidePageHUD.m; sourceTree = "<group>"; };
 		0469EE5D1F4AE6CF0091137D /* TDLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdManager.h; sourceTree = "<group>"; };
@@ -784,86 +784,11 @@
 		0452640C1F58FFB3001FD38B /* ELMAddress */ = {
 			isa = PBXGroup;
 			children = (
-				0452640D1F58FFB3001FD38B /* AddGoodsAddress */,
-				045264151F58FFB3001FD38B /* SearchSelectAddress */,
+				045EA5481F598F6500B0A704 /* Controller */,
+				045EA54F1F598F6500B0A704 /* Model */,
+				045EA5501F598F6500B0A704 /* Views */,
 			);
 			path = ELMAddress;
-			sourceTree = "<group>";
-		};
-		0452640D1F58FFB3001FD38B /* AddGoodsAddress */ = {
-			isa = PBXGroup;
-			children = (
-				0452640E1F58FFB3001FD38B /* Controller */,
-				045264111F58FFB3001FD38B /* Model */,
-				045264121F58FFB3001FD38B /* Views */,
-			);
-			path = AddGoodsAddress;
-			sourceTree = "<group>";
-		};
-		0452640E1F58FFB3001FD38B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0452640F1F58FFB3001FD38B /* TDBAddGoodsAddressViewController.h */,
-				045264101F58FFB3001FD38B /* TDBAddGoodsAddressViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		045264111F58FFB3001FD38B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		045264121F58FFB3001FD38B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				045264131F58FFB3001FD38B /* TDBAddGoodsAddressView.h */,
-				045264141F58FFB3001FD38B /* TDBAddGoodsAddressView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		045264151F58FFB3001FD38B /* SearchSelectAddress */ = {
-			isa = PBXGroup;
-			children = (
-				045264161F58FFB3001FD38B /* Controller */,
-				0452641B1F58FFB3001FD38B /* Model */,
-				0452641C1F58FFB3001FD38B /* Views */,
-			);
-			path = SearchSelectAddress;
-			sourceTree = "<group>";
-		};
-		045264161F58FFB3001FD38B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				045264171F58FFB3001FD38B /* TDNearbyAddressViewController.h */,
-				045264181F58FFB3001FD38B /* TDNearbyAddressViewController.m */,
-				045264191F58FFB3001FD38B /* TDSearchAddressViewController.h */,
-				0452641A1F58FFB3001FD38B /* TDSearchAddressViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0452641B1F58FFB3001FD38B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0452641C1F58FFB3001FD38B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0452641D1F58FFB3001FD38B /* TDHistoryAddressView.h */,
-				0452641E1F58FFB3001FD38B /* TDHistoryAddressView.m */,
-				0452641F1F58FFB3001FD38B /* TDNearbyAddressTableViewCell.h */,
-				045264201F58FFB3001FD38B /* TDNearbyAddressTableViewCell.m */,
-				045264211F58FFB3001FD38B /* TDSearchResultView.h */,
-				045264221F58FFB3001FD38B /* TDSearchResultView.m */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		045264231F58FFB3001FD38B /* MTWMAddress */ = {
@@ -971,6 +896,41 @@
 				045264231F58FFB3001FD38B /* MTWMAddress */,
 			);
 			path = Address;
+			sourceTree = "<group>";
+		};
+		045EA5481F598F6500B0A704 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				045EA5491F598F6500B0A704 /* TDBAddGoodsAddressViewController.h */,
+				045EA54A1F598F6500B0A704 /* TDBAddGoodsAddressViewController.m */,
+				045EA54B1F598F6500B0A704 /* TDNearbyAddressViewController.h */,
+				045EA54C1F598F6500B0A704 /* TDNearbyAddressViewController.m */,
+				045EA54D1F598F6500B0A704 /* TDSearchAddressViewController.h */,
+				045EA54E1F598F6500B0A704 /* TDSearchAddressViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		045EA54F1F598F6500B0A704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		045EA5501F598F6500B0A704 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				045EA5511F598F6500B0A704 /* TDBAddGoodsAddressView.h */,
+				045EA5521F598F6500B0A704 /* TDBAddGoodsAddressView.m */,
+				045EA5531F598F6500B0A704 /* TDHistoryAddressView.h */,
+				045EA5541F598F6500B0A704 /* TDHistoryAddressView.m */,
+				045EA5551F598F6500B0A704 /* TDNearbyAddressTableViewCell.h */,
+				045EA5561F598F6500B0A704 /* TDNearbyAddressTableViewCell.m */,
+				045EA5571F598F6500B0A704 /* TDSearchResultView.h */,
+				045EA5581F598F6500B0A704 /* TDSearchResultView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0469EE5C1F4AE6B70091137D /* LaunchAdManager */ = {
@@ -1622,11 +1582,10 @@
 				04AB0C1A1F5016B700599CE0 /* UIViewController+ZJScrollPageController.m in Sources */,
 				046C580E1F4AC19A0058364B /* UIColor+WHE.m in Sources */,
 				0485A4D21F41952800C2FA63 /* TDUserInfo.m in Sources */,
-				045264261F58FFB3001FD38B /* TDNearbyAddressViewController.m in Sources */,
 				04771A2C1F2B6AC6009E5649 /* TDPublishViewController.m in Sources */,
+				045EA55B1F598F6500B0A704 /* TDSearchAddressViewController.m in Sources */,
 				046C583A1F4AC7C10058364B /* HanyuPinyinOutputFormat.m in Sources */,
 				046C57FB1F4AAEF70058364B /* TDRootWebViewController.m in Sources */,
-				045264241F58FFB3001FD38B /* TDBAddGoodsAddressViewController.m in Sources */,
 				046C583D1F4AC7C10058364B /* PinYinForObjc.m in Sources */,
 				041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */,
 				04910ED81F2F00D500F963EC /* TDBaseRequestApI.m in Sources */,
@@ -1643,10 +1602,10 @@
 				04C1C36A1F3AEF1B0035F26C /* TDPhoneLoginView.m in Sources */,
 				043F7A331F386ABC0075CF93 /* TDProfileTableViewCell.m in Sources */,
 				04CB0EF41F3D808B004908D8 /* TDThirdPartyLoginView.m in Sources */,
-				045264251F58FFB3001FD38B /* TDBAddGoodsAddressView.m in Sources */,
 				046C58351F4AC7C10058364B /* CityInfo.m in Sources */,
 				0464B9AF1F4C42EA00E15EB8 /* TDGuidePageHUD.m in Sources */,
 				0404945F1F299B2E0093B269 /* UINavigationItem+Additions.m in Sources */,
+				045EA55A1F598F6500B0A704 /* TDNearbyAddressViewController.m in Sources */,
 				045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */,
 				042478A01F1F61C8006DF56A /* TDAppDelegate.m in Sources */,
 				04771A321F2B6B66009E5649 /* TDContentDetailViewController.m in Sources */,
@@ -1657,7 +1616,6 @@
 				04AB0C1D1F5016B700599CE0 /* ZJScrollPageView.m in Sources */,
 				046C58401F4AC7C10058364B /* ZYPinYinSearch.m in Sources */,
 				046C580D1F4AC19A0058364B /* UIButton+WHE.m in Sources */,
-				0452642A1F58FFB3001FD38B /* TDSearchResultView.m in Sources */,
 				04246C801F505113002F5855 /* TTGTextTagCollectionView.m in Sources */,
 				0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */,
 				045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */,
@@ -1670,12 +1628,13 @@
 				046C58101F4AC19A0058364B /* CYWebViewController.m in Sources */,
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
 				046A26B41F3968C90013406B /* TDProfileHeaderView.m in Sources */,
-				045264271F58FFB3001FD38B /* TDSearchAddressViewController.m in Sources */,
 				0438475D1F2A1FF50056D3CA /* UIColor+Additons.m in Sources */,
 				0438D34A1F39B47E00D4ED81 /* UIButton+Additions.m in Sources */,
 				046C580F1F4AC19A0058364B /* UIImage+CYButtonIcon.m in Sources */,
 				0438D3441F39A71400D4ED81 /* TDRootTableViewCell.m in Sources */,
+				045EA55E1F598F6500B0A704 /* TDNearbyAddressTableViewCell.m in Sources */,
 				046C58371F4AC7C10058364B /* CityListViewController.m in Sources */,
+				045EA55C1F598F6500B0A704 /* TDBAddGoodsAddressView.m in Sources */,
 				04771A201F2B6A2C009E5649 /* TDHomeDetailViewController.m in Sources */,
 				046C58331F4AC7C10058364B /* CityButton.m in Sources */,
 				045264331F593243001FD38B /* TDNearbyAddressView.m in Sources */,
@@ -1690,20 +1649,21 @@
 				04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */,
 				045263EB1F58EEEA001FD38B /* TDAddressProfileView.m in Sources */,
 				04AB0C191F5016B700599CE0 /* UIView+ZJFrame.m in Sources */,
+				045EA55D1F598F6500B0A704 /* TDHistoryAddressView.m in Sources */,
 				041ACB311F29CB39007280ED /* UIBarButtonItem+Additions.m in Sources */,
 				04C1C3671F3AAAB80035F26C /* UIImage+Additions.m in Sources */,
 				046C583C1F4AC7C10058364B /* PinyinFormatter.m in Sources */,
-				045264291F58FFB3001FD38B /* TDNearbyAddressTableViewCell.m in Sources */,
 				046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */,
 				04AB0C1C1F5016B700599CE0 /* ZJContentView.m in Sources */,
 				04AB0C1B1F5016B700599CE0 /* ZJCollectionView.m in Sources */,
 				0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */,
 				0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */,
+				045EA5591F598F6500B0A704 /* TDBAddGoodsAddressViewController.m in Sources */,
 				046C58391F4AC7C10058364B /* ChineseToPinyinResource.m in Sources */,
 				040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */,
+				045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */,
 				044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */,
 				0440BEAD1F3BEDC000E9DADE /* TDRegisterViewController.m in Sources */,
-				045264281F58FFB3001FD38B /* TDHistoryAddressView.m in Sources */,
 				04771A1A1F2B69FC009E5649 /* TDMainViewController.m in Sources */,
 				04246C7F1F505113002F5855 /* TTGTagCollectionView.m in Sources */,
 				046C58121F4AC19A0058364B /* NJKWebViewProgressView.m in Sources */,

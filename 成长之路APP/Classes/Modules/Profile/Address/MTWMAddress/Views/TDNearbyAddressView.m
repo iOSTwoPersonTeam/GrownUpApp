@@ -30,7 +30,6 @@
 
 -(void)setupUI
 {
-
     [self tableview]; //列表添加
 }
 
