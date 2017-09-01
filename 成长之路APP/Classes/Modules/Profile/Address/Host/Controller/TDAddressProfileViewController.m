@@ -10,6 +10,7 @@
 #import "TDAddressProfileViewController.h"
 #import "TDAddressProfileView.h"
 #import "TDBAddGoodsAddressViewController.h"
+#import "TDMTMapViewController.h"
 
 @interface TDAddressProfileViewController ()
 
@@ -53,8 +54,19 @@
 //跳转美团外卖
 -(void)clickMtwmAddressView
 {
-    
-    
+    TDMTMapViewController *mtMapVC =[[TDMTMapViewController alloc] init];
+    mtMapVC.location =_elmlocation;
+    mtMapVC.getAddressBlock = ^(NSString *detailAddress, CLLocationCoordinate2D location) {
+        
+        DLog(@"地址:%@--纬度:%f",detailAddress,location.latitude);
+        self.addressProfileView.mtwmTitleLabel.text =detailAddress;
+        self.addressProfileView.mtwmDetailLabel.text =[NSString stringWithFormat:@"纬度:%f 经度:%f",location.latitude,location.longitude];
+        self.elmlocation =location;
+        
+        [self navigationBack];
+    };
+
+    [self.navigationController pushViewController:mtMapVC animated:YES];
 }
 
 

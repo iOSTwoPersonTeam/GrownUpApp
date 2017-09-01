@@ -8,7 +8,7 @@
 
 #import "BaiduMapManager.h"
 
-@interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate>
+@interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate,BMKMapViewDelegate>
 @property(nonatomic,strong)BMKMapView *mapView; //地图
 @property (nonatomic, strong)BMKLocationService *locService; // 定位对象
 @property (nonatomic, strong)BMKGeoCodeSearch *geoSearcher; // 地理编码对象
@@ -150,6 +150,7 @@
 {
     self.bMKPoiSearch.delegate =nil;
     self.geoSearcher.delegate =nil;
+    self.mapView.delegate =nil;
 }
 
 

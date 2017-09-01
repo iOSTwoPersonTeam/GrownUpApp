@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = self.title ?: @"地图";
+    self.title = self.title ?: @"饿了么";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(clickSearch)];
     
     [self.view addSubview:self.mapView]; //添加地图
