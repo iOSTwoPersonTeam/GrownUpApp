@@ -25,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.backEnabled = YES;
     self.emptyDataEnabled = YES;
     self.refreshEnabled = YES;
     

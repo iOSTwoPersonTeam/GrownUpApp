@@ -10,7 +10,7 @@
 
 @interface TDRootViewController : UIViewController
 
-@property (nonatomic, assign) BOOL backEnabled;     //显示返回按钮
+@property (nonatomic, assign) BOOL backEnabled;     //显示返回按钮 默认显示Yes
 
 - (void)back;
 

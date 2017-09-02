@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+        self.backEnabled = YES;
      self.title =@"美团外卖";
     [self.view addSubview:self.cityAndSearchView]; //城市和搜索View
     [self.cityAndSearchView addSubview:self.customSearchBar];  //添加搜索框
