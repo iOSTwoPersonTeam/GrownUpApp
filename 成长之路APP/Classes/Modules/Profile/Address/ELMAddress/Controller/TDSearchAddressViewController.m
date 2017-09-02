@@ -31,7 +31,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.leftBarButtonItem =[UIBarButtonItem leftBarButtonItemWithTitle:@"北京市" titleColor:[UIColor redColor] target:self selector:@selector(clickSelectCity)];
-    self.navigationItem.rightBarButtonItem =[UIBarButtonItem leftBarButtonItemWithTitle:@"取消" titleColor:[UIColor redColor] target:self selector:@selector(cancelDidClick)];
+    self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithTitle:@"取消" titleColor:[UIColor redColor] target:self selector:@selector(cancelDidClick)];
     [self customSearchBar];
     
     [self.view addSubview:self.scrollPageView]; //添加标题segment

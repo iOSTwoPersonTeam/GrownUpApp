@@ -10,6 +10,7 @@
 #import <UINavigationController+FDFullscreenPopGesture.h>
 #import "BaiduMapManager.h"
 #import "TDNearbyAddressView.h"
+#import "TDMTNearbySearchViewController.h"
 
 @interface TDMTMapViewController ()<BMKMapViewDelegate,UISearchBarDelegate>
 
@@ -35,11 +36,15 @@
     [self.view addSubview:self.locationButton]; //定位按钮
     [self.view addSubview:self.annotationImageView]; //定位大头针图片
     [self.view addSubview:self.nearbyAddressview]; //附近地址view
-
     [self getLocation]; //根据位置定位
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
 
+    self.fd_interactivePopDisabled = YES;
+}
 
 
 
@@ -105,7 +110,14 @@
     }];
 }
 
+#pragma mark ----UISearchBarDelagate---
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    TDMTNearbySearchViewController *mtNearbySearchVC =[[TDMTNearbySearchViewController alloc] init];
+    [self presentViewController:[[TDRootNavigationController alloc] initWithRootViewController:mtNearbySearchVC] animated:YES completion:nil];
 
+    return NO;
+}
 
 #pragma mark ---getter---
 //城市和搜索view
@@ -191,8 +203,6 @@
     }
     return _customSearchBar;
 }
-
-
 
 
 

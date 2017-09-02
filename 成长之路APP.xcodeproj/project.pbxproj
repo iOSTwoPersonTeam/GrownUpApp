@@ -15,6 +15,7 @@
 		04246C7F1F505113002F5855 /* TTGTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04246C7C1F505113002F5855 /* TTGTagCollectionView.m */; };
 		04246C801F505113002F5855 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04246C7E1F505113002F5855 /* TTGTextTagCollectionView.m */; };
 		042478A01F1F61C8006DF56A /* TDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424789F1F1F61C8006DF56A /* TDAppDelegate.m */; };
+		042F8D871F5A6081007747C5 /* TDMTNearbySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F8D861F5A6081007747C5 /* TDMTNearbySearchViewController.m */; };
 		0438475D1F2A1FF50056D3CA /* UIColor+Additons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438475C1F2A1FF50056D3CA /* UIColor+Additons.m */; };
 		0438D33E1F39A5D300D4ED81 /* TDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438D33D1F39A5D300D4ED81 /* TDLoginViewController.m */; };
 		0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438D3401F39A6AF00D4ED81 /* TDRootTableViewController.m */; };
@@ -156,6 +157,8 @@
 		04246C7E1F505113002F5855 /* TTGTextTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTGTextTagCollectionView.m; sourceTree = "<group>"; };
 		0424789E1F1F61C8006DF56A /* TDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAppDelegate.h; sourceTree = "<group>"; };
 		0424789F1F1F61C8006DF56A /* TDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAppDelegate.m; sourceTree = "<group>"; };
+		042F8D851F5A6081007747C5 /* TDMTNearbySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMTNearbySearchViewController.h; sourceTree = "<group>"; };
+		042F8D861F5A6081007747C5 /* TDMTNearbySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMTNearbySearchViewController.m; sourceTree = "<group>"; };
 		0438475B1F2A1FF50056D3CA /* UIColor+Additons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additons.h"; sourceTree = "<group>"; };
 		0438475C1F2A1FF50056D3CA /* UIColor+Additons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additons.m"; sourceTree = "<group>"; };
 		0438D33C1F39A5D300D4ED81 /* TDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoginViewController.h; sourceTree = "<group>"; };
@@ -806,6 +809,8 @@
 			children = (
 				0452642E1F590101001FD38B /* TDMTMapViewController.h */,
 				0452642F1F590101001FD38B /* TDMTMapViewController.m */,
+				042F8D851F5A6081007747C5 /* TDMTNearbySearchViewController.h */,
+				042F8D861F5A6081007747C5 /* TDMTNearbySearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1592,6 +1597,7 @@
 				044F79D21F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m in Sources */,
 				046C58381F4AC7C10058364B /* ChineseInclude.m in Sources */,
 				043F7A301F38516E0075CF93 /* TDProfileViewController.m in Sources */,
+				042F8D871F5A6081007747C5 /* TDMTNearbySearchViewController.m in Sources */,
 				046C583B1F4AC7C10058364B /* NSString+PinYin4Cocoa.m in Sources */,
 				0438D33E1F39A5D300D4ED81 /* TDLoginViewController.m in Sources */,
 				049041B41F4C35B6006C1601 /* DHGifImageOperation.m in Sources */,
