@@ -20,7 +20,8 @@ target '成长之路APP' do
     pod 'XHLaunchAd'             #开屏广告实现
     pod 'SDCycleScrollView'      #无限轮播图
     pod 'PYSearch'               #搜索控制器替代原生
-
+    pod 'PYTheme'                #动态主题更换
+    
    #ShareSDK分享
    pod 'ShareSDK3'                                  # 主模块(必须)
    pod 'MOBFoundation'                              # Mob 公共库(必须)

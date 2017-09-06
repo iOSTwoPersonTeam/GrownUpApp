@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040494571F2992AE0093B269 /* TDTabBarViewController.m */; };
 		0404945F1F299B2E0093B269 /* UINavigationItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404945E1F299B2E0093B269 /* UINavigationItem+Additions.m */; };
+		04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */; };
 		041ACB2B1F29B895007280ED /* TDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041ACB2A1F29B895007280ED /* TDRootViewController.m */; };
 		041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041ACB2D1F29B8C9007280ED /* TDRootNavigationController.m */; };
 		041ACB311F29CB39007280ED /* UIBarButtonItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 041ACB301F29CB39007280ED /* UIBarButtonItem+Additions.m */; };
@@ -145,6 +146,8 @@
 		040494571F2992AE0093B269 /* TDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTabBarViewController.m; sourceTree = "<group>"; };
 		0404945D1F299B2E0093B269 /* UINavigationItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Additions.h"; sourceTree = "<group>"; };
 		0404945E1F299B2E0093B269 /* UINavigationItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Additions.m"; sourceTree = "<group>"; };
+		04149F2E1F5B9F8E006EEC44 /* TDThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDThemeViewController.h; sourceTree = "<group>"; };
+		04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDThemeViewController.m; sourceTree = "<group>"; };
 		041ACB291F29B895007280ED /* TDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRootViewController.h; sourceTree = "<group>"; };
 		041ACB2A1F29B895007280ED /* TDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRootViewController.m; sourceTree = "<group>"; };
 		041ACB2C1F29B8C9007280ED /* TDRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRootNavigationController.h; sourceTree = "<group>"; };
@@ -425,6 +428,39 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		04149F2A1F5B9F3D006EEC44 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				04149F2B1F5B9F3D006EEC44 /* Controller */,
+				04149F2C1F5B9F3D006EEC44 /* Model */,
+				04149F2D1F5B9F3D006EEC44 /* Views */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		04149F2B1F5B9F3D006EEC44 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04149F2E1F5B9F8E006EEC44 /* TDThemeViewController.h */,
+				04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04149F2C1F5B9F3D006EEC44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04149F2D1F5B9F3D006EEC44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		041ACB281F29B81E007280ED /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,6 +592,7 @@
 				04E7D59D1F43F95B00E8D9DB /* UserInfo */,
 				04E7D5A41F444E7100E8D9DB /* Settings */,
 				045D14BA1F56580300640930 /* Address */,
+				04149F2A1F5B9F3D006EEC44 /* Theme */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1591,6 +1628,7 @@
 				045EA55B1F598F6500B0A704 /* TDSearchAddressViewController.m in Sources */,
 				046C583A1F4AC7C10058364B /* HanyuPinyinOutputFormat.m in Sources */,
 				046C57FB1F4AAEF70058364B /* TDRootWebViewController.m in Sources */,
+				04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */,
 				046C583D1F4AC7C10058364B /* PinYinForObjc.m in Sources */,
 				041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */,
 				04910ED81F2F00D500F963EC /* TDBaseRequestApI.m in Sources */,

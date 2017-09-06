@@ -14,6 +14,18 @@
 
 @implementation TDRootViewController
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return _statuaBarStyle;
+}
+//动态更新状态栏颜色
+-(void)setStatuaBarStyle:(UIStatusBarStyle)statuaBarStyle
+{
+    _statuaBarStyle =statuaBarStyle;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,8 +38,20 @@
     self.hidesBottomBarWhenPushed = YES;
     self.preferredContentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT - 64);
     
+    self.statuaBarStyle = UIStatusBarStyleDefault;
     self.backEnabled =YES;
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
 

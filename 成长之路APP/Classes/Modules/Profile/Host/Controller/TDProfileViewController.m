@@ -14,8 +14,8 @@
 #import "TDUserInfoViewController.h"
 #import "TDSettingsViewController.h"
 #import "TDAddressProfileViewController.h"
+#import "TDThemeViewController.h"
 
-#define ELMAddress @"地址选择"
 
 @interface TDProfileViewController ()
 
@@ -74,16 +74,15 @@
         webVC.title = @"橙椒平台服务规则";
         [self navigationDetail:webVC];
     }
-    else if ([title isEqualToString:@"关于"]){
-        //关于
-        TDRootWebViewController *webVC = [TDRootWebViewController loadURL:[NSString stringWithFormat:@"%@c=spread&m=preview&id=19",WebSchemeURL]];
-        webVC.title = @"橙椒平台服务规则";
-        [self navigationDetail:webVC];
-    }
-    else if ([title isEqualToString:ELMAddress]){
+    else if ([title isEqualToString:@"地址选择"]){ //地址跳转
         
-        TDAddressProfileViewController *VC =[[ TDAddressProfileViewController alloc] init];
-        [self navigationDetail:VC];
+        TDAddressProfileViewController *addressVC =[[ TDAddressProfileViewController alloc] init];
+        [self navigationDetail:addressVC];
+    }
+    else if ([title isEqualToString:@"主题选择"]){ //地址跳转
+        
+        TDThemeViewController *themeVC =[[ TDThemeViewController alloc] init];
+        [self navigationDetail:themeVC];
     }
     
 }
@@ -195,7 +194,8 @@
         
         _titleArray =@[@[@"服务收藏",@"店铺关注"],
                        @[@"意见反馈",@"联系客服"],
-                       @[ELMAddress],
+                       @[@"地址选择"],
+                       @[@"主题选择"],
                        @[@"关于"],
                        @[@"设置"]
                     ];
@@ -209,6 +209,7 @@
         _imageArray =@[@[@"服务收藏",@"店铺关注"],
                         @[@"意见反馈",@"联系客服"],
                         @[@"意见反馈"],
+                        @[@"店铺关注"],
                         @[@"关于"],
                         @[@"设置"]
                     ];
