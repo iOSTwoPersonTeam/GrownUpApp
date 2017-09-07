@@ -107,16 +107,6 @@
 }
 
 //TDContentViewController
--(void)leftAdd
-{
-    NSLog(@"添加--------");
-    
-}
-
--(void)rightEdit
-{
-    NSLog(@"编辑--------");
-}
 
 //TDMessageViewController
 -(void)leftRefresh
@@ -150,9 +140,10 @@
     }
     else if (index ==1){
         
+        self.fd_prefersNavigationBarHidden = YES;
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        self.tabBarViewController.tabBarView.frame =CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49);
         self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"内容"];
-        self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(leftAdd)];
-        self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(rightEdit)]];
         
     }
     else if (index ==2){
