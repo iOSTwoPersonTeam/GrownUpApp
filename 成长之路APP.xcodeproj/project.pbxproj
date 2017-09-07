@@ -120,6 +120,7 @@
 		04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7D5AC1F44635400E8D9DB /* TDSettingsTableViewCell.m */; };
 		04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8E7841F2C2C4200F407A6 /* TDRootModel.m */; };
 		04E8E7881F2C2CD500F407A6 /* TDModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */; };
+		04F6FD781F60F9EC00A301B9 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */; };
 		04F773C51F45CBBF005FA37A /* TDShareSDKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F773C41F45CBBF005FA37A /* TDShareSDKTool.m */; };
 		BE6496A023EF79369C1ABA7D /* libPods-成长之路APP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 773934F5E62E6955CF04F2AE /* libPods-成长之路APP.a */; };
 /* End PBXBuildFile section */
@@ -362,6 +363,8 @@
 		04E8E7841F2C2C4200F407A6 /* TDRootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRootModel.m; sourceTree = "<group>"; };
 		04E8E7861F2C2CD500F407A6 /* TDModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDModelViewController.h; sourceTree = "<group>"; };
 		04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDModelViewController.m; sourceTree = "<group>"; };
+		04F6FD761F60F9EC00A301B9 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		04F773C31F45CBBF005FA37A /* TDShareSDKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDShareSDKTool.h; sourceTree = "<group>"; };
 		04F773C41F45CBBF005FA37A /* TDShareSDKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDShareSDKTool.m; sourceTree = "<group>"; };
 		04FA08551F346060006E66BE /* URLMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLMacros.h; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 				041ACB301F29CB39007280ED /* UIBarButtonItem+Additions.m */,
 				04AB9E451F2AD1290031FD6E /* UIViewController+Additions.h */,
 				04AB9E461F2AD1290031FD6E /* UIViewController+Additions.m */,
+				04F6FD761F60F9EC00A301B9 /* UIView+Additions.h */,
+				04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */,
 				04AB0BF01F4FB39D00599CE0 /* UILabel+Additions.h */,
 				04AB0BF11F4FB39D00599CE0 /* UILabel+Additions.m */,
 				0438D3481F39B47E00D4ED81 /* UIButton+Additions.h */,
@@ -1637,6 +1642,7 @@
 				043F7A301F38516E0075CF93 /* TDProfileViewController.m in Sources */,
 				042F8D871F5A6081007747C5 /* TDMTNearbySearchViewController.m in Sources */,
 				046C583B1F4AC7C10058364B /* NSString+PinYin4Cocoa.m in Sources */,
+				04F6FD781F60F9EC00A301B9 /* UIView+Additions.m in Sources */,
 				0438D33E1F39A5D300D4ED81 /* TDLoginViewController.m in Sources */,
 				049041B41F4C35B6006C1601 /* DHGifImageOperation.m in Sources */,
 				04A1CB831F4AEE3200CE45EC /* TDLaunchAdModel.m in Sources */,

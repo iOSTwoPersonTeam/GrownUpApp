@@ -6,7 +6,6 @@
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
 @protocol TDModelDelegate <NSObject>
 

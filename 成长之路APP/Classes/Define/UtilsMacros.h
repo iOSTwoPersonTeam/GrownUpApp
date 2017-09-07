@@ -15,6 +15,7 @@
 //获取屏幕宽高
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define TDTabBarHeight  49       //定义Tabbar高度
 
 //-------------------打印日志-------------------------
 //DEBUG  模式下打印日志,当前行

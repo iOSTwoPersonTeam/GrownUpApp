@@ -26,6 +26,14 @@ typedef NS_ENUM(NSUInteger, ImageAndTitlePosition) {
  */
 - (void)setImagePosition:(ImageAndTitlePosition )postion WithImageAndTitleSpacing:(CGFloat )spacing;
 
+/*
+ *  按钮添加倒计时
+ */
+-(void)countDown_startTime:(NSInteger )timeout title:(NSString *)tittle waitTittle:(NSString *)waitTittle;
+
+
+
+
 @end
 
 

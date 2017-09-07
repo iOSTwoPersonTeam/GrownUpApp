@@ -6,8 +6,6 @@
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface TDRootViewController : UIViewController
 
 

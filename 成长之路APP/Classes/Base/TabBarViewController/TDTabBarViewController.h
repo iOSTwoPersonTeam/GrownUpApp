@@ -6,8 +6,6 @@
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #pragma mark - @interface TabBarView
 
 @protocol TabBarViewDelegate <NSObject>

@@ -12,6 +12,8 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 //第三方库
 #import <MBProgressHUD/MBProgressHUD.h>             //提示框
@@ -70,6 +72,7 @@
 #import "UINavigationItem+Additions.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIViewController+Additions.h"
+#import "UIView+Additions.h"
 #import "UIButton+Additions.h"
 #import "UILabel+Additions.h"
 #import "UIImage+Additions.h"
