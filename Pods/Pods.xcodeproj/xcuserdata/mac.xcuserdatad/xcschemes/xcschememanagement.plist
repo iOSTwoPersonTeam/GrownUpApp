@@ -59,11 +59,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PYTheme.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-成长之路APP.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,17 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FF3D6F5520FBC14A39ED1B8797E9D2F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5437890023F30CA85DFCA260CA914D48</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>55D4C35FF64082B4F0560A2B54A57480</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,17 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60745D3CFC8D6C1791835E3B9BC4C625</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6D4B65B2763C71516E1313F304C2BC8E</key>
+		<key>74516F0AB24B555082E1897AE683457F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>904F4F27FD314010A3812EB2A9306183</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>940752D536DC58B4AAAAEAB2AABD370C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
+		<key>A1575E702251EC412E95674E64C5DFE5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF316B1D969560DF03D4F0FE024D9F62</key>
+		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,12 +142,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>E6AE20C639A9AE661770D683A4435F19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EE366E1E6962F82E6AEC8AE66FA66CBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F80FA521BF37427877D021608E91E29E</key>
+		<key>FF7B467C719B5714552162EEC2C28B3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

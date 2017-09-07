@@ -48,8 +48,8 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     // 取出cell
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    // 设置主题色
-    [self py_setThemeColor:cell.backgroundColor];
+
+    
 }
 
 
