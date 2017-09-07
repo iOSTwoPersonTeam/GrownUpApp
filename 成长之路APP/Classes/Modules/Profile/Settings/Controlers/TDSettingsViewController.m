@@ -12,7 +12,9 @@
 @interface TDSettingsViewController ()
 
 @property(nonatomic,strong)NSArray *titleArray; //名称数组
+@property(nonatomic,strong)NSMutableArray *detailArray; //详情数组
 @property(nonatomic,strong)UIButton *logoutButton; //退出登录按钮
+@property(nonatomic,strong)NSString *cacheSizeText; //缓存大小
 
 @end
 
@@ -25,6 +27,10 @@
     self.hudEnabled =NO;
     
     self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"设置"];
+    
+    //获取缓存大小
+    SDImageCache *cache = [SDImageCache sharedImageCache];
+    _cacheSizeText = [NSString stringWithFormat:@"%.2f MB", [cache getSize]/1024.f/1024.f];
     
     self.view.frame =CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     CGRect frame =self.tableView.frame;
@@ -93,13 +99,7 @@
 {
     //详情
     TDSettingsTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TDSettingsTableViewCell class])];
-    if (indexPath.section ==0) {
-        cell.accessoryType =UITableViewCellAccessoryNone;
-    }
-    else{
-        cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;
-    }
-    [cell setTitle:self.titleArray[indexPath.section][indexPath.row]];
+    [cell getDataWithTitle:self.titleArray[indexPath.section][indexPath.row] WithDetailText:self.detailArray[indexPath.section][indexPath.row] WithIndexPath:indexPath.row];
     
     return cell;
 }
@@ -124,12 +124,24 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
+    if (indexPath.section ==0 && indexPath.row ==0) {
+
+        [[SDImageCache sharedImageCache] clearMemory];
+        _cacheSizeText = @"0 MB";
+        
+#warning 没有解决问题------数组套数组 更新指定元素的方法
+        _detailArray =[NSMutableArray arrayWithArray:
+                       @[@[_cacheSizeText],
+                         @[@""]
+                         ]];
+        
+        [self.tableView reloadData];
+    }
     
 }
 
 #pragma mark ---getter
-
+//名称数组
 -(NSArray *)titleArray
 {
     if (_titleArray ==nil) {
@@ -140,6 +152,19 @@
     }
     return _titleArray;
 }
+
+//详情数组
+-(NSMutableArray *)detailArray
+{
+    if (!_detailArray) {
+        _detailArray =[NSMutableArray arrayWithArray:
+                                    @[@[_cacheSizeText],
+                                    @[@""]
+                                    ]];
+    }
+    return _detailArray;
+}
+
 
 -(UIButton *)logoutButton
 {

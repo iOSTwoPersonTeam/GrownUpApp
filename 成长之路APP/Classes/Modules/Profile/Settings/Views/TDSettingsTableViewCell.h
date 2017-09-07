@@ -10,6 +10,6 @@
 
 @interface TDSettingsTableViewCell : TDRootTableViewCell
 
-- (void)setTitle:(nonnull NSString*)title;
+- (void)getDataWithTitle:(nonnull NSString*)title WithDetailText:(NSString *_Nullable)detailText WithIndexPath:(NSInteger )index;
 
 @end
