@@ -717,9 +717,9 @@
 			isa = PBXGroup;
 			children = (
 				045E99611F62447B00D827F2 /* TDContentScrollView.h */,
+				045E99641F62447B00D827F2 /* TDContentScrollView.m */,
 				045E99621F62447B00D827F2 /* TDContentTableView.h */,
 				045E99631F62447B00D827F2 /* TDContentTableView.m */,
-				045E99641F62447B00D827F2 /* TDContentScrollView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";

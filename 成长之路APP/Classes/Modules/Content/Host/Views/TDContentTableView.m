@@ -10,6 +10,8 @@
 
 @interface TDContentTableView ()<UITableViewDelegate,UITableViewDataSource>
 
+@property(nonatomic, strong)NSArray *dataArray; //数组
+
 @end
 
 @implementation TDContentTableView
@@ -20,6 +22,9 @@
         self.delegate = self;
         self.dataSource = self;
         self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
+        self.dataArray =@[@"看电视看的方法那倒是当升",@"看电视看的方法那倒是当",@"看电视看的方法那倒是当",@"看电视看的方法那倒是当",@"看电视看的方法那倒是当",@"看电视看的方法那倒是当",@"看电视看的方法那倒是当",@"看电视看的方法那倒是当"];
+        
     }
     return self;
 }
@@ -35,10 +40,11 @@
 
 
 
+
 #pragma mark ---Delagate---
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 16;
+    return self.dataArray.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,8 +64,8 @@
         //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.backgroundColor =[UIColor orangeColor];
-    cell.textLabel.text =@"大家好";
+    cell.backgroundColor =[UIColor whiteColor];
+    cell.textLabel.text =_dataArray[indexPath.row];
     
     return cell;
     
