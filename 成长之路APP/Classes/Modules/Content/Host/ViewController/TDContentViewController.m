@@ -38,7 +38,6 @@
     [self.headerView addSubview:self.headerSpaceView]; //主功能区域下方按钮
     [self.mainScrollView addSubview:self.mainTableView];
     [self.view addSubview:self.coverNavView];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -76,16 +75,13 @@
 #pragma mark ----tableViewDelagate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     return 16;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     return 60;
 }
-
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -105,7 +101,6 @@
     return cell;
     
 }
-
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -150,6 +145,10 @@
         newFrame = self.functionHeaderView.frame;
         newFrame.origin.y = 0;
         self.functionHeaderView.frame = newFrame;
+        
+        //处理透明度
+            _mainNavView.alpha = 1;
+            _coverNavView.alpha = 0;
     }
     else if(y < functionHeaderViewHeight && y > 0) {
         CGRect newFrame = self.headerView.frame;
@@ -265,7 +264,6 @@
     }
     return _headerView;
 }
-
 
 //taleView
 -(UITableView *)mainTableView
