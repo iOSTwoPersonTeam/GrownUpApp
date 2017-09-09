@@ -159,7 +159,7 @@
 #pragma mark ---CityListViewDelegate  城市选择Delegate
 - (void)didClickedWithCity:(CityItem *)cityItem
 {
-    [self.locationButton setAttributedTitle:[[NSAttributedString alloc] initWithString:cityItem.name attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14], NSForegroundColorAttributeName : GlobalThemeColor}] forState:UIControlStateNormal];
+    [self.locationButton setAttributedTitle:[[NSAttributedString alloc] initWithString:cityItem.name attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14], NSForegroundColorAttributeName : [UIColor grayColor]}] forState:UIControlStateNormal];
     CGSize size = [cityItem.name getSizeWithMaxWidth:60 maxHeight:14 withFontSize:14];
     [self.locationButton setImageEdgeInsets:UIEdgeInsetsMake(0, size.width, 0, 0)];
 }

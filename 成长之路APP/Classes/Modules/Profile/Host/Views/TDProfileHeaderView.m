@@ -82,7 +82,7 @@
     //录音按钮
     self.moreButton.frame =CGRectMake(12 + hspace, self.headerImageView.frame.origin.y -60, 32, 32);
     //设置按钮
-    self.settingButton.frame =CGRectMake(SCREEN_WIDTH-36 + hspace, CGRectGetMinY(self.moreButton.frame), 32, 32);
+    self.settingButton.frame =CGRectMake(SCREEN_WIDTH-36 + hspace, CGRectGetMinY(self.moreButton.frame), 35, 35);
 
 }
 
