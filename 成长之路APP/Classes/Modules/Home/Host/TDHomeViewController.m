@@ -22,22 +22,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor =[UIColor orangeColor];
-    
     [self.view addSubview:self.cycleScrollView];  //添加轮播图
 
+    
+    
 }
 
 
 #pragma mark ---private---
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    TDHomeDetailViewController *VC =[[TDHomeDetailViewController alloc] init];
-    VC.title =@"首页详情";
-    [self.navigationController pushViewController:VC animated:YES];
 
-}
+
+
+
+#pragma mark ----Delagate---
+
+
+
+
 
 
 #pragma mark --getter---
