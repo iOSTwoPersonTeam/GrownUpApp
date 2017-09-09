@@ -19,6 +19,7 @@
 {
     if (self =[super initWithFrame:frame]) {
         
+        self.backgroundColor =GlobalBackgroundColor;
     }
     return self;
 }
@@ -46,18 +47,18 @@
 - (UIView *)functionHeaderView {
     if(!_functionHeaderView){
         _functionHeaderView = [[UIView alloc]init];
-        _functionHeaderView.backgroundColor = [UIColor purpleColor];
+        _functionHeaderView.backgroundColor = [UIColor whiteColor];
         
-        NSArray *titleArray =@[@"扫一扫",@"付款",@"卡券",@"定位"];
-        NSArray *imageArray =@[@"设置",@"设置",@"设置",@"设置"];
+        NSArray *titleArray =@[@"下载",@"历史",@"已购",@"喜欢"];
+        NSArray *imageArray =@[@"下载",@"历史",@"已购",@"喜欢"];
         float with =60;
         float spaceX =(SCREEN_WIDTH -titleArray.count *with)/titleArray.count;
         
         for (int i=0; i <titleArray.count; i++) {
-            UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(spaceX/2 +with*i +spaceX *i, 10, with, 80)];
+            UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(spaceX/2 +with*i +spaceX *i, 10, with, 60)];
             [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(30, 30)] forState:UIControlStateNormal];
             [button setTitle:titleArray[i] forState:UIControlStateNormal];
-            button.backgroundColor =[UIColor orangeColor];
+            button.backgroundColor =[UIColor whiteColor];
             button.titleLabel.font =[UIFont systemFontOfSize:14];
             [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
             [button setImagePosition:ImageAndTitlePositionTop WithImageAndTitleSpacing:10.0];
@@ -72,7 +73,7 @@
 - (UIView *)headerSpaceView{
     if(!_headerSpaceView){
         _headerSpaceView = [[UIView alloc]init];
-        _headerSpaceView.backgroundColor = [UIColor cyanColor];
+        _headerSpaceView.backgroundColor = [UIColor orangeColor];
         [self.headerView addSubview:_headerSpaceView];
     }
     return _headerSpaceView;
@@ -81,7 +82,7 @@
 - (UIView *)headerView{
     if(!_headerView){
         _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, functionHeaderViewHeight + HeaderSpaceViewHeight)];
-        _headerView.backgroundColor = [UIColor yellowColor];
+        _headerView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_headerView];
     }
     return _headerView;

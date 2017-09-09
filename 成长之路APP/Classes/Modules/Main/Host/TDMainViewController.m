@@ -25,7 +25,6 @@
 
 @property (nonatomic, strong) UIButton *locationButton;     //用户首页定位
 @property (nonatomic, strong) UIBarButtonItem *locationItem;  //用户首页定位
-@property (nonatomic, strong) UIBarButtonItem *searchItem;  //用户首页搜索
 
 @end
 
@@ -46,7 +45,7 @@
 {
     //初始显示用户首页定位，搜索
     if ([[self class] getUserSelectCity]) {
-        [self.locationButton setAttributedTitle:[[NSAttributedString alloc] initWithString:[[[self class] getUserSelectCity] name] attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14], NSForegroundColorAttributeName : GlobalThemeColor}] forState:UIControlStateNormal];
+        [self.locationButton setAttributedTitle:[[NSAttributedString alloc] initWithString:[[[self class] getUserSelectCity] name] attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14], NSForegroundColorAttributeName : [UIColor grayColor]}] forState:UIControlStateNormal];
         CGSize size = [[[[self class] getUserSelectCity] name] getSizeWithMaxWidth:60 maxHeight:14 withFontSize:14];
         [self.locationButton setImageEdgeInsets:UIEdgeInsetsMake(0, size.width, 0, 0)];
     }
@@ -59,7 +58,7 @@
 {
     self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"首页"];
     self.navigationItem.leftBarButtonItem = self.locationItem;
-    self.navigationItem.rightBarButtonItem = self.searchItem;
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem rightBarButtonItemWithImage:[UIImage SizeImage:@"搜索" toSize:CGSizeMake(25,25)] highlighted:[UIImage SizeImage:@"搜索" toSize:CGSizeMake(25,25)] target:self selector:@selector(search)];
     
 }
 
@@ -109,11 +108,6 @@
 //TDContentViewController
 
 //TDMessageViewController
--(void)leftRefresh
-{
-    NSLog(@"刷新--------");
-}
-
 -(void)rightCamera
 {
     NSLog(@"相机--------");
@@ -149,9 +143,7 @@
     else if (index ==2){
         
         self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"消息"];
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(leftRefresh)];
-        
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(rightCamera)];
+        self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithImage:[UIImage SizeImage:@"历史" toSize:CGSizeMake(25, 25)] highlighted:[UIImage SizeImage:@"历史" toSize:CGSizeMake(25, 25)] target:self selector:@selector(rightCamera)];
     }
     else if (index ==3){
         
@@ -206,7 +198,7 @@
     if (!_locationButton) {
         _locationButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _locationButton.frame = CGRectMake(0, 0, 80, 16);
-        [_locationButton setImage:[UIImage imageNamed:@"箭头"] forState:UIControlStateNormal];
+        [_locationButton setImage:[UIImage SizeImage:@"箭头" toSize:CGSizeMake(16,16)] forState:UIControlStateNormal];
         [_locationButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -16, 0, 16)];
         [_locationButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [_locationButton addTarget:self action:@selector(location) forControlEvents:UIControlEventTouchUpInside];
@@ -221,14 +213,6 @@
         _locationItem = [[UIBarButtonItem alloc] initWithCustomView:self.locationButton];
     }
     return _locationItem;
-}
-//首页右面搜索导航栏
-- (UIBarButtonItem *)searchItem
-{
-    if (!_searchItem) {
-        _searchItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(search)];
-    }
-    return _searchItem;
 }
 
 

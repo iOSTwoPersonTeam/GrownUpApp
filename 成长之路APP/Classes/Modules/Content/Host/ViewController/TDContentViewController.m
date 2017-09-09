@@ -30,6 +30,7 @@
     
     _topOffsetY = functionHeaderViewHeight + HeaderSpaceViewHeight;
 
+    self.view.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:self.mainNavView]; //添加常态导航栏
     [self.view addSubview:self.coverNavView]; //添加变化后的导航栏
     [self.view addSubview:self.mainScrollview]; //添加主ScrollView
@@ -130,13 +131,26 @@
         _mainNavView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
         _mainNavView.backgroundColor = [UIColor clearColor];
         
-        UIButton *payButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 60, 30)];
-        [payButton setImage:[UIImage SizeImage:@"设置" toSize:CGSizeMake(30, 30)] forState:UIControlStateNormal];
-        [payButton setTitle:@"账单" forState:UIControlStateNormal];
-        payButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        [payButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        UIButton *emailButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 27, 30, 30)];
+        [emailButton setImage:[UIImage SizeImage:@"邮箱" toSize:CGSizeMake(25, 25)] forState:UIControlStateNormal];
+        [emailButton setImagePosition:ImageAndTitlePositionLeft WithImageAndTitleSpacing:10.0];
+        [_mainNavView addSubview:emailButton];
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-30, CGRectGetMinY(emailButton.frame), 60, 30)];
+        titleLabel.text =@"内容";
+        titleLabel.font =[UIFont fontWithName:@"Helvetica" size:18];
+        titleLabel.textColor =GlobalThemeColor;
+        [_mainNavView addSubview:titleLabel];
+
+        UIButton *payButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-40, CGRectGetMinY(emailButton.frame), 30, 30)];
+        [payButton setImage:[UIImage SizeImage:@"历史" toSize:CGSizeMake(25, 25)] forState:UIControlStateNormal];
         [payButton setImagePosition:ImageAndTitlePositionLeft WithImageAndTitleSpacing:10.0];
         [_mainNavView addSubview:payButton];
+        
+        UILabel *lineLabel =[[UILabel alloc] initWithFrame:CGRectMake(0, 63, SCREEN_WIDTH, 1)];
+        lineLabel.backgroundColor =GlobalBackgroundColor;
+        [_mainNavView addSubview:lineLabel];
+
     }
     return _mainNavView;
 }
@@ -145,15 +159,16 @@
     if(!_coverNavView){
         _coverNavView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
         _coverNavView.backgroundColor = [UIColor clearColor];
-        NSArray *imageArray =@[@"设置",@"设置",@"设置"];
-        float with =40;
+        NSArray *imageArray =@[@"邮箱",@"下载",@"历史"];
+        float with =30;
         for (int i=0; i <imageArray.count; i++) {
-            UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(30*(i +1) +with*i, 30, with, 25)];
-            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(25, 25)] forState:UIControlStateNormal];
-            button.backgroundColor =[UIColor orangeColor];
+            UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(30*(i +1) +with*i, 30, with, 30)];
+            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(27, 27)] forState:UIControlStateNormal];
             [_coverNavView addSubview:button];
         }
-        
+        UILabel *lineLabel =[[UILabel alloc] initWithFrame:CGRectMake(0, 63, SCREEN_WIDTH, 1)];
+        lineLabel.backgroundColor =GlobalBackgroundColor;
+        [_coverNavView addSubview:lineLabel];
         _coverNavView.alpha = 0;
     }
     return _coverNavView;
