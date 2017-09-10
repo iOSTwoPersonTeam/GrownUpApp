@@ -7,12 +7,16 @@
 //
 
 #import "TDHomeViewController.h"
-#import "TDHomeDetailViewController.h"
+#import "ZJScrollPageView.h"
+#import "TDHomeHotViewController.h"
+#import "TDHomeClassisViewController.h"
+#import "TDHomeFinenessViewController.h"
 
-@interface TDHomeViewController ()<SDCycleScrollViewDelegate>
+@interface TDHomeViewController ()<ZJScrollPageViewDelegate>
 
-@property(nonatomic,strong)SDCycleScrollView *cycleScrollView; //首页轮播图
-@property(nonatomic,strong)NSArray *imagesURLStrings; //图片数组
+@property(nonatomic,strong)ZJScrollPageView *scrollPageView;
+@property(nonatomic,strong)NSArray *themeArray; //主题分类
+@property(nonatomic,strong)NSArray *childViewControllers; //子控制器
 
 @end
 
@@ -21,10 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.view addSubview:self.cycleScrollView];  //添加轮播图
 
-    
+    [self.view addSubview:self.scrollPageView]; //添加标题segment
     
 }
 
@@ -36,53 +38,81 @@
 
 
 #pragma mark ----Delagate---
+#pragma mark ---ZJScrollPageViewDelegate
+-(NSInteger)numberOfChildViewControllers
+{
+    return self.childViewControllers.count;
+}
 
+-(UIViewController<ZJScrollPageViewChildVcDelegate> *)childViewController:(UIViewController<ZJScrollPageViewChildVcDelegate> *)reuseViewController forIndex:(NSInteger)index
+{
+    UIViewController<ZJScrollPageViewChildVcDelegate> *childVc = (UIViewController<ZJScrollPageViewChildVcDelegate>*)reuseViewController;
+    
+    if (!childVc) {
+        childVc = self.childViewControllers[index];
+    }
+    
+    return childVc;
+    
+}
+
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods
+{
+    return NO;
+}
 
 
 
 
 
 #pragma mark --getter---
-//------轮播图
--(SDCycleScrollView *)cycleScrollView
+-(ZJScrollPageView *)scrollPageView
 {
-    if (!_cycleScrollView) {
+    if (!_scrollPageView) {
         
-        // 网络加载 --- 创建带标题的图片轮播器
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/4) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
-        _cycleScrollView.backgroundColor =[UIColor whiteColor];
-        _cycleScrollView.infiniteLoop =YES;  //是否无限循环
-        _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter; //page控件是否居中
-        _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
-        
-        // --- 模拟加载延迟
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            _cycleScrollView.imageURLStringsGroup = self.imagesURLStrings;
-        });
-        
-        // block监听点击方式
-        _cycleScrollView.clickItemOperationBlock = ^(NSInteger index) {
-            
-            NSLog(@">>>>>  %ld", (long)index);
-            
-        };
+        ZJSegmentStyle *style =[[ZJSegmentStyle alloc] init];
+        //显示滚动条
+        style.showLine =YES;
+        //标题不滚动
+        style.scrollTitle =NO;
+        //segmentView是否有弹性
+        style.segmentViewBounces =NO;
+        //取消点击时候的动画效果
+        style.animatedContentViewWhenTitleClicked =NO;
+        //取消内容视图弹框
+//        style.scrollContentView =NO;
+        //标题颜色
+        style.selectedTitleColor = [UIColor redColor];
+        //标题滚动条颜色
+        style.scrollLineColor = [UIColor redColor];
+        //标题字体
+        style.titleFont =[UIFont systemFontOfSize:16];
+        //颜色渐变
+        style.gradualChangeTitleColor =YES;
+        //初始化
+        _scrollPageView =[[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) segmentStyle:style titles:self.themeArray parentViewController:self delegate:self];
         
     }
-    return _cycleScrollView;
+    return _scrollPageView;
 }
 
-//图片数组
--(NSArray *)imagesURLStrings
+-(NSArray *)themeArray
 {
-    if (!_imagesURLStrings) {
-        _imagesURLStrings = @[
-                              @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
-                              @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
-                              @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
-                              ];
+    if (!_themeArray) {
+        _themeArray =@[@"热门",@"分类",@"精品",@"直播",@"广播"];
     }
-
-    return _imagesURLStrings;
+    return _themeArray;
+}
+-(NSArray *)childViewControllers
+{
+    if (!_childViewControllers) {
+        _childViewControllers =@[[[TDHomeHotViewController alloc]init],
+                                 [[TDHomeClassisViewController alloc]init],
+                                 [[TDHomeFinenessViewController alloc]init],
+                                 [[TDHomeHotViewController alloc]init],
+                                 [[TDHomeHotViewController alloc]init]];
+    }
+    return _childViewControllers;
 }
 
 
