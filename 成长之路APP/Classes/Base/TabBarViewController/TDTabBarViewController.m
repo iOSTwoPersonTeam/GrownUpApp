@@ -233,7 +233,7 @@
     [self.centerButton.titleLabel setFont:[UIFont systemFontOfSize:11]];
     [self.centerButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.centerButton setTitleColor:[UIColor grayColor] forState:UIControlStateSelected];
-    [self.centerButton setTitleEdgeInsets:UIEdgeInsetsMake(45, -95, 0, 0)];
+    [self.centerButton setTitleEdgeInsets:UIEdgeInsetsMake(45, -130, 0, 0)];
 }
 
 -(void)setTextColor:(UIColor *)textColor{

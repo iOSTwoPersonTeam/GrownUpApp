@@ -173,8 +173,8 @@
     
     tabBarViewController.tabBarView.frame =CGRectMake(0, SCREEN_HEIGHT-64 -49, SCREEN_WIDTH, 49);
     tabBarViewController.showCenterItem =YES;
-    tabBarViewController.centerItemTitle =@"发布需求";
-    tabBarViewController.centerItemImage =[UIImage imageNamed:@"发布需求"];
+    tabBarViewController.centerItemTitle =@"发布";
+    tabBarViewController.centerItemImage =[UIImage imageNamed:@"发布"];
     tabBarViewController.XMDelegate =self;
     self.tabBarViewController =tabBarViewController;
 
@@ -186,6 +186,7 @@
     TDProfileViewController *profileVC =[[TDProfileViewController alloc] init];
     tabBarViewController.viewControllers =@[homeVC,contentVC,messageVc,profileVC];
     
+    //中间的发布按钮present时候有无导航栏-----
     tabBarViewController.xm_centerViewController = [[TDRootNavigationController alloc] initWithRootViewController:publishVC];
 
     return tabBarViewController;
