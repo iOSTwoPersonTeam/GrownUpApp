@@ -30,6 +30,8 @@
 		0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEB51F3C0C9100E9DADE /* TDForgetPasswordViewController.m */; };
 		0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEB81F3C0CC400E9DADE /* TDForgetPasswordView.m */; };
 		044818E51F678A8000DD71FC /* TDPublishAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044818E41F678A8000DD71FC /* TDPublishAnimateView.m */; };
+		044818F01F678E2B00DD71FC /* TDSystemMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044818EF1F678E2B00DD71FC /* TDSystemMessageViewController.m */; };
+		044818F31F678E3E00DD71FC /* TDPersonMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044818F21F678E3E00DD71FC /* TDPersonMessageViewController.m */; };
 		044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */; };
 		044F79D21F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79D11F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m */; };
 		045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E51F58EEEA001FD38B /* TDAddressProfileViewController.m */; };
@@ -80,7 +82,6 @@
 		046C58401F4AC7C10058364B /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C58311F4AC7C10058364B /* ZYPinYinSearch.m */; };
 		04771A1A1F2B69FC009E5649 /* TDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A191F2B69FC009E5649 /* TDMainViewController.m */; };
 		04771A211F2B6A2C009E5649 /* TDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A1F1F2B6A2C009E5649 /* TDHomeViewController.m */; };
-		04771A271F2B6A7A009E5649 /* TDMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A241F2B6A7A009E5649 /* TDMessageDetailViewController.m */; };
 		04771A281F2B6A7A009E5649 /* TDMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A261F2B6A7A009E5649 /* TDMessageViewController.m */; };
 		0478F1C71F64E64100FAA40B /* TDHomeHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1C61F64E64100FAA40B /* TDHomeHotViewController.m */; };
 		0478F1CA1F64E86800FAA40B /* TDHomeClassisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1C91F64E86800FAA40B /* TDHomeClassisViewController.m */; };
@@ -193,6 +194,10 @@
 		0440BEB81F3C0CC400E9DADE /* TDForgetPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDForgetPasswordView.m; sourceTree = "<group>"; };
 		044818E31F678A8000DD71FC /* TDPublishAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPublishAnimateView.h; sourceTree = "<group>"; };
 		044818E41F678A8000DD71FC /* TDPublishAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPublishAnimateView.m; sourceTree = "<group>"; };
+		044818EE1F678E2B00DD71FC /* TDSystemMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSystemMessageViewController.h; sourceTree = "<group>"; };
+		044818EF1F678E2B00DD71FC /* TDSystemMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSystemMessageViewController.m; sourceTree = "<group>"; };
+		044818F11F678E3E00DD71FC /* TDPersonMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPersonMessageViewController.h; sourceTree = "<group>"; };
+		044818F21F678E3E00DD71FC /* TDPersonMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPersonMessageViewController.m; sourceTree = "<group>"; };
 		044F79CD1F2B155F00FF7CC4 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		044F79D01F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDAppDelegate+AppService.h"; sourceTree = "<group>"; };
@@ -294,8 +299,6 @@
 		04771A191F2B69FC009E5649 /* TDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMainViewController.m; sourceTree = "<group>"; };
 		04771A1E1F2B6A2C009E5649 /* TDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeViewController.h; sourceTree = "<group>"; };
 		04771A1F1F2B6A2C009E5649 /* TDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeViewController.m; sourceTree = "<group>"; };
-		04771A231F2B6A7A009E5649 /* TDMessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMessageDetailViewController.h; sourceTree = "<group>"; };
-		04771A241F2B6A7A009E5649 /* TDMessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMessageDetailViewController.m; sourceTree = "<group>"; };
 		04771A251F2B6A7A009E5649 /* TDMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMessageViewController.h; sourceTree = "<group>"; };
 		04771A261F2B6A7A009E5649 /* TDMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMessageViewController.m; sourceTree = "<group>"; };
 		0478F1C51F64E64100FAA40B /* TDHomeHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeHotViewController.h; sourceTree = "<group>"; };
@@ -601,6 +604,8 @@
 			isa = PBXGroup;
 			children = (
 				04771A221F2B6A7A009E5649 /* Host */,
+				044818EA1F678E0000DD71FC /* SystemMessage */,
+				044818E61F678E0000DD71FC /* PersonMessage */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -841,6 +846,72 @@
 				044818E41F678A8000DD71FC /* TDPublishAnimateView.m */,
 			);
 			path = AddPublishAnimateView;
+			sourceTree = "<group>";
+		};
+		044818E61F678E0000DD71FC /* PersonMessage */ = {
+			isa = PBXGroup;
+			children = (
+				044818E71F678E0000DD71FC /* Controller */,
+				044818E81F678E0000DD71FC /* Model */,
+				044818E91F678E0000DD71FC /* Views */,
+			);
+			path = PersonMessage;
+			sourceTree = "<group>";
+		};
+		044818E71F678E0000DD71FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044818F11F678E3E00DD71FC /* TDPersonMessageViewController.h */,
+				044818F21F678E3E00DD71FC /* TDPersonMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044818E81F678E0000DD71FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044818E91F678E0000DD71FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		044818EA1F678E0000DD71FC /* SystemMessage */ = {
+			isa = PBXGroup;
+			children = (
+				044818EB1F678E0000DD71FC /* Controller */,
+				044818EC1F678E0000DD71FC /* Model */,
+				044818ED1F678E0000DD71FC /* Views */,
+			);
+			path = SystemMessage;
+			sourceTree = "<group>";
+		};
+		044818EB1F678E0000DD71FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				044818EE1F678E2B00DD71FC /* TDSystemMessageViewController.h */,
+				044818EF1F678E2B00DD71FC /* TDSystemMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		044818EC1F678E0000DD71FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		044818ED1F678E0000DD71FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		045263E21F58EEEA001FD38B /* Host */ = {
@@ -1181,8 +1252,6 @@
 		04771A221F2B6A7A009E5649 /* Host */ = {
 			isa = PBXGroup;
 			children = (
-				04771A231F2B6A7A009E5649 /* TDMessageDetailViewController.h */,
-				04771A241F2B6A7A009E5649 /* TDMessageDetailViewController.m */,
 				04771A251F2B6A7A009E5649 /* TDMessageViewController.h */,
 				04771A261F2B6A7A009E5649 /* TDMessageViewController.m */,
 			);
@@ -1824,6 +1893,7 @@
 				04AB0BF21F4FB39D00599CE0 /* UILabel+Additions.m in Sources */,
 				04E8E7881F2C2CD500F407A6 /* TDModelViewController.m in Sources */,
 				04C1C36A1F3AEF1B0035F26C /* TDPhoneLoginView.m in Sources */,
+				044818F01F678E2B00DD71FC /* TDSystemMessageViewController.m in Sources */,
 				043F7A331F386ABC0075CF93 /* TDProfileTableViewCell.m in Sources */,
 				04CB0EF41F3D808B004908D8 /* TDThirdPartyLoginView.m in Sources */,
 				046C58351F4AC7C10058364B /* CityInfo.m in Sources */,
@@ -1845,6 +1915,7 @@
 				045E99661F62447B00D827F2 /* TDContentScrollView.m in Sources */,
 				045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */,
 				04AB0C1F1F5016B700599CE0 /* ZJSegmentStyle.m in Sources */,
+				044818F31F678E3E00DD71FC /* TDPersonMessageViewController.m in Sources */,
 				04E7D5AA1F444EA400E8D9DB /* TDSettingsViewController.m in Sources */,
 				046C58321F4AC7C10058364B /* ButtonGroupView.m in Sources */,
 				0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */,
@@ -1895,7 +1966,6 @@
 				046C58121F4AC19A0058364B /* NJKWebViewProgressView.m in Sources */,
 				04AB0C201F5016B700599CE0 /* ZJTitleView.m in Sources */,
 				049041AD1F4C1012006C1601 /* TDAppIntroductionViewController.m in Sources */,
-				04771A271F2B6A7A009E5649 /* TDMessageDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
