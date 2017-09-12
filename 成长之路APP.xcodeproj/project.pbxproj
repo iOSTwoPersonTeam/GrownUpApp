@@ -29,6 +29,7 @@
 		0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEAF1F3BEE0C00E9DADE /* TDRegisterView.m */; };
 		0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEB51F3C0C9100E9DADE /* TDForgetPasswordViewController.m */; };
 		0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEB81F3C0CC400E9DADE /* TDForgetPasswordView.m */; };
+		044818E51F678A8000DD71FC /* TDPublishAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 044818E41F678A8000DD71FC /* TDPublishAnimateView.m */; };
 		044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */; };
 		044F79D21F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79D11F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m */; };
 		045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E51F58EEEA001FD38B /* TDAddressProfileViewController.m */; };
@@ -81,7 +82,6 @@
 		04771A211F2B6A2C009E5649 /* TDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A1F1F2B6A2C009E5649 /* TDHomeViewController.m */; };
 		04771A271F2B6A7A009E5649 /* TDMessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A241F2B6A7A009E5649 /* TDMessageDetailViewController.m */; };
 		04771A281F2B6A7A009E5649 /* TDMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A261F2B6A7A009E5649 /* TDMessageViewController.m */; };
-		04771A2C1F2B6AC6009E5649 /* TDPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A2B1F2B6AC6009E5649 /* TDPublishViewController.m */; };
 		0478F1C71F64E64100FAA40B /* TDHomeHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1C61F64E64100FAA40B /* TDHomeHotViewController.m */; };
 		0478F1CA1F64E86800FAA40B /* TDHomeClassisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1C91F64E86800FAA40B /* TDHomeClassisViewController.m */; };
 		0478F1CD1F64E88400FAA40B /* TDHomeFinenessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1CC1F64E88400FAA40B /* TDHomeFinenessViewController.m */; };
@@ -118,6 +118,7 @@
 		04C1C36A1F3AEF1B0035F26C /* TDPhoneLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1C3691F3AEF1B0035F26C /* TDPhoneLoginView.m */; };
 		04C1C36E1F3B068F0035F26C /* LRTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1C36D1F3B068F0035F26C /* LRTextField.m */; };
 		04CB0EF41F3D808B004908D8 /* TDThirdPartyLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB0EF31F3D808B004908D8 /* TDThirdPartyLoginView.m */; };
+		04D989841F66159F00A0630D /* TDPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D989821F66159F00A0630D /* TDPublishViewController.m */; };
 		04E7D5A31F43F9AF00E8D9DB /* TDUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7D5A21F43F9AF00E8D9DB /* TDUserInfoViewController.m */; };
 		04E7D5AA1F444EA400E8D9DB /* TDSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7D5A91F444EA400E8D9DB /* TDSettingsViewController.m */; };
 		04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7D5AC1F44635400E8D9DB /* TDSettingsTableViewCell.m */; };
@@ -190,6 +191,8 @@
 		0440BEB51F3C0C9100E9DADE /* TDForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDForgetPasswordViewController.m; sourceTree = "<group>"; };
 		0440BEB71F3C0CC400E9DADE /* TDForgetPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDForgetPasswordView.h; sourceTree = "<group>"; };
 		0440BEB81F3C0CC400E9DADE /* TDForgetPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDForgetPasswordView.m; sourceTree = "<group>"; };
+		044818E31F678A8000DD71FC /* TDPublishAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPublishAnimateView.h; sourceTree = "<group>"; };
+		044818E41F678A8000DD71FC /* TDPublishAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPublishAnimateView.m; sourceTree = "<group>"; };
 		044F79CD1F2B155F00FF7CC4 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		044F79D01F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDAppDelegate+AppService.h"; sourceTree = "<group>"; };
@@ -295,8 +298,6 @@
 		04771A241F2B6A7A009E5649 /* TDMessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMessageDetailViewController.m; sourceTree = "<group>"; };
 		04771A251F2B6A7A009E5649 /* TDMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMessageViewController.h; sourceTree = "<group>"; };
 		04771A261F2B6A7A009E5649 /* TDMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMessageViewController.m; sourceTree = "<group>"; };
-		04771A2A1F2B6AC6009E5649 /* TDPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPublishViewController.h; sourceTree = "<group>"; };
-		04771A2B1F2B6AC6009E5649 /* TDPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPublishViewController.m; sourceTree = "<group>"; };
 		0478F1C51F64E64100FAA40B /* TDHomeHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeHotViewController.h; sourceTree = "<group>"; };
 		0478F1C61F64E64100FAA40B /* TDHomeHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeHotViewController.m; sourceTree = "<group>"; };
 		0478F1C81F64E86800FAA40B /* TDHomeClassisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeClassisViewController.h; sourceTree = "<group>"; };
@@ -362,6 +363,8 @@
 		04C1C36D1F3B068F0035F26C /* LRTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRTextField.m; sourceTree = "<group>"; };
 		04CB0EF21F3D808B004908D8 /* TDThirdPartyLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDThirdPartyLoginView.h; sourceTree = "<group>"; };
 		04CB0EF31F3D808B004908D8 /* TDThirdPartyLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDThirdPartyLoginView.m; sourceTree = "<group>"; };
+		04D989811F66159F00A0630D /* TDPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPublishViewController.h; sourceTree = "<group>"; };
+		04D989821F66159F00A0630D /* TDPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPublishViewController.m; sourceTree = "<group>"; };
 		04E7D5A11F43F9AF00E8D9DB /* TDUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUserInfoViewController.h; sourceTree = "<group>"; };
 		04E7D5A21F43F9AF00E8D9DB /* TDUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUserInfoViewController.m; sourceTree = "<group>"; };
 		04E7D5A81F444EA400E8D9DB /* TDSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSettingsViewController.h; sourceTree = "<group>"; };
@@ -633,6 +636,7 @@
 		042478991F1F5993006DF56A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				044818E21F678A8000DD71FC /* AddPublishAnimateView */,
 				04246C791F505113002F5855 /* TTGTagCollectionView */,
 				04AB0C071F5016B600599CE0 /* ZJScrollPageView */,
 				049041AE1F4C35B6006C1601 /* DHGuidePageHUD */,
@@ -828,6 +832,15 @@
 				0440BEAF1F3BEE0C00E9DADE /* TDRegisterView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		044818E21F678A8000DD71FC /* AddPublishAnimateView */ = {
+			isa = PBXGroup;
+			children = (
+				044818E31F678A8000DD71FC /* TDPublishAnimateView.h */,
+				044818E41F678A8000DD71FC /* TDPublishAnimateView.m */,
+			);
+			path = AddPublishAnimateView;
 			sourceTree = "<group>";
 		};
 		045263E21F58EEEA001FD38B /* Host */ = {
@@ -1179,8 +1192,9 @@
 		04771A291F2B6AC6009E5649 /* Host */ = {
 			isa = PBXGroup;
 			children = (
-				04771A2A1F2B6AC6009E5649 /* TDPublishViewController.h */,
-				04771A2B1F2B6AC6009E5649 /* TDPublishViewController.m */,
+				04D989801F66159F00A0630D /* ViewController */,
+				04D9897F1F66159F00A0630D /* Model */,
+				04D989831F66159F00A0630D /* Views */,
 			);
 			path = Host;
 			sourceTree = "<group>";
@@ -1442,6 +1456,29 @@
 				04C1C36D1F3B068F0035F26C /* LRTextField.m */,
 			);
 			path = LRTextField;
+			sourceTree = "<group>";
+		};
+		04D9897F1F66159F00A0630D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04D989801F66159F00A0630D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				04D989811F66159F00A0630D /* TDPublishViewController.h */,
+				04D989821F66159F00A0630D /* TDPublishViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		04D989831F66159F00A0630D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		04E7D59D1F43F95B00E8D9DB /* UserInfo */ = {
@@ -1756,6 +1793,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D989841F66159F00A0630D /* TDPublishViewController.m in Sources */,
 				046C583E1F4AC7C10058364B /* PinyinHelper.m in Sources */,
 				04E7D5A31F43F9AF00E8D9DB /* TDUserInfoViewController.m in Sources */,
 				045264301F590101001FD38B /* TDMTMapViewController.m in Sources */,
@@ -1764,7 +1802,6 @@
 				04AB0C1A1F5016B700599CE0 /* UIViewController+ZJScrollPageController.m in Sources */,
 				046C580E1F4AC19A0058364B /* UIColor+WHE.m in Sources */,
 				0485A4D21F41952800C2FA63 /* TDUserInfo.m in Sources */,
-				04771A2C1F2B6AC6009E5649 /* TDPublishViewController.m in Sources */,
 				045EA55B1F598F6500B0A704 /* TDSearchAddressViewController.m in Sources */,
 				046C583A1F4AC7C10058364B /* HanyuPinyinOutputFormat.m in Sources */,
 				046C57FB1F4AAEF70058364B /* TDRootWebViewController.m in Sources */,
@@ -1837,6 +1874,7 @@
 				04AB0C191F5016B700599CE0 /* UIView+ZJFrame.m in Sources */,
 				045EA55D1F598F6500B0A704 /* TDHistoryAddressView.m in Sources */,
 				041ACB311F29CB39007280ED /* UIBarButtonItem+Additions.m in Sources */,
+				044818E51F678A8000DD71FC /* TDPublishAnimateView.m in Sources */,
 				04C1C3671F3AAAB80035F26C /* UIImage+Additions.m in Sources */,
 				046C583C1F4AC7C10058364B /* PinyinFormatter.m in Sources */,
 				046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */,
