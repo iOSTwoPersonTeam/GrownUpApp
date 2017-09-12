@@ -17,6 +17,10 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define TDTabBarHeight  49       //定义Tabbar高度
 
+//内容模块宏定义
+#define ContentfunctionHeaderViewHeight 80
+#define ContentHeaderSpaceViewHeight 40
+
 //-------------------打印日志-------------------------
 //DEBUG  模式下打印日志,当前行
 #ifdef DEBUG

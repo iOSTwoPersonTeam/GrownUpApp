@@ -9,10 +9,6 @@
 #import "TDContentViewController.h"
 #import "TDContentTableView.h"
 #import "TDContentScrollView.h"
-
-#define functionHeaderViewHeight 95
-#define HeaderSpaceViewHeight 60
-
 @interface TDContentViewController ()<UIScrollViewDelegate>
 
 @property(nonatomic, strong)UIView *mainNavView; //导航栏
@@ -28,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _topOffsetY = functionHeaderViewHeight + HeaderSpaceViewHeight;
+    _topOffsetY = ContentfunctionHeaderViewHeight + ContentHeaderSpaceViewHeight;
 
     self.view.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:self.mainNavView]; //添加常态导航栏
@@ -54,17 +50,15 @@
 }
 
 - (void)functionViewAnimationWithOffsetY:(CGFloat)offsetY{
-    if (offsetY > functionHeaderViewHeight / 2.0) {
-        [self.mainScrollview setContentOffset:CGPointMake(0, 95) animated:YES];
+    if (offsetY > ContentfunctionHeaderViewHeight / 2.0) {
+        [self.mainScrollview setContentOffset:CGPointMake(0, ContentfunctionHeaderViewHeight) animated:YES];
     }else {
         [self.mainScrollview setContentOffset:CGPointMake(0, 0) animated:YES];
     }
 }
 
 - (void)setScrollViewContentOffSetWithPoint:(CGPoint) point {
-    if (!self.mainTableView.mj_header.isRefreshing) {
         self.mainTableView.contentOffset = point;
-    }
 }
 
 #pragma mark ----Delagate---
@@ -73,8 +67,8 @@
     CGFloat y = scrollView.contentOffset.y;
     
     if (y < - 65) {
-        [self.mainTableView.mj_header beginRefreshing];
-    }else if(y > 0 && y <= functionHeaderViewHeight) {
+
+    }else if(y > 0 && y <= ContentfunctionHeaderViewHeight) {
         [self functionViewAnimationWithOffsetY:y];
     }
 }
@@ -92,9 +86,9 @@
         self.mainTableView.frame = newFrame;
         
         //偏移量给到tableview，tableview自己来滑动
-        if (!self.mainTableView.mj_header.isRefreshing) {
+  
             self.mainTableView.contentOffset = CGPointMake(0, y);
-        }
+        
         //功能区状态回归
         newFrame = self.mainScrollview.functionHeaderView.frame;
         newFrame.origin.y = 0;
@@ -104,13 +98,13 @@
         _mainNavView.alpha = 1;
         _coverNavView.alpha = 0;
     }
-    else if(y < functionHeaderViewHeight && y > 0) {
+    else if(y < ContentfunctionHeaderViewHeight && y > 0) {
         CGRect newFrame = self.mainScrollview.headerView.frame;
         newFrame.origin.y = y/2;
         self.mainScrollview.functionHeaderView.frame = newFrame;
         
         //处理透明度
-        CGFloat alpha = (1 - y/functionHeaderViewHeight*2.5 ) > 0 ? (1 - y/functionHeaderViewHeight*2.5 ) : 0;
+        CGFloat alpha = (1 - y/ContentfunctionHeaderViewHeight*2.5 ) > 0 ? (1 - y/ContentfunctionHeaderViewHeight*2.5 ) : 0;
         self.mainScrollview.functionHeaderView.alpha = alpha;
         if (alpha > 0.5) {
             CGFloat newAlpha = alpha * 2 - 1;
@@ -181,7 +175,7 @@
         _mainScrollview =[[TDContentScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64 -49)];
         _mainScrollview.backgroundColor =[UIColor whiteColor];
         _mainScrollview.delegate =self;
-        _mainScrollview.scrollIndicatorInsets = UIEdgeInsetsMake(155, 0, 0, 0);
+        _mainScrollview.scrollIndicatorInsets = UIEdgeInsetsMake(ContentHeaderSpaceViewHeight + ContentfunctionHeaderViewHeight, 0, 0, 0);
     }
     return _mainScrollview;
 }
@@ -190,7 +184,7 @@
 -(TDContentTableView *)mainTableView
 {
     if (!_mainTableView) {
-        CGFloat orginY = HeaderSpaceViewHeight + functionHeaderViewHeight;
+        CGFloat orginY = ContentHeaderSpaceViewHeight + ContentfunctionHeaderViewHeight;
         CGFloat tableviewHeight = SCREEN_HEIGHT - orginY - 64;
         _mainTableView =[[TDContentTableView alloc] initWithFrame:CGRectMake(0, orginY, SCREEN_WIDTH, tableviewHeight)];
         _mainTableView.backgroundColor =[UIColor clearColor];

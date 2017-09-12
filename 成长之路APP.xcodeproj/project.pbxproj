@@ -34,6 +34,7 @@
 		044819091F67B1C100DD71FC /* TDActivityStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044819081F67B1C100DD71FC /* TDActivityStatusViewController.m */; };
 		0448190C1F67B1E900DD71FC /* TDFriendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448190B1F67B1E900DD71FC /* TDFriendStatusViewController.m */; };
 		0448190F1F67B1FD00DD71FC /* TDMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448190E1F67B1FD00DD71FC /* TDMessageViewController.m */; };
+		044819171F67C07100DD71FC /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044819161F67C07100DD71FC /* MarqueeLabel.m */; };
 		044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */; };
 		044F79D21F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79D11F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m */; };
 		045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E51F58EEEA001FD38B /* TDAddressProfileViewController.m */; };
@@ -203,6 +204,8 @@
 		0448190B1F67B1E900DD71FC /* TDFriendStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDFriendStatusViewController.m; sourceTree = "<group>"; };
 		0448190D1F67B1FD00DD71FC /* TDMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMessageViewController.h; sourceTree = "<group>"; };
 		0448190E1F67B1FD00DD71FC /* TDMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMessageViewController.m; sourceTree = "<group>"; };
+		044819151F67C07100DD71FC /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		044819161F67C07100DD71FC /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		044F79CD1F2B155F00FF7CC4 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		044F79D01F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDAppDelegate+AppService.h"; sourceTree = "<group>"; };
@@ -634,6 +637,7 @@
 		042478991F1F5993006DF56A /* ThridParty */ = {
 			isa = PBXGroup;
 			children = (
+				044819141F67C07100DD71FC /* MarqueeLabel */,
 				044818E21F678A8000DD71FC /* AddPublishAnimateView */,
 				04246C791F505113002F5855 /* TTGTagCollectionView */,
 				04AB0C071F5016B600599CE0 /* ZJScrollPageView */,
@@ -958,6 +962,15 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		044819141F67C07100DD71FC /* MarqueeLabel */ = {
+			isa = PBXGroup;
+			children = (
+				044819151F67C07100DD71FC /* MarqueeLabel.h */,
+				044819161F67C07100DD71FC /* MarqueeLabel.m */,
+			);
+			path = MarqueeLabel;
 			sourceTree = "<group>";
 		};
 		045263E21F58EEEA001FD38B /* Host */ = {
@@ -1912,6 +1925,7 @@
 				046C583A1F4AC7C10058364B /* HanyuPinyinOutputFormat.m in Sources */,
 				046C57FB1F4AAEF70058364B /* TDRootWebViewController.m in Sources */,
 				04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */,
+				044819171F67C07100DD71FC /* MarqueeLabel.m in Sources */,
 				046C583D1F4AC7C10058364B /* PinYinForObjc.m in Sources */,
 				041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */,
 				04910ED81F2F00D500F963EC /* TDBaseRequestApI.m in Sources */,

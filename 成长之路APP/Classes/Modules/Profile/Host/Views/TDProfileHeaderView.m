@@ -80,7 +80,7 @@
     self.userNameLabel.frame =CGRectMake(CGRectGetMinX(self.headerImageView.frame), CGRectGetMaxY(self.headerImageView.frame)+10, 90, 30);
     
     //录音按钮
-    self.moreButton.frame =CGRectMake(12 + hspace, self.headerImageView.frame.origin.y -60, 32, 32);
+    self.moreButton.frame =CGRectMake(12 + hspace, self.headerImageView.frame.origin.y -60, 25, 25);
     //设置按钮
     self.settingButton.frame =CGRectMake(SCREEN_WIDTH-36 + hspace, CGRectGetMinY(self.moreButton.frame), 35, 35);
 
@@ -155,7 +155,7 @@
 {
     if (!_moreButton) {
         UIButton *moreButton =[UIButton buttonWithType:UIButtonTypeCustom];
-        [moreButton setImage:[UIImage SizeImage:@"邮箱白色" toSize:CGSizeMake(25,25)] forState:UIControlStateNormal];
+        [moreButton setImage:[UIImage imageNamed:@"邮箱白色"] forState:UIControlStateNormal];
         [self addSubview:moreButton];
         _moreButton =moreButton;
     }

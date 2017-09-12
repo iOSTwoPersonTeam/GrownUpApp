@@ -7,8 +7,7 @@
 //
 
 #import "TDContentScrollView.h"
-#define functionHeaderViewHeight 95
-#define HeaderSpaceViewHeight 60
+
 @interface TDContentScrollView ()
 
 @end
@@ -28,9 +27,8 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    self.functionHeaderView.frame =CGRectMake(0, 0, SCREEN_WIDTH, functionHeaderViewHeight);
-    self.headerSpaceView.frame =CGRectMake(0, CGRectGetMaxY(self.functionHeaderView.frame), SCREEN_WIDTH, HeaderSpaceViewHeight);
-    
+    self.functionHeaderView.frame =CGRectMake(0, 0, SCREEN_WIDTH, ContentfunctionHeaderViewHeight);
+    self.headerSpaceView.frame =CGRectMake(0, CGRectGetMaxY(self.functionHeaderView.frame), SCREEN_WIDTH, ContentHeaderSpaceViewHeight);
 }
 
 
@@ -51,12 +49,12 @@
         
         NSArray *titleArray =@[@"下载",@"历史",@"已购",@"喜欢"];
         NSArray *imageArray =@[@"下载",@"历史",@"已购",@"喜欢"];
-        float with =60;
+        float with =30;
         float spaceX =(SCREEN_WIDTH -titleArray.count *with)/titleArray.count;
         
         for (int i=0; i <titleArray.count; i++) {
             UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(spaceX/2 +with*i +spaceX *i, 10, with, 60)];
-            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(40, 40)] forState:UIControlStateNormal];
+            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(30, 30)] forState:UIControlStateNormal];
             [button setTitle:titleArray[i] forState:UIControlStateNormal];
             button.backgroundColor =[UIColor whiteColor];
             button.titleLabel.font =[UIFont systemFontOfSize:14];
@@ -81,14 +79,12 @@
 
 - (UIView *)headerView{
     if(!_headerView){
-        _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, functionHeaderViewHeight + HeaderSpaceViewHeight)];
+        _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, ContentfunctionHeaderViewHeight + ContentHeaderSpaceViewHeight)];
         _headerView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_headerView];
     }
     return _headerView;
 }
-
-
 
 
 
