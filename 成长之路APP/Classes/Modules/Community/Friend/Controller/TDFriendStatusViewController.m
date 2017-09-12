@@ -1,24 +1,22 @@
 //
-//  TDPersonMessageViewController.m
+//  TDFriendStatusViewController.m
 //  成长之路APP
 //
 //  Created by mac on 2017/9/12.
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import "TDPersonMessageViewController.h"
+#import "TDFriendStatusViewController.h"
 
-@interface TDPersonMessageViewController ()
+@interface TDFriendStatusViewController ()
 
 @end
 
-@implementation TDPersonMessageViewController
+@implementation TDFriendStatusViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.view.backgroundColor =[UIColor orangeColor];
 }
 
 - (void)didReceiveMemoryWarning {

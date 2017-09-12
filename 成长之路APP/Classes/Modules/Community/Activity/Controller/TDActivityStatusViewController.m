@@ -1,23 +1,22 @@
 //
-//  TDSystemMessageViewController.m
+//  TDActivityStatusViewController.m
 //  成长之路APP
 //
 //  Created by mac on 2017/9/12.
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import "TDSystemMessageViewController.h"
+#import "TDActivityStatusViewController.h"
 
-@interface TDSystemMessageViewController ()
+@interface TDActivityStatusViewController ()
 
 @end
 
-@implementation TDSystemMessageViewController
+@implementation TDActivityStatusViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {

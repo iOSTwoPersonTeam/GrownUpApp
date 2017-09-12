@@ -56,7 +56,7 @@
         
         for (int i=0; i <titleArray.count; i++) {
             UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(spaceX/2 +with*i +spaceX *i, 10, with, 60)];
-            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(30, 30)] forState:UIControlStateNormal];
+            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(40, 40)] forState:UIControlStateNormal];
             [button setTitle:titleArray[i] forState:UIControlStateNormal];
             button.backgroundColor =[UIColor whiteColor];
             button.titleLabel.font =[UIFont systemFontOfSize:14];

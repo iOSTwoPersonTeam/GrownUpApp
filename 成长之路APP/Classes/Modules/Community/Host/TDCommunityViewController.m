@@ -1,24 +1,25 @@
 //
-//  TDMessageViewController.m
+//  TDCommunityViewController.m
 //  成长之路APP
 //
-//  Created by mac on 2017/7/19.
+//  Created by mac on 2017/9/12.
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import "TDMessageViewController.h"
+#import "TDCommunityViewController.h"
 #import "ZJScrollPageView.h"
-#import "TDPersonMessageViewController.h"
-#import "TDSystemMessageViewController.h"
+#import "TDActivityStatusViewController.h"
+#import "TDFriendStatusViewController.h"
+#import "TDMessageViewController.h"
 
-@interface TDMessageViewController ()<ZJScrollPageViewDelegate>
+@interface TDCommunityViewController ()<ZJScrollPageViewDelegate>
 @property(nonatomic,strong)ZJScrollPageView *scrollPageView;
 @property(nonatomic,strong)NSArray *themeArray; //主题分类
 @property(nonatomic,strong)NSArray *childViewControllers; //子控制器
 
 @end
 
-@implementation TDMessageViewController
+@implementation TDCommunityViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,19 +97,20 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"系统消息",@"个人消息"];
+        _themeArray =@[@"动态",@"圈子",@"消息"];
     }
     return _themeArray;
 }
 -(NSArray *)childViewControllers
 {
     if (!_childViewControllers) {
-        _childViewControllers =@[[[TDSystemMessageViewController alloc]init],
-                                 [[TDPersonMessageViewController alloc]init]];
+        _childViewControllers =@[[[TDActivityStatusViewController alloc]init],
+                                 [[TDFriendStatusViewController alloc]init],
+                                 [[TDMessageViewController alloc]init]
+                                 ];
     }
     return _childViewControllers;
 }
-
 
 
 @end

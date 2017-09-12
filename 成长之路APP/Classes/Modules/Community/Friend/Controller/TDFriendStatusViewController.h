@@ -1,5 +1,5 @@
 //
-//  TDPersonMessageViewController.h
+//  TDFriendStatusViewController.h
 //  成长之路APP
 //
 //  Created by mac on 2017/9/12.
@@ -8,7 +8,6 @@
 
 #import "TDRootViewController.h"
 #import "ZJScrollPageView.h"
-
-@interface TDPersonMessageViewController : TDRootViewController<ZJScrollPageViewChildVcDelegate>
+@interface TDFriendStatusViewController : TDRootViewController<ZJScrollPageViewChildVcDelegate>
 
 @end

@@ -12,7 +12,7 @@
 #import "TDHomeViewController.h"
 #import "TDContentViewController.h"
 #import "TDPublishViewController.h"
-#import "TDMessageViewController.h"
+#import "TDCommunityViewController.h"
 #import "TDProfileViewController.h"
 #import "CityListViewController.h"
 #import "TDBAddGoodsAddressViewController.h"
@@ -58,7 +58,7 @@
 {
     self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"首页"];
     self.navigationItem.leftBarButtonItem = self.locationItem;
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem rightBarButtonItemWithImage:[UIImage SizeImage:@"搜索" toSize:CGSizeMake(25,25)] highlighted:[UIImage SizeImage:@"搜索" toSize:CGSizeMake(25,25)] target:self selector:@selector(search)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem rightBarButtonItemWithImage:[UIImage imageNamed:@"搜索"] highlighted:[UIImage imageNamed:@"搜索"] target:self selector:@selector(search)];
     
 }
 
@@ -142,8 +142,8 @@
     }
     else if (index ==2){
         
-        self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"消息"];
-        self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithImage:[UIImage SizeImage:@"历史" toSize:CGSizeMake(25, 25)] highlighted:[UIImage SizeImage:@"历史" toSize:CGSizeMake(25, 25)] target:self selector:@selector(rightCamera)];
+        self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"社区"];
+        self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithImage:[UIImage imageNamed:@"历史"] highlighted:[UIImage imageNamed:@"历史"] target:self selector:@selector(rightCamera)];
     }
     else if (index ==3){
         
@@ -169,7 +169,7 @@
 
 -(TDTabBarViewController *)MaintabBarViewController
 {
-    TDTabBarViewController *tabBarViewController=[[TDTabBarViewController alloc] initWithTabBarSelectedImages:[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"首页-点击"],[UIImage imageNamed:@"我的订单-点击"],[UIImage imageNamed:@"消息-点击"],[UIImage imageNamed:@"我的-点击"], nil] normalImages:[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"首页"],[UIImage imageNamed:@"我的订单"],[UIImage imageNamed:@"消息"],[UIImage imageNamed:@"我的"], nil] titles:[NSMutableArray arrayWithObjects:@"首页",@"内容",@"消息",@"我的", nil]];
+    TDTabBarViewController *tabBarViewController=[[TDTabBarViewController alloc] initWithTabBarSelectedImages:[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"首页-点击"],[UIImage imageNamed:@"我的订单-点击"],[UIImage imageNamed:@"消息-点击"],[UIImage imageNamed:@"我的-点击"], nil] normalImages:[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"首页"],[UIImage imageNamed:@"我的订单"],[UIImage imageNamed:@"消息"],[UIImage imageNamed:@"我的"], nil] titles:[NSMutableArray arrayWithObjects:@"首页",@"内容",@"社区",@"我的", nil]];
     
     tabBarViewController.tabBarView.frame =CGRectMake(0, SCREEN_HEIGHT-64 -49, SCREEN_WIDTH, 49);
     tabBarViewController.showCenterItem =YES;
@@ -182,7 +182,7 @@
     
     TDContentViewController *contentVC =[[TDContentViewController alloc] init];
     TDPublishViewController *publishVC =[[TDPublishViewController alloc] init];
-    TDMessageViewController *messageVc =[[TDMessageViewController alloc] init];
+    TDCommunityViewController *messageVc =[[TDCommunityViewController alloc] init];
     TDProfileViewController *profileVC =[[TDProfileViewController alloc] init];
     tabBarViewController.viewControllers =@[homeVC,contentVC,messageVc,profileVC];
     

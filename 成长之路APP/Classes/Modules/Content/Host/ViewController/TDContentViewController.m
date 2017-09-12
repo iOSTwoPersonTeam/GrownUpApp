@@ -131,8 +131,8 @@
         _mainNavView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
         _mainNavView.backgroundColor = [UIColor clearColor];
         
-        UIButton *emailButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 27, 30, 30)];
-        [emailButton setImage:[UIImage SizeImage:@"邮箱" toSize:CGSizeMake(25, 25)] forState:UIControlStateNormal];
+        UIButton *emailButton = [[UIButton alloc] initWithFrame:CGRectMake(20, 30, 25, 25)];
+        [emailButton setImage:[UIImage imageNamed:@"邮箱"] forState:UIControlStateNormal];
         [emailButton setImagePosition:ImageAndTitlePositionLeft WithImageAndTitleSpacing:10.0];
         [_mainNavView addSubview:emailButton];
         
@@ -142,8 +142,8 @@
         titleLabel.textColor =GlobalThemeColor;
         [_mainNavView addSubview:titleLabel];
 
-        UIButton *payButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-40, CGRectGetMinY(emailButton.frame), 30, 30)];
-        [payButton setImage:[UIImage SizeImage:@"历史" toSize:CGSizeMake(25, 25)] forState:UIControlStateNormal];
+        UIButton *payButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-40, CGRectGetMinY(emailButton.frame), 25, 25)];
+        [payButton setImage:[UIImage imageNamed:@"历史"] forState:UIControlStateNormal];
         [payButton setImagePosition:ImageAndTitlePositionLeft WithImageAndTitleSpacing:10.0];
         [_mainNavView addSubview:payButton];
         
@@ -160,10 +160,10 @@
         _coverNavView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
         _coverNavView.backgroundColor = [UIColor clearColor];
         NSArray *imageArray =@[@"邮箱",@"下载",@"历史"];
-        float with =30;
+        float with =27;
         for (int i=0; i <imageArray.count; i++) {
-            UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(30*(i +1) +with*i, 30, with, 30)];
-            [button setImage:[UIImage  SizeImage:imageArray[i] toSize:CGSizeMake(27, 27)] forState:UIControlStateNormal];
+            UIButton *button =[[UIButton alloc] initWithFrame:CGRectMake(30*(i +1) +with*i, 30, with, 27)];
+            [button setImage:[UIImage  imageNamed:imageArray[i]] forState:UIControlStateNormal];
             [_coverNavView addSubview:button];
         }
         UILabel *lineLabel =[[UILabel alloc] initWithFrame:CGRectMake(0, 63, SCREEN_WIDTH, 1)];
