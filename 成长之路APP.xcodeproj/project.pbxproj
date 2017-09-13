@@ -103,6 +103,9 @@
 		049041CA1F4C36A1006C1601 /* guideMovie1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 049041C01F4C36A1006C1601 /* guideMovie1.mov */; };
 		049041CB1F4C36A1006C1601 /* view_bg_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 049041C11F4C36A1006C1601 /* view_bg_image.png */; };
 		04910ED81F2F00D500F963EC /* TDBaseRequestApI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04910ED71F2F00D500F963EC /* TDBaseRequestApI.m */; };
+		0498E1ED1F6911DC006D08BA /* TDRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1EC1F6911DC006D08BA /* TDRecommendViewController.m */; };
+		0498E1F01F6911F9006D08BA /* TDShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */; };
+		0498E1F31F69120E006D08BA /* TDDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1F21F69120E006D08BA /* TDDownViewController.m */; };
 		04A1CB831F4AEE3200CE45EC /* TDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1CB821F4AEE3200CE45EC /* TDLaunchAdModel.m */; };
 		04AB0BF21F4FB39D00599CE0 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0BF11F4FB39D00599CE0 /* UILabel+Additions.m */; };
 		04AB0C061F5011CB00599CE0 /* TDHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0C041F5011CB00599CE0 /* TDHomeSearchViewController.m */; };
@@ -331,6 +334,12 @@
 		049041C11F4C36A1006C1601 /* view_bg_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_bg_image.png; sourceTree = "<group>"; };
 		04910ED61F2F00D500F963EC /* TDBaseRequestApI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBaseRequestApI.h; sourceTree = "<group>"; };
 		04910ED71F2F00D500F963EC /* TDBaseRequestApI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBaseRequestApI.m; sourceTree = "<group>"; };
+		0498E1EB1F6911DC006D08BA /* TDRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRecommendViewController.h; sourceTree = "<group>"; };
+		0498E1EC1F6911DC006D08BA /* TDRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRecommendViewController.m; sourceTree = "<group>"; };
+		0498E1EE1F6911F9006D08BA /* TDShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDShoppingViewController.h; sourceTree = "<group>"; };
+		0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDShoppingViewController.m; sourceTree = "<group>"; };
+		0498E1F11F69120E006D08BA /* TDDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDownViewController.h; sourceTree = "<group>"; };
+		0498E1F21F69120E006D08BA /* TDDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDownViewController.m; sourceTree = "<group>"; };
 		04A1CB811F4AEE3200CE45EC /* TDLaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdModel.h; sourceTree = "<group>"; };
 		04A1CB821F4AEE3200CE45EC /* TDLaunchAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLaunchAdModel.m; sourceTree = "<group>"; };
 		04AB0BF01F4FB39D00599CE0 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
@@ -1494,6 +1503,105 @@
 			path = BaseRequestApI;
 			sourceTree = "<group>";
 		};
+		0498E1DF1F6911A5006D08BA /* Down */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1E01F6911A5006D08BA /* Controller */,
+				0498E1E11F6911A5006D08BA /* Model */,
+				0498E1E21F6911A5006D08BA /* Views */,
+			);
+			path = Down;
+			sourceTree = "<group>";
+		};
+		0498E1E01F6911A5006D08BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1F11F69120E006D08BA /* TDDownViewController.h */,
+				0498E1F21F69120E006D08BA /* TDDownViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0498E1E11F6911A5006D08BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0498E1E21F6911A5006D08BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0498E1E31F6911A5006D08BA /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1E41F6911A5006D08BA /* Controller */,
+				0498E1E51F6911A5006D08BA /* Model */,
+				0498E1E61F6911A5006D08BA /* Views */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		0498E1E41F6911A5006D08BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1EB1F6911DC006D08BA /* TDRecommendViewController.h */,
+				0498E1EC1F6911DC006D08BA /* TDRecommendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0498E1E51F6911A5006D08BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0498E1E61F6911A5006D08BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0498E1E71F6911A5006D08BA /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1E81F6911A5006D08BA /* Controller */,
+				0498E1E91F6911A5006D08BA /* Model */,
+				0498E1EA1F6911A5006D08BA /* Views */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		0498E1E81F6911A5006D08BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1EE1F6911F9006D08BA /* TDShoppingViewController.h */,
+				0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0498E1E91F6911A5006D08BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0498E1EA1F6911A5006D08BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		04AB0C011F5011CB00599CE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1554,6 +1662,9 @@
 			isa = PBXGroup;
 			children = (
 				04771A2D1F2B6B66009E5649 /* Host */,
+				0498E1E31F6911A5006D08BA /* Recommend */,
+				0498E1DF1F6911A5006D08BA /* Down */,
+				0498E1E71F6911A5006D08BA /* Shopping */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -1959,6 +2070,7 @@
 				0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */,
 				0485A4CE1F414E9E00C2FA63 /* MBProgressHUD+MJ.m in Sources */,
 				04AB9E471F2AD1290031FD6E /* UIViewController+Additions.m in Sources */,
+				0498E1F31F69120E006D08BA /* TDDownViewController.m in Sources */,
 				046C58101F4AC19A0058364B /* CYWebViewController.m in Sources */,
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
 				046A26B41F3968C90013406B /* TDProfileHeaderView.m in Sources */,
@@ -1988,12 +2100,14 @@
 				04C1C3671F3AAAB80035F26C /* UIImage+Additions.m in Sources */,
 				046C583C1F4AC7C10058364B /* PinyinFormatter.m in Sources */,
 				046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */,
+				0498E1F01F6911F9006D08BA /* TDShoppingViewController.m in Sources */,
 				04AB0C1C1F5016B700599CE0 /* ZJContentView.m in Sources */,
 				043DD10B1F613EDC008B576E /* TDContentViewController.m in Sources */,
 				04AB0C1B1F5016B700599CE0 /* ZJCollectionView.m in Sources */,
 				0448190F1F67B1FD00DD71FC /* TDMessageViewController.m in Sources */,
 				0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */,
 				0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */,
+				0498E1ED1F6911DC006D08BA /* TDRecommendViewController.m in Sources */,
 				045EA5591F598F6500B0A704 /* TDBAddGoodsAddressViewController.m in Sources */,
 				046C58391F4AC7C10058364B /* ChineseToPinyinResource.m in Sources */,
 				040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */,

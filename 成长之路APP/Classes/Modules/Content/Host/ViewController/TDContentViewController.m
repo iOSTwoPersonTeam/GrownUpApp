@@ -8,9 +8,9 @@
 
 #import "TDContentViewController.h"
 #import "ZJScrollPageView.h"
-#import "TDActivityStatusViewController.h"
-#import "TDFriendStatusViewController.h"
-#import "TDMessageViewController.h"
+#import "TDRecommendViewController.h"
+#import "TDDownViewController.h"
+#import "TDShoppingViewController.h"
 
 @interface TDContentViewController ()<UIScrollViewDelegate,ZJScrollPageViewDelegate>
 
@@ -98,16 +98,16 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"推荐",@"下载",@"历史"];
+        _themeArray =@[@"推荐",@"下载",@"购物"];
     }
     return _themeArray;
 }
 -(NSArray *)childViewControllers
 {
     if (!_childViewControllers) {
-        _childViewControllers =@[[[TDActivityStatusViewController alloc]init],
-                                 [[TDFriendStatusViewController alloc]init],
-                                 [[TDMessageViewController alloc]init]
+        _childViewControllers =@[[[TDRecommendViewController alloc]init],
+                                 [[TDDownViewController alloc]init],
+                                 [[TDShoppingViewController alloc]init]
                                  ];
     }
     return _childViewControllers;
