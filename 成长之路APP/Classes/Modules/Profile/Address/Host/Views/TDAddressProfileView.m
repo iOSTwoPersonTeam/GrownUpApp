@@ -11,7 +11,7 @@
 @interface TDAddressProfileView ()
 
 @property(nonatomic ,weak)UIImageView *elmImageView; //饿了么编辑
-@property(nonatomic ,weak)UIImageView *mtwmImageView; //饿了么编辑
+@property(nonatomic ,weak)UIImageView *mtwmImageView; //美团外卖编辑
 
 @end
 

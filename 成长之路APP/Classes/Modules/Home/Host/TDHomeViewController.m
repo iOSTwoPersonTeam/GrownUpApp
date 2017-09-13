@@ -109,8 +109,8 @@
         _childViewControllers =@[[[TDHomeHotViewController alloc]init],
                                  [[TDHomeClassisViewController alloc]init],
                                  [[TDHomeFinenessViewController alloc]init],
-                                 [[TDHomeHotViewController alloc]init],
-                                 [[TDHomeHotViewController alloc]init]];
+                                 [[TDHomeFinenessViewController alloc]init],
+                                 [[TDHomeFinenessViewController alloc]init]];
     }
     return _childViewControllers;
 }

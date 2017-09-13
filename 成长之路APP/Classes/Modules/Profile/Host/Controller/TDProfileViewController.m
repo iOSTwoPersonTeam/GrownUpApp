@@ -15,7 +15,8 @@
 #import "TDSettingsViewController.h"
 #import "TDAddressProfileViewController.h"
 #import "TDThemeViewController.h"
-
+#import "TDOfoBikeViewController.h"
+#import "TDRunningTrackViewController.h"
 
 @interface TDProfileViewController ()
 
@@ -78,6 +79,16 @@
         
         TDAddressProfileViewController *addressVC =[[ TDAddressProfileViewController alloc] init];
         [self navigationDetail:addressVC];
+    }
+    else if ([title isEqualToString:@"ofo共享单车"]){ //ofo共享单车
+        
+        TDOfoBikeViewController *ofoBikeVC =[[ TDOfoBikeViewController alloc] init];
+        [self navigationDetail:ofoBikeVC];
+    }
+    else if ([title isEqualToString:@"运动轨迹"]){ //运动轨迹
+        
+        TDRunningTrackViewController *runningTrackVC =[[ TDRunningTrackViewController alloc] init];
+        [self navigationDetail:runningTrackVC];
     }
     else if ([title isEqualToString:@"主题选择"]){ //地址跳转
         
@@ -194,7 +205,7 @@
         
         _titleArray =@[@[@"服务收藏",@"店铺关注"],
                        @[@"意见反馈",@"联系客服"],
-                       @[@"地址选择"],
+                       @[@"地址选择",@"ofo共享单车",@"运动轨迹"],
                        @[@"主题选择"],
                        @[@"关于"],
                        @[@"设置"]
@@ -208,7 +219,7 @@
     if (_imageArray ==nil) {
         _imageArray =@[@[@"服务收藏",@"店铺关注"],
                         @[@"意见反馈",@"联系客服"],
-                        @[@"意见反馈"],
+                        @[@"意见反馈",@"店铺关注",@"服务收藏"],
                         @[@"店铺关注"],
                         @[@"关于"],
                         @[@"设置"]

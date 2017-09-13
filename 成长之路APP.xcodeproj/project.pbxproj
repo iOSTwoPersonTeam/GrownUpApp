@@ -106,6 +106,8 @@
 		0498E1ED1F6911DC006D08BA /* TDRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1EC1F6911DC006D08BA /* TDRecommendViewController.m */; };
 		0498E1F01F6911F9006D08BA /* TDShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */; };
 		0498E1F31F69120E006D08BA /* TDDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1F21F69120E006D08BA /* TDDownViewController.m */; };
+		0498E2021F6922B7006D08BA /* TDOfoBikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E2011F6922B7006D08BA /* TDOfoBikeViewController.m */; };
+		0498E2051F6922D0006D08BA /* TDRunningTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E2041F6922D0006D08BA /* TDRunningTrackViewController.m */; };
 		04A1CB831F4AEE3200CE45EC /* TDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1CB821F4AEE3200CE45EC /* TDLaunchAdModel.m */; };
 		04AB0BF21F4FB39D00599CE0 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0BF11F4FB39D00599CE0 /* UILabel+Additions.m */; };
 		04AB0C061F5011CB00599CE0 /* TDHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0C041F5011CB00599CE0 /* TDHomeSearchViewController.m */; };
@@ -340,6 +342,10 @@
 		0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDShoppingViewController.m; sourceTree = "<group>"; };
 		0498E1F11F69120E006D08BA /* TDDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDownViewController.h; sourceTree = "<group>"; };
 		0498E1F21F69120E006D08BA /* TDDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDDownViewController.m; sourceTree = "<group>"; };
+		0498E2001F6922B7006D08BA /* TDOfoBikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDOfoBikeViewController.h; sourceTree = "<group>"; };
+		0498E2011F6922B7006D08BA /* TDOfoBikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDOfoBikeViewController.m; sourceTree = "<group>"; };
+		0498E2031F6922D0006D08BA /* TDRunningTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRunningTrackViewController.h; sourceTree = "<group>"; };
+		0498E2041F6922D0006D08BA /* TDRunningTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRunningTrackViewController.m; sourceTree = "<group>"; };
 		04A1CB811F4AEE3200CE45EC /* TDLaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdModel.h; sourceTree = "<group>"; };
 		04A1CB821F4AEE3200CE45EC /* TDLaunchAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLaunchAdModel.m; sourceTree = "<group>"; };
 		04AB0BF01F4FB39D00599CE0 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
@@ -616,6 +622,8 @@
 				04E7D59D1F43F95B00E8D9DB /* UserInfo */,
 				04E7D5A41F444E7100E8D9DB /* Settings */,
 				045D14BA1F56580300640930 /* Address */,
+				0498E1FC1F6922A3006D08BA /* OfoBike */,
+				0498E1F81F69221F006D08BA /* RunningTrack */,
 				04149F2A1F5B9F3D006EEC44 /* Theme */,
 			);
 			path = Profile;
@@ -1602,6 +1610,72 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0498E1F81F69221F006D08BA /* RunningTrack */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1F91F69221F006D08BA /* Controller */,
+				0498E1FA1F69221F006D08BA /* Model */,
+				0498E1FB1F69221F006D08BA /* Views */,
+			);
+			path = RunningTrack;
+			sourceTree = "<group>";
+		};
+		0498E1F91F69221F006D08BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0498E2031F6922D0006D08BA /* TDRunningTrackViewController.h */,
+				0498E2041F6922D0006D08BA /* TDRunningTrackViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0498E1FA1F69221F006D08BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0498E1FB1F69221F006D08BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0498E1FC1F6922A3006D08BA /* OfoBike */ = {
+			isa = PBXGroup;
+			children = (
+				0498E1FD1F6922A3006D08BA /* Controller */,
+				0498E1FE1F6922A3006D08BA /* Model */,
+				0498E1FF1F6922A3006D08BA /* Views */,
+			);
+			path = OfoBike;
+			sourceTree = "<group>";
+		};
+		0498E1FD1F6922A3006D08BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0498E2001F6922B7006D08BA /* TDOfoBikeViewController.h */,
+				0498E2011F6922B7006D08BA /* TDOfoBikeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0498E1FE1F6922A3006D08BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0498E1FF1F6922A3006D08BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		04AB0C011F5011CB00599CE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,6 +2088,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D989841F66159F00A0630D /* TDPublishViewController.m in Sources */,
+				0498E2051F6922D0006D08BA /* TDRunningTrackViewController.m in Sources */,
 				046C583E1F4AC7C10058364B /* PinyinHelper.m in Sources */,
 				04E7D5A31F43F9AF00E8D9DB /* TDUserInfoViewController.m in Sources */,
 				045264301F590101001FD38B /* TDMTMapViewController.m in Sources */,
@@ -2075,6 +2150,7 @@
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
 				046A26B41F3968C90013406B /* TDProfileHeaderView.m in Sources */,
 				044818FA1F67AF4500DD71FC /* TDCommunityViewController.m in Sources */,
+				0498E2021F6922B7006D08BA /* TDOfoBikeViewController.m in Sources */,
 				0438475D1F2A1FF50056D3CA /* UIColor+Additons.m in Sources */,
 				0438D34A1F39B47E00D4ED81 /* UIButton+Additions.m in Sources */,
 				046C580F1F4AC19A0058364B /* UIImage+CYButtonIcon.m in Sources */,
