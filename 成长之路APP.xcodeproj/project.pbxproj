@@ -47,8 +47,6 @@
 		0457458A1F146770003F4F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045745891F146770003F4F2D /* Assets.xcassets */; };
 		045745981F146770003F4F2D /* ____APPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745971F146770003F4F2D /* ____APPTests.m */; };
 		045745A31F146770003F4F2D /* ____APPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 045745A21F146770003F4F2D /* ____APPUITests.m */; };
-		045E99651F62447B00D827F2 /* TDContentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E99631F62447B00D827F2 /* TDContentTableView.m */; };
-		045E99661F62447B00D827F2 /* TDContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045E99641F62447B00D827F2 /* TDContentScrollView.m */; };
 		045EA5591F598F6500B0A704 /* TDBAddGoodsAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA54A1F598F6500B0A704 /* TDBAddGoodsAddressViewController.m */; };
 		045EA55A1F598F6500B0A704 /* TDNearbyAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA54C1F598F6500B0A704 /* TDNearbyAddressViewController.m */; };
 		045EA55B1F598F6500B0A704 /* TDSearchAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA54E1F598F6500B0A704 /* TDSearchAddressViewController.m */; };
@@ -232,10 +230,6 @@
 		0457459E1F146770003F4F2D /* 成长之路APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "成长之路APPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		045745A21F146770003F4F2D /* ____APPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____APPUITests.m"; sourceTree = "<group>"; };
 		045745A41F146770003F4F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		045E99611F62447B00D827F2 /* TDContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDContentScrollView.h; sourceTree = "<group>"; };
-		045E99621F62447B00D827F2 /* TDContentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDContentTableView.h; sourceTree = "<group>"; };
-		045E99631F62447B00D827F2 /* TDContentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDContentTableView.m; sourceTree = "<group>"; };
-		045E99641F62447B00D827F2 /* TDContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDContentScrollView.m; sourceTree = "<group>"; };
 		045EA5491F598F6500B0A704 /* TDBAddGoodsAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBAddGoodsAddressViewController.h; sourceTree = "<group>"; };
 		045EA54A1F598F6500B0A704 /* TDBAddGoodsAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBAddGoodsAddressViewController.m; sourceTree = "<group>"; };
 		045EA54B1F598F6500B0A704 /* TDNearbyAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressViewController.h; sourceTree = "<group>"; };
@@ -731,10 +725,6 @@
 		043DD10A1F613EDC008B576E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				045E99611F62447B00D827F2 /* TDContentScrollView.h */,
-				045E99641F62447B00D827F2 /* TDContentScrollView.m */,
-				045E99621F62447B00D827F2 /* TDContentTableView.h */,
-				045E99631F62447B00D827F2 /* TDContentTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1960,10 +1950,8 @@
 				04AB0C1D1F5016B700599CE0 /* ZJScrollPageView.m in Sources */,
 				046C58401F4AC7C10058364B /* ZYPinYinSearch.m in Sources */,
 				046C580D1F4AC19A0058364B /* UIButton+WHE.m in Sources */,
-				045E99651F62447B00D827F2 /* TDContentTableView.m in Sources */,
 				04246C801F505113002F5855 /* TTGTextTagCollectionView.m in Sources */,
 				0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */,
-				045E99661F62447B00D827F2 /* TDContentScrollView.m in Sources */,
 				045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */,
 				04AB0C1F1F5016B700599CE0 /* ZJSegmentStyle.m in Sources */,
 				04E7D5AA1F444EA400E8D9DB /* TDSettingsViewController.m in Sources */,

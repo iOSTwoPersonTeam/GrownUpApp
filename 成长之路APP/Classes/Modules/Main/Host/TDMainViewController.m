@@ -106,11 +106,15 @@
 }
 
 //TDContentViewController
-
-//TDMessageViewController
--(void)rightCamera
+-(void)rightCategory
 {
-    NSLog(@"相机--------");
+    NSLog(@"内容下载--------");
+}
+
+//TDCommunityViewController
+-(void)rightHistory
+{
+    NSLog(@"社区历史记录--------");
 }
 
 
@@ -133,17 +137,13 @@
         
     }
     else if (index ==1){
-        
-        self.fd_prefersNavigationBarHidden = YES;
-        [self.navigationController setNavigationBarHidden:YES animated:NO];
-        self.tabBarViewController.tabBarView.frame =CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49);
+        self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithImage:[UIImage imageNamed:@"分类"] highlighted:[UIImage imageNamed:@"分类"] target:self selector:@selector(rightCategory)];
         self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"内容"];
-        
     }
     else if (index ==2){
         
         self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"社区"];
-        self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithImage:[UIImage imageNamed:@"历史"] highlighted:[UIImage imageNamed:@"历史"] target:self selector:@selector(rightCamera)];
+        self.navigationItem.rightBarButtonItem =[UIBarButtonItem rightBarButtonItemWithImage:[UIImage imageNamed:@"历史"] highlighted:[UIImage imageNamed:@"历史"] target:self selector:@selector(rightHistory)];
     }
     else if (index ==3){
         
