@@ -8,11 +8,13 @@
 
 #import "BaiduMapManager.h"
 
-@interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate,BMKMapViewDelegate>
+@interface BaiduMapManager ()<BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,BMKPoiSearchDelegate,BMKCloudSearchDelegate,BMKMapViewDelegate>
 @property(nonatomic,strong)BMKMapView *mapView; //地图
 @property (nonatomic, strong)BMKLocationService *locService; // 定位对象
 @property (nonatomic, strong)BMKGeoCodeSearch *geoSearcher; // 地理编码对象
 @property(nonatomic,strong)BMKPoiSearch *bMKPoiSearch; //搜索检索服务
+
+@property(nonatomic,strong)BMKCloudSearch *bMKCloudSearch;  //云检索服务
 
 @end
 
@@ -39,7 +41,9 @@
 #pragma mark ---开始定位
 - (void)startLocation {
     //启动LocationService
+
     [self.locService startUserLocationService];
+
 }
 
 #pragma mark -----停止定位
@@ -145,6 +149,29 @@
 
 }
 
+#pragma mark ---根据经纬度获取LBS云检索结果 BMKCloudLocalSearchInfo
+-(void)getCloudResultWithLocation:(NSString *)location withSearchKeyword:(NSString *)keyword resultSucceed:(void (^)(NSArray *poiResultLis))cloudResult errorCode:(void (^)(int error))errorCode
+{
+    //周边云检索参数信息类
+    BMKCloudNearbySearchInfo *cloudLocalSearch = [[BMKCloudNearbySearchInfo alloc]init];
+    cloudLocalSearch.location =location;
+    cloudLocalSearch.keyword =@"ofo";
+    cloudLocalSearch.ak = TDBaidu_ServiceKey;
+    cloudLocalSearch.geoTableId =TDBaidu_ServiceGeoTableId;
+    [self.bMKCloudSearch nearbySearchWithSearchInfo:cloudLocalSearch];
+
+    self.cloudResultSucceed = ^(NSArray *poiResultList) {
+        
+        cloudResult(poiResultList);
+    };
+    self.cloudResultError = ^(int error) {
+      
+        errorCode(error);
+    };
+
+}
+
+
 #pragma mark ---不用的时候需要置nil，否则影响内存的释放
 -(void)cancelMapDelagate
 {
@@ -184,6 +211,10 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     //    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    
+#warning mark ---这里在更新定位后的方法里面要停止定位服务,这样在重新定位时候方法才能起作用---
+    [_locService stopUserLocationService];
+    
     if (_mapView) {
         
         [_mapView updateLocationData:userLocation];
@@ -237,6 +268,27 @@
     }
 }
 
+#pragma mark ---BMKCloudSearchDelegate (LBS云检索返回搜索结果)
+//云检索列表信息返回
+- (void)onGetCloudPoiResult:(NSArray*)poiResultList searchType:(int)type errorCode:(int)error
+{
+    if (self.cloudResultSucceed) {
+        self.cloudResultSucceed(poiResultList);
+    }
+    
+    if (self.cloudResultError) {
+        self.cloudResultError(error);
+    }
+    
+    NSLog(@"%d----",error);
+
+}
+//云检索详情信息返回
+- (void)onGetCloudPoiDetailResult:(BMKCloudPOIInfo*)poiDetailResult searchType:(int)type errorCode:(int)error
+{
+
+    
+}
 
 #pragma mark ---getter--
 //地理反编码
@@ -276,6 +328,15 @@
     return _bMKPoiSearch;
 }
 
+//云检索服务
+-(BMKCloudSearch *)bMKCloudSearch
+{
+    if (!_bMKCloudSearch) {
+        _bMKCloudSearch =[[BMKCloudSearch alloc] init];
+        _bMKCloudSearch.delegate =self;
+    }
+    return _bMKCloudSearch;
+}
 
 
 @end

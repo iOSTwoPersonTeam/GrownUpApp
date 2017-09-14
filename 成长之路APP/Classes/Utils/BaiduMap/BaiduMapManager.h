@@ -20,6 +20,10 @@
 //POI详情检索结果
 @property(nonatomic, copy) void(^poiDetailResultSucceed)(BMKPoiDetailResult *result);
 @property(nonatomic, copy) void(^poiDetailResultError)(BMKSearchErrorCode error);
+//LBS云检索结果
+@property(nonatomic, copy) void(^cloudResultSucceed)(NSArray*poiResultList);
+@property(nonatomic, copy) void(^cloudResultError)(int error);
+
 
 +(BaiduMapManager *)shareLocationManager;
 
@@ -63,6 +67,11 @@
  *  根据经纬度获取周边云检索结果 BMKNearbySearchOption
  */
 -(void)getNearbyResultWithLocation:(CLLocationCoordinate2D )location withSearchKeyword:(NSString *)keyword resultSucceed:(void (^)(BMKPoiResult *nearbyResult))nearbyResult errorCode:(void (^)(BMKSearchErrorCode error))errorCode;
+
+/*
+ *  根据经纬度获取LBS云检索结果 BMKCloudLocalSearchInfo
+ */
+-(void)getCloudResultWithLocation:(NSString *)location withSearchKeyword:(NSString *)keyword resultSucceed:(void (^)(NSArray *poiResultLis))cloudResult errorCode:(void (^)(int error))errorCode;
 
 
 /*

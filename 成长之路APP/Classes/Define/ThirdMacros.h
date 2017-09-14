@@ -31,6 +31,8 @@
 
 /*****百度地图********/
 #define TDBaidu_SecretKey @"MIgSaVajxdUWwuIMRGp8I7RDcXavOaPp"  //百度地图授权密钥Key
+#define TDBaidu_ServiceKey @"GV23Zmjl1wazQj4zSfYEDfP5jDrDzf98" //云检索服务端AK
+#define TDBaidu_ServiceGeoTableId 176077 //云检索服务端表单对应id
 
 
 
