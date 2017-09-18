@@ -8,6 +8,11 @@
 
 #import "NSString+Additions.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <sys/socket.h>
+#import <sys/sockio.h>
+#import <sys/ioctl.h>
+#import <net/if.h>
+#import <arpa/inet.h>
 
 @implementation NSString (Additions)
 
@@ -47,7 +52,7 @@
     return [valueTest1 evaluateWithObject:self] || [valueTest2 evaluateWithObject:self];
 }
 
-//---MD5加密
+#pragma mark ---MD5加密
 - (NSString *)getMd5
 {
     if (self == nil || [self length] == 0)
@@ -66,8 +71,134 @@
     return outputString;
 }
 
+#pragma mark ---双层的MD5加密
+-(NSString *)get_StrictMd5
+{
+    if (self == nil || [self length] == 0)
+    {
+        return nil;
+    }
+    const char *value = [self UTF8String];
+    
+    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
+    
+   NSMutableString *outputString = [NSMutableString string];
+    
+    [outputString appendFormat : @"%02x" ,outputBuffer[0]];
+    
+    for ( int i = 1 ; i<CC_MD5_DIGEST_LENGTH ; i++) {
+        
+        [outputString appendFormat : @"%02x" ,outputBuffer[i]^outputBuffer[ 0 ]];
+    }
+    
+    NSString *md5String = [outputString uppercaseString];
+    
+    return md5String;
+}
 
-// 获取指定最大宽度、最大高度、字体大小的string的size
+#pragma mark ---获取随机数-----
++ (NSString *)dw_getNonce_str
+{
+    NSArray *sourceStr = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",
+                           @"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",
+                           @"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",
+                           @"U",@"V",@"W",@"X",@"Y",@"Z"];
+    
+    NSString *resultStr = [[NSMutableString alloc] init];
+    
+    for (int i = 0; i < 32; i ++) {
+        
+        int value = arc4random() % 32;
+        
+        resultStr = [resultStr stringByAppendingString:[NSString stringWithFormat:@"%@",sourceStr[value]]];
+    }
+    
+    return [NSString stringWithString:resultStr];
+}
+
+#pragma mark ---获取客户端当前IP地址
++ (NSString *)dw_getIPAddress {
+    
+    int sockfd =socket(AF_INET,SOCK_DGRAM, 0);
+    
+    //    if (sockfd <</span> 0) return nil;
+    
+    NSMutableArray *ips = [NSMutableArray array];
+    
+    int BUFFERSIZE =4096;
+    
+    struct ifconf ifc;
+    
+    char buffer[BUFFERSIZE], *ptr, lastname[IFNAMSIZ], *cptr;
+    
+    struct ifreq *ifr, ifrcopy;
+    
+    ifc.ifc_len = BUFFERSIZE;
+    
+    ifc.ifc_buf = buffer;
+    
+    if (ioctl(sockfd,SIOCGIFCONF, &ifc) >= 0){
+        
+        for (ptr = buffer; ptr < buffer + ifc.ifc_len; ){
+            
+            ifr = (struct ifreq *)ptr;
+            
+            int len =sizeof(struct sockaddr);
+            
+            if (ifr->ifr_addr.sa_len > len) {
+                
+                len = ifr->ifr_addr.sa_len;
+                
+            }
+            
+            ptr += sizeof(ifr->ifr_name) + len;
+            
+            if (ifr->ifr_addr.sa_family !=AF_INET) continue;
+            
+            if ((cptr = (char *)strchr(ifr->ifr_name,':')) != NULL) *cptr =0;
+            
+            if (strncmp(lastname, ifr->ifr_name,IFNAMSIZ) == 0)continue;
+            
+            memcpy(lastname, ifr->ifr_name,IFNAMSIZ);
+            
+            ifrcopy = *ifr;
+            
+            ioctl(sockfd,SIOCGIFFLAGS, &ifrcopy);
+            
+            if ((ifrcopy.ifr_flags &IFF_UP) == 0)continue;
+            
+            
+            
+            NSString *ip = [NSString stringWithFormat:@"%s",inet_ntoa(((struct sockaddr_in *)&ifr->ifr_addr)->sin_addr)];
+            
+            [ips addObject:ip];
+            
+        }
+        
+    }
+    
+    close(sockfd);
+    
+    NSString *deviceIP =@"";
+    
+    for (int i=0; i < ips.count; i++)
+        
+    {
+        
+        if (ips.count >0)
+            
+        {
+            deviceIP = [NSString stringWithFormat:@"%@",ips.lastObject];
+        }
+        
+    }
+    return deviceIP;
+    
+}
+
+
+#pragma mark ---获取指定最大宽度、最大高度、字体大小的string的size
 - (CGSize)getSizeWithMaxWidth:(float)width maxHeight:(float)height withFontSize:(CGFloat)fontSize
 {
     CGSize size =  [self boundingRectWithSize:CGSizeMake(width, height) options:NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:fontSize]} context:nil].size;

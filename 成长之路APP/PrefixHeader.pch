@@ -53,6 +53,8 @@
 
 
 
+
+
 //全局宏
 #import "UtilsMacros.h"
 #import "FontAndColorMacros.h"
@@ -84,10 +86,10 @@
 
 
 //封装通用基础库
-#import "TDBaseRequestApI.h"
-#import "TDUserInfo.h"
-#import "TDShareSDKTool.h"
-
+#import "TDBaseRequestApI.h"  //网络请求
+#import "TDUserInfo.h"        //用户基本信息
+#import "TDShareSDKTool.h"    //ShareSDk分享
+#import "TDWXPayConfig.h"     //微信支付
 
 
 #endif /* PrefixHeader_pch */

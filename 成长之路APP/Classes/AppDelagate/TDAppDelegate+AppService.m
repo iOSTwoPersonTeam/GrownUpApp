@@ -96,11 +96,32 @@
         
         [self addXHLaunchAd];  //显示视频或图片广告
     }
-    
-
-    
 }
 
+#pragma mark ---微信调用注册
+-(void)WXRegisterAPP
+{
+    /** 
+     * 向微信终端注册ID，这里的APPID一般建议写成宏,容易维护。这里的id是AppleID，需要改这里还有target里面的URL Type
+     */
+    [[TDWXPayManager sharedManager] get_RegisterApp:TD_WeiChat_AppID enableMTA:YES];
+}
+
+#pragma mark - 微信支付回调-----
+//前面的两个方法被iOS9弃用了，如果是Xcode7.2网上的话会出现无法进入进入微信的onResp回调方法，就是这个原因。本来我是不想写着两个旧方法的，但是一看官方的demo上写的这两个，我就也写了。。。。
+//9.0前的方法，为了适配低版本 保留
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+#warning mark ---在这里代理的位置[TDWXPayManager sharedManager]--
+    return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+}
+//9.0后的方法
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    //这里判断是否发起的请求为微信支付，如果是的话，用WXApi的方法调起微信客户端的支付页面（://pay 之前的那串字符串就是你的APPID，）
+    return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+}
 
 
 @end

@@ -45,7 +45,10 @@
  */
 -(void)addAppIntroduction;
 
-
+/*
+ *  微信调用注册
+ */
+-(void)WXRegisterAPP;
 
 
 @end

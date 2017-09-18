@@ -25,6 +25,7 @@
 		043DD10B1F613EDC008B576E /* TDContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043DD1091F613EDC008B576E /* TDContentViewController.m */; };
 		043F7A301F38516E0075CF93 /* TDProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043F7A2F1F38516E0075CF93 /* TDProfileViewController.m */; };
 		043F7A331F386ABC0075CF93 /* TDProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043F7A321F386ABC0075CF93 /* TDProfileTableViewCell.m */; };
+		04406CB81F6E06EC0039010A /* TDPaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04406CB71F6E06EC0039010A /* TDPaymentStatusViewController.m */; };
 		0440BEAD1F3BEDC000E9DADE /* TDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEAC1F3BEDC000E9DADE /* TDRegisterViewController.m */; };
 		0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEAF1F3BEE0C00E9DADE /* TDRegisterView.m */; };
 		0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0440BEB51F3C0C9100E9DADE /* TDForgetPasswordViewController.m */; };
@@ -35,11 +36,15 @@
 		0448190C1F67B1E900DD71FC /* TDFriendStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448190B1F67B1E900DD71FC /* TDFriendStatusViewController.m */; };
 		0448190F1F67B1FD00DD71FC /* TDMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448190E1F67B1FD00DD71FC /* TDMessageViewController.m */; };
 		044819171F67C07100DD71FC /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 044819161F67C07100DD71FC /* MarqueeLabel.m */; };
+		044A77FE1F6B70E100A55B53 /* TDPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A77FD1F6B70E100A55B53 /* TDPaymentViewController.m */; };
+		044A78011F6B713900A55B53 /* TDGoodsOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A78001F6B713900A55B53 /* TDGoodsOrderViewController.m */; };
+		044A78081F6BC49000A55B53 /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A78041F6BC49000A55B53 /* BaiduMapManager.m */; };
+		044A78091F6BC49000A55B53 /* TDShareSDKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A78071F6BC49000A55B53 /* TDShareSDKTool.m */; };
+		044A780D1F6BD01800A55B53 /* TDWXPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 044A780C1F6BD01800A55B53 /* TDWXPayManager.m */; };
 		044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */; };
 		044F79D21F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 044F79D11F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.m */; };
 		045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E51F58EEEA001FD38B /* TDAddressProfileViewController.m */; };
 		045263EB1F58EEEA001FD38B /* TDAddressProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045263E91F58EEEA001FD38B /* TDAddressProfileView.m */; };
-		0452640B1F58EFF3001FD38B /* BaiduMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452640A1F58EFF3001FD38B /* BaiduMapManager.m */; };
 		045264301F590101001FD38B /* TDMTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0452642F1F590101001FD38B /* TDMTMapViewController.m */; };
 		045264331F593243001FD38B /* TDNearbyAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264321F593243001FD38B /* TDNearbyAddressView.m */; };
 		045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045264351F594894001FD38B /* TDNearbyTableViewCell.m */; };
@@ -86,6 +91,8 @@
 		0478F1C71F64E64100FAA40B /* TDHomeHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1C61F64E64100FAA40B /* TDHomeHotViewController.m */; };
 		0478F1CA1F64E86800FAA40B /* TDHomeClassisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1C91F64E86800FAA40B /* TDHomeClassisViewController.m */; };
 		0478F1CD1F64E88400FAA40B /* TDHomeFinenessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478F1CC1F64E88400FAA40B /* TDHomeFinenessViewController.m */; };
+		047DED0C1F6C018D00FD56FE /* TDWXPaySignAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DED0B1F6C018D00FD56FE /* TDWXPaySignAdaptor.m */; };
+		047DED111F6C050100FD56FE /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DED101F6C050100FD56FE /* XMLDictionary.m */; };
 		0485A4CE1F414E9E00C2FA63 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485A4CD1F414E9E00C2FA63 /* MBProgressHUD+MJ.m */; };
 		0485A4D21F41952800C2FA63 /* TDUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485A4D11F41952800C2FA63 /* TDUserInfo.m */; };
 		049041AD1F4C1012006C1601 /* TDAppIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049041AC1F4C1012006C1601 /* TDAppIntroductionViewController.m */; };
@@ -131,7 +138,6 @@
 		04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8E7841F2C2C4200F407A6 /* TDRootModel.m */; };
 		04E8E7881F2C2CD500F407A6 /* TDModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */; };
 		04F6FD781F60F9EC00A301B9 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */; };
-		04F773C51F45CBBF005FA37A /* TDShareSDKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F773C41F45CBBF005FA37A /* TDShareSDKTool.m */; };
 		BE6496A023EF79369C1ABA7D /* libPods-成长之路APP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 773934F5E62E6955CF04F2AE /* libPods-成长之路APP.a */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +195,8 @@
 		043F7A2F1F38516E0075CF93 /* TDProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProfileViewController.m; sourceTree = "<group>"; };
 		043F7A311F386ABC0075CF93 /* TDProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProfileTableViewCell.h; sourceTree = "<group>"; };
 		043F7A321F386ABC0075CF93 /* TDProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProfileTableViewCell.m; sourceTree = "<group>"; };
+		04406CB61F6E06EC0039010A /* TDPaymentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPaymentStatusViewController.h; sourceTree = "<group>"; };
+		04406CB71F6E06EC0039010A /* TDPaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPaymentStatusViewController.m; sourceTree = "<group>"; };
 		0440BEAB1F3BEDC000E9DADE /* TDRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRegisterViewController.h; sourceTree = "<group>"; };
 		0440BEAC1F3BEDC000E9DADE /* TDRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRegisterViewController.m; sourceTree = "<group>"; };
 		0440BEAE1F3BEE0C00E9DADE /* TDRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRegisterView.h; sourceTree = "<group>"; };
@@ -209,6 +217,16 @@
 		0448190E1F67B1FD00DD71FC /* TDMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMessageViewController.m; sourceTree = "<group>"; };
 		044819151F67C07100DD71FC /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
 		044819161F67C07100DD71FC /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
+		044A77FC1F6B70E100A55B53 /* TDPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPaymentViewController.h; sourceTree = "<group>"; };
+		044A77FD1F6B70E100A55B53 /* TDPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPaymentViewController.m; sourceTree = "<group>"; };
+		044A77FF1F6B713900A55B53 /* TDGoodsOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGoodsOrderViewController.h; sourceTree = "<group>"; };
+		044A78001F6B713900A55B53 /* TDGoodsOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGoodsOrderViewController.m; sourceTree = "<group>"; };
+		044A78031F6BC49000A55B53 /* BaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapManager.h; sourceTree = "<group>"; };
+		044A78041F6BC49000A55B53 /* BaiduMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapManager.m; sourceTree = "<group>"; };
+		044A78061F6BC49000A55B53 /* TDShareSDKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDShareSDKTool.h; sourceTree = "<group>"; };
+		044A78071F6BC49000A55B53 /* TDShareSDKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDShareSDKTool.m; sourceTree = "<group>"; };
+		044A780B1F6BD01800A55B53 /* TDWXPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDWXPayManager.h; sourceTree = "<group>"; };
+		044A780C1F6BD01800A55B53 /* TDWXPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDWXPayManager.m; sourceTree = "<group>"; };
 		044F79CD1F2B155F00FF7CC4 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		044F79CE1F2B155F00FF7CC4 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		044F79D01F2B1DDC00FF7CC4 /* TDAppDelegate+AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TDAppDelegate+AppService.h"; sourceTree = "<group>"; };
@@ -217,8 +235,6 @@
 		045263E51F58EEEA001FD38B /* TDAddressProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileViewController.m; sourceTree = "<group>"; };
 		045263E81F58EEEA001FD38B /* TDAddressProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAddressProfileView.h; sourceTree = "<group>"; };
 		045263E91F58EEEA001FD38B /* TDAddressProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAddressProfileView.m; sourceTree = "<group>"; };
-		045264091F58EFF3001FD38B /* BaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMapManager.h; sourceTree = "<group>"; };
-		0452640A1F58EFF3001FD38B /* BaiduMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduMapManager.m; sourceTree = "<group>"; };
 		0452642E1F590101001FD38B /* TDMTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMTMapViewController.h; sourceTree = "<group>"; };
 		0452642F1F590101001FD38B /* TDMTMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMTMapViewController.m; sourceTree = "<group>"; };
 		045264311F593243001FD38B /* TDNearbyAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDNearbyAddressView.h; sourceTree = "<group>"; };
@@ -312,6 +328,11 @@
 		0478F1C91F64E86800FAA40B /* TDHomeClassisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeClassisViewController.m; sourceTree = "<group>"; };
 		0478F1CB1F64E88400FAA40B /* TDHomeFinenessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeFinenessViewController.h; sourceTree = "<group>"; };
 		0478F1CC1F64E88400FAA40B /* TDHomeFinenessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeFinenessViewController.m; sourceTree = "<group>"; };
+		047DED0A1F6C018D00FD56FE /* TDWXPaySignAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDWXPaySignAdaptor.h; sourceTree = "<group>"; };
+		047DED0B1F6C018D00FD56FE /* TDWXPaySignAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDWXPaySignAdaptor.m; sourceTree = "<group>"; };
+		047DED0D1F6C034700FD56FE /* TDWXPayConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDWXPayConfig.h; sourceTree = "<group>"; };
+		047DED0F1F6C050100FD56FE /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		047DED101F6C050100FD56FE /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		0485A4CC1F414E9E00C2FA63 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		0485A4CD1F414E9E00C2FA63 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		0485A4D01F41952800C2FA63 /* TDUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUserInfo.h; sourceTree = "<group>"; };
@@ -395,8 +416,6 @@
 		04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDModelViewController.m; sourceTree = "<group>"; };
 		04F6FD761F60F9EC00A301B9 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
-		04F773C31F45CBBF005FA37A /* TDShareSDKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDShareSDKTool.h; sourceTree = "<group>"; };
-		04F773C41F45CBBF005FA37A /* TDShareSDKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDShareSDKTool.m; sourceTree = "<group>"; };
 		04FA08551F346060006E66BE /* URLMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLMacros.h; sourceTree = "<group>"; };
 		1139E551BC57DFD6E19D647A /* Pods-成长之路APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-成长之路APP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-成长之路APP/Pods-成长之路APP.debug.xcconfig"; sourceTree = "<group>"; };
 		773934F5E62E6955CF04F2AE /* libPods-成长之路APP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-成长之路APP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -577,6 +596,9 @@
 		042478821F1F5993006DF56A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				044A78021F6BC49000A55B53 /* BaiduMapManager */,
+				044A78051F6BC49000A55B53 /* ShareSDKManager */,
+				044A780A1F6BCD1A00A55B53 /* WXPayManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -665,10 +687,8 @@
 		0424789A1F1F5993006DF56A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				04AF6CBF1F4D247400BE5D2B /* BaiduMap */,
 				049041AA1F4C0FB9006C1601 /* AppIntroduction */,
 				0469EE5C1F4AE6B70091137D /* LaunchAdManager */,
-				04F773C21F45CB9D005FA37A /* ShareSDKTool */,
 				0485A4CF1F4194FC00C2FA63 /* UserInfo */,
 				04910ED51F2F001900F963EC /* BaseRequestApI */,
 				040494551F2991BC0093B269 /* Category */,
@@ -978,6 +998,37 @@
 				044819161F67C07100DD71FC /* MarqueeLabel.m */,
 			);
 			path = MarqueeLabel;
+			sourceTree = "<group>";
+		};
+		044A78021F6BC49000A55B53 /* BaiduMapManager */ = {
+			isa = PBXGroup;
+			children = (
+				044A78031F6BC49000A55B53 /* BaiduMapManager.h */,
+				044A78041F6BC49000A55B53 /* BaiduMapManager.m */,
+			);
+			path = BaiduMapManager;
+			sourceTree = "<group>";
+		};
+		044A78051F6BC49000A55B53 /* ShareSDKManager */ = {
+			isa = PBXGroup;
+			children = (
+				044A78061F6BC49000A55B53 /* TDShareSDKTool.h */,
+				044A78071F6BC49000A55B53 /* TDShareSDKTool.m */,
+			);
+			path = ShareSDKManager;
+			sourceTree = "<group>";
+		};
+		044A780A1F6BCD1A00A55B53 /* WXPayManager */ = {
+			isa = PBXGroup;
+			children = (
+				047DED0D1F6C034700FD56FE /* TDWXPayConfig.h */,
+				044A780B1F6BD01800A55B53 /* TDWXPayManager.h */,
+				044A780C1F6BD01800A55B53 /* TDWXPayManager.m */,
+				047DED0A1F6C018D00FD56FE /* TDWXPaySignAdaptor.h */,
+				047DED0B1F6C018D00FD56FE /* TDWXPaySignAdaptor.m */,
+				047DED0E1F6C050100FD56FE /* XMLDictionary */,
+			);
+			path = WXPayManager;
 			sourceTree = "<group>";
 		};
 		045263E21F58EEEA001FD38B /* Host */ = {
@@ -1444,6 +1495,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		047DED0E1F6C050100FD56FE /* XMLDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				047DED0F1F6C050100FD56FE /* XMLDictionary.h */,
+				047DED101F6C050100FD56FE /* XMLDictionary.m */,
+			);
+			path = XMLDictionary;
+			sourceTree = "<group>";
+		};
 		0485A4CB1F414E9E00C2FA63 /* MBProgressHUD+MJ */ = {
 			isa = PBXGroup;
 			children = (
@@ -1592,6 +1652,12 @@
 			children = (
 				0498E1EE1F6911F9006D08BA /* TDShoppingViewController.h */,
 				0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */,
+				044A77FF1F6B713900A55B53 /* TDGoodsOrderViewController.h */,
+				044A78001F6B713900A55B53 /* TDGoodsOrderViewController.m */,
+				044A77FC1F6B70E100A55B53 /* TDPaymentViewController.h */,
+				044A77FD1F6B70E100A55B53 /* TDPaymentViewController.m */,
+				04406CB61F6E06EC0039010A /* TDPaymentStatusViewController.h */,
+				04406CB71F6E06EC0039010A /* TDPaymentStatusViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1721,15 +1787,6 @@
 				04AB0C181F5016B700599CE0 /* ZJTitleView.m */,
 			);
 			path = ZJScrollPageView;
-			sourceTree = "<group>";
-		};
-		04AF6CBF1F4D247400BE5D2B /* BaiduMap */ = {
-			isa = PBXGroup;
-			children = (
-				045264091F58EFF3001FD38B /* BaiduMapManager.h */,
-				0452640A1F58EFF3001FD38B /* BaiduMapManager.m */,
-			);
-			path = BaiduMap;
 			sourceTree = "<group>";
 		};
 		04B6121A1F284351003155BF /* Content */ = {
@@ -1863,15 +1920,6 @@
 				04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */,
 			);
 			path = RootModel;
-			sourceTree = "<group>";
-		};
-		04F773C21F45CB9D005FA37A /* ShareSDKTool */ = {
-			isa = PBXGroup;
-			children = (
-				04F773C31F45CBBF005FA37A /* TDShareSDKTool.h */,
-				04F773C41F45CBBF005FA37A /* TDShareSDKTool.m */,
-			);
-			path = ShareSDKTool;
 			sourceTree = "<group>";
 		};
 		62CAB42103F463F87A956177 /* Pods */ = {
@@ -2092,6 +2140,7 @@
 				046C583E1F4AC7C10058364B /* PinyinHelper.m in Sources */,
 				04E7D5A31F43F9AF00E8D9DB /* TDUserInfoViewController.m in Sources */,
 				045264301F590101001FD38B /* TDMTMapViewController.m in Sources */,
+				047DED111F6C050100FD56FE /* XMLDictionary.m in Sources */,
 				04C1C36E1F3B068F0035F26C /* LRTextField.m in Sources */,
 				04AB0C1A1F5016B700599CE0 /* UIViewController+ZJScrollPageController.m in Sources */,
 				046C580E1F4AC19A0058364B /* UIColor+WHE.m in Sources */,
@@ -2110,6 +2159,7 @@
 				046C58381F4AC7C10058364B /* ChineseInclude.m in Sources */,
 				043F7A301F38516E0075CF93 /* TDProfileViewController.m in Sources */,
 				042F8D871F5A6081007747C5 /* TDMTNearbySearchViewController.m in Sources */,
+				044A77FE1F6B70E100A55B53 /* TDPaymentViewController.m in Sources */,
 				0478F1CA1F64E86800FAA40B /* TDHomeClassisViewController.m in Sources */,
 				046C583B1F4AC7C10058364B /* NSString+PinYin4Cocoa.m in Sources */,
 				04F6FD781F60F9EC00A301B9 /* UIView+Additions.m in Sources */,
@@ -2128,6 +2178,7 @@
 				0448190C1F67B1E900DD71FC /* TDFriendStatusViewController.m in Sources */,
 				045EA55A1F598F6500B0A704 /* TDNearbyAddressViewController.m in Sources */,
 				045263EA1F58EEEA001FD38B /* TDAddressProfileViewController.m in Sources */,
+				044A78081F6BC49000A55B53 /* BaiduMapManager.m in Sources */,
 				042478A01F1F61C8006DF56A /* TDAppDelegate.m in Sources */,
 				04771A211F2B6A2C009E5649 /* TDHomeViewController.m in Sources */,
 				046C58361F4AC7C10058364B /* CityItem.m in Sources */,
@@ -2140,6 +2191,7 @@
 				0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */,
 				045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */,
 				04AB0C1F1F5016B700599CE0 /* ZJSegmentStyle.m in Sources */,
+				044A780D1F6BD01800A55B53 /* TDWXPayManager.m in Sources */,
 				04E7D5AA1F444EA400E8D9DB /* TDSettingsViewController.m in Sources */,
 				046C58321F4AC7C10058364B /* ButtonGroupView.m in Sources */,
 				0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */,
@@ -2149,9 +2201,11 @@
 				046C58101F4AC19A0058364B /* CYWebViewController.m in Sources */,
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
 				046A26B41F3968C90013406B /* TDProfileHeaderView.m in Sources */,
+				044A78091F6BC49000A55B53 /* TDShareSDKTool.m in Sources */,
 				044818FA1F67AF4500DD71FC /* TDCommunityViewController.m in Sources */,
 				0498E2021F6922B7006D08BA /* TDOfoBikeViewController.m in Sources */,
 				0438475D1F2A1FF50056D3CA /* UIColor+Additons.m in Sources */,
+				04406CB81F6E06EC0039010A /* TDPaymentStatusViewController.m in Sources */,
 				0438D34A1F39B47E00D4ED81 /* UIButton+Additions.m in Sources */,
 				046C580F1F4AC19A0058364B /* UIImage+CYButtonIcon.m in Sources */,
 				0438D3441F39A71400D4ED81 /* TDRootTableViewCell.m in Sources */,
@@ -2162,8 +2216,7 @@
 				045264331F593243001FD38B /* TDNearbyAddressView.m in Sources */,
 				04AB0C1E1F5016B700599CE0 /* ZJScrollSegmentView.m in Sources */,
 				049041B51F4C35B6006C1601 /* DHGuidePageHUD.m in Sources */,
-				0452640B1F58EFF3001FD38B /* BaiduMapManager.m in Sources */,
-				04F773C51F45CBBF005FA37A /* TDShareSDKTool.m in Sources */,
+				044A78011F6B713900A55B53 /* TDGoodsOrderViewController.m in Sources */,
 				0457457F1F146770003F4F2D /* main.m in Sources */,
 				0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */,
 				046C58131F4AC19A0058364B /* UINavigationBar+Awesome.m in Sources */,
@@ -2177,6 +2230,7 @@
 				046C583C1F4AC7C10058364B /* PinyinFormatter.m in Sources */,
 				046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */,
 				0498E1F01F6911F9006D08BA /* TDShoppingViewController.m in Sources */,
+				047DED0C1F6C018D00FD56FE /* TDWXPaySignAdaptor.m in Sources */,
 				04AB0C1C1F5016B700599CE0 /* ZJContentView.m in Sources */,
 				043DD10B1F613EDC008B576E /* TDContentViewController.m in Sources */,
 				04AB0C1B1F5016B700599CE0 /* ZJCollectionView.m in Sources */,
