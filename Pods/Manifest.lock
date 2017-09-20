@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AliPay (2.1.2)
   - BaiduMapKit (3.3.2)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
@@ -50,6 +51,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AliPay
   - BaiduMapKit
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
@@ -74,6 +76,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AliPay: 2bd35a4e486d2a8c035043023cd846e886bb21d1
   BaiduMapKit: 5118390d63b375483bd64c963e8e32a40fd9ddb5
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -91,6 +94,6 @@ SPEC CHECKSUMS:
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
   XHLaunchAd: 7827b5608c91606f372e6475556bd86968100d0e
 
-PODFILE CHECKSUM: 13e414b69b3603c23074e375db6e4f1a2f76c468
+PODFILE CHECKSUM: 7ee5e65937dcc033afa5ea793c9919b331a07b41
 
 COCOAPODS: 1.2.1

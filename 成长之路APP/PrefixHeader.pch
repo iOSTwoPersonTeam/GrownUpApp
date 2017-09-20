@@ -51,7 +51,8 @@
 #import "WeiboSDK.h"
 //新浪微博SDK需要在项目Build Settings中的Other Linker Flags添加"-ObjC"
 
-
+//支付宝支付SDK
+#import <AlipaySDK/AlipaySDK.h>
 
 
 
@@ -90,6 +91,7 @@
 #import "TDUserInfo.h"        //用户基本信息
 #import "TDShareSDKTool.h"    //ShareSDk分享
 #import "TDWXPayConfig.h"     //微信支付
+#import "TDUnifyPayManager.h" //处理微信,支付宝支付的统一方法类
 
 
 #endif /* PrefixHeader_pch */

@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040494571F2992AE0093B269 /* TDTabBarViewController.m */; };
 		0404945F1F299B2E0093B269 /* UINavigationItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404945E1F299B2E0093B269 /* UINavigationItem+Additions.m */; };
+		040979A41F723A5400788C40 /* TDUnifyPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 040979A31F723A5400788C40 /* TDUnifyPayManager.m */; };
 		04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */; };
+		041595061F6F7AC40057D87F /* TDPaymentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041595051F6F7AC40057D87F /* TDPaymentHeaderView.m */; };
+		041595091F6F9C330057D87F /* TDPaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041595081F6F9C330057D87F /* TDPaymentTableViewCell.m */; };
 		041ACB2B1F29B895007280ED /* TDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041ACB2A1F29B895007280ED /* TDRootViewController.m */; };
 		041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041ACB2D1F29B8C9007280ED /* TDRootNavigationController.m */; };
 		041ACB311F29CB39007280ED /* UIBarButtonItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 041ACB301F29CB39007280ED /* UIBarButtonItem+Additions.m */; };
@@ -163,8 +166,14 @@
 		040494571F2992AE0093B269 /* TDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDTabBarViewController.m; sourceTree = "<group>"; };
 		0404945D1F299B2E0093B269 /* UINavigationItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+Additions.h"; sourceTree = "<group>"; };
 		0404945E1F299B2E0093B269 /* UINavigationItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Additions.m"; sourceTree = "<group>"; };
+		040979A21F723A5400788C40 /* TDUnifyPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUnifyPayManager.h; sourceTree = "<group>"; };
+		040979A31F723A5400788C40 /* TDUnifyPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUnifyPayManager.m; sourceTree = "<group>"; };
 		04149F2E1F5B9F8E006EEC44 /* TDThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDThemeViewController.h; sourceTree = "<group>"; };
 		04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDThemeViewController.m; sourceTree = "<group>"; };
+		041595041F6F7AC40057D87F /* TDPaymentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPaymentHeaderView.h; sourceTree = "<group>"; };
+		041595051F6F7AC40057D87F /* TDPaymentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPaymentHeaderView.m; sourceTree = "<group>"; };
+		041595071F6F9C330057D87F /* TDPaymentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPaymentTableViewCell.h; sourceTree = "<group>"; };
+		041595081F6F9C330057D87F /* TDPaymentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDPaymentTableViewCell.m; sourceTree = "<group>"; };
 		041ACB291F29B895007280ED /* TDRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRootViewController.h; sourceTree = "<group>"; };
 		041ACB2A1F29B895007280ED /* TDRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRootViewController.m; sourceTree = "<group>"; };
 		041ACB2C1F29B8C9007280ED /* TDRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRootNavigationController.h; sourceTree = "<group>"; };
@@ -482,6 +491,15 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		0409799E1F721C0B00788C40 /* UnifyPayManager */ = {
+			isa = PBXGroup;
+			children = (
+				040979A21F723A5400788C40 /* TDUnifyPayManager.h */,
+				040979A31F723A5400788C40 /* TDUnifyPayManager.m */,
+			);
+			path = UnifyPayManager;
+			sourceTree = "<group>";
+		};
 		04149F2A1F5B9F3D006EEC44 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +617,7 @@
 				044A78021F6BC49000A55B53 /* BaiduMapManager */,
 				044A78051F6BC49000A55B53 /* ShareSDKManager */,
 				044A780A1F6BCD1A00A55B53 /* WXPayManager */,
+				0409799E1F721C0B00788C40 /* UnifyPayManager */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1672,6 +1691,10 @@
 		0498E1EA1F6911A5006D08BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				041595041F6F7AC40057D87F /* TDPaymentHeaderView.h */,
+				041595051F6F7AC40057D87F /* TDPaymentHeaderView.m */,
+				041595071F6F9C330057D87F /* TDPaymentTableViewCell.h */,
+				041595081F6F9C330057D87F /* TDPaymentTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2187,6 +2210,7 @@
 				04AB0C1D1F5016B700599CE0 /* ZJScrollPageView.m in Sources */,
 				046C58401F4AC7C10058364B /* ZYPinYinSearch.m in Sources */,
 				046C580D1F4AC19A0058364B /* UIButton+WHE.m in Sources */,
+				040979A41F723A5400788C40 /* TDUnifyPayManager.m in Sources */,
 				04246C801F505113002F5855 /* TTGTextTagCollectionView.m in Sources */,
 				0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */,
 				045264361F594894001FD38B /* TDNearbyTableViewCell.m in Sources */,
@@ -2237,9 +2261,11 @@
 				0448190F1F67B1FD00DD71FC /* TDMessageViewController.m in Sources */,
 				0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */,
 				0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */,
+				041595061F6F7AC40057D87F /* TDPaymentHeaderView.m in Sources */,
 				0498E1ED1F6911DC006D08BA /* TDRecommendViewController.m in Sources */,
 				045EA5591F598F6500B0A704 /* TDBAddGoodsAddressViewController.m in Sources */,
 				046C58391F4AC7C10058364B /* ChineseToPinyinResource.m in Sources */,
+				041595091F6F9C330057D87F /* TDPaymentTableViewCell.m in Sources */,
 				040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */,
 				045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */,
 				044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */,
@@ -2388,7 +2414,30 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 83L8E39V57;
+				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/AliPay\"",
+					"\"${PODS_ROOT}/Headers/Public/BaiduMapKit\"",
+					"\"${PODS_ROOT}/Headers/Public/DZNEmptyDataSet\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MGSwipeTableCell\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MOBFoundation\"",
+					"\"${PODS_ROOT}/Headers/Public/MZTimerLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/PYSearch\"",
+					"\"${PODS_ROOT}/Headers/Public/SDCycleScrollView\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/ShareSDK3\"",
+					"\"${PODS_ROOT}/Headers/Public/XHLaunchAd\"",
+				);
 				INFOPLIST_FILE = "成长之路APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2405,7 +2454,30 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 83L8E39V57;
+				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/AliPay\"",
+					"\"${PODS_ROOT}/Headers/Public/BaiduMapKit\"",
+					"\"${PODS_ROOT}/Headers/Public/DZNEmptyDataSet\"",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MGSwipeTableCell\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MOBFoundation\"",
+					"\"${PODS_ROOT}/Headers/Public/MZTimerLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/PYSearch\"",
+					"\"${PODS_ROOT}/Headers/Public/SDCycleScrollView\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/ShareSDK3\"",
+					"\"${PODS_ROOT}/Headers/Public/XHLaunchAd\"",
+				);
 				INFOPLIST_FILE = "成长之路APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

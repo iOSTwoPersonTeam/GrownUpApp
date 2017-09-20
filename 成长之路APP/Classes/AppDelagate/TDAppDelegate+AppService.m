@@ -105,6 +105,10 @@
      * 向微信终端注册ID，这里的APPID一般建议写成宏,容易维护。这里的id是AppleID，需要改这里还有target里面的URL Type
      */
     [[TDWXPayManager sharedManager] get_RegisterApp:TD_WeiChat_AppID enableMTA:YES];
+    
+    //统一处理支付类注册微信---
+//    [TDUnifyPayManager wechatRegisterAppWithAppId:TD_WeiChat_AppID enableMTA:YES];
+    
 }
 
 #pragma mark - 微信支付回调-----
@@ -112,16 +116,66 @@
 //9.0前的方法，为了适配低版本 保留
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
 #warning mark ---在这里代理的位置[TDWXPayManager sharedManager]--
-    return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+    if ([url.scheme isEqualToString:TD_WeiChat_AppID])
+    {
+      return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+    }
+   
+    //统一处理支付类的支付回调结果
+    if([url.scheme hasPrefix:@"wx"]){//微信
+//        return [TDUnifyPayManager wechatHandleOpenURL:url];
+    }
+    else if([url.scheme hasPrefix:@"safepay"]){//支付宝
+        return [TDUnifyPayManager alipayHandleOpenURL:url];
+    }
+    else if([url.scheme hasPrefix:@"UnionPay"]){//银联
+        
+    }
+    
+    return YES;
+
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+    if ([url.scheme isEqualToString:TD_WeiChat_AppID])
+    {
+        return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+    }
+    
+    //统一处理支付类的支付回调结果
+    if([url.scheme hasPrefix:@"wx"]){//微信
+//        return [TDUnifyPayManager wechatHandleOpenURL:url];
+    }
+    else if([url.scheme hasPrefix:@"safepay"]){//支付宝
+        return [TDUnifyPayManager alipayHandleOpenURL:url];
+    }
+    else if([url.scheme hasPrefix:@"UnionPay"]){//银联
+        
+    }
+    
+    return YES;
 }
 //9.0后的方法
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
     //这里判断是否发起的请求为微信支付，如果是的话，用WXApi的方法调起微信客户端的支付页面（://pay 之前的那串字符串就是你的APPID，）
-    return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+    if ([url.scheme isEqualToString:TD_WeiChat_AppID])
+    {
+        return [WXApi handleOpenURL:url delegate:[TDWXPayManager sharedManager]];
+    }
+    
+    //统一处理支付类的支付回调结果
+    if([url.scheme hasPrefix:@"wx"]){//微信
+//        return [TDUnifyPayManager wechatHandleOpenURL:url];
+    }
+    else if([url.host hasPrefix:@"safepay"]){//支付宝
+        return [TDUnifyPayManager alipayHandleOpenURL:url];
+    }
+    else if([url.scheme hasPrefix:@"UnionPay"]){//银联
+        
+    }
+    
+    return YES;
 }
+
 
 
 @end
