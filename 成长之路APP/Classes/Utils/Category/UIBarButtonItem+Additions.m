@@ -23,6 +23,14 @@
     button.adjustsImageWhenHighlighted = NO;
     [button setBackgroundImage:image forState:UIControlStateNormal];
     [button setBackgroundImage:highlightedImage forState:UIControlStateHighlighted];
+#warning mark --ios11适配 支持autolayout,因此在导航栏设置时候要用约束方式实现
+    if (@available(iOS 11.0, *)) {
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@11.5);
+            make.height.equalTo(@20);
+        }];
+    }
+
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
@@ -37,6 +45,12 @@
     button.adjustsImageWhenHighlighted = NO;
     [button setBackgroundImage:image forState:UIControlStateNormal];
     [button setBackgroundImage:highlightedImage forState:UIControlStateHighlighted];
+#warning mark --ios11适配 支持autolayout,因此在导航栏设置时候要用约束方式实现
+    if (@available(iOS 11.0, *)) {
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.equalTo(@27);
+        }];
+    }
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
@@ -52,6 +66,7 @@
     [button.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [button sizeToFit];
     [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 

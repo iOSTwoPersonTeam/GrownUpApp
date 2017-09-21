@@ -17,17 +17,20 @@
 * 4.支持网络及本地资源.
 * 5.兼容iPhone和iPad.
 * 6.支持广告点击事件.
-* 7.支持自定义跳过按钮.
+* 7.支持自定义跳过按钮,添加子视图.
 * 8.支持设置数据等待时间.
 * 9.自带图片/视频下载,缓存功能.
 * 10.支持预缓存图片及视频.
 * 11.支持设置完成动画.
-* 12.无依赖其他第三方库等等...
+* 12.等等等...
 
 ### 技术交流群(群号:537476189).
 
 ### 更新记录:  
 
+*   2017.09.18 -- v3.6.0 -->1.优化图片解码方案,2.支持设置GIF动图是否循环播放
+*   2017.09.13 -- v3.5.8 -->增加几种显示完成的动画...
+*   2017.08.20 -- v3.5.6 -->已知问题修复及内存优化...
 *   2017.05.26 -- v3.5.4 -->修复横屏启动造成的界面问题...
 *   2017.05.02 -- v3.5.0 -->Gif动图占用内存优化...
 *   2017.04.26 -- v3.4.6 -->版本优化,bug fix...
@@ -152,16 +155,18 @@
     
 ```
 ### 注意:
+#### 若你需要请求广告数据,来初始化开屏广告请看这里
 >若你的广告图片/视频URL来源于数据请求,请在请求数据前设置等待时间,在数据请求成功回调里配置广告,如下:
 
 ```objc
 
 //1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
-//2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将自动进入window的RootVC
-//3.数据获取成功,初始化广告时,自动结束等待,显示广告.
+//2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示启动广告
+//3.数据获取成功,配置广告数据后,自动结束等待,显示广告
 
+	 //请求广告URL前,必须设置,否则会先进入window的RootVC
 	 //设置数据等待时间
-    [XHLaunchAd setWaitDataDuration:3];//请求广告URL前,必须设置,否则会先进入window的RootVC
+    [XHLaunchAd setWaitDataDuration:3];
     
     //广告数据请求
     [Network getLaunchAdImageDataSuccess:^(NSDictionary * response) {
@@ -169,7 +174,7 @@
       //在此处利用服务器返回的广告数据,按上面示例添加开屏广告代码
       XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration ... 
 
-     //配置相关参数.... 
+     //按照上面示例配置相关参数.... 
 
      //显示开屏广告
      [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
@@ -277,12 +282,13 @@ configuration.customSkipView = [self customSkipView];
 ### 7.其他代理方法
 ```objc
 /**
- *  图片下载完成/或本地图片读取完成 回调
+ *  图片本地读取/或下载完成回调
  *
- *  @param launchAd XHLaunchAd
- *  @param image    image
+ *  @param launchAd  XHLaunchAd
+ *  @param image 读取/下载的image
+ *  @param imageData 读取/下载的imageData
  */
--(void)xhLaunchAd:(XHLaunchAd *)launchAd imageDownLoadFinish:(UIImage *)image
+-(void)xhLaunchAd:(XHLaunchAd *)launchAd imageDownLoadFinish:(UIImage *)image imageData:(NSData *)imageData;
 {
     NSLog(@"图片下载完成/或本地图片读取完成回调");
 }
@@ -347,6 +353,9 @@ configuration.customSkipView = [self customSkipView];
 +(NSString *)xhLaunchAdCachePath;
 
 ```
+##  依赖
+*   1.本库依赖FLAnimatedImage
+
 ##  安装
 ### 1.手动添加:<br>
 *   1.将 XHLaunchAd 文件夹添加到工程目录中<br>

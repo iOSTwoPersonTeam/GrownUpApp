@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-        [self.view addSubview:self.scrollPageView]; //添加标题segment
+    [self.view addSubview:self.scrollPageView]; //添加标题segment
 
 }
 

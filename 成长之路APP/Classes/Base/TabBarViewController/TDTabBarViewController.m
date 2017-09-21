@@ -45,7 +45,9 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [self.tabBar removeFromSuperview];
+    //移除原有的系统自带tabBar
+#warning mark --ios11适配 需要self.tabBarController.tabBar  不能self.tabBar这样移除tabbar 并且这也会影响到上面导航栏的展示
+    [self.tabBarController.tabBar removeFromSuperview];
 }
 
 #pragma mark - 初始化数据

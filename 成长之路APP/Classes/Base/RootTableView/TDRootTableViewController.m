@@ -30,7 +30,15 @@
 {
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets =NO;
+    /*
+     *  tableView适配ios11方法
+     */
+#warning mark ---ios11适配 tableView适配----
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     _tableView =[[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.backgroundColor =GlobalBackgroundColor;

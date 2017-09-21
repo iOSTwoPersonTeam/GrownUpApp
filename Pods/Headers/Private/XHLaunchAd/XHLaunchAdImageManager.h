@@ -1,1 +1,1 @@
-../../../XHLaunchAd/XHLaunchAd/XHLaunchAdImageManager.h
+../../../XHLaunchAd/XHLaunchAd/XHLaunchAd/XHLaunchAdImageManager.h
