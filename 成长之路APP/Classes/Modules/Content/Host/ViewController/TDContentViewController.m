@@ -35,7 +35,6 @@
 
 
 
-
 #pragma mark ----Delagate---
 #pragma mark ---ZJScrollPageViewDelegate
 -(NSInteger)numberOfChildViewControllers
