@@ -29,6 +29,7 @@
     [self.view addSubview:self.scrollPageView]; //添加标题segment
 
     NSLog(@"git提交-----");
+    NSLog(@"分支提交+++++");
 }
 
 #pragma mark ---private---
