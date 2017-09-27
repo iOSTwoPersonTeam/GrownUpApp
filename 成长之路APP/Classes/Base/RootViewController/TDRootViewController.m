@@ -40,11 +40,12 @@
     
     self.statuaBarStyle = UIStatusBarStyleDefault;
     self.backEnabled =YES;
-    
+    self.isHidenNaviBar =NO; //默认不隐藏
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -75,6 +76,24 @@
 
 }
 
+/*
+ *  是否隐藏导航栏
+ */
+-(void)setIsHidenNaviBar:(BOOL)isHidenNaviBar
+{
+    _isHidenNaviBar =isHidenNaviBar;
+    
+    if (isHidenNaviBar ==YES) {
+     
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+    else{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
+    
+}
 
 //返回事件
 - (void)back
