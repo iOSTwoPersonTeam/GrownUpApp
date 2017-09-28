@@ -36,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [self.view addSubview:self.mapView]; //添加地图视图
     [self.view addSubview:self.locationButton]; //添加定位按钮
     [self.view addSubview:self.backButton]; //添加返回按钮
@@ -206,6 +206,7 @@
 {
     [self.mapView updateLocationData:userLocation];
 }
+
 // 定位失败了会调用
 - (void)didFailToLocateUserWithError:(NSError *)error
 {
@@ -252,7 +253,7 @@
     }
     return _mapView;
 }
-
+//自定义定位图层图标
 -(BMKLocationViewDisplayParam *)displayParam
 {
     if (!_displayParam) {
@@ -266,8 +267,6 @@
     }
     return _displayParam;
 }
-
-
 //定位服务
 -(BMKLocationService *)locationService
 {
