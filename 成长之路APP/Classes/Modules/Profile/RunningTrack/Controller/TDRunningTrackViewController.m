@@ -8,6 +8,7 @@
 
 #import "TDRunningTrackViewController.h"
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#import "TDRunningTrackDataView.h"
 
 #define FirstLocation @"firstLocation"
 
@@ -28,6 +29,7 @@
 @property(nonatomic, strong)UIButton *backButton; //返回按钮
 @property(nonatomic, strong)BMKLocationService *locationService; //定位服务
 @property(nonatomic, strong)BMKLocationViewDisplayParam *displayParam; //自定义图层样式
+@property(nonatomic, strong)TDRunningTrackDataView *runTrackdataView; //数据展示view
 
 @end
 
@@ -40,6 +42,7 @@
     [self.view addSubview:self.mapView]; //添加地图视图
     [self.view addSubview:self.locationButton]; //添加定位按钮
     [self.view addSubview:self.backButton]; //添加返回按钮
+    [self.view bringSubviewToFront:self.runTrackdataView];
     [self.locationService startUserLocationService];
     //起点大头针的添加
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FirstLocation];
@@ -75,8 +78,16 @@
 -(void)clickBack
 {
     DLog(@"返回----");
-    [self.navigationController popViewControllerAnimated:YES];
-    
+    [UIView animateWithDuration:0.6 animations:^{
+        self.runTrackdataView.hidden =NO;
+    }];
+}
+//点击空白进入地图事件
+-(void)clickIntoRunMap
+{
+    [UIView animateWithDuration:0.6 animations:^{
+        self.runTrackdataView.hidden =YES;
+    }];
 }
 
 //获取位置坐标数组
@@ -310,6 +321,23 @@
     }
     return _backButton;
 }
+
+-(TDRunningTrackDataView *)runTrackdataView
+{
+    if (!_runTrackdataView) {
+        _runTrackdataView =[[TDRunningTrackDataView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT )];
+        _runTrackdataView.backgroundColor =[UIColor clearColor];
+        [self.view addSubview:_runTrackdataView];
+        __weak typeof(self) unself =self;
+        _runTrackdataView.clickIntoMapBlock = ^{
+            [unself clickIntoRunMap];
+        };
+        NSDictionary *dic =[NSDictionary dictionary];
+        _runTrackdataView.modelDic =dic;
+    }
+    return _runTrackdataView;
+}
+
 
 
 @end

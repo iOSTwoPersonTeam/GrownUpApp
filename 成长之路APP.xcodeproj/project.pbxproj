@@ -113,6 +113,7 @@
 		049041CA1F4C36A1006C1601 /* guideMovie1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 049041C01F4C36A1006C1601 /* guideMovie1.mov */; };
 		049041CB1F4C36A1006C1601 /* view_bg_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 049041C11F4C36A1006C1601 /* view_bg_image.png */; };
 		04910ED81F2F00D500F963EC /* TDBaseRequestApI.m in Sources */ = {isa = PBXBuildFile; fileRef = 04910ED71F2F00D500F963EC /* TDBaseRequestApI.m */; };
+		04930CD51F7CD5D9005674FA /* TDRunningTrackDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04930CD41F7CD5D9005674FA /* TDRunningTrackDataView.m */; };
 		0498E1ED1F6911DC006D08BA /* TDRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1EC1F6911DC006D08BA /* TDRecommendViewController.m */; };
 		0498E1F01F6911F9006D08BA /* TDShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1EF1F6911F9006D08BA /* TDShoppingViewController.m */; };
 		0498E1F31F69120E006D08BA /* TDDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E1F21F69120E006D08BA /* TDDownViewController.m */; };
@@ -366,6 +367,8 @@
 		049041C11F4C36A1006C1601 /* view_bg_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_bg_image.png; sourceTree = "<group>"; };
 		04910ED61F2F00D500F963EC /* TDBaseRequestApI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBaseRequestApI.h; sourceTree = "<group>"; };
 		04910ED71F2F00D500F963EC /* TDBaseRequestApI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBaseRequestApI.m; sourceTree = "<group>"; };
+		04930CD31F7CD5D9005674FA /* TDRunningTrackDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDRunningTrackDataView.h; sourceTree = "<group>"; };
+		04930CD41F7CD5D9005674FA /* TDRunningTrackDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDRunningTrackDataView.m; sourceTree = "<group>"; };
 		0498E1EB1F6911DC006D08BA /* TDRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDRecommendViewController.h; sourceTree = "<group>"; };
 		0498E1EC1F6911DC006D08BA /* TDRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRecommendViewController.m; sourceTree = "<group>"; };
 		0498E1EE1F6911F9006D08BA /* TDShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDShoppingViewController.h; sourceTree = "<group>"; };
@@ -1728,6 +1731,8 @@
 		0498E1FB1F69221F006D08BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04930CD31F7CD5D9005674FA /* TDRunningTrackDataView.h */,
+				04930CD41F7CD5D9005674FA /* TDRunningTrackDataView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2158,6 +2163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04930CD51F7CD5D9005674FA /* TDRunningTrackDataView.m in Sources */,
 				04D989841F66159F00A0630D /* TDPublishViewController.m in Sources */,
 				0498E2051F6922D0006D08BA /* TDRunningTrackViewController.m in Sources */,
 				046C583E1F4AC7C10058364B /* PinyinHelper.m in Sources */,
