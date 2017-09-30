@@ -19,7 +19,6 @@
 @property(nonatomic, weak)UIButton *continueButton; //继续 / 暂停按钮
 @property(nonatomic, weak)UIButton *endButton; //结束
 @property(nonatomic, strong)UIBezierPath *currentPath; //当前的贝塞尔曲线
-
 @end
 
 @implementation TDRunningTrackDataView
