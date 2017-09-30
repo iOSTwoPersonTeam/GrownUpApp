@@ -15,7 +15,7 @@
 @property(nonatomic, weak)UILabel *calorieLabel; //卡路里(热量)
 @property(nonatomic, weak)UILabel *speedLabel; //速度
 @property(nonatomic, weak)UILabel *stepNumberlabel; //步数
-@property(nonatomic, weak)UIButton *continueButton; //继续
+@property(nonatomic, weak)UIButton *continueButton; //继续 / 暂停按钮
 @property(nonatomic, weak)UIButton *endButton; //结束
 @property(nonatomic, strong)UIBezierPath *currentPath; //当前的贝塞尔曲线
 
@@ -181,8 +181,45 @@
         [continueButton setTitle:@"继续" forState:UIControlStateNormal];
         continueButton.titleLabel.font =[UIFont systemFontOfSize:18 weight:0.6];
         [self addSubview:continueButton];
+        [self bringSubviewToFront:continueButton];
         continueButton.backgroundColor =[UIColor redColor];
-        _continueButton =continueButton;
+         _continueButton =continueButton;
+        [continueButton addGesture_TapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            
+            [UIView animateWithDuration:0.4 animations:^{
+                
+                //获得该相应手势，被添加到哪个View
+                UIButton *button= (UIButton *)gestureRecoginzer.view;
+                if ([button.currentTitle isEqualToString:@"继续"]) {
+                    CGRect frame =button.frame;
+                    frame.origin.x =SCREEN_WIDTH/2-40;
+                    button.frame =frame;
+                    [button setTitle:@"暂停" forState:UIControlStateNormal];
+                    
+                    CGRect endframe =_endButton.frame;
+                    endframe.origin.x =SCREEN_WIDTH/2-40;
+                    _endButton.frame =endframe;
+                    
+                } else{
+                    
+                    CGRect frame =button.frame;
+                    frame.origin.x =SCREEN_WIDTH/2 -SCREEN_WIDTH/5 -50;
+                    button.frame =frame;
+                    [button setTitle:@"继续" forState:UIControlStateNormal];
+                    
+                    CGRect endframe =_endButton.frame;
+                    endframe.origin.x =SCREEN_WIDTH/2 +SCREEN_WIDTH/5 -50;
+                    _endButton.frame =endframe;
+                    
+                }
+
+                
+                if (self.clickButtonBlock) {
+                    self.clickButtonBlock(button.currentTitle);
+                }
+            }];
+
+        }];
     }
     return _continueButton;
 }
@@ -197,7 +234,15 @@
         [endButton setTitle:@"结束" forState:UIControlStateNormal];
         endButton.titleLabel.font =[UIFont systemFontOfSize:18 weight:0.6];
         [self addSubview:endButton];
+        [self sendSubviewToBack:endButton];
         _endButton =endButton;
+        [endButton addGesture_LongPressActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            //获得该相应手势，被添加到哪个View
+            UIButton *button= (UIButton *)gestureRecoginzer.view;
+            if (self.clickButtonBlock) {
+                self.clickButtonBlock(button.currentTitle);
+            }
+        }];
     }
     return _endButton;
 }
