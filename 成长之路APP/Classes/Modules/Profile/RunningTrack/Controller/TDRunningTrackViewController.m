@@ -332,6 +332,10 @@
         _runTrackdataView.clickIntoMapBlock = ^{
             [unself clickIntoRunMap];
         };
+        _runTrackdataView.clickButtonBlock = ^(NSString *title) {
+          
+            NSLog(@"%@",title);
+        };
         NSDictionary *dic =[NSDictionary dictionary];
         _runTrackdataView.modelDic =dic;
     }

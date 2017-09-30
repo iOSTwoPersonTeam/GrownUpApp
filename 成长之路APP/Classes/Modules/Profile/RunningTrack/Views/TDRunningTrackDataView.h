@@ -10,8 +10,9 @@
 
 @interface TDRunningTrackDataView : UIView
 
-@property(nonatomic, copy) void (^clickIntoMapBlock)(); //点击事件
-@property(nonatomic, copy)NSDictionary *modelDic; //模型字典
+@property(nonatomic, copy) void (^clickIntoMapBlock)(); //点击地图事件
+@property(nonatomic, copy) void (^clickButtonBlock)(NSString *title); //按钮点击事件
 
+@property(nonatomic, copy)NSDictionary *modelDic; //模型字典
 
 @end
