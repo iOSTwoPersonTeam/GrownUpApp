@@ -8,10 +8,11 @@
 
 #import "TDRunningTrackDataView.h"
 
-@interface TDRunningTrackDataView ()
+@interface TDRunningTrackDataView ()<MZTimerLabelDelegate>
 
 @property(nonatomic, weak)UILabel *distanceLabel; //距离
 @property(nonatomic, weak)UILabel *timeLabel; //时间
+@property(nonatomic, strong)MZTimerLabel *timerFormatLabel; //计时器
 @property(nonatomic, weak)UILabel *calorieLabel; //卡路里(热量)
 @property(nonatomic, weak)UILabel *speedLabel; //速度
 @property(nonatomic, weak)UILabel *stepNumberlabel; //步数
@@ -27,10 +28,10 @@
 {
     _modelDic =modelDic;
     self.distanceLabel.text =@"12.56";
-    self.timeLabel.text =@"00:58:20";
     self.calorieLabel.text =@"16.49";
     self.speedLabel.text =@"17.38";
     self.stepNumberlabel.text =@"1234400";
+    [self.timerFormatLabel start];
 }
 
 #pragma mark -----布局---
@@ -84,6 +85,7 @@
 }
 
 #pragma mark --private--
+//触摸点击地图区域
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
@@ -97,7 +99,55 @@
         }
     }
 }
+//按钮点击事件----
+-(void)changeContinueAndEndButton:(UIButton *)button
+{
+    [UIView animateWithDuration:0.4 animations:^{
+        
+        if ([button.currentTitle isEqualToString:@"继续"]) {
+            CGRect frame =button.frame;
+            frame.origin.x =SCREEN_WIDTH/2-40;
+            button.frame =frame;
+            [button setTitle:@"暂停" forState:UIControlStateNormal];
+            
+            CGRect endframe =_endButton.frame;
+            endframe.origin.x =SCREEN_WIDTH/2-40;
+            _endButton.frame =endframe;
+            
+        } else{
+            
+            CGRect frame =button.frame;
+            frame.origin.x =SCREEN_WIDTH/2 -SCREEN_WIDTH/5 -50;
+            button.frame =frame;
+            [button setTitle:@"继续" forState:UIControlStateNormal];
+            
+            CGRect endframe =_endButton.frame;
+            endframe.origin.x =SCREEN_WIDTH/2 +SCREEN_WIDTH/5 -50;
+            _endButton.frame =endframe;
+        }
+    }];
+}
 
+#pragma mark --Delagate---
+- (NSString*)timerLabel:(MZTimerLabel *)timerLabel customTextToDisplayAtTime:(NSTimeInterval)time
+{
+    if([timerLabel isEqual:_timerFormatLabel]){
+        int second = (int)time  % 60;
+        int minute = ((int)time / 60) % 60;
+        int hours = time / 3600;
+        int day;
+        if (hours>24) {
+            day=hours/24;
+        }else
+        {
+            day=0;
+        }
+        hours=hours-24*day;
+        return [NSString stringWithFormat:@"%02d:%02d:%02d ",hours,minute,second];
+    }
+    else
+        return nil;
+}
 
 
 
@@ -122,12 +172,21 @@
         UILabel *timeLabel =[[UILabel alloc] init];
         timeLabel.textColor =[UIColor whiteColor];
         timeLabel.textAlignment =NSTextAlignmentCenter;
-        timeLabel.font =[UIFont systemFontOfSize:45 weight:0.3];
-        timeLabel.backgroundColor =[UIColor redColor];
+        timeLabel.font =[UIFont systemFontOfSize:55 weight:0.1];
+        timeLabel.backgroundColor =[UIColor clearColor];
         [self addSubview:timeLabel];
         _timeLabel =timeLabel;
     }
     return _timeLabel;
+}
+
+- (MZTimerLabel *)timerFormatLabel
+{
+    if (!_timerFormatLabel) {
+        _timerFormatLabel = [[MZTimerLabel alloc] initWithLabel:self.timeLabel andTimerType:MZTimerLabelTypeStopWatch];
+        _timerFormatLabel.delegate = self;
+    }
+    return _timerFormatLabel;
 }
 
 -(UILabel *)calorieLabel
@@ -182,43 +241,18 @@
         continueButton.titleLabel.font =[UIFont systemFontOfSize:18 weight:0.6];
         [self addSubview:continueButton];
         [self bringSubviewToFront:continueButton];
-        continueButton.backgroundColor =[UIColor redColor];
+        continueButton.backgroundColor =RGBA(37, 200, 140, 1.0);
          _continueButton =continueButton;
+        __weak typeof(self) unself =self;
         [continueButton addGesture_TapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            
-            [UIView animateWithDuration:0.4 animations:^{
-                
                 //获得该相应手势，被添加到哪个View
-                UIButton *button= (UIButton *)gestureRecoginzer.view;
-                if ([button.currentTitle isEqualToString:@"继续"]) {
-                    CGRect frame =button.frame;
-                    frame.origin.x =SCREEN_WIDTH/2-40;
-                    button.frame =frame;
-                    [button setTitle:@"暂停" forState:UIControlStateNormal];
-                    
-                    CGRect endframe =_endButton.frame;
-                    endframe.origin.x =SCREEN_WIDTH/2-40;
-                    _endButton.frame =endframe;
-                    
-                } else{
-                    
-                    CGRect frame =button.frame;
-                    frame.origin.x =SCREEN_WIDTH/2 -SCREEN_WIDTH/5 -50;
-                    button.frame =frame;
-                    [button setTitle:@"继续" forState:UIControlStateNormal];
-                    
-                    CGRect endframe =_endButton.frame;
-                    endframe.origin.x =SCREEN_WIDTH/2 +SCREEN_WIDTH/5 -50;
-                    _endButton.frame =endframe;
-                    
-                }
-
-                
-                if (self.clickButtonBlock) {
-                    self.clickButtonBlock(button.currentTitle);
-                }
-            }];
-
+            UIButton *button= (UIButton *)gestureRecoginzer.view;
+            [unself changeContinueAndEndButton:button];
+            
+            if (unself.clickButtonBlock) {
+                unself.clickButtonBlock(button.currentTitle);
+            }
+            
         }];
     }
     return _continueButton;
@@ -236,11 +270,12 @@
         [self addSubview:endButton];
         [self sendSubviewToBack:endButton];
         _endButton =endButton;
+        __weak typeof(self) unself =self;
         [endButton addGesture_LongPressActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
             //获得该相应手势，被添加到哪个View
             UIButton *button= (UIButton *)gestureRecoginzer.view;
-            if (self.clickButtonBlock) {
-                self.clickButtonBlock(button.currentTitle);
+            if (unself.clickButtonBlock) {
+                unself.clickButtonBlock(button.currentTitle);
             }
         }];
     }
@@ -273,7 +308,7 @@
     UIColor *strokeColor = [UIColor clearColor];
     [strokeColor set];
     [aPath stroke];//设置线条颜色
-    UIColor *fillColor = [UIColor colorWithWhite:0.05 alpha:0.95];
+    UIColor *fillColor = [UIColor colorWithWhite:0.1 alpha:0.85];
     [fillColor set];
     [aPath fill];//填充
     
