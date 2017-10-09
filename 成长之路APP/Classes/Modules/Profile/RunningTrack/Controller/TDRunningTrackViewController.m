@@ -22,6 +22,12 @@
     CLLocation *currentLocation;
     //开始位置
     CLLocation *startLocation;
+    //运动总距离
+    CGFloat sumDistance;
+    //当前速度
+    CGFloat currentSpeed;
+    //目前继续暂停结束状态
+    NSInteger statusType; //0继续 1暂停 2结束
     
 }
 @property(nonatomic, strong)BMKMapView *mapView; //地图
@@ -90,12 +96,33 @@
     }];
 }
 
+//继续 暂停 结束按钮点击事件--
+-(void)clickContinueOrEndButton:(NSString *)title
+{
+    if ([title isEqualToString:@"继续"]) {  //继续
+        statusType =0;
+    } else if ([title isEqualToString:@"暂停"]){ //暂停
+        statusType =1;
+    } else{ //结束
+        statusType =2;
+    }
+    
+}
+
+
+
 //获取位置坐标数组
 - (void)operationForLocation:(BMKUserLocation *)userLocation
 {
+    if (statusType !=0) {  //暂停或结束不统计
+        
+        [self.mapView updateLocationData:userLocation];
+        return;
+    }
     // 1、检查移动的距离，移除不合理的点
+    CLLocationDistance distance = 0.0;
     if (locationPoint.count > 0) {
-        CLLocationDistance distance = [userLocation.location distanceFromLocation:currentLocation];
+        distance = [userLocation.location distanceFromLocation:currentLocation];
         if (distance < 5.0)
             return;
     }
@@ -120,6 +147,12 @@
     
     //7、实时更新用户位置
     [self.mapView updateLocationData:userLocation];
+    
+    //8.距离 速度以及步数的计算
+    // 累加步行距离
+    sumDistance += distance;
+    currentSpeed =userLocation.location.speed;
+    [self.runTrackdataView getDateWithDistance:[NSString stringWithFormat:@"%.2f",sumDistance / 1000.0] withSpeed:userLocation.location.speed withSpace:1000];
 }
 
 #pragma mark - 绘制轨迹
@@ -332,12 +365,17 @@
         _runTrackdataView.clickIntoMapBlock = ^{
             [unself clickIntoRunMap];
         };
+        
         _runTrackdataView.clickButtonBlock = ^(NSString *title) {
-          
             NSLog(@"%@",title);
+            [unself clickContinueOrEndButton:title];
         };
-        NSDictionary *dic =[NSDictionary dictionary];
-        _runTrackdataView.modelDic =dic;
+        self.runTrackdataView.clickEndButtonTimeBlock = ^(NSString *title, NSTimeInterval timeInterval) {
+            
+          NSLog(@"总距离:%@ ---时间:%.2f ----速度:%f---",[NSString stringWithFormat:@"%.2f",sumDistance / 1000.0],timeInterval,currentSpeed);
+            
+            [unself.navigationController popViewControllerAnimated:YES];
+        };
     }
     return _runTrackdataView;
 }

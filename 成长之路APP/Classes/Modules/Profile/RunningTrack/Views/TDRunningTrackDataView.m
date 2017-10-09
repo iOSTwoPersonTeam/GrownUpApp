@@ -23,14 +23,21 @@
 
 @implementation TDRunningTrackDataView
 
--(void)setModelDic:(NSDictionary *)modelDic
+-(void)getDateWithDistance:(NSString *)distance withSpeed:(CGFloat )speeds withSpace:(NSInteger )spaces
 {
-    _modelDic =modelDic;
-    self.distanceLabel.text =@"12.56";
-    self.calorieLabel.text =@"16.49";
-    self.speedLabel.text =@"17.38";
-    self.stepNumberlabel.text =@"1234400";
+    self.distanceLabel.text =[NSString stringWithFormat:@"%@公里",distance];
+    self.calorieLabel.text =[NSString stringWithFormat:@"%@大卡",@"16.49"];
+    self.speedLabel.text =[NSString stringWithFormat:@"%.2f速度",speeds>0 ?speeds :0.00];
+    self.stepNumberlabel.text =[NSString stringWithFormat:@"%ld步数",(long)spaces];
     [self.timerFormatLabel start];
+    
+    [UILabel changeLineForLabel:self.distanceLabel withLineIndex:self.distanceLabel.text.length -2 withTitleClolor:[UIColor redColor] withTitleFont:[UIFont systemFontOfSize:70 weight:0.4]];
+    [UILabel changeLineForLabel:self.calorieLabel withLineIndex:self.calorieLabel.text.length -2 withTitleClolor:[UIColor redColor] withTitleFont:[UIFont systemFontOfSize:27 weight:0.2]];
+    [UILabel changeLineForLabel:self.speedLabel withLineIndex:self.speedLabel.text.length -2 withTitleClolor:[UIColor redColor] withTitleFont:[UIFont systemFontOfSize:27 weight:0.2]];
+    [UILabel changeLineForLabel:self.stepNumberlabel withLineIndex:self.stepNumberlabel.text.length -2 withTitleClolor:[UIColor redColor] withTitleFont:[UIFont systemFontOfSize:27 weight:0.2]];
+    
+    [self updateConstraintsIfNeeded];
+    [self setNeedsUpdateConstraints];
 }
 
 #pragma mark -----布局---
@@ -39,20 +46,20 @@
     [super layoutSubviews];
     [self.distanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
-        make.top.equalTo(@60);
+        make.top.equalTo(@50);
         make.width.equalTo(@(SCREEN_WIDTH));
-        make.height.equalTo(@120);
+        make.height.equalTo(@160);
     }];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
-        make.top.equalTo(self.distanceLabel.mas_bottom).offset(40);
+        make.top.equalTo(self.distanceLabel.mas_bottom).offset(30);
         make.width.equalTo(self.distanceLabel.mas_width);
         make.height.equalTo(@80);
     }];
     [self.calorieLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX).offset(-SCREEN_WIDTH/4);
         make.top.equalTo(@(SCREEN_HEIGHT/2 +40));
-        make.width.equalTo(@80);
+        make.width.equalTo(@120);
         make.height.equalTo(@100);
     }];
     [self.speedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,6 +120,8 @@
             endframe.origin.x =SCREEN_WIDTH/2-40;
             _endButton.frame =endframe;
             
+            [self.timerFormatLabel pause];  //暂停计时
+            
         } else{
             
             CGRect frame =button.frame;
@@ -123,6 +132,8 @@
             CGRect endframe =_endButton.frame;
             endframe.origin.x =SCREEN_WIDTH/2 +SCREEN_WIDTH/5 -50;
             _endButton.frame =endframe;
+            
+            [self.timerFormatLabel start];  //继续计时
         }
     }];
 }
@@ -131,6 +142,9 @@
 - (NSString*)timerLabel:(MZTimerLabel *)timerLabel customTextToDisplayAtTime:(NSTimeInterval)time
 {
     if([timerLabel isEqual:_timerFormatLabel]){
+        
+        self.currentTime =time;
+        
         int second = (int)time  % 60;
         int minute = ((int)time / 60) % 60;
         int hours = time / 3600;
@@ -157,8 +171,7 @@
         UILabel *distanceLabel =[[UILabel alloc] init];
         distanceLabel.textColor =[UIColor whiteColor];
         distanceLabel.textAlignment =NSTextAlignmentCenter;
-        distanceLabel.font =[UIFont systemFontOfSize:70 weight:0.4];
-        distanceLabel.backgroundColor =[UIColor redColor];
+        distanceLabel.font =[UIFont systemFontOfSize:35 weight:0.05];
         [self addSubview:distanceLabel];
         _distanceLabel =distanceLabel;
     }
@@ -169,7 +182,7 @@
 {
     if (!_timeLabel) {
         UILabel *timeLabel =[[UILabel alloc] init];
-        timeLabel.textColor =[UIColor whiteColor];
+        timeLabel.textColor =[UIColor redColor];
         timeLabel.textAlignment =NSTextAlignmentCenter;
         timeLabel.font =[UIFont systemFontOfSize:55 weight:0.1];
         timeLabel.backgroundColor =[UIColor clearColor];
@@ -194,8 +207,7 @@
         UILabel *calorieLabel =[[UILabel alloc] init];
         calorieLabel.textColor =[UIColor whiteColor];
         calorieLabel.textAlignment =NSTextAlignmentCenter;
-        calorieLabel.font =[UIFont systemFontOfSize:18 weight:0.2];
-        calorieLabel.backgroundColor =[UIColor redColor];
+        calorieLabel.font =[UIFont systemFontOfSize:22 weight:0.1];
         [self addSubview:calorieLabel];
         _calorieLabel =calorieLabel;
     }
@@ -208,8 +220,7 @@
         UILabel *speedLabel =[[UILabel alloc] init];
         speedLabel.textColor =[UIColor whiteColor];
         speedLabel.textAlignment =NSTextAlignmentCenter;
-        speedLabel.font =[UIFont systemFontOfSize:18 weight:0.2];
-        speedLabel.backgroundColor =[UIColor redColor];
+        speedLabel.font =[UIFont systemFontOfSize:22 weight:0.1];
         [self addSubview:speedLabel];
         _speedLabel =speedLabel;
     }
@@ -222,8 +233,7 @@
         UILabel *stepNumberlabel =[[UILabel alloc] init];
         stepNumberlabel.textColor =[UIColor whiteColor];
         stepNumberlabel.textAlignment =NSTextAlignmentCenter;
-        stepNumberlabel.font =[UIFont systemFontOfSize:18 weight:0.2];
-        stepNumberlabel.backgroundColor =[UIColor redColor];
+        stepNumberlabel.font =[UIFont systemFontOfSize:22 weight:0.1];
         [self addSubview:stepNumberlabel];
         _stepNumberlabel =stepNumberlabel;
     }
@@ -270,11 +280,13 @@
         [self sendSubviewToBack:endButton];
         _endButton =endButton;
         __weak typeof(self) unself =self;
-        [endButton addGesture_LongPressActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+        [endButton addGesture_TapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
             //获得该相应手势，被添加到哪个View
             UIButton *button= (UIButton *)gestureRecoginzer.view;
-            if (unself.clickButtonBlock) {
-                unself.clickButtonBlock(button.currentTitle);
+            [unself.timerFormatLabel pause]; //结束计时
+            if (unself.clickEndButtonTimeBlock) {
+ 
+                unself.clickEndButtonTimeBlock(button.currentTitle, unself.currentTime);
             }
         }];
     }
