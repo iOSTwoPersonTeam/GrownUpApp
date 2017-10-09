@@ -11,8 +11,9 @@
 @interface TDRunningTrackDataView : UIView
 
 @property(nonatomic, copy) void (^clickIntoMapBlock)(); //点击地图事件
-@property(nonatomic, copy) void (^clickButtonBlock)(NSString *title); //按钮点击事件
+@property(nonatomic, copy) void (^clickButtonBlock)(NSString *title); //继续暂停按钮点击事件
+@property(nonatomic, copy) void(^clickEndButtonTimeBlock)(NSString *title ,NSTimeInterval timeInterval); //结束按钮
 
-@property(nonatomic, copy)NSDictionary *modelDic; //模型字典
+-(void)getDateWithDistance:(NSString *)distance withSpeed:(CGFloat )speeds withSpace:(NSInteger )spaces;
 
 @end

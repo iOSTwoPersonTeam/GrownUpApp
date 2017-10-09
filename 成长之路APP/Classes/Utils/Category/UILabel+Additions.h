@@ -26,6 +26,10 @@
  */
 + (void)changeSpaceForLabel:(UILabel *)label withLineSpace:(float)lineSpace WordSpace:(float)wordSpace;
 
+/**
+ * UIlabel换行同时修改字体颜色大小
+ */
++(void )changeLineForLabel:(UILabel *)label withLineIndex:(NSUInteger )index withTitleClolor:(UIColor *)titlecolor withTitleFont:(UIFont *)titleFont;
 
 
 @end
