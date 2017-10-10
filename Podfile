@@ -20,16 +20,16 @@ target '成长之路APP' do
     pod 'XHLaunchAd'             #开屏广告实现
     pod 'SDCycleScrollView'      #无限轮播图
     pod 'PYSearch'               #搜索控制器替代原生
-    pod 'AliPay'                 #支付宝支付SDK
+    pod 'AliPay' ,'2.1.2'        #支付宝支付SDK
     
    #ShareSDK分享
-   pod 'ShareSDK3'                                  # 主模块(必须)
-   pod 'MOBFoundation'                              # Mob 公共库(必须)
-   pod 'ShareSDK3/ShareSDKUI'                       # UI模块(非必须，需要用到ShareSDK提供的分享菜单栏和分享编辑页面需要以下1行)
-   pod 'ShareSDK3/ShareSDKPlatforms/QQ'             # 平台SDK模块-QQ
-   pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'      # 平台SDK模块-新浪微博
-   pod 'ShareSDK3/ShareSDKPlatforms/WeChat'         # 平台SDK模块-微信
-   pod 'ShareSDK3/ShareSDKPlatforms/Copy'           # 平台SDK模块-复制链接
+   pod 'ShareSDK3' ,'4.0.1'                                 # 主模块(必须)
+   pod 'MOBFoundation' ,'3.0.2'                             # Mob 公共库(必须)
+   pod 'ShareSDK3/ShareSDKUI' ,'4.0.1'                       # UI模块(非必须，需要用到ShareSDK提供的分享菜单栏和分享编辑页面需要以下1行)
+   pod 'ShareSDK3/ShareSDKPlatforms/QQ' ,'4.0.1'             # 平台SDK模块-QQ
+   pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo' ,'4.0.1'      # 平台SDK模块-新浪微博
+   pod 'ShareSDK3/ShareSDKPlatforms/WeChat' ,'4.0.1'        # 平台SDK模块-微信
+   pod 'ShareSDK3/ShareSDKPlatforms/Copy' ,'4.0.1'          # 平台SDK模块-复制链接
    
    
    
