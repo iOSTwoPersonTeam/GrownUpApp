@@ -350,6 +350,7 @@
         _backButton.layer.masksToBounds =YES;
         _backButton.layer.cornerRadius =CGRectGetHeight(_backButton.frame)/2;
         [_backButton addTarget:self action:@selector(clickBack) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return _backButton;
 }
