@@ -1,6 +1,6 @@
 ![](Logo/header.png)
 
-### 开屏广告解决方案---支持静态/动态图片广告/mp4视频广告
+### 开屏广告、启动广告解决方案-支持静态/动态图片广告/mp4视频广告
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg?maxAge=2592000)](https://github.com/CoderZhuXH/XHLaunchAd)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/CoderZhuXH/XHLaunchAd)
@@ -22,13 +22,16 @@
 * 9.自带图片/视频下载,缓存功能.
 * 10.支持预缓存图片及视频.
 * 11.支持设置完成动画.
-* 12.等等等...
+* 12.支持清除指定资源缓存.
+* 13.等等等...
 
-### 技术交流群(群号:537476189).
+### 技术交流群(群号:537476189)
 
 ### 更新记录:  
 
-*   2017.09.18 -- v3.6.0 -->1.优化图片解码方案,2.支持设置GIF动图是否循环播放
+*   2017.10.09 -- v3.7.0 -->1.增加几种清除缓存的接口,2.增加几种倒计时按钮类型,3.已知问题优化与修复...
+*   2017.09.29 -- v3.6.1 -->1.增加清除指定图片/视频缓存接口,2.优化在iPhoneX上显示效果,3.已知问题优化与修复...
+*   2017.09.18 -- v3.6.0 -->1.优化图片解码方案,2.支持设置GIF动图是否循环播放...
 *   2017.09.13 -- v3.5.8 -->增加几种显示完成的动画...
 *   2017.08.20 -- v3.5.6 -->已知问题修复及内存优化...
 *   2017.05.26 -- v3.5.4 -->修复横屏启动造成的界面问题...
@@ -64,8 +67,8 @@
 ### 1.设置App启动页为LaunchImage,设置方法可百度、谷歌 ,或[戳这里>>>](https://github.com/CoderZhuXH/XHLaunchAd/blob/master/LaunchImageSet/LaunchImageSet.md)
 ### 2.在AppDelegate中导入XHLaunchAd.h 头文件,在didFinishLaunchingWithOptions:方法中添加下面代码
 
-### -2.1 添加图片开屏广告
-#### -- 2.1.1 使用默认配置快速初始化
+### -2.1 添加图片开屏广告-使用本地数据
+#### -2.1.1 使用默认配置快速初始化
 ```objc
 //1.使用默认配置初始化
     XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
@@ -76,7 +79,8 @@
     //显示图片开屏广告
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
 ```
-#### -- 2.1.2自定义配置初始化
+#### -2.1.2自定义配置初始化
+
 ```objc
 //2.自定义配置初始化
     XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration new];
@@ -86,6 +90,8 @@
     imageAdconfiguration.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-150);
     //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
     imageAdconfiguration.imageNameOrURLString = @"image0.jpg";
+    //设置GIF动图是否只循环播放一次(仅对动图设置有效)
+    imageAdconfiguration.GIFImageCycleOnce = NO;
     //网络图片缓存机制(只对网络图片有效)
     imageAdconfiguration.imageOption = XHLaunchAdImageRefreshCached;
     //图片填充模式
@@ -108,11 +114,99 @@
     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self]; 
     
 ```
-### -2.2添加视频开屏广告
-#### --2.2.1 使用默认配置快速初始化
+### -2.2 添加图片开屏广告-使用网络数据
+#### -2.2.1 使用默认配置快速初始化
+
+```objc
+	//1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
+    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
+    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
+    
+    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
+    [XHLaunchAd setWaitDataDuration:3];
+    
+    //广告数据请求
+    [Network getLaunchAdImageDataSuccess:^(NSDictionary * response) {
+        
+        NSLog(@"广告数据 = %@",response);
+        
+        //广告数据转模型
+        LaunchAdModel *model = [[LaunchAdModel alloc] initWithDict:response[@"data"]];
+        //配置广告数据
+        XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration defaultConfiguration];
+        //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+        imageAdconfiguration.imageNameOrURLString = model.content;
+        //广告点击打开链接
+        imageAdconfiguration.openURLString = model.openUrl;
+        //显示开屏广告
+        [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
+        
+    } failure:^(NSError *error) {
+    }];
+
+
+```
+#### -2.2.2 自定义配置初始化
+
 ```objc
 
-//1.使用默认配置初始化
+ 	//1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
+    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
+    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
+    
+    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
+    [XHLaunchAd setWaitDataDuration:3];
+    
+    //广告数据请求
+    [Network getLaunchAdImageDataSuccess:^(NSDictionary * response) {
+        
+        NSLog(@"广告数据 = %@",response);
+        
+        //广告数据转模型
+        LaunchAdModel *model = [[LaunchAdModel alloc] initWithDict:response[@"data"]];
+        //配置广告数据
+        XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration new];
+        //广告停留时间
+        imageAdconfiguration.duration = model.duration;
+        //广告frame
+        imageAdconfiguration.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width/model.width*model.height);
+        //广告图片URLString/或本地图片名(.jpg/.gif请带上后缀)
+        imageAdconfiguration.imageNameOrURLString = model.content;
+        //设置GIF动图是否只循环播放一次(仅对动图设置有效)
+        imageAdconfiguration.GIFImageCycleOnce = NO;
+        //缓存机制(仅对网络图片有效)
+        //为告展示效果更好,可设置为XHLaunchAdImageCacheInBackground,先缓存,下次显示
+        imageAdconfiguration.imageOption = XHLaunchAdImageDefault;
+        //图片填充模式
+        imageAdconfiguration.contentMode = UIViewContentModeScaleToFill;
+        //广告点击打开链接
+        imageAdconfiguration.openURLString = model.openUrl;
+        //广告显示完成动画
+        imageAdconfiguration.showFinishAnimate =ShowFinishAnimateLite;
+        //广告显示完成动画时间
+        imageAdconfiguration.showFinishAnimateTime = 0.8;
+        //跳过按钮类型
+        imageAdconfiguration.skipButtonType = SkipTypeTimeText;
+        //后台返回时,是否显示广告
+        imageAdconfiguration.showEnterForeground = NO;
+
+         //设置要添加的自定义视图(可选)
+         //imageAdconfiguration.subViews = ...
+ 
+        //显示开屏广告
+        [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
+        
+    } failure:^(NSError *error) {
+    }];
+
+```
+
+### -2.3添加视频开屏广告-使用本地数据
+#### -2.3.1 使用默认配置快速初始化
+
+```objc
+
+	//1.使用默认配置初始化
     XHLaunchVideoAdConfiguration *videoAdconfiguration = [XHLaunchVideoAdConfiguration defaultConfiguration];
     //广告视频URLString/或本地视频名(请带上后缀)
     videoAdconfiguration.videoNameOrURLString = @"video0.mp4";
@@ -122,9 +216,10 @@
     [XHLaunchAd videoAdWithVideoAdConfiguration:videoAdconfiguration delegate:self];
 ```
 
-#### --2.2.2 自定义配置初始化
+#### -2.3.2 自定义配置初始化
+
 ```objc   
-//2.自定义配置
+	//2.自定义配置
     XHLaunchVideoAdConfiguration *videoAdconfiguration = [XHLaunchVideoAdConfiguration new];
     //广告停留时间
     videoAdconfiguration.duration = 5;
@@ -132,8 +227,6 @@
     videoAdconfiguration.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     //广告视频URLString/或本地视频名(请带上后缀)
     videoAdconfiguration.videoNameOrURLString = @"video1.mp4";
-    //URL
-    //videoAdconfiguration.videoNameOrURLString = videoURL;
     //视频填充模式
     videoAdconfiguration.scalingMode = MPMovieScalingModeAspectFill;
     //广告点击打开链接
@@ -154,36 +247,91 @@
     [XHLaunchAd videoAdWithVideoAdConfiguration:videoAdconfiguration delegate:self];
     
 ```
-### 注意:
-#### 若你需要请求广告数据,来初始化开屏广告请看这里
->若你的广告图片/视频URL来源于数据请求,请在请求数据前设置等待时间,在数据请求成功回调里配置广告,如下:
+### -2.4添加视频开屏广告-使用网络数据
+#### -2.4.1 使用默认配置快速初始化
 
 ```objc
 
-//1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
-//2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示启动广告
-//3.数据获取成功,配置广告数据后,自动结束等待,显示广告
-
-	 //请求广告URL前,必须设置,否则会先进入window的RootVC
-	 //设置数据等待时间
+  //1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
+    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
+    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
+    
+    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
     [XHLaunchAd setWaitDataDuration:3];
     
     //广告数据请求
-    [Network getLaunchAdImageDataSuccess:^(NSDictionary * response) {
+    [Network getLaunchAdVideoDataSuccess:^(NSDictionary * response) {
         
-      //在此处利用服务器返回的广告数据,按上面示例添加开屏广告代码
-      XHLaunchImageAdConfiguration *imageAdconfiguration = [XHLaunchImageAdConfiguration ... 
-
-     //按照上面示例配置相关参数.... 
-
-     //显示开屏广告
-     [XHLaunchAd imageAdWithImageAdConfiguration:imageAdconfiguration delegate:self];
-              
+        NSLog(@"广告数据 = %@",response);
+        
+        //广告数据转模型
+        LaunchAdModel *model = [[LaunchAdModel alloc] initWithDict:response[@"data"]];
+        
+        //配置广告数据
+        XHLaunchVideoAdConfiguration *videoAdconfiguration = [XHLaunchVideoAdConfiguration defaultConfiguration];
+        //注意:视频广告只支持先缓存,下次显示(看效果请二次运行)
+        videoAdconfiguration.videoNameOrURLString = model.content;
+        //广告点击打开链接
+        videoAdconfiguration.openURLString = model.openUrl;
+        [XHLaunchAd videoAdWithVideoAdConfiguration:videoAdconfiguration delegate:self];
+        
     } failure:^(NSError *error) {
-    }];   
-    
-   
+    }];
+
+
 ```
+#### -2.4.2 自定义配置初始化
+
+```objc
+
+ 	//1.因为数据请求是异步的,请在数据请求前,调用下面方法配置数据等待时间.
+    //2.设为3即表示:启动页将停留3s等待服务器返回广告数据,3s内等到广告数据,将正常显示广告,否则将不显示
+    //3.数据获取成功,配置广告数据后,自动结束等待,显示广告
+    
+    //注意:请求广告数据前,必须设置此属性,否则会先进入window的的根控制器
+    [XHLaunchAd setWaitDataDuration:3];
+    
+    //广告数据请求
+    [Network getLaunchAdVideoDataSuccess:^(NSDictionary * response) {
+        
+        NSLog(@"广告数据 = %@",response);
+        
+        //广告数据转模型
+        LaunchAdModel *model = [[LaunchAdModel alloc] initWithDict:response[@"data"]];
+        
+        //配置广告数据
+        XHLaunchVideoAdConfiguration *videoAdconfiguration = [XHLaunchVideoAdConfiguration new];
+        //广告停留时间
+        videoAdconfiguration.duration = model.duration;
+        //广告frame
+        videoAdconfiguration.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width/model.width*model.height);
+        //广告视频URLString/或本地视频名(请带上后缀)
+        //注意:视频广告只支持先缓存,下次显示(看效果请二次运行)
+        videoAdconfiguration.videoNameOrURLString = model.content;
+        //视频缩放模式
+        videoAdconfiguration.scalingMode = MPMovieScalingModeAspectFill;
+        //广告点击打开链接
+        videoAdconfiguration.openURLString = model.openUrl;
+        //广告显示完成动画
+        videoAdconfiguration.showFinishAnimate =ShowFinishAnimateFadein;
+        //广告显示完成动画时间
+        videoAdconfiguration.showFinishAnimateTime = 0.8;
+        //后台返回时,是否显示广告
+        videoAdconfiguration.showEnterForeground = NO;
+        //跳过按钮类型
+        videoAdconfiguration.skipButtonType = SkipTypeTimeText;
+
+        //设置要添加的自定义视图(可选)
+        //videoAdconfiguration.subViews = ...
+
+        [XHLaunchAd videoAdWithVideoAdConfiguration:videoAdconfiguration delegate:self];
+        
+    } failure:^(NSError *error) {
+    }];
+
+
+```
+
 ### 3.点击事件
 ```objc
 /**
@@ -238,6 +386,7 @@ configuration.customSkipView = [self customSkipView];
     [button setTitle:[NSString stringWithFormat:@"自定义%lds",duration] forState:UIControlStateNormal];
 }
 ```
+
 ### 5.预缓存接口(如果你需要提前下载并缓存广告图片或视频 请调用下面方法)
 ```objc
 /**
@@ -338,9 +487,37 @@ configuration.customSkipView = [self customSkipView];
 ```objc
 
 /**
- *  清除XHLaunch本地缓存
+ *  清除XHLaunch本地所有缓存
  */
 +(void)clearDiskCache;
+
+/**
+ 清除指定Url的图片本地缓存(异步)
+
+ @param imageUrlArray 需要清除缓存的图片Url数组
+ */
++(void)clearDiskCacheWithImageUrlArray:(NSArray<NSURL *> *)imageUrlArray;
+
+/**
+ 清除指定Url除外的图片本地缓存(异步)
+ 
+ @param exceptImageUrlArray 不需要清除缓存的图片Url数组,此url数组的图片缓存将被保留
+ */
++(void)clearDiskCacheExceptImageUrlArray:(NSArray<NSURL *> *)exceptImageUrlArray;
+
+/**
+ 清除指定Url的视频本地缓存(异步)
+
+ @param videoUrlArray 需要清除缓存的视频url数组
+ */
++(void)clearDiskCacheWithVideoUrlArray:(NSArray<NSURL *> *)videoUrlArray;
+
+/**
+ 清除指定Url除外的视频本地缓存(异步)
+ 
+ @param exceptVideoUrlArray 不需要清除缓存的视频Url数组,此url数组的视频缓存将被保留
+ */
++(void)clearDiskCacheExceptVideoUrlArray:(NSArray<NSURL *> *)exceptVideoUrlArray;
 
 /**
  *  获取XHLaunch本地缓存大小(M)
@@ -353,8 +530,9 @@ configuration.customSkipView = [self customSkipView];
 +(NSString *)xhLaunchAdCachePath;
 
 ```
+
 ##  依赖
-*   1.本库依赖FLAnimatedImage
+####    1.本库依赖于:FLAnimatedImage
 
 ##  安装
 ### 1.手动添加:<br>
