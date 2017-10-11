@@ -373,13 +373,13 @@ static TDBaseRequestApI *_manager =nil;
     switch (status) { case AFNetworkReachabilityStatusReachableViaWiFi:
             NSLog(@"wifi---无线网络");
             // 弹框提示的内容
-            hud.label.text = @"WiFi在线";
+            hud.labelText = @"WiFi在线";
             break;
         case AFNetworkReachabilityStatusReachableViaWWAN: NSLog(@"3G|4G --手机流量");
-            hud.label.text = @"2G/3G/4G";
+            hud.labelText = @"2G/3G/4G";
             break;
         case AFNetworkReachabilityStatusNotReachable: NSLog(@"没有网络");
-            hud.label.text = @"世界上最遥远的距离就是没网";
+            hud.labelText = @"世界上最遥远的距离就是没网";
             break;
         case AFNetworkReachabilityStatusUnknown:
             NSLog(@"未知");
