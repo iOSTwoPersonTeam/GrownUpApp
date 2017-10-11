@@ -50,6 +50,12 @@
  */
 -(void)WXRegisterAPP;
 
+/*
+ *  环信基本配置
+ */
+-(void)setEaseChatBaseInforamtion;
+
+
 
 @end
 

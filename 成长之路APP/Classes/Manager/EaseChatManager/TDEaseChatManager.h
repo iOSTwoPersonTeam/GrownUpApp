@@ -10,4 +10,24 @@
 
 @interface TDEaseChatManager : NSObject
 
+/*
+ * TDEaseChatmanager 单例
+ */
++(id)shareManager;
+
+/*
+ * 注册环信
+ */
+-(void)registerEaseChat;
+
+/*
+ * 环信进入后台
+ */
+- (void)easeClientDidEnterBackground:(UIApplication *)application;
+
+/*
+ *  环信将要从后台返回
+ */
+- (void)easeClientWillEnterForeground:(UIApplication *)application;
+
 @end

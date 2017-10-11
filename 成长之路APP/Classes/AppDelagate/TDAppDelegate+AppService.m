@@ -98,6 +98,7 @@
     }
 }
 
+
 #pragma mark ---微信调用注册
 -(void)WXRegisterAPP
 {
@@ -110,6 +111,26 @@
 //    [TDUnifyPayManager wechatRegisterAppWithAppId:TD_WeiChat_AppID enableMTA:YES];
     
 }
+
+#pragma mark ---环信SDK基本信息
+-(void)setEaseChatBaseInforamtion
+{
+    //封装单例注册
+    [[TDEaseChatManager shareManager] registerEaseChat];
+}
+// APP进入后台
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    //环信进入后台
+    [[TDEaseChatManager shareManager] easeClientDidEnterBackground:application];
+}
+// APP将要从后台返回
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    //环信将要返回前台
+     [[TDEaseChatManager shareManager] easeClientWillEnterForeground:application];
+}
+
 
 #pragma mark - 微信支付回调-----
 //前面的两个方法被iOS9弃用了，如果是Xcode7.2网上的话会出现无法进入进入微信的onResp回调方法，就是这个原因。本来我是不想写着两个旧方法的，但是一看官方的demo上写的这两个，我就也写了。。。。

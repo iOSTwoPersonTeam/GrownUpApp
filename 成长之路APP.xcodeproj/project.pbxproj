@@ -351,6 +351,7 @@
 		0485A4D01F41952800C2FA63 /* TDUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUserInfo.h; sourceTree = "<group>"; };
 		0485A4D11F41952800C2FA63 /* TDUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUserInfo.m; sourceTree = "<group>"; };
 		0485A4D31F41A62800C2FA63 /* ThirdMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdMacros.h; sourceTree = "<group>"; };
+		0489FC3F1F8E245800F286DB /* TDEaseChatConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDEaseChatConfig.h; sourceTree = "<group>"; };
 		049041AB1F4C1012006C1601 /* TDAppIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAppIntroductionViewController.h; sourceTree = "<group>"; };
 		049041AC1F4C1012006C1601 /* TDAppIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAppIntroductionViewController.m; sourceTree = "<group>"; };
 		049041AF1F4C35B6006C1601 /* DHGifImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGifImageOperation.h; sourceTree = "<group>"; };
@@ -542,6 +543,7 @@
 		041872EB1F8E1F2500DBD228 /* EaseChatManager */ = {
 			isa = PBXGroup;
 			children = (
+				0489FC3F1F8E245800F286DB /* TDEaseChatConfig.h */,
 				041872EC1F8E1FC500DBD228 /* TDEaseChatManager.h */,
 				041872ED1F8E1FC500DBD228 /* TDEaseChatManager.m */,
 			);
