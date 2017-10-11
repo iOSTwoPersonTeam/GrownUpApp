@@ -28,7 +28,6 @@
     CGFloat currentSpeed;
     //目前继续暂停结束状态
     NSInteger statusType; //0继续 1暂停 2结束
-    
 }
 @property(nonatomic, strong)BMKMapView *mapView; //地图
 @property(nonatomic, strong)UIButton *locationButton; //定位按钮
