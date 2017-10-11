@@ -54,6 +54,9 @@
 //支付宝支付SDK
 #import <AlipaySDK/AlipaySDK.h>
 
+//环信相关
+#import <Hyphenate/Hyphenate.h>   //环信SDK
+#import <EaseUI.h>                //EaseUI
 
 
 //全局宏
