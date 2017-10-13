@@ -17,21 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    //环信ID:@"8001"
+    //聊天类型:EMConversationTypeChat
+//    EaseMessageViewController *chatController = [[EaseMessageViewController alloc] initWithConversationChatter:testAccount conversationType:EMConversationTypeChat];
+//    [self.navigationController pushViewController:chatController animated:YES];
+    
+    TDEaseChatViewController *chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:testAccount conversationType:EMConversationTypeChat];
+    [self.navigationController pushViewController:chatController animated:YES];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

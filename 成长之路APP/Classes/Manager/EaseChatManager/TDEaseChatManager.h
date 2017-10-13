@@ -30,4 +30,24 @@
  */
 - (void)easeClientWillEnterForeground:(UIApplication *)application;
 
+/*
+ *  环信登录
+ */
+-(void)logInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error;
+
+/*
+ *  退出环信
+ */
+-(void)logOutEaseChatWithSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure;
+
+
+
+
+
+
+
+
+
+
+
 @end

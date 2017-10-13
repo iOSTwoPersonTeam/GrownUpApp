@@ -36,6 +36,7 @@
     [self setBaiDuMapBaseInformation]; //百度地图基本配置
 //    [self addAppIntroduction]; //添加引导页 首次安装之后显示广告页面
     [self WXRegisterAPP];       //向微信终端程序注册第三方应用
+    [self setEaseChatBaseInforamtion]; //环信基本配置
     return YES;
 }
 

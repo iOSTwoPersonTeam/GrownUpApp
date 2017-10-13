@@ -97,16 +97,18 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"动态",@"圈子",@"消息"];
+        _themeArray =@[@"消息",@"联系人",@"朋友圈"];
     }
     return _themeArray;
 }
 -(NSArray *)childViewControllers
 {
     if (!_childViewControllers) {
-        _childViewControllers =@[[[TDActivityStatusViewController alloc]init],
+        _childViewControllers =@[
+                                 [[TDMessageViewController alloc]init],
                                  [[TDFriendStatusViewController alloc]init],
-                                 [[TDMessageViewController alloc]init]
+                                 [[TDActivityStatusViewController alloc]init]
+  
                                  ];
     }
     return _childViewControllers;

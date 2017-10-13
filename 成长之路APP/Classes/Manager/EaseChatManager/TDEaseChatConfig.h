@@ -10,12 +10,20 @@
 #define TDEaseChatConfig_h
 
 #import "TDEaseChatManager.h"
+#import "TDEaseChatViewController.h"
 
+#define TDEaseChatAppKey     @"tidoo#ts"   //环信注册的AppKey 
 
-#define TDEaseChatAppKey     @"douser#istore"   //环信注册的AppKey
-#define TDEaseChatApnsCertName  @"istore_dev"   //apnsCertName:推送证书名
+#if DEBUG
+#define TDEaseChatApnsCertName  @"tidoo"   //apnsCertName:推送证书名 测试
+#else
+#define TDEaseChatApnsCertName  @"tidoo_des"   //apnsCertName:推送证书名 正式
+#endif
 
-
+//测试账号和密码
+#define testAccount    @"test_f6dba05d53df7d9944ac69bf10c2bb21"
+#define textPassword   @"test_64de8bff6e0b27235b68ad1fc791efe8"
+#define testRoomId     @"test_12f56318827defa69f787618b0900861"
 
 
 
