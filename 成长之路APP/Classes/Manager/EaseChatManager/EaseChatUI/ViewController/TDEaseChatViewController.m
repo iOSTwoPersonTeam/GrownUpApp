@@ -52,6 +52,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCallNotification:) name:@"callOutWithChatter" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCallNotification:) name:@"callControllerClose" object:nil];
     
+    self.title =self.title ?:@"聊天室";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem leftBarButtonItemWithImage:[UIImage imageNamed:@"返回"] highlighted:[UIImage imageNamed:@"返回"] target:self selector:@selector(back)];
     
 }
@@ -110,6 +111,7 @@
     }
 }
 
+#pragma mark ---刷新数据
 - (void)tableViewDidTriggerHeaderRefresh {
     //    if ([[ChatDemoHelper shareHelper] isFetchHistoryChange]) {
     //        NSString *startMessageId = nil;
@@ -130,6 +132,8 @@
     //    } else {
     //        [super tableViewDidTriggerHeaderRefresh];
     //    }
+    
+    [super tableViewDidTriggerHeaderRefresh];
 }
 
 #pragma mark - setup subviews
