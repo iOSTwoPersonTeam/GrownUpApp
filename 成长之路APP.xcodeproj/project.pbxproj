@@ -21,6 +21,8 @@
 		04246C801F505113002F5855 /* TTGTextTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04246C7E1F505113002F5855 /* TTGTextTagCollectionView.m */; };
 		042478A01F1F61C8006DF56A /* TDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0424789F1F1F61C8006DF56A /* TDAppDelegate.m */; };
 		042F8D871F5A6081007747C5 /* TDMTNearbySearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042F8D861F5A6081007747C5 /* TDMTNearbySearchViewController.m */; };
+		04314A471F90BE7900BA4A54 /* TDEaseChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04314A461F90BE7900BA4A54 /* TDEaseChatTableViewCell.m */; };
+		04314A4A1F90C00B00BA4A54 /* TDEaseConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04314A491F90C00B00BA4A54 /* TDEaseConversationListViewController.m */; };
 		0438475D1F2A1FF50056D3CA /* UIColor+Additons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438475C1F2A1FF50056D3CA /* UIColor+Additons.m */; };
 		0438D33E1F39A5D300D4ED81 /* TDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438D33D1F39A5D300D4ED81 /* TDLoginViewController.m */; };
 		0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0438D3401F39A6AF00D4ED81 /* TDRootTableViewController.m */; };
@@ -193,6 +195,10 @@
 		0424789F1F1F61C8006DF56A /* TDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAppDelegate.m; sourceTree = "<group>"; };
 		042F8D851F5A6081007747C5 /* TDMTNearbySearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDMTNearbySearchViewController.h; sourceTree = "<group>"; };
 		042F8D861F5A6081007747C5 /* TDMTNearbySearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMTNearbySearchViewController.m; sourceTree = "<group>"; };
+		04314A451F90BE7900BA4A54 /* TDEaseChatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseChatTableViewCell.h; sourceTree = "<group>"; };
+		04314A461F90BE7900BA4A54 /* TDEaseChatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseChatTableViewCell.m; sourceTree = "<group>"; };
+		04314A481F90C00B00BA4A54 /* TDEaseConversationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseConversationListViewController.h; sourceTree = "<group>"; };
+		04314A491F90C00B00BA4A54 /* TDEaseConversationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseConversationListViewController.m; sourceTree = "<group>"; };
 		0438475B1F2A1FF50056D3CA /* UIColor+Additons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additons.h"; sourceTree = "<group>"; };
 		0438475C1F2A1FF50056D3CA /* UIColor+Additons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additons.m"; sourceTree = "<group>"; };
 		0438D33C1F39A5D300D4ED81 /* TDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoginViewController.h; sourceTree = "<group>"; };
@@ -1803,6 +1809,8 @@
 		049F78C71F8F510200BE0AA2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04314A481F90C00B00BA4A54 /* TDEaseConversationListViewController.h */,
+				04314A491F90C00B00BA4A54 /* TDEaseConversationListViewController.m */,
 				049F78CA1F8F515F00BE0AA2 /* TDEaseChatViewController.h */,
 				049F78CB1F8F515F00BE0AA2 /* TDEaseChatViewController.m */,
 			);
@@ -1812,6 +1820,8 @@
 		049F78C81F8F510200BE0AA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04314A451F90BE7900BA4A54 /* TDEaseChatTableViewCell.h */,
+				04314A461F90BE7900BA4A54 /* TDEaseChatTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2247,6 +2257,7 @@
 				04F6FD781F60F9EC00A301B9 /* UIView+Additions.m in Sources */,
 				0438D33E1F39A5D300D4ED81 /* TDLoginViewController.m in Sources */,
 				049041B41F4C35B6006C1601 /* DHGifImageOperation.m in Sources */,
+				04314A471F90BE7900BA4A54 /* TDEaseChatTableViewCell.m in Sources */,
 				049F78CC1F8F515F00BE0AA2 /* TDEaseChatViewController.m in Sources */,
 				04A1CB831F4AEE3200CE45EC /* TDLaunchAdModel.m in Sources */,
 				04AB0C061F5011CB00599CE0 /* TDHomeSearchViewController.m in Sources */,
@@ -2293,6 +2304,7 @@
 				0438D34A1F39B47E00D4ED81 /* UIButton+Additions.m in Sources */,
 				046C580F1F4AC19A0058364B /* UIImage+CYButtonIcon.m in Sources */,
 				0438D3441F39A71400D4ED81 /* TDRootTableViewCell.m in Sources */,
+				04314A4A1F90C00B00BA4A54 /* TDEaseConversationListViewController.m in Sources */,
 				045EA55E1F598F6500B0A704 /* TDNearbyAddressTableViewCell.m in Sources */,
 				046C58371F4AC7C10058364B /* CityListViewController.m in Sources */,
 				045EA55C1F598F6500B0A704 /* TDBAddGoodsAddressView.m in Sources */,

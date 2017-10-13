@@ -22,16 +22,21 @@
 }
 
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
     //环信ID:@"8001"
     //聊天类型:EMConversationTypeChat
-//    EaseMessageViewController *chatController = [[EaseMessageViewController alloc] initWithConversationChatter:testAccount conversationType:EMConversationTypeChat];
-//    [self.navigationController pushViewController:chatController animated:YES];
+    //    EaseMessageViewController *chatController = [[EaseMessageViewController alloc] initWithConversationChatter:testAccount conversationType:EMConversationTypeChat];
+    //    [self.navigationController pushViewController:chatController animated:YES];
     
-    TDEaseChatViewController *chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:testAccount conversationType:EMConversationTypeChat];
-    [self.navigationController pushViewController:chatController animated:YES];
-}
+    //单聊
+    //    TDEaseChatViewController *chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:testAccount conversationType:EMConversationTypeChat];
+    //    [self.navigationController pushViewController:chatController animated:YES];
+    
+//    //群聊
+//    TDEaseChatViewController *chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:teatGroupId conversationType:EMConversationTypeGroupChat];
+//    [self.navigationController pushViewController:chatController animated:YES];
+//}
 
 
 

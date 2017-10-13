@@ -11,6 +11,7 @@
 
 #import "TDEaseChatManager.h"
 #import "TDEaseChatViewController.h"
+#import "TDEaseConversationListViewController.h"
 
 #define TDEaseChatAppKey     @"tidoo#ts"   //环信注册的AppKey 
 
@@ -24,7 +25,7 @@
 #define testAccount    @"test_f6dba05d53df7d9944ac69bf10c2bb21"
 #define textPassword   @"test_64de8bff6e0b27235b68ad1fc791efe8"
 #define testRoomId     @"test_12f56318827defa69f787618b0900861"
-
+#define teatGroupId    @"201915763777339820"
 
 
 
