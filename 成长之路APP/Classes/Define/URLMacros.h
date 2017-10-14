@@ -21,7 +21,8 @@
 
 #ifdef DEBUG
 
-#define                                                                                                                                                    REQUEST_URL      @"http://shandanapitest.51negoo.com/"      //测试接口地址
+//#define                                                                                                                                                    REQUEST_URL      @"http://shandanapitest.51negoo.com/"      //测试接口地址
+#define REQUEST_URL    @"http://tishengtestapi.51ts.cn/"      //测试接口地址
 #define WebSchemeURL @"http://mtestshandan.51ts.cn/index.php?"  //WebViewController测试地址
 
 #define                                                                                                                                                    NengGoREQUEST_URL          @"http://tishengtestapi.51ts.cn/"      //能go测试接口地址

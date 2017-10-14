@@ -48,6 +48,17 @@
         [MBProgressHUD showMessage:@"请填写正确格式的密码"];
         return;
     }
+    
+    //保存用户数据  用户数据本地存储
+    [TDUserInfo saveUserInfo:@{@"USERNAME" :userText ,@"UCODE" :userText ,@"PASSWORD" :passwordtext}];
+    if (self.loginSuccessHandler) {
+        self.loginSuccessHandler();
+    }
+    [self rigisterAndLoginEaseChatwithUserName:[TDUserInfo getUser].UCODE withPassword:@"123456"];
+    
+    return;
+    
+    //接口请求用户数据暂时不用************
     __weak typeof(self) weakSelf = self;
     //初始化单例类
     TDBaseRequestApI *manager =[TDBaseRequestApI shareManager];
@@ -88,7 +99,6 @@
             NSLog(@"失败------%@",error);
             [MBProgressHUD showMessage:@"登录失败"];
         }];
-    
 }
 
 
@@ -130,12 +140,11 @@
         
         NSLog(@"%@------%@----",[TDUserInfo getUser].USERNAME,[TDUserInfo getUser].ICON);
         
-        //环信的注册和登录
-        [weakSelf rigisterAndLoginEaseChatwithUserName:[TDUserInfo getUser].UCODE withPassword:@"123456"];
-        
         if (weakSelf.loginSuccessHandler) {
             weakSelf.loginSuccessHandler();
         }
+        
+        [weakSelf rigisterAndLoginEaseChatwithUserName:[TDUserInfo getUser].UCODE withPassword:@"123456"];
         
     } failure:^(NSError *error) {
         
@@ -161,6 +170,14 @@
     } Error:^(EMError *aError) {
         
         NSLog(@"注册环信失败--%@",aError);
+        //登录环信
+        [weekeaseManager setLogInEaseChatWithUsername:userName password:password Succeed:^{
+            NSLog(@"登录环信成功----");
+            
+        } Error:^(EMError *aError) {
+            
+            NSLog(@"登录环信失败---%@",aError);
+        }];
     }];
     
 }
