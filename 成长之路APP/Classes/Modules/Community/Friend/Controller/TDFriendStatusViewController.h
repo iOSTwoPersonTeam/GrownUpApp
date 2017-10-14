@@ -8,6 +8,6 @@
 
 #import "TDRootViewController.h"
 #import "ZJScrollPageView.h"
-@interface TDFriendStatusViewController : TDRootViewController<ZJScrollPageViewChildVcDelegate>
+@interface TDFriendStatusViewController : TDEaseChatContactListViewController<ZJScrollPageViewChildVcDelegate>
 
 @end

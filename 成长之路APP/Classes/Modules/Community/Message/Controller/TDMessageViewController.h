@@ -9,6 +9,6 @@
 #import "TDRootViewController.h"
 #import "ZJScrollPageView.h"
 
-@interface TDMessageViewController :TDRootViewController /*TDEaseConversationListViewController*/<ZJScrollPageViewChildVcDelegate>
+@interface TDMessageViewController : TDEaseConversationListViewController<ZJScrollPageViewChildVcDelegate>
 
 @end

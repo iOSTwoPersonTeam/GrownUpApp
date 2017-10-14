@@ -12,6 +12,7 @@
 #import "TDEaseChatManager.h"
 #import "TDEaseChatViewController.h"
 #import "TDEaseConversationListViewController.h"
+#import "TDEaseChatContactListViewController.h"
 
 //#define TDEaseChatAppKey     @"tidoo#ts"   //环信注册的AppKey
 //自己注册的

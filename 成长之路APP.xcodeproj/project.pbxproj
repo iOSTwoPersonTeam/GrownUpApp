@@ -124,6 +124,7 @@
 		0498E2051F6922D0006D08BA /* TDRunningTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0498E2041F6922D0006D08BA /* TDRunningTrackViewController.m */; };
 		049F78CC1F8F515F00BE0AA2 /* TDEaseChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F78CB1F8F515F00BE0AA2 /* TDEaseChatViewController.m */; };
 		04A1CB831F4AEE3200CE45EC /* TDLaunchAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A1CB821F4AEE3200CE45EC /* TDLaunchAdModel.m */; };
+		04A565141F92169C003A4C35 /* TDEaseChatContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A565131F92169C003A4C35 /* TDEaseChatContactListViewController.m */; };
 		04AB0BF21F4FB39D00599CE0 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0BF11F4FB39D00599CE0 /* UILabel+Additions.m */; };
 		04AB0C061F5011CB00599CE0 /* TDHomeSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0C041F5011CB00599CE0 /* TDHomeSearchViewController.m */; };
 		04AB0C191F5016B700599CE0 /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0C091F5016B700599CE0 /* UIView+ZJFrame.m */; };
@@ -394,6 +395,8 @@
 		049F78CB1F8F515F00BE0AA2 /* TDEaseChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseChatViewController.m; sourceTree = "<group>"; };
 		04A1CB811F4AEE3200CE45EC /* TDLaunchAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdModel.h; sourceTree = "<group>"; };
 		04A1CB821F4AEE3200CE45EC /* TDLaunchAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLaunchAdModel.m; sourceTree = "<group>"; };
+		04A565121F92169C003A4C35 /* TDEaseChatContactListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseChatContactListViewController.h; sourceTree = "<group>"; };
+		04A565131F92169C003A4C35 /* TDEaseChatContactListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseChatContactListViewController.m; sourceTree = "<group>"; };
 		04AB0BF01F4FB39D00599CE0 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
 		04AB0BF11F4FB39D00599CE0 /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
 		04AB0C031F5011CB00599CE0 /* TDHomeSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeSearchViewController.h; sourceTree = "<group>"; };
@@ -1813,6 +1816,8 @@
 				04314A491F90C00B00BA4A54 /* TDEaseConversationListViewController.m */,
 				049F78CA1F8F515F00BE0AA2 /* TDEaseChatViewController.h */,
 				049F78CB1F8F515F00BE0AA2 /* TDEaseChatViewController.m */,
+				04A565121F92169C003A4C35 /* TDEaseChatContactListViewController.h */,
+				04A565131F92169C003A4C35 /* TDEaseChatContactListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2243,6 +2248,7 @@
 				046C57FB1F4AAEF70058364B /* TDRootWebViewController.m in Sources */,
 				04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */,
 				044819171F67C07100DD71FC /* MarqueeLabel.m in Sources */,
+				04A565141F92169C003A4C35 /* TDEaseChatContactListViewController.m in Sources */,
 				046C583D1F4AC7C10058364B /* PinYinForObjc.m in Sources */,
 				041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */,
 				04910ED81F2F00D500F963EC /* TDBaseRequestApI.m in Sources */,
