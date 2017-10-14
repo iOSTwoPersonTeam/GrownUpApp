@@ -13,7 +13,9 @@
 #import "TDEaseChatViewController.h"
 #import "TDEaseConversationListViewController.h"
 
-#define TDEaseChatAppKey     @"tidoo#ts"   //环信注册的AppKey 
+//#define TDEaseChatAppKey     @"tidoo#ts"   //环信注册的AppKey
+//自己注册的
+#define TDEaseChatAppKey     @"chengdenghui#trainmore"   //环信注册的AppKey
 
 #if DEBUG
 #define TDEaseChatApnsCertName  @"tidoo"   //apnsCertName:推送证书名 测试

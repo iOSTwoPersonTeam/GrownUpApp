@@ -115,8 +115,8 @@
 #pragma mark ---环信SDK基本信息
 -(void)setEaseChatBaseInforamtion
 {
-    //封装单例注册
-    [[TDEaseChatManager shareManager] registerEaseChat];
+    //封装单例 配置环信基本信息
+    [[TDEaseChatManager shareManager] setEaseChatBaseInformation];
 }
 // APP进入后台
 - (void)applicationDidEnterBackground:(UIApplication *)application

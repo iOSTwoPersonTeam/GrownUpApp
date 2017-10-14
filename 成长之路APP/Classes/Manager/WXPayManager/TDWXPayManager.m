@@ -177,6 +177,7 @@ static TDWXPayManager *_manager =nil;
         NSDictionary *dic = [NSDictionary dictionaryWithXMLString:responseString];
          DWWXPaySuccessModels *paySuccessModels = [DWWXPaySuccessModels wxPaySuccessWithDictionary:dic];
         
+         __weak typeof(self)  unself =self;
         if ([paySuccessModels.return_code isEqualToString:@"SUCCESS"]) {  //付款请求成功
             
             if ([paySuccessModels.result_code isEqualToString:@"SUCCESS"]) {
@@ -185,27 +186,27 @@ static TDWXPayManager *_manager =nil;
                     
                     if ([paySuccessModels.trade_state isEqualToString:@"SUCCESS"]) {
                         
-                        [self backTrade_stateMsg:@"支付成功" backTrade_state:paySuccessModels.trade_state];
+                        [unself backTrade_stateMsg:@"支付成功" backTrade_state:paySuccessModels.trade_state];
                         
                     }else if ([paySuccessModels.trade_state isEqualToString:@"REFUND"]) {
                         
-                        [self backTrade_stateMsg:@"转入退款" backTrade_state:paySuccessModels.trade_state];
+                        [unself backTrade_stateMsg:@"转入退款" backTrade_state:paySuccessModels.trade_state];
                         
                     }else if ([paySuccessModels.trade_state isEqualToString:@"NOTPAY"]) {
                         
-                        [self backTrade_stateMsg:@"未支付" backTrade_state:paySuccessModels.trade_state];
+                        [unself backTrade_stateMsg:@"未支付" backTrade_state:paySuccessModels.trade_state];
                         
                     }else if ([paySuccessModels.trade_state isEqualToString:@"CLOSED"]) {
                         
-                        [self backTrade_stateMsg:@"已关闭" backTrade_state:paySuccessModels.trade_state];
+                        [unself backTrade_stateMsg:@"已关闭" backTrade_state:paySuccessModels.trade_state];
                         
                     }else if ([paySuccessModels.trade_state isEqualToString:@"REVOKED"]) {
                         
-                        [self backTrade_stateMsg:@"用户支付中" backTrade_state:paySuccessModels.trade_state];
+                        [unself backTrade_stateMsg:@"用户支付中" backTrade_state:paySuccessModels.trade_state];
                         
                     }else if ([paySuccessModels.trade_state isEqualToString:@"PAYERROR"]) {
                         
-                        [self backTrade_stateMsg:@"支付失败(其他原因，如银行返回失败)" backTrade_state:paySuccessModels.trade_state];
+                        [unself backTrade_stateMsg:@"支付失败(其他原因，如银行返回失败)" backTrade_state:paySuccessModels.trade_state];
                     }
                     
                     return ;
@@ -226,7 +227,7 @@ static TDWXPayManager *_manager =nil;
                         err_code_des = @"系统错误\n系统异常，请再调用发起查询";
                     }
                     
-                    self.Return_ErrorCode(paySuccessModels.return_msg,paySuccessModels.err_code,err_code_des);
+                    unself.Return_ErrorCode(paySuccessModels.return_msg,paySuccessModels.err_code,err_code_des);
                     
                     return;
                 }

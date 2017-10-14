@@ -47,27 +47,27 @@ static  TDEaseChatManager *_manager =nil;
 }
 
 
-#pragma mark ---环信注册
--(void)registerEaseChat
+#pragma mark ---配置环信基本信息
+-(void)setEaseChatBaseInformation
 {
     //AppKey:注册的AppKey，详细见下面注释。
     //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
     EMOptions *options = [EMOptions optionsWithAppkey:TDEaseChatAppKey];
-    options.apnsCertName = TDEaseChatApnsCertName;
+//    options.apnsCertName = TDEaseChatApnsCertName;
     [[EMClient sharedClient] initializeSDKWithOptions:options];
     
-    //登录暂时放在这个地方----------
-    [[EMClient sharedClient] loginWithUsername: testAccount
-                                      password:textPassword
-                                    completion:^(NSString *aUsername, EMError *aError) {
-                                        if (!aError) {
-                                            NSLog(@"登录成功");
-
-                                            
-                                        } else {
-                                            NSLog(@"登录失败");
-                                        }
-                                    }];
+//    //登录暂时放在这个地方----------
+//    [[EMClient sharedClient] loginWithUsername: testAccount
+//                                      password:textPassword
+//                                    completion:^(NSString *aUsername, EMError *aError) {
+//                                        if (!aError) {
+//                                            NSLog(@"登录成功");
+//
+//
+//                                        } else {
+//                                            NSLog(@"登录失败");
+//                                        }
+//                                    }];
 
 }
 
@@ -83,36 +83,69 @@ static  TDEaseChatManager *_manager =nil;
    [[EMClient sharedClient] applicationWillEnterForeground:application];
 }
 
-#pragma mark ---环信登录
--(void)logInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error
+#pragma mark ---注册环信基本信息
+-(void)setRegisterEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error
 {
+ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+     
+        [[EMClient sharedClient] registerWithUsername:username password:password completion:^(NSString *aUsername, EMError *aError) {
+     
+                 dispatch_async(dispatch_get_main_queue(), ^{
+         
+                     if (!aError) {
+                         NSLog(@"注册成功");
+                         if (succeess) {
+                             succeess();
+                         }
+                         
+                     }else{
+                         NSLog(@"注册失败");
+                         if (error) {
+                             error(aError);
+                         }
+                     }
+                 });
+         
+         
+         }];
+     
+    });
+}
 
+#pragma mark ---环信登录
+-(void)setLogInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error
+{
  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
      
      [[EMClient sharedClient] loginWithUsername:username ? username : testAccount
                                        password:password ? password :textPassword
                                      completion:^(NSString *aUsername, EMError *aError) {
-                                         if (!aError) {
-                                             NSLog(@"登录成功");
+                                         
+                     dispatch_async(dispatch_get_main_queue(), ^{
                                              
-                                             if (succeess) {
-                                                 succeess();
-                                             }
-                                             
-                                         } else {
-                                             NSLog(@"登录失败");
-                                             if (error) {
-                                                 error(aError);
-                                             }
-                                         }
-                                     }];
+                                 if (!aError) {
+                                     NSLog(@"登录成功");
+                                     
+                                     if (succeess) {
+                                         succeess();
+                                     }
+                                     
+                                 } else {
+                                     NSLog(@"登录失败");
+                                     if (error) {
+                                         error(aError);
+                                     }
+                                 }
+                     });
+
+             }];
     
     });
     
 }
 
 #pragma mark --环信退出
--(void)logOutEaseChatWithSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure
+-(void)setLogOutEaseChatWithSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         EMError *error = [[EMClient sharedClient] logout:YES];

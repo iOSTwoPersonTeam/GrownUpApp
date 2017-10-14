@@ -38,7 +38,6 @@
 
 
 #pragma mark HTTP --登录接口数据请求
-
 - (void)getlogInDataWithUserText:(NSString *)userText  WithPasswordText:(NSString *)passwordtext
 {
     if (![userText validateMobile]) {
@@ -94,11 +93,10 @@
 
 
 #pragma mark ---private
-
+//第三方分享点击事件
 -(void)clickShare
 {
     DLog(@"分享---");
-    
     [[TDShareSDKTool shareManager] shareCustomUIWithContentURL:@"http://www.jianshu.com/p/e92afbf1ce79" andcontentTitle:@"标题" contentDescription:@"详情" contentImage:@"http://img5.imgtn.bdimg.com/it/u=4267222417,1017407570&fm=200&gp=0.jpg" success:^(NSDictionary *userData) {
         
         DLog(@"分享成功----%@",userData);
@@ -107,22 +105,76 @@
         
         DLog(@"分享失败---%@",error);
     }];
+}
+
+//第三方登录方法
+-(void)getUserInfoThirdLoginWithType:(SSDKPlatformType )platformType
+{
+    /*
+     SSDKPlatformTypeWechat
+     SSDKPlatformTypeQQ
+     SSDKPlatformTypeSinaWeibo
+     */
+    __weak typeof(self)  weakSelf =self;
+    [[TDShareSDKTool shareManager] getUserInfoThirdLoginWithType:platformType success:^(SSDKUser *user) {
+        
+        [MBProgressHUD showMessage:@"登录成功"];
+        NSLog(@"uid=%@",user.uid);
+        NSLog(@"%@",user.credential);
+        NSLog(@"token=%@",user.credential.token);
+        NSLog(@"昵称-----=%@",user.nickname);
+        NSLog(@"头像----%@",user.icon);
+        
+        //保存用户数据
+        [TDUserInfo saveUserInfo:@{@"USERNAME" :user.nickname ,@"ICON" :user.icon ,@"UCODE" :user.uid}];
+        
+        NSLog(@"%@------%@----",[TDUserInfo getUser].USERNAME,[TDUserInfo getUser].ICON);
+        
+        //环信的注册和登录
+        [weakSelf rigisterAndLoginEaseChatwithUserName:[TDUserInfo getUser].UCODE withPassword:@"123456"];
+        
+        if (weakSelf.loginSuccessHandler) {
+            weakSelf.loginSuccessHandler();
+        }
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+}
+
+//环信的登录注册方法
+-(void)rigisterAndLoginEaseChatwithUserName:(NSString *)userName  withPassword:(NSString *)password
+{
+    __weak typeof([TDEaseChatManager shareManager])  weekeaseManager =[TDEaseChatManager shareManager];
+    //注册环信
+    [[TDEaseChatManager shareManager] setRegisterEaseChatWithUsername:userName password:password Succeed:^{
+        //登录环信
+        [weekeaseManager setLogInEaseChatWithUsername:userName password:password Succeed:^{
+            NSLog(@"登录环信成功----");
+            
+        } Error:^(EMError *aError) {
+            
+            NSLog(@"登录环信失败---%@",aError);
+        }];
+        
+    } Error:^(EMError *aError) {
+        
+        NSLog(@"注册环信失败--%@",aError);
+    }];
     
 }
 
-
 #pragma mark --getter
-
+//手机号登录部分
 -(TDPhoneLoginView *)phoneLoginView
 {
     if (!_phoneLoginView) {
         _phoneLoginView =[[TDPhoneLoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/2)];
-        
           __weak typeof(self) unself = self;
         _phoneLoginView.loginBlock = ^(NSString *userText, NSString *passwordtext) {
             //登录
             [unself getlogInDataWithUserText:userText  WithPasswordText:passwordtext];
-            
         };
         _phoneLoginView.registerBlock = ^{
             //注册页面
@@ -133,12 +185,12 @@
             //忘记密码页面
             TDForgetPasswordViewController *forgetPasswordVC =[[TDForgetPasswordViewController alloc] init];
             [unself.navigationController pushViewController:forgetPasswordVC animated:YES];
-            
         };
     }
     return _phoneLoginView;
 }
 
+//第三方登录部分
 -(TDThirdPartyLoginView *)thirdPartyLoginView
 {
     if (!_thirdPartyLoginView) {
@@ -149,79 +201,18 @@
         _thirdPartyLoginView.clickweixinBlock = ^{
             
             DLog(@"微信-----");
-            [[TDShareSDKTool shareManager] getUserInfoThirdLoginWithType:SSDKPlatformTypeWechat success:^(SSDKUser *user) {
-                
-                [MBProgressHUD showMessage:@"微信登录成功"];
-                NSLog(@"uid=%@",user.uid);
-                NSLog(@"%@",user.credential);
-                NSLog(@"token=%@",user.credential.token);
-                NSLog(@"昵称-----=%@",user.nickname);
-                NSLog(@"头像----%@",user.icon);
-                
-                //保存用户数据
-                [TDUserInfo saveUserInfo:@{@"USERNAME" :user.nickname ,@"ICON" :user.icon ,@"UCODE" :user.uid}];
-                
-                NSLog(@"%@------%@----",[TDUserInfo getUser].USERNAME,[TDUserInfo getUser].ICON);
-                
-                if (weakSelf.loginSuccessHandler) {
-                    weakSelf.loginSuccessHandler();
-                }
-                
-            } failure:^(NSError *error) {
-                
-                 NSLog(@"%@",error);
-            }];
-
+            [weakSelf getUserInfoThirdLoginWithType:SSDKPlatformTypeWechat];
         };
         _thirdPartyLoginView.clickQQBlock = ^{
             
             DLog(@"QQ------");
-            [[TDShareSDKTool shareManager] getUserInfoThirdLoginWithType:SSDKPlatformTypeQQ success:^(SSDKUser *user) {
-                
-                [MBProgressHUD showMessage:@"QQ登录成功"];
-                NSLog(@"uid=%@",user.uid);
-                NSLog(@"%@",user.credential);
-                NSLog(@"token=%@",user.credential.token);
-                NSLog(@"昵称-----=%@",user.nickname);
-                NSLog(@"头像----%@",user.icon);
-                
-                //保存用户数据
-                [TDUserInfo saveUserInfo:@{@"USERNAME":user.nickname ,@"ICON":user.icon ,@"UCODE" :user.uid}];
-                
-                if (weakSelf.loginSuccessHandler) {
-                    weakSelf.loginSuccessHandler();
-                }
-
-            } failure:^(NSError *error) {
-                
-                NSLog(@"%@",error);
-            }];
+        [weakSelf getUserInfoThirdLoginWithType:SSDKPlatformTypeQQ];
 
         };
         _thirdPartyLoginView.clickweiboBlock = ^{
             
             DLog(@"微博----");
-            [[TDShareSDKTool shareManager] getUserInfoThirdLoginWithType:SSDKPlatformTypeSinaWeibo success:^(SSDKUser *user) {
-                
-                [MBProgressHUD showMessage:@"微博登录成功"];
-                NSLog(@"uid=%@",user.uid);
-                NSLog(@"%@",user.credential);
-                NSLog(@"token=%@",user.credential.token);
-                NSLog(@"昵称-----=%@",user.nickname);
-                NSLog(@"头像----%@",user.icon);
-                
-                //保存用户数据
-                [TDUserInfo saveUserInfo:@{@"USERNAME":user.nickname ,@"ICON":user.icon ,@"UCODE" :user.uid}];
-                
-                if (weakSelf.loginSuccessHandler) {
-                    weakSelf.loginSuccessHandler();
-                }
-                
-            } failure:^(NSError *error) {
-                
-                NSLog(@"%@",error);
-            }];
-            
+          [weakSelf getUserInfoThirdLoginWithType:SSDKPlatformTypeSinaWeibo];
         };
         
     }

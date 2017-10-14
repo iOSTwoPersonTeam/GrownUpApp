@@ -16,9 +16,9 @@
 +(id)shareManager;
 
 /*
- * 注册环信
+ * 配置环信数据
  */
--(void)registerEaseChat;
+-(void)setEaseChatBaseInformation;
 
 /*
  * 环信进入后台
@@ -31,14 +31,19 @@
 - (void)easeClientWillEnterForeground:(UIApplication *)application;
 
 /*
+ *  注册环信
+ */
+-(void)setRegisterEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error;
+
+/*
  *  环信登录
  */
--(void)logInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error;
+-(void)setLogInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error;
 
 /*
  *  退出环信
  */
--(void)logOutEaseChatWithSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure;
+-(void)setLogOutEaseChatWitLhSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure;
 
 
 

@@ -25,9 +25,7 @@
     self.view.backgroundColor =[UIColor whiteColor];
     self.navigationItem.titleView =[UINavigationItem titleViewForTitle:@"新用户注册"];
     
-    
     [self.view addSubview:self.registerView];
-    
 }
 
 
@@ -145,7 +143,7 @@
 
 
 #pragma mark --getter
-
+//注册view
 -(TDRegisterView *)registerView
 {
     if (!_registerView) {
