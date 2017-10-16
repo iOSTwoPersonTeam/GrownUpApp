@@ -116,6 +116,8 @@ static  TDEaseChatManager *_manager =nil;
 -(void)setLogInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error
 {
  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+     //设置是否自动登录
+     [[EMClient sharedClient].options setIsAutoLogin:YES];
      
      [[EMClient sharedClient] loginWithUsername:username ? username : testAccount
                                        password:password ? password :textPassword
@@ -145,7 +147,7 @@ static  TDEaseChatManager *_manager =nil;
 }
 
 #pragma mark --环信退出
--(void)setLogOutEaseChatWithSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure
+-(void)setLogOutEaseChatWitLhSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         EMError *error = [[EMClient sharedClient] logout:YES];

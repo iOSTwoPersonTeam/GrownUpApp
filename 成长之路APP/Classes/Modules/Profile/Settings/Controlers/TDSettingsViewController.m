@@ -51,6 +51,15 @@
 -(void)clickLogout
 {
     DLog(@"退出登录-------");
+    [[SDImageCache sharedImageCache] clearDisk];
+    [[SDImageCache sharedImageCache] clearMemory];
+    
+    [[TDEaseChatManager shareManager] setLogOutEaseChatWitLhSucceed:^{
+        NSLog(@"退出环信成功---");
+    } failure:^(EMError *error) {
+        NSLog(@"退出环信失败----");
+    }];
+    
     [TDUserInfo removeUserInfo];
     
     if (self.logoutBlock) {

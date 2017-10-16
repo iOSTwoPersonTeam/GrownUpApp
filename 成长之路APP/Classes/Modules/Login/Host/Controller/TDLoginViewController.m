@@ -36,7 +36,6 @@
 
 }
 
-
 #pragma mark HTTP --登录接口数据请求
 - (void)getlogInDataWithUserText:(NSString *)userText  WithPasswordText:(NSString *)passwordtext
 {

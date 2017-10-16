@@ -130,7 +130,18 @@
     //环信将要返回前台
      [[TDEaseChatManager shareManager] easeClientWillEnterForeground:application];
 }
+#pragma mark 注册deviceToken
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[EMClient sharedClient] bindDeviceToken:deviceToken];
+    });
+}
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *) error
+{
+    MJExtensionLog(@"error:%@",error);
+}
 
 #pragma mark - 微信支付回调-----
 //前面的两个方法被iOS9弃用了，如果是Xcode7.2网上的话会出现无法进入进入微信的onResp回调方法，就是这个原因。本来我是不想写着两个旧方法的，但是一看官方的demo上写的这两个，我就也写了。。。。
