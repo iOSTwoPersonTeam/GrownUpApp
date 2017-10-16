@@ -25,8 +25,7 @@
     self.dataSource = self;
     
     [self networkStateView];
-    
-    [self tableViewDidTriggerHeaderRefresh];
+
     [self removeEmptyConversationsFromDB];
 }
 
@@ -34,6 +33,7 @@
 {
     [super viewWillAppear:animated];
     [self refresh];
+    [self tableViewDidTriggerHeaderRefresh];
 }
 
 - (void)removeEmptyConversationsFromDB

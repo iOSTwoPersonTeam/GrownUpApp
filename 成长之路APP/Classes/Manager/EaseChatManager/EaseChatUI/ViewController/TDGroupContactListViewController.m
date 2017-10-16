@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"title.group", @"Group");
+    self.title = NSLocalizedString(@"群聊", @"Group");
     self.showRefreshHeader = YES;
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
@@ -48,7 +48,11 @@
     [[EMClient sharedClient].groupManager addDelegate:self delegateQueue:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadDataSource) name:@"reloadGroupList" object:nil];
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self reloadDataSource];
 }
 
