@@ -10,6 +10,8 @@
 		040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040494571F2992AE0093B269 /* TDTabBarViewController.m */; };
 		0404945F1F299B2E0093B269 /* UINavigationItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404945E1F299B2E0093B269 /* UINavigationItem+Additions.m */; };
 		040979A41F723A5400788C40 /* TDUnifyPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 040979A31F723A5400788C40 /* TDUnifyPayManager.m */; };
+		040BCEDC1F94853A003694AD /* TDGroupContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BCEDB1F94853A003694AD /* TDGroupContactListViewController.m */; };
+		040BCEDF1F948950003694AD /* TDGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 040BCEDE1F948950003694AD /* TDGroupTableViewCell.m */; };
 		04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */; };
 		041595061F6F7AC40057D87F /* TDPaymentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041595051F6F7AC40057D87F /* TDPaymentHeaderView.m */; };
 		041595091F6F9C330057D87F /* TDPaymentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 041595081F6F9C330057D87F /* TDPaymentTableViewCell.m */; };
@@ -174,6 +176,10 @@
 		0404945E1F299B2E0093B269 /* UINavigationItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+Additions.m"; sourceTree = "<group>"; };
 		040979A21F723A5400788C40 /* TDUnifyPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDUnifyPayManager.h; sourceTree = "<group>"; };
 		040979A31F723A5400788C40 /* TDUnifyPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDUnifyPayManager.m; sourceTree = "<group>"; };
+		040BCEDA1F94853A003694AD /* TDGroupContactListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDGroupContactListViewController.h; sourceTree = "<group>"; };
+		040BCEDB1F94853A003694AD /* TDGroupContactListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDGroupContactListViewController.m; sourceTree = "<group>"; };
+		040BCEDD1F948950003694AD /* TDGroupTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDGroupTableViewCell.h; sourceTree = "<group>"; };
+		040BCEDE1F948950003694AD /* TDGroupTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDGroupTableViewCell.m; sourceTree = "<group>"; };
 		04149F2E1F5B9F8E006EEC44 /* TDThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDThemeViewController.h; sourceTree = "<group>"; };
 		04149F2F1F5B9F8E006EEC44 /* TDThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDThemeViewController.m; sourceTree = "<group>"; };
 		041595041F6F7AC40057D87F /* TDPaymentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDPaymentHeaderView.h; sourceTree = "<group>"; };
@@ -1818,6 +1824,8 @@
 				049F78CB1F8F515F00BE0AA2 /* TDEaseChatViewController.m */,
 				04A565121F92169C003A4C35 /* TDEaseChatContactListViewController.h */,
 				04A565131F92169C003A4C35 /* TDEaseChatContactListViewController.m */,
+				040BCEDA1F94853A003694AD /* TDGroupContactListViewController.h */,
+				040BCEDB1F94853A003694AD /* TDGroupContactListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1827,6 +1835,8 @@
 			children = (
 				04314A451F90BE7900BA4A54 /* TDEaseChatTableViewCell.h */,
 				04314A461F90BE7900BA4A54 /* TDEaseChatTableViewCell.m */,
+				040BCEDD1F948950003694AD /* TDGroupTableViewCell.h */,
+				040BCEDE1F948950003694AD /* TDGroupTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2274,6 +2284,7 @@
 				04CB0EF41F3D808B004908D8 /* TDThirdPartyLoginView.m in Sources */,
 				046C58351F4AC7C10058364B /* CityInfo.m in Sources */,
 				0464B9AF1F4C42EA00E15EB8 /* TDGuidePageHUD.m in Sources */,
+				040BCEDF1F948950003694AD /* TDGroupTableViewCell.m in Sources */,
 				0404945F1F299B2E0093B269 /* UINavigationItem+Additions.m in Sources */,
 				0448190C1F67B1E900DD71FC /* TDFriendStatusViewController.m in Sources */,
 				045EA55A1F598F6500B0A704 /* TDNearbyAddressViewController.m in Sources */,
@@ -2326,6 +2337,7 @@
 				04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */,
 				045263EB1F58EEEA001FD38B /* TDAddressProfileView.m in Sources */,
 				04AB0C191F5016B700599CE0 /* UIView+ZJFrame.m in Sources */,
+				040BCEDC1F94853A003694AD /* TDGroupContactListViewController.m in Sources */,
 				045EA55D1F598F6500B0A704 /* TDHistoryAddressView.m in Sources */,
 				041ACB311F29CB39007280ED /* UIBarButtonItem+Additions.m in Sources */,
 				044818E51F678A8000DD71FC /* TDPublishAnimateView.m in Sources */,

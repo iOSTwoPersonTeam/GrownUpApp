@@ -8,34 +8,6 @@
 
 #import "TDEaseConversationListViewController.h"
 #import "TDEaseChatViewController.h"
-//#import "RobotManager.h"
-//#import "RobotChatViewController.h"
-//#import "UserProfileManager.h"
-//#import "RealtimeSearchUtil.h"
-//#import "RedPacketChatViewController.h"
-//#import "ChatDemoHelper.h"
-
-//#import "UIViewController+SearchController.h"
-
-//@implementation EMConversation (search)
-//
-////根据用户昵称,环信机器人名称,群名称进行搜索
-//- (NSString*)showName
-//{
-//    if (self.type == EMConversationTypeChat) {
-//        if ([[RobotManager sharedInstance] isRobotWithUsername:self.conversationId]) {
-//            return [[RobotManager sharedInstance] getRobotNickWithUsername:self.conversationId];
-//        }
-//        return [[UserProfileManager sharedInstance] getNickNameWithUsername:self.conversationId];
-//    } else if (self.type == EMConversationTypeGroupChat) {
-//        if ([self.ext objectForKey:@"subject"] || [self.ext objectForKey:@"isPublic"]) {
-//            return [self.ext objectForKey:@"subject"];
-//        }
-//    }
-//    return self.conversationId;
-//}
-//
-//@end
 
 @interface TDEaseConversationListViewController ()<EaseConversationListViewControllerDelegate, EaseConversationListViewControllerDataSource>
 
@@ -47,15 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Do any additional setup after loading the view.
     self.showRefreshHeader = YES;
     self.delegate = self;
     self.dataSource = self;
     
     [self networkStateView];
-    
-    [self setupSearchController];
     
     [self tableViewDidTriggerHeaderRefresh];
     [self removeEmptyConversationsFromDB];
@@ -65,11 +34,6 @@
 {
     [super viewWillAppear:animated];
     [self refresh];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)removeEmptyConversationsFromDB
@@ -122,11 +86,6 @@
     if (conversationModel) {
         EMConversation *conversation = conversationModel.conversation;
         if (conversation) {
-//            if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
-//                TDEaseChatViewController *chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//                chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
-//                [self.navigationController pushViewController:chatController animated:YES];
-//            } else {
                 UIViewController *chatController = nil;
 #ifdef REDPACKET_AVALABLE
                 chatController = [[RedPacketChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
@@ -135,7 +94,6 @@
 #endif
                 chatController.title = conversationModel.title;
                 [self.navigationController pushViewController:chatController animated:YES];
-//            }
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
         [self.tableView reloadData];
@@ -159,7 +117,7 @@
 //            }
 //        }
     } else if (model.conversation.type == EMConversationTypeGroupChat) {
-        NSString *imageName = @"groupPublicHeader";
+        NSString *imageName = @"EaseUIResource.bundle/group";
         if (![conversation.ext objectForKey:@"subject"])
         {
             NSArray *groupArray = [[EMClient sharedClient].groupManager getJoinedGroups];
@@ -175,7 +133,7 @@
         }
         NSDictionary *ext = conversation.ext;
         model.title = [ext objectForKey:@"subject"];
-        imageName = [[ext objectForKey:@"isPublic"] boolValue] ? @"groupPublicHeader" : @"groupPrivateHeader";
+        imageName = [[ext objectForKey:@"isPublic"] boolValue] ? @"EaseUIResource.bundle/group" : @"EaseUIResource.bundle/group";
         model.avatarImage = [UIImage imageNamed:imageName];
     }
     return model;
@@ -217,31 +175,6 @@
             default: {
             } break;
         }
-        
-//        if (lastMessage.direction == EMMessageDirectionReceive) {
-//            NSString *from = lastMessage.from;
-//            UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:from];
-//            if (profileEntity) {
-//                from = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
-//            }
-//            latestMessageTitle = [NSString stringWithFormat:@"%@: %@", from, latestMessageTitle];
-//        }
-//
-//        NSDictionary *ext = conversationModel.conversation.ext;
-//        if (ext && [ext[kHaveUnreadAtMessage] intValue] == kAtAllMessage) {
-//            latestMessageTitle = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"group.atAll", nil), latestMessageTitle];
-//            attributedStr = [[NSMutableAttributedString alloc] initWithString:latestMessageTitle];
-//            [attributedStr setAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:1.0 green:.0 blue:.0 alpha:0.5]} range:NSMakeRange(0, NSLocalizedString(@"group.atAll", nil).length)];
-//
-//        }
-//        else if (ext && [ext[kHaveUnreadAtMessage] intValue] == kAtYouMessage) {
-//            latestMessageTitle = [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"group.atMe", @"[Somebody @ me]"), latestMessageTitle];
-//            attributedStr = [[NSMutableAttributedString alloc] initWithString:latestMessageTitle];
-//            [attributedStr setAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:1.0 green:.0 blue:.0 alpha:0.5]} range:NSMakeRange(0, NSLocalizedString(@"group.atMe", @"[Somebody @ me]").length)];
-//        }
-//        else {
-//            attributedStr = [[NSMutableAttributedString alloc] initWithString:latestMessageTitle];
-//        }
     }
     
     return attributedStr;
@@ -255,90 +188,11 @@
     if (lastMessage) {
         latestMessageTime = [NSDate formattedTimeFromTimeInterval:lastMessage.timestamp];
     }
-    
-    
     return latestMessageTime;
-}
-
-#pragma mark - EMSearchControllerDelegate
-
-- (void)cancelButtonClicked
-{
-//    [[RealtimeSearchUtil currentUtil] realtimeSearchStop];
-}
-
-- (void)searchTextChangeWithString:(NSString *)aString
-{
-    __weak typeof(self) weakSelf = self;
-//    [[RealtimeSearchUtil currentUtil] realtimeSearchWithSource:self.dataArray searchText:aString collationStringSelector:@selector(title) resultBlock:^(NSArray *results) {
-//        if (results) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [weakSelf.resultController.displaySource removeAllObjects];
-//                [weakSelf.resultController.displaySource addObjectsFromArray:results];
-//                [weakSelf.resultController.tableView reloadData];
-//            });
-//        }
-//    }];
 }
 
 #pragma mark - private
 
-- (void)setupSearchController
-{
-//    [self enableSearchController];
-    
-    __weak TDEaseConversationListViewController *weakSelf = self;
-//    [self.resultController setCellForRowAtIndexPathCompletion:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
-//        NSString *CellIdentifier = [EaseConversationCell cellIdentifierWithModel:nil];
-//        EaseConversationCell *cell = (EaseConversationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-        // Configure the cell...
-//        if (cell == nil) {
-//            cell = [[EaseConversationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        }
-//        
-//        id<IConversationModel> model = [weakSelf.resultController.displaySource objectAtIndex:indexPath.row];
-//        cell.model = model;
-//        
-//        cell.detailLabel.attributedText = [weakSelf conversationListViewController:weakSelf latestMessageTitleForConversationModel:model];
-//        cell.timeLabel.text = [weakSelf conversationListViewController:weakSelf latestMessageTimeForConversationModel:model];
-//        return cell;
-//    }];
-    
-//    [self.resultController setHeightForRowAtIndexPathCompletion:^CGFloat(UITableView *tableView, NSIndexPath *indexPath) {
-//        return [EaseConversationCell cellHeightWithModel:nil];
-//    }];
-
-//    [self.resultController setDidSelectRowAtIndexPathCompletion:^(UITableView *tableView, NSIndexPath *indexPath) {
-//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//        [weakSelf.searchController.searchBar endEditing:YES];
-//        id<IConversationModel> model = [weakSelf.resultController.displaySource objectAtIndex:indexPath.row];
-//        EMConversation *conversation = model.conversation;
-//        ChatViewController *chatController;
-//        if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
-//            chatController = [[RobotChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//            chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
-//        }else {
-//#ifdef REDPACKET_AVALABLE
-//            chatController = [[RedPacketChatViewController alloc]  initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//#else
-//            chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//#endif
-//            chatController.title = [conversation showName];
-//        }
-//        [weakSelf.navigationController pushViewController:chatController animated:YES];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
-//        [weakSelf.tableView reloadData];
-//
-//        [weakSelf cancelSearch];
-//    }];
-
-//    UISearchBar *searchBar = self.searchController.searchBar;
-//    [self.view addSubview:searchBar];
-//    self.tableView.frame = CGRectMake(0, searchBar.frame.size.height, self.view.frame.size.width,self.view.frame.size.height - searchBar.frame.size.height);
-    //    self.tableView.tableHeaderView = searchBar;
-    //    [searchBar sizeToFit];
-}
 
 #pragma mark - public
 
@@ -359,7 +213,6 @@
     else{
         self.tableView.tableHeaderView = nil;
     }
-    
 }
 
 - (void)networkChanged:(EMConnectionState)connectionState

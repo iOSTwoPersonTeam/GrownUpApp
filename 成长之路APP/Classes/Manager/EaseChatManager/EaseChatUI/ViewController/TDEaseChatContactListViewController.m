@@ -8,17 +8,7 @@
 
 #import "TDEaseChatContactListViewController.h"
 #import "TDEaseChatViewController.h"
-//#import "RobotListViewController.h"
-//#import "ChatroomListViewController.h"
-//#import "AddFriendViewController.h"
-//#import "ApplyViewController.h"
-//#import "UserProfileManager.h"
-//#import "RealtimeSearchUtil.h"
-//#import "UserProfileManager.h"
-//#import "RedPacketChatViewController.h"
-//
-//#import "BaseTableViewCell.h"
-//#import "UIViewController+SearchController.h"
+#import "TDGroupContactListViewController.h"
 
 @interface TDEaseChatContactListViewController ()<UISearchBarDelegate, UIActionSheetDelegate, EaseUserCellDelegate>
 {
@@ -55,11 +45,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - getter
 
 
@@ -75,7 +60,7 @@
 {
     // Return the number of rows in the section.
     if (section == 0) {
-        return 3;
+        return 2;
     } else if (section == 1) {
         return [self.otherPlatformIds count];
     }
@@ -86,17 +71,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            NSString *CellIdentifier = @"addFriend";
-            EaseUserCell *cell = (EaseUserCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-            if (cell == nil) {
-                cell = [[EaseUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            }
-            cell.avatarView.image = [UIImage imageNamed:@"newFriends"];
-            cell.titleLabel.text = NSLocalizedString(@"title.apply", @"Application and notification");
-            cell.avatarView.badge = self.unapplyCount;
-            return cell;
-        }
         
         NSString *CellIdentifier = @"commonCell";
         EaseUserCell *cell = (EaseUserCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -104,17 +78,13 @@
             cell = [[EaseUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         
-        if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
             cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
-            cell.titleLabel.text = NSLocalizedString(@"title.group", @"Group");
+            cell.titleLabel.text = NSLocalizedString(@"群聊", @"Group");
         }
-        else if (indexPath.row == 2) {
+        else if (indexPath.row == 1) {
             cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
-            cell.titleLabel.text = NSLocalizedString(@"title.chatroom",@"chatroom");
-        }
-        else if (indexPath.row == 3) {
-            cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
-            cell.titleLabel.text = NSLocalizedString(@"title.robotlist",@"robot list");
+            cell.titleLabel.text = NSLocalizedString(@"聊天室",@"chatroom");
         }
         return cell;
     } else if (indexPath.section == 1) {
@@ -126,6 +96,8 @@
             cell = [[EaseUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
         cell.titleLabel.text = [self.otherPlatformIds objectAtIndex:indexPath.row];
+        cell.showAvatar =YES;
+        cell.avatarView.image =[UIImage imageNamed:@"EaseUIResource.bundle/user@2x"];
         
         return cell;
         
@@ -140,11 +112,6 @@
         
         NSArray *userSection = [self.dataArray objectAtIndex:(indexPath.section - 2)];
         EaseUserModel *model = [userSection objectAtIndex:indexPath.row];
-//        UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:model.buddy];
-//        if (profileEntity) {
-//            model.avatarURLPath = profileEntity.imageUrl;
-//            model.nickname = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
-//        }
         cell.indexPath = indexPath;
         cell.delegate = self;
         cell.model = model;
@@ -199,28 +166,15 @@
     NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     if (section == 0) {
-        if (row == 0) {
-//            [self.navigationController pushViewController:[ApplyViewController shareController] animated:YES];
+       if (row == 0)
+        {
+            TDGroupContactListViewController *groupController = [[TDGroupContactListViewController alloc] initWithStyle:UITableViewStylePlain];
+            [self.navigationController pushViewController:groupController animated:YES];
         }
         else if (row == 1)
         {
-            //            if (_groupController == nil) {
-            //                _groupController = [[GroupListViewController alloc] initWithStyle:UITableViewStylePlain];
-            //            }
-            //            else{
-            //                [_groupController reloadDataSource];
-            //            }
-//            GroupListViewController *groupController = [[GroupListViewController alloc] initWithStyle:UITableViewStylePlain];
-//            [self.navigationController pushViewController:groupController animated:YES];
-        }
-        else if (row == 2)
-        {
 //            ChatroomListViewController *controller = [[ChatroomListViewController alloc] initWithStyle:UITableViewStylePlain];
 //            [self.navigationController pushViewController:controller animated:YES];
-        }
-        else if (row == 3) {
-//            RobotListViewController *robot = [[RobotListViewController alloc] init];
-//            [self.navigationController pushViewController:robot animated:YES];
         }
     } else if (section == 1) {
         TDEaseChatViewController * chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:[self.otherPlatformIds objectAtIndex:indexPath.row] conversationType:EMConversationTypeChat];
@@ -230,7 +184,7 @@
         EaseUserModel *model = [[self.dataArray objectAtIndex:(section - 2)] objectAtIndex:row];
         UIViewController *chatController = nil;
 #ifdef REDPACKET_AVALABLE
-//        chatController = [[RedPacketChatViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
+        chatController = [[RedPacketChatViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
 #else
         chatController = [[TDEaseChatViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
 #endif
