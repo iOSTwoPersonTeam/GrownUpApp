@@ -142,6 +142,16 @@
 		04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7D5AC1F44635400E8D9DB /* TDSettingsTableViewCell.m */; };
 		04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8E7841F2C2C4200F407A6 /* TDRootModel.m */; };
 		04E8E7881F2C2CD500F407A6 /* TDModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */; };
+		04EE21491F972E2B005110FC /* TDAddFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21311F972E20005110FC /* TDAddFriendTableViewCell.m */; };
+		04EE214A1F972E2E005110FC /* TDAddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21331F972E20005110FC /* TDAddFriendViewController.m */; };
+		04EE214B1F972E34005110FC /* TDApplyFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21361F972E20005110FC /* TDApplyFriendTableViewCell.m */; };
+		04EE214C1F972E36005110FC /* TDApplyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21381F972E20005110FC /* TDApplyTableViewController.m */; };
+		04EE214D1F972E3A005110FC /* TDEaseChatContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE213B1F972E20005110FC /* TDEaseChatContactListViewController.m */; };
+		04EE214E1F972E3E005110FC /* TDEaseChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE213E1F972E20005110FC /* TDEaseChatTableViewCell.m */; };
+		04EE214F1F972E41005110FC /* TDEaseChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21401F972E20005110FC /* TDEaseChatViewController.m */; };
+		04EE21501F972E47005110FC /* TDEaseConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21431F972E20005110FC /* TDEaseConversationListViewController.m */; };
+		04EE21511F972E4B005110FC /* TDGroupContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21461F972E20005110FC /* TDGroupContactListViewController.m */; };
+		04EE21521F972E4E005110FC /* TDGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EE21481F972E20005110FC /* TDGroupTableViewCell.m */; };
 		04F6FD781F60F9EC00A301B9 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */; };
 		BE6496A023EF79369C1ABA7D /* libPods-成长之路APP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 773934F5E62E6955CF04F2AE /* libPods-成长之路APP.a */; };
 /* End PBXBuildFile section */
@@ -430,6 +440,26 @@
 		04E8E7841F2C2C4200F407A6 /* TDRootModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDRootModel.m; sourceTree = "<group>"; };
 		04E8E7861F2C2CD500F407A6 /* TDModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDModelViewController.h; sourceTree = "<group>"; };
 		04E8E7871F2C2CD500F407A6 /* TDModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDModelViewController.m; sourceTree = "<group>"; };
+		04EE21301F972E20005110FC /* TDAddFriendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDAddFriendTableViewCell.h; sourceTree = "<group>"; };
+		04EE21311F972E20005110FC /* TDAddFriendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAddFriendTableViewCell.m; sourceTree = "<group>"; };
+		04EE21321F972E20005110FC /* TDAddFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDAddFriendViewController.h; sourceTree = "<group>"; };
+		04EE21331F972E20005110FC /* TDAddFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDAddFriendViewController.m; sourceTree = "<group>"; };
+		04EE21351F972E20005110FC /* TDApplyFriendTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDApplyFriendTableViewCell.h; sourceTree = "<group>"; };
+		04EE21361F972E20005110FC /* TDApplyFriendTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDApplyFriendTableViewCell.m; sourceTree = "<group>"; };
+		04EE21371F972E20005110FC /* TDApplyTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDApplyTableViewController.h; sourceTree = "<group>"; };
+		04EE21381F972E20005110FC /* TDApplyTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDApplyTableViewController.m; sourceTree = "<group>"; };
+		04EE213A1F972E20005110FC /* TDEaseChatContactListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseChatContactListViewController.h; sourceTree = "<group>"; };
+		04EE213B1F972E20005110FC /* TDEaseChatContactListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseChatContactListViewController.m; sourceTree = "<group>"; };
+		04EE213D1F972E20005110FC /* TDEaseChatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseChatTableViewCell.h; sourceTree = "<group>"; };
+		04EE213E1F972E20005110FC /* TDEaseChatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseChatTableViewCell.m; sourceTree = "<group>"; };
+		04EE213F1F972E20005110FC /* TDEaseChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseChatViewController.h; sourceTree = "<group>"; };
+		04EE21401F972E20005110FC /* TDEaseChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseChatViewController.m; sourceTree = "<group>"; };
+		04EE21421F972E20005110FC /* TDEaseConversationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDEaseConversationListViewController.h; sourceTree = "<group>"; };
+		04EE21431F972E20005110FC /* TDEaseConversationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDEaseConversationListViewController.m; sourceTree = "<group>"; };
+		04EE21451F972E20005110FC /* TDGroupContactListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDGroupContactListViewController.h; sourceTree = "<group>"; };
+		04EE21461F972E20005110FC /* TDGroupContactListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDGroupContactListViewController.m; sourceTree = "<group>"; };
+		04EE21471F972E20005110FC /* TDGroupTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDGroupTableViewCell.h; sourceTree = "<group>"; };
+		04EE21481F972E20005110FC /* TDGroupTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDGroupTableViewCell.m; sourceTree = "<group>"; };
 		04F6FD761F60F9EC00A301B9 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
 		04F6FD771F60F9EC00A301B9 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		04FA08551F346060006E66BE /* URLMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLMacros.h; sourceTree = "<group>"; };
@@ -546,6 +576,7 @@
 				0489FC3F1F8E245800F286DB /* TDEaseChatConfig.h */,
 				041872EC1F8E1FC500DBD228 /* TDEaseChatManager.h */,
 				041872ED1F8E1FC500DBD228 /* TDEaseChatManager.m */,
+				04EE212E1F972E20005110FC /* EaseChatUI */,
 			);
 			path = EaseChatManager;
 			sourceTree = "<group>";
@@ -1966,6 +1997,81 @@
 			path = RootModel;
 			sourceTree = "<group>";
 		};
+		04EE212E1F972E20005110FC /* EaseChatUI */ = {
+			isa = PBXGroup;
+			children = (
+				04EE212F1F972E20005110FC /* AddFriend */,
+				04EE21341F972E20005110FC /* ApplyFriend */,
+				04EE21391F972E20005110FC /* EaseChatContactList */,
+				04EE213C1F972E20005110FC /* EaseChatView */,
+				04EE21411F972E20005110FC /* EaseConversationList */,
+				04EE21441F972E20005110FC /* GroupContactList */,
+			);
+			path = EaseChatUI;
+			sourceTree = "<group>";
+		};
+		04EE212F1F972E20005110FC /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				04EE21301F972E20005110FC /* TDAddFriendTableViewCell.h */,
+				04EE21311F972E20005110FC /* TDAddFriendTableViewCell.m */,
+				04EE21321F972E20005110FC /* TDAddFriendViewController.h */,
+				04EE21331F972E20005110FC /* TDAddFriendViewController.m */,
+			);
+			path = AddFriend;
+			sourceTree = "<group>";
+		};
+		04EE21341F972E20005110FC /* ApplyFriend */ = {
+			isa = PBXGroup;
+			children = (
+				04EE21351F972E20005110FC /* TDApplyFriendTableViewCell.h */,
+				04EE21361F972E20005110FC /* TDApplyFriendTableViewCell.m */,
+				04EE21371F972E20005110FC /* TDApplyTableViewController.h */,
+				04EE21381F972E20005110FC /* TDApplyTableViewController.m */,
+			);
+			path = ApplyFriend;
+			sourceTree = "<group>";
+		};
+		04EE21391F972E20005110FC /* EaseChatContactList */ = {
+			isa = PBXGroup;
+			children = (
+				04EE213A1F972E20005110FC /* TDEaseChatContactListViewController.h */,
+				04EE213B1F972E20005110FC /* TDEaseChatContactListViewController.m */,
+			);
+			path = EaseChatContactList;
+			sourceTree = "<group>";
+		};
+		04EE213C1F972E20005110FC /* EaseChatView */ = {
+			isa = PBXGroup;
+			children = (
+				04EE213D1F972E20005110FC /* TDEaseChatTableViewCell.h */,
+				04EE213E1F972E20005110FC /* TDEaseChatTableViewCell.m */,
+				04EE213F1F972E20005110FC /* TDEaseChatViewController.h */,
+				04EE21401F972E20005110FC /* TDEaseChatViewController.m */,
+			);
+			path = EaseChatView;
+			sourceTree = "<group>";
+		};
+		04EE21411F972E20005110FC /* EaseConversationList */ = {
+			isa = PBXGroup;
+			children = (
+				04EE21421F972E20005110FC /* TDEaseConversationListViewController.h */,
+				04EE21431F972E20005110FC /* TDEaseConversationListViewController.m */,
+			);
+			path = EaseConversationList;
+			sourceTree = "<group>";
+		};
+		04EE21441F972E20005110FC /* GroupContactList */ = {
+			isa = PBXGroup;
+			children = (
+				04EE21451F972E20005110FC /* TDGroupContactListViewController.h */,
+				04EE21461F972E20005110FC /* TDGroupContactListViewController.m */,
+				04EE21471F972E20005110FC /* TDGroupTableViewCell.h */,
+				04EE21481F972E20005110FC /* TDGroupTableViewCell.m */,
+			);
+			path = GroupContactList;
+			sourceTree = "<group>";
+		};
 		62CAB42103F463F87A956177 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2179,6 +2285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EE214B1F972E34005110FC /* TDApplyFriendTableViewCell.m in Sources */,
 				04930CD51F7CD5D9005674FA /* TDRunningTrackDataView.m in Sources */,
 				04D989841F66159F00A0630D /* TDPublishViewController.m in Sources */,
 				0498E2051F6922D0006D08BA /* TDRunningTrackViewController.m in Sources */,
@@ -2187,6 +2294,7 @@
 				045264301F590101001FD38B /* TDMTMapViewController.m in Sources */,
 				047DED111F6C050100FD56FE /* XMLDictionary.m in Sources */,
 				04C1C36E1F3B068F0035F26C /* LRTextField.m in Sources */,
+				04EE214F1F972E41005110FC /* TDEaseChatViewController.m in Sources */,
 				04AB0C1A1F5016B700599CE0 /* UIViewController+ZJScrollPageController.m in Sources */,
 				046C580E1F4AC19A0058364B /* UIColor+WHE.m in Sources */,
 				044819091F67B1C100DD71FC /* TDActivityStatusViewController.m in Sources */,
@@ -2195,6 +2303,7 @@
 				046C583A1F4AC7C10058364B /* HanyuPinyinOutputFormat.m in Sources */,
 				046C57FB1F4AAEF70058364B /* TDRootWebViewController.m in Sources */,
 				04149F301F5B9F8E006EEC44 /* TDThemeViewController.m in Sources */,
+				04EE21511F972E4B005110FC /* TDGroupContactListViewController.m in Sources */,
 				044819171F67C07100DD71FC /* MarqueeLabel.m in Sources */,
 				046C583D1F4AC7C10058364B /* PinYinForObjc.m in Sources */,
 				041ACB2E1F29B8C9007280ED /* TDRootNavigationController.m in Sources */,
@@ -2245,7 +2354,9 @@
 				04AB9E471F2AD1290031FD6E /* UIViewController+Additions.m in Sources */,
 				0498E1F31F69120E006D08BA /* TDDownViewController.m in Sources */,
 				046C58101F4AC19A0058364B /* CYWebViewController.m in Sources */,
+				04EE214D1F972E3A005110FC /* TDEaseChatContactListViewController.m in Sources */,
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
+				04EE214E1F972E3E005110FC /* TDEaseChatTableViewCell.m in Sources */,
 				046A26B41F3968C90013406B /* TDProfileHeaderView.m in Sources */,
 				044A78091F6BC49000A55B53 /* TDShareSDKTool.m in Sources */,
 				044818FA1F67AF4500DD71FC /* TDCommunityViewController.m in Sources */,
@@ -2262,9 +2373,11 @@
 				046C58331F4AC7C10058364B /* CityButton.m in Sources */,
 				045264331F593243001FD38B /* TDNearbyAddressView.m in Sources */,
 				04AB0C1E1F5016B700599CE0 /* ZJScrollSegmentView.m in Sources */,
+				04EE214C1F972E36005110FC /* TDApplyTableViewController.m in Sources */,
 				049041B51F4C35B6006C1601 /* DHGuidePageHUD.m in Sources */,
 				044A78011F6B713900A55B53 /* TDGoodsOrderViewController.m in Sources */,
 				0457457F1F146770003F4F2D /* main.m in Sources */,
+				04EE21491F972E2B005110FC /* TDAddFriendTableViewCell.m in Sources */,
 				0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */,
 				046C58131F4AC19A0058364B /* UINavigationBar+Awesome.m in Sources */,
 				04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */,
@@ -2282,8 +2395,10 @@
 				043DD10B1F613EDC008B576E /* TDContentViewController.m in Sources */,
 				04AB0C1B1F5016B700599CE0 /* ZJCollectionView.m in Sources */,
 				0448190F1F67B1FD00DD71FC /* TDMessageViewController.m in Sources */,
+				04EE21501F972E47005110FC /* TDEaseConversationListViewController.m in Sources */,
 				0438D3411F39A6AF00D4ED81 /* TDRootTableViewController.m in Sources */,
 				0440BEB91F3C0CC400E9DADE /* TDForgetPasswordView.m in Sources */,
+				04EE214A1F972E2E005110FC /* TDAddFriendViewController.m in Sources */,
 				041595061F6F7AC40057D87F /* TDPaymentHeaderView.m in Sources */,
 				0498E1ED1F6911DC006D08BA /* TDRecommendViewController.m in Sources */,
 				045EA5591F598F6500B0A704 /* TDBAddGoodsAddressViewController.m in Sources */,
@@ -2293,6 +2408,7 @@
 				045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */,
 				044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */,
 				0440BEAD1F3BEDC000E9DADE /* TDRegisterViewController.m in Sources */,
+				04EE21521F972E4E005110FC /* TDGroupTableViewCell.m in Sources */,
 				04771A1A1F2B69FC009E5649 /* TDMainViewController.m in Sources */,
 				04246C7F1F505113002F5855 /* TTGTagCollectionView.m in Sources */,
 				0478F1C71F64E64100FAA40B /* TDHomeHotViewController.m in Sources */,
