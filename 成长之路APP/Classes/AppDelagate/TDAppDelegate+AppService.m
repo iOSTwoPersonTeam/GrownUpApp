@@ -109,7 +109,6 @@
     
     //统一处理支付类注册微信---
 //    [TDUnifyPayManager wechatRegisterAppWithAppId:TD_WeiChat_AppID enableMTA:YES];
-    
 }
 
 #pragma mark ---环信SDK基本信息-------
@@ -117,26 +116,6 @@
 {
     //封装单例 配置环信基本信息
     [[TDEaseChatManager shareManager] setEaseChatBaseInformation];
-    
-    //注册一个监听对象到监听列表中
-    //注册好友回调
-    [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
-    
-}
-
-//监听好友申请消息
-- (void)friendRequestDidReceiveFromUser:(NSString *)aUsername message:(NSString *)aMessage
-{
-    NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:aUsername,@"username",aMessage,@"message", nil];
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    [userDefaults setObject:dic forKey:@"dic"];
-    
-    [userDefaults synchronize];
-    
-    NSLog(@"来自%@的好友申请",aUsername);
-    
 }
 
 // APP进入后台

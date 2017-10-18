@@ -8,7 +8,7 @@
 
 #import "TDAppDelegate.h"
 
-@interface TDAppDelegate (AppService)<EMContactManagerDelegate>
+@interface TDAppDelegate (AppService)
 
 /*
  * 初始化window,设置主窗口

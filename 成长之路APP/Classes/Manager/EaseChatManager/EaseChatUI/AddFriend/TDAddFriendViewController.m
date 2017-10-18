@@ -7,9 +7,7 @@
 //
 
 #import "TDAddFriendViewController.h"
-//#import "ApplyViewController.h"
 #import "TDAddFriendTableViewCell.h"
-//#import "InvitationManager.h"
 
 @interface TDAddFriendViewController ()<UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIAlertViewDelegate>
 
@@ -67,14 +65,7 @@
     [self.view addSubview:self.textField];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - getter
-
 - (UIView *)headerView
 {
     if (_headerView == nil) {
@@ -102,7 +93,6 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -242,15 +232,13 @@
     NSString *buddyName = [self.dataSource objectAtIndex:indexPath.row];
     if (buddyName && buddyName.length > 0) {
         [self showHudInView:self.view hint:NSLocalizedString(@"friend.sendApply", @"sending application...")];
-        EMError *error = [[EMClient sharedClient].contactManager addContact:buddyName message:message];
-        [self hideHud];
-        if (error) {
-            [self showHint:NSLocalizedString(@"friend.sendApplyFail", @"send application fails, please operate again")];
-        }
-        else{
+        [[TDEaseChatManager shareManager] applyAddContact:buddyName message:message withSucceed:^{
             [self showHint:NSLocalizedString(@"friend.sendApplySuccess", @"send successfully")];
             [self.navigationController popViewControllerAnimated:YES];
-        }
+        } Error:^(EMError *aError) {
+            [self showHint:NSLocalizedString(@"friend.sendApplyFail", @"send application fails, please operate again")];
+        }];
+
     }
 }
 

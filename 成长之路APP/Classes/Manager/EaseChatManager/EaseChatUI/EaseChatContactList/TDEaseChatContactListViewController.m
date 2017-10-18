@@ -329,7 +329,7 @@
     __weak typeof(self) weakself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        weakself.otherPlatformIds = [[EMClient sharedClient].contactManager getContactsFromServerWithError:nil];
+        weakself.otherPlatformIds = [[TDEaseChatManager shareManager] getContactsFromServerAndSaveContactsList];
 
         dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -346,7 +346,7 @@
     [self.dataArray removeAllObjects];
     [self.contactsSource removeAllObjects];
     
-    NSArray *buddyList = [[EMClient sharedClient].contactManager getContacts];
+    NSArray *buddyList = [[TDEaseChatManager shareManager] getContactsFromServerAndSaveContactsList];
     
     for (NSString *buddy in buddyList) {
         [self.contactsSource addObject:buddy];

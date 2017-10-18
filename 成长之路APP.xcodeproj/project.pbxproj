@@ -2013,10 +2013,10 @@
 		04EE212F1F972E20005110FC /* AddFriend */ = {
 			isa = PBXGroup;
 			children = (
-				04EE21301F972E20005110FC /* TDAddFriendTableViewCell.h */,
-				04EE21311F972E20005110FC /* TDAddFriendTableViewCell.m */,
 				04EE21321F972E20005110FC /* TDAddFriendViewController.h */,
 				04EE21331F972E20005110FC /* TDAddFriendViewController.m */,
+				04EE21301F972E20005110FC /* TDAddFriendTableViewCell.h */,
+				04EE21311F972E20005110FC /* TDAddFriendTableViewCell.m */,
 			);
 			path = AddFriend;
 			sourceTree = "<group>";
@@ -2024,10 +2024,10 @@
 		04EE21341F972E20005110FC /* ApplyFriend */ = {
 			isa = PBXGroup;
 			children = (
-				04EE21351F972E20005110FC /* TDApplyFriendTableViewCell.h */,
-				04EE21361F972E20005110FC /* TDApplyFriendTableViewCell.m */,
 				04EE21371F972E20005110FC /* TDApplyTableViewController.h */,
 				04EE21381F972E20005110FC /* TDApplyTableViewController.m */,
+				04EE21351F972E20005110FC /* TDApplyFriendTableViewCell.h */,
+				04EE21361F972E20005110FC /* TDApplyFriendTableViewCell.m */,
 			);
 			path = ApplyFriend;
 			sourceTree = "<group>";
@@ -2044,10 +2044,10 @@
 		04EE213C1F972E20005110FC /* EaseChatView */ = {
 			isa = PBXGroup;
 			children = (
-				04EE213D1F972E20005110FC /* TDEaseChatTableViewCell.h */,
-				04EE213E1F972E20005110FC /* TDEaseChatTableViewCell.m */,
 				04EE213F1F972E20005110FC /* TDEaseChatViewController.h */,
 				04EE21401F972E20005110FC /* TDEaseChatViewController.m */,
+				04EE213D1F972E20005110FC /* TDEaseChatTableViewCell.h */,
+				04EE213E1F972E20005110FC /* TDEaseChatTableViewCell.m */,
 			);
 			path = EaseChatView;
 			sourceTree = "<group>";
