@@ -150,24 +150,15 @@ static TDApplyTableViewController *controller = nil;
         [self showHudInView:self.view hint:NSLocalizedString(@"sendingApply", @"sending apply...")];
         
         NSDictionary *entity = [self.dataSource objectAtIndex:indexPath.row];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            EMError *error;
-
-            error = [[EMClient sharedClient].contactManager acceptInvitationForUsername:entity[@"username"]];
-    
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self hideHud];
-                if (!error) {
-                    [self.dataSource removeObject:entity];
-                    NSString *loginUsername = [[EMClient sharedClient] currentUsername];
-                    [userDefaultes removeObjectForKey:@"dic"];
-                    [self.tableView reloadData];
-                }
-                else{
-                    [self showHint:NSLocalizedString(@"acceptFail", @"accept failure")];
-                }
-            });
-        });
+       
+        [[TDEaseChatManager shareManager] judgeAcceptInvitationStatus:YES forContact:entity[@"username"] withSucceed:^{
+            [self.dataSource removeObject:entity];
+            [userDefaultes removeObjectForKey:@"dic"];
+            [self.tableView reloadData];
+        } Error:^(EMError *aError) {
+           [self showHint:NSLocalizedString(@"acceptFail", @"accept failure")];
+        }];
+        [self hideHud];
     }
 }
 
@@ -176,24 +167,22 @@ static TDApplyTableViewController *controller = nil;
     if (indexPath.row < [self.dataSource count]) {
         [self showHudInView:self.view hint:NSLocalizedString(@"sendingApply", @"sending apply...")];
         NSDictionary *entity = [self.dataSource objectAtIndex:indexPath.row];
-
-          EMError *error =[[EMClient sharedClient].contactManager declineInvitationForUsername:entity[@"username"]];
-
-        [self hideHud];
-        if (!error) {
+        
+        [[TDEaseChatManager shareManager] judgeAcceptInvitationStatus:NO forContact:entity[@"username"] withSucceed:^{
             [self.dataSource removeObject:entity];
             NSString *loginUsername = [[EMClient sharedClient] currentUsername];
             [userDefaultes removeObjectForKey:@"dic"];
             [self.tableView reloadData];
-        }
-        else{
+        } Error:^(EMError *aError) {
             [self showHint:NSLocalizedString(@"rejectFail", @"reject failure")];
             [self.dataSource removeObject:entity];
             NSString *loginUsername = [[EMClient sharedClient] currentUsername];
-
+            
             [self.tableView reloadData];
+        }];
+        
+        [self hideHud];
 
-        }
     }
 }
 

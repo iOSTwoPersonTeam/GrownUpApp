@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TDEaseChatManager : NSObject
+@interface TDEaseChatManager : NSObject<EMContactManagerDelegate>
 
 /*
  * TDEaseChatmanager 单例
@@ -45,11 +45,30 @@
  */
 -(void)setLogOutEaseChatWitLhSucceed:(void(^)())suceess failure:(void(^)(EMError *error))failure;
 
+/*
+ *  获取联系人列表
+ */
+-(NSArray *)getContactsFromServerAndSaveContactsList;
 
+/*
+ *  获取所有群组联系人列表
+ */
+-(NSArray *)getJoinGroupsContactList;
 
+/*
+ *  获取会话列表
+ */
+-(NSArray *)getConversationFromServerOrSaveConversationList;
 
+/*
+ *  申请添加好友
+ */
+-(void)applyAddContact:(NSString *)contactName message:(NSString *)message withSucceed:(void(^)())succeed Error:(void(^)(EMError *aError))error;
 
-
+/*
+ * 接受或者拒绝好友申请 isAccept 是Yes接受  No拒绝
+ */
+-(void)judgeAcceptInvitationStatus:(BOOL)isAccept forContact:(NSString *)contactName withSucceed:(void(^)())succeed Error:(void(^)(EMError *aError))error;
 
 
 
