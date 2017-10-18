@@ -10,7 +10,6 @@
 
 @interface TDEaseChatManager ()
 
-
 @end
 
 static  TDEaseChatManager *_manager =nil;
