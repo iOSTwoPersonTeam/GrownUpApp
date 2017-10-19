@@ -31,12 +31,12 @@
 - (void)easeClientWillEnterForeground:(UIApplication *)application;
 
 /*
- *  注册环信
+ *  注册环信注册环信账号
  */
 -(void)setRegisterEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error;
 
 /*
- *  环信登录
+ *  环信登录环信账号
  */
 -(void)setLogInEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error;
 

@@ -72,7 +72,7 @@ static  TDEaseChatManager *_manager =nil;
    [[EMClient sharedClient] applicationWillEnterForeground:application];
 }
 
-#pragma mark ---注册环信基本信息
+#pragma mark ---注册环信账号
 -(void)setRegisterEaseChatWithUsername:username password:password Succeed:(void(^)())succeess Error:(void(^)(EMError *aError))error
 {
  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
