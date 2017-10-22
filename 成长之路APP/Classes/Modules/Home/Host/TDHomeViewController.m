@@ -108,8 +108,8 @@
     if (!_childViewControllers) {
         _childViewControllers =@[[[TDHomeHotViewController alloc]init],
                                  [[TDHomeClassisViewController alloc]init],
-                                 [[TDHomeFinenessViewController alloc]init],
-                                 [[TDHomeFinenessViewController alloc]init],
+                                 [[TDHomeClassisViewController alloc]init],
+                                 [[TDHomeClassisViewController alloc]init],
                                  [[TDHomeFinenessViewController alloc]init]];
     }
     return _childViewControllers;

@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - AliPay (2.1.2)
-  - BaiduMapKit (3.4.0)
+  - BaiduMapKit (3.4.2)
   - DACircularProgress (2.3.1)
   - DZNEmptyDataSet (1.8.1)
   - EaseUI (3.3.2):
@@ -25,7 +25,7 @@ PODS:
   - FDFullscreenPopGesture (1.1)
   - FLAnimatedImage (1.0.12)
   - Hyphenate (3.3.2)
-  - IQKeyboardManager (5.0.3)
+  - IQKeyboardManager (5.0.4)
   - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
   - MGSwipeTableCell (1.6.1)
@@ -37,7 +37,7 @@ PODS:
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
   - MZTimerLabel (0.5.4)
-  - PYSearch (0.8.4)
+  - PYSearch (0.8.5)
   - SDCycleScrollView (1.64):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
@@ -58,24 +58,24 @@ PODS:
     - MOBFoundation
   - ShareSDK3/ShareSDKUI (4.0.1):
     - MOBFoundation
-  - XHLaunchAd (3.7.0):
+  - XHLaunchAd (3.8.0):
     - FLAnimatedImage (~> 1.0.12)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (= 3.1.0)
   - AliPay (= 2.1.2)
-  - BaiduMapKit
-  - DZNEmptyDataSet
+  - BaiduMapKit (= 3.4.2)
+  - DZNEmptyDataSet (= 1.8.1)
   - EaseUI (from `https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git`, tag `3.3.2`)
-  - FDFullscreenPopGesture
+  - FDFullscreenPopGesture (= 1.1)
   - Hyphenate (= 3.3.2)
-  - IQKeyboardManager
-  - Masonry
-  - MGSwipeTableCell
-  - MJExtension
+  - IQKeyboardManager (= 5.0.4)
+  - Masonry (= 1.1.0)
+  - MGSwipeTableCell (= 1.6.1)
+  - MJExtension (= 3.0.13)
   - MOBFoundation (= 3.0.2)
-  - MZTimerLabel
-  - PYSearch
+  - MZTimerLabel (= 0.5.4)
+  - PYSearch (= 0.8.5)
   - SDCycleScrollView (= 1.64)
   - ShareSDK3 (= 4.0.1)
   - ShareSDK3/ShareSDKPlatforms/Copy (= 4.0.1)
@@ -83,7 +83,7 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo (= 4.0.1)
   - ShareSDK3/ShareSDKPlatforms/WeChat (= 4.0.1)
   - ShareSDK3/ShareSDKUI (= 4.0.1)
-  - XHLaunchAd
+  - XHLaunchAd (= 3.8.0)
 
 EXTERNAL SOURCES:
   EaseUI:
@@ -98,14 +98,14 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AliPay: 2bd35a4e486d2a8c035043023cd846e886bb21d1
-  BaiduMapKit: 0a5e5e0b1e3fd8dc5aceb40ab9b89e52e1d13df9
+  BaiduMapKit: f61b19ecf07a3f2deede72b221b366bf698739ed
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EaseUI: a1bda9aae6d8566de6d67856807d9457981f1a75
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Hyphenate: b596a794ec253b089a6e5c952d718aeedd85c76c
-  IQKeyboardManager: dc5b18b47e5170e4d150bb86dbee8c8a2fc48997
+  IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MGSwipeTableCell: 19a1d65dcc1ceaea42eb44bb2adae32101904514
@@ -114,12 +114,12 @@ SPEC CHECKSUMS:
   MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
-  PYSearch: 75f94d4a1473334898a5776bf62a6a08ebe7eec5
+  PYSearch: 3eca6a4736700076565cd7d3a64343aff8397eea
   SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
-  XHLaunchAd: d83337b0dc0502f05760ba16913ed8047b431759
+  XHLaunchAd: 13ed8e106406c280dc82f05613ef7c23f5208d07
 
-PODFILE CHECKSUM: 84b7d7002438bda4b6d42e4addc02067dfa2225f
+PODFILE CHECKSUM: 85980a851b7a28715e4f136c1eea62b7933e0484
 
 COCOAPODS: 1.2.1
