@@ -17,6 +17,7 @@
 //#define TDEaseChatAppKey     @"tidoo#ts"   //环信注册的AppKey
 //自己注册的
 #define TDEaseChatAppKey     @"chengdenghui#trainmore"   //环信注册的AppKey
+//#define TDEaseChatAppKey     @"easemob-demo#chatdemoui"   //环信注册的AppKey  账号12512860269  密码:123456 可以直播
 
 #if DEBUG
 #define TDEaseChatApnsCertName  @"tidoo"   //apnsCertName:推送证书名 测试
