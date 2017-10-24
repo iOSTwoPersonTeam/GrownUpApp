@@ -7,9 +7,8 @@
 //
 
 #import "TDRootViewController.h"
-#import "EaseLiveTVListViewController.h"
 #import "ZJScrollPageView.h"
 
-@interface TDHomeFinenessViewController : EaseLiveTVListViewController<ZJScrollPageViewChildVcDelegate>
+@interface TDHomeFinenessViewController : TDRootViewController<ZJScrollPageViewChildVcDelegate>
 
 @end

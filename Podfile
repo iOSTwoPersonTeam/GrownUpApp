@@ -33,6 +33,7 @@ target '成长之路APP' do
     pod 'ShareSDK3/ShareSDKPlatforms/Copy' ,'4.0.1'          # 平台SDK模块-复制链接
 
     #集成环信SDK
+    pod 'HyphenateLite' ,'3.3.2'
     pod 'Hyphenate' ,'3.3.2'
     #集成环信EaseUI
     pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git', :tag => '3.3.2'
