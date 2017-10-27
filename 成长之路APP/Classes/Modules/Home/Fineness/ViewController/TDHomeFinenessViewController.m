@@ -50,12 +50,7 @@
 {
     DLog(@"发布直播------");
     //创建聊天室的方法
-    
-    
-    
-    
-    
-    
+
     //EaseLiveRoom
     /*
      room.session.mobilepullstream =@"rtmp://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/easemob-demo_chatdemoui_3493_1";
