@@ -10,7 +10,7 @@
 #import "ZJScrollPageView.h"
 #import "TDHomeHotViewController.h"
 #import "TDHomeClassisViewController.h"
-#import "TDHomeFinenessViewController.h"
+#import "TDHomeLiveStreamingViewController.h"
 
 @interface TDHomeViewController ()<ZJScrollPageViewDelegate>
 
@@ -110,7 +110,7 @@
                                  [[TDHomeClassisViewController alloc]init],
                                  [[TDHomeClassisViewController alloc]init],
                                  [[TDHomeClassisViewController alloc]init],
-                                 [[TDHomeFinenessViewController alloc]init]];
+                            [[TDHomeLiveStreamingViewController alloc]init]];
     }
     return _childViewControllers;
 }
