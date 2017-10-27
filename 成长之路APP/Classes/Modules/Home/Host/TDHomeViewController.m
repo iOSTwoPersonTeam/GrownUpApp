@@ -99,7 +99,7 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"热门",@"分类",@"精品",@"直播",@"广播"];
+        _themeArray =@[@"热门",@"分类",@"精品",@"广播",@"直播"];
     }
     return _themeArray;
 }

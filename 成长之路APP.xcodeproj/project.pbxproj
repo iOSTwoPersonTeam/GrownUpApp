@@ -242,7 +242,6 @@
 		04AB0C1F1F5016B700599CE0 /* ZJSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0C161F5016B700599CE0 /* ZJSegmentStyle.m */; };
 		04AB0C201F5016B700599CE0 /* ZJTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB0C181F5016B700599CE0 /* ZJTitleView.m */; };
 		04AB9E471F2AD1290031FD6E /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AB9E461F2AD1290031FD6E /* UIViewController+Additions.m */; };
-		04BC3EE11FA328D600A42D3E /* TDHomeFinenessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC3EDF1FA328D600A42D3E /* TDHomeFinenessViewController.m */; };
 		04BC3EE41FA3295D00A42D3E /* TDHomeLiveStreamingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BC3EE31FA3295D00A42D3E /* TDHomeLiveStreamingViewController.m */; };
 		04C1C3671F3AAAB80035F26C /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1C3661F3AAAB80035F26C /* UIImage+Additions.m */; };
 		04C1C36A1F3AEF1B0035F26C /* TDPhoneLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C1C3691F3AEF1B0035F26C /* TDPhoneLoginView.m */; };
@@ -864,8 +863,6 @@
 		04AB9E461F2AD1290031FD6E /* UIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Additions.m"; sourceTree = "<group>"; };
 		04AB9E481F2ADE510031FD6E /* UtilsMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
 		04AB9E491F2ADFED0031FD6E /* FontAndColorMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontAndColorMacros.h; sourceTree = "<group>"; };
-		04BC3EDE1FA328D600A42D3E /* TDHomeFinenessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeFinenessViewController.h; sourceTree = "<group>"; };
-		04BC3EDF1FA328D600A42D3E /* TDHomeFinenessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeFinenessViewController.m; sourceTree = "<group>"; };
 		04BC3EE21FA3295D00A42D3E /* TDHomeLiveStreamingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeLiveStreamingViewController.h; sourceTree = "<group>"; };
 		04BC3EE31FA3295D00A42D3E /* TDHomeLiveStreamingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeLiveStreamingViewController.m; sourceTree = "<group>"; };
 		04C1C3651F3AAAB80035F26C /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
@@ -2870,8 +2867,6 @@
 		04BC3EDD1FA328D600A42D3E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				04BC3EDE1FA328D600A42D3E /* TDHomeFinenessViewController.h */,
-				04BC3EDF1FA328D600A42D3E /* TDHomeFinenessViewController.m */,
 				04BC3EE21FA3295D00A42D3E /* TDHomeLiveStreamingViewController.h */,
 				04BC3EE31FA3295D00A42D3E /* TDHomeLiveStreamingViewController.m */,
 			);
@@ -3483,7 +3478,6 @@
 				04927CD51FA2CF1E006A2BBA /* EaseLiveTVListViewController.m in Sources */,
 				04927D181FA2CF1E006A2BBA /* YzdHUDLabel.m in Sources */,
 				044A78011F6B713900A55B53 /* TDGoodsOrderViewController.m in Sources */,
-				04BC3EE11FA328D600A42D3E /* TDHomeFinenessViewController.m in Sources */,
 				0457457F1F146770003F4F2D /* main.m in Sources */,
 				04EE21491F972E2B005110FC /* TDAddFriendTableViewCell.m in Sources */,
 				0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */,

@@ -26,6 +26,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>         //图片网络请求
 #import <SDWebImage/UIButton+WebCache.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>     //无限轮播图
+#import <PYSearch.h>                                //搜索功能
+#import "MarqueeLabel.h"                            //滚动文字显示
 
 //baiduMap
 #import <BaiduMapAPI_Base/BMKMapManager.h>          //百度地图
@@ -33,8 +35,6 @@
 #import <BaiduMapAPI_Location/BMKLocationComponent.h> //引入定位功能所有的头文件
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>   //引入检索功能所有的头文件
 #import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h> //引入LBS云检索头文件
-
-#import <PYSearch.h>                                //搜索功能
 #import <BaiduMapAPI_Utils/BMKUtilsComponent.h>     //区域头文件
 
 

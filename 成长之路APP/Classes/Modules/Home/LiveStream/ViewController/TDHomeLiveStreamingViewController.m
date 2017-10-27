@@ -12,6 +12,7 @@
 
 @interface TDHomeLiveStreamingViewController ()
 
+@property(nonatomic, strong)MarqueeLabel *rollWordLabel; //滚动文字
 @property(nonatomic, strong)UIButton *publishButton; //发布直播按钮
 
 @end
@@ -22,8 +23,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self.view addSubview:self.rollWordLabel];
     [self.view addSubview:self.publishButton];
     
+    NSString *markString =@"环信+UCould直播,这里只提供简单的几个账号.15712860261是发布直播账号,观看直播只要任意输入账号即可,点击view页面即可进入观看直播,还有因为没有服务器创建聊天室,因此这里的聊天室是在pc端自己创建的(暂时固定)………………";
+    self.rollWordLabel.text =markString;
 }
 
 
@@ -72,14 +76,31 @@
 
 
 #pragma mark --getter
+-(MarqueeLabel *)rollWordLabel
+{
+    if (!_rollWordLabel) {
+        _rollWordLabel =[[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _rollWordLabel.backgroundColor =[UIColor whiteColor];
+        _rollWordLabel.font =[UIFont systemFontOfSize:15];
+        _rollWordLabel.textColor =[UIColor lightGrayColor];
+        _rollWordLabel.marqueeType =MLContinuous;
+        _rollWordLabel.animationCurve =UIViewAnimationOptionCurveLinear;
+        _rollWordLabel.userInteractionEnabled =YES;
+        _rollWordLabel.rate =70;
+        _rollWordLabel.fadeLength =10;
+    }
+    return _rollWordLabel;
+}
+
 -(UIButton *)publishButton
 {
     if (!_publishButton) {
-        _publishButton =[[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-70, SCREEN_HEIGHT/2, 60, 60)];
+        _publishButton =[[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-90, SCREEN_HEIGHT/2, 80, 80)];
         _publishButton.backgroundColor =[UIColor orangeColor];
-        [_publishButton setTitle:@"发布" forState:UIControlStateNormal];
+        [_publishButton setTitle:@"发布直播" forState:UIControlStateNormal];
+        _publishButton.titleLabel.font =[UIFont systemFontOfSize:14];
         _publishButton.layer.masksToBounds =YES;
-        _publishButton.layer.cornerRadius =30;
+        _publishButton.layer.cornerRadius =40;
         [_publishButton addTarget:self action:@selector(clickPublish) forControlEvents:UIControlEventTouchUpInside];
     }
     return _publishButton;
