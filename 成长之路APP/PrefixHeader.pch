@@ -96,7 +96,7 @@
 #import "TDWXPayConfig.h"     //微信支付
 #import "TDUnifyPayManager.h" //处理微信,支付宝支付的统一方法类
 #import "TDEaseChatConfig.h"  //环信封装
-
+#import "EaseLiveConfig.h"    //环信直播封装
 
 #endif /* PrefixHeader_pch */
 
