@@ -8,8 +8,10 @@
 
 #import "TDHomeViewController.h"
 #import "ZJScrollPageView.h"
-#import "TDHomeHotViewController.h"
-#import "TDHomeClassisViewController.h"
+#import "TDHomeRecommendViewController.h"
+#import "TDHomeCategoryViewController.h"
+#import "TDHomeBroadcastViewController.h"
+#import "TDHomeRankViewController.h"
 #import "TDHomeLiveStreamingViewController.h"
 
 @interface TDHomeViewController ()<ZJScrollPageViewDelegate>
@@ -99,17 +101,17 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"热门",@"分类",@"精品",@"广播",@"直播"];
+        _themeArray =@[@"推荐",@"分类",@"广播",@"榜单",@"直播"];
     }
     return _themeArray;
 }
 -(NSArray *)childViewControllers
 {
     if (!_childViewControllers) {
-        _childViewControllers =@[[[TDHomeHotViewController alloc]init],
-                                 [[TDHomeClassisViewController alloc]init],
-                                 [[TDHomeClassisViewController alloc]init],
-                                 [[TDHomeClassisViewController alloc]init],
+        _childViewControllers =@[[[TDHomeRecommendViewController alloc]init],
+                                 [[TDHomeCategoryViewController alloc]init],
+                                 [[TDHomeBroadcastViewController alloc]init],
+                                 [[TDHomeRankViewController alloc]init],
                             [[TDHomeLiveStreamingViewController alloc]init]];
     }
     return _childViewControllers;

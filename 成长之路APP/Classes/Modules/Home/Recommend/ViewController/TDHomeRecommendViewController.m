@@ -1,26 +1,27 @@
 //
-//  TDHomeHotViewController.m
+//  TDHomeRecommendViewController.m
 //  成长之路APP
 //
-//  Created by mac on 2017/9/10.
+//  Created by mac on 2017/10/30.
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import "TDHomeHotViewController.h"
+#import "TDHomeRecommendViewController.h"
 
-@interface TDHomeHotViewController ()<SDCycleScrollViewDelegate>
+@interface TDHomeRecommendViewController ()<SDCycleScrollViewDelegate>
+
 @property(nonatomic,strong)SDCycleScrollView *cycleScrollView; //首页轮播图
 @property(nonatomic,strong)NSArray *imagesURLStrings; //图片数组
 @property(nonatomic,strong)NSArray *titleArray;
 
 @end
 
-@implementation TDHomeHotViewController
+@implementation TDHomeRecommendViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     [self.view addSubview:self.cycleScrollView];  //添加轮播图
 }
 
@@ -83,8 +84,5 @@
     }
     return _titleArray;
 }
-
-
-
 
 @end

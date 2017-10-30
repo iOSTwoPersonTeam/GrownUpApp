@@ -1,23 +1,22 @@
 //
-//  TDHomeClassisViewController.m
+//  TDHomeBroadcastViewController.m
 //  成长之路APP
 //
-//  Created by mac on 2017/9/10.
+//  Created by mac on 2017/10/30.
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
-#import "TDHomeClassisViewController.h"
+#import "TDHomeBroadcastViewController.h"
 
-@interface TDHomeClassisViewController ()
+@interface TDHomeBroadcastViewController ()
 
 @end
 
-@implementation TDHomeClassisViewController
+@implementation TDHomeBroadcastViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {
