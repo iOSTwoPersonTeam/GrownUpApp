@@ -27,7 +27,9 @@
 #import <SDWebImage/UIButton+WebCache.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>     //无限轮播图
 #import <PYSearch.h>                                //搜索功能
+#import <ReactiveCocoa.h>                           //函数响应式编程 用于MVVM框架
 #import "MarqueeLabel.h"                            //滚动文字显示
+
 
 //baiduMap
 #import <BaiduMapAPI_Base/BMKMapManager.h>          //百度地图

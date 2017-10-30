@@ -7,12 +7,25 @@
 //
 
 #import "TDHomeRecommendViewController.h"
+#import "TDHomeRecommendViewModel.h"
 
-@interface TDHomeRecommendViewController ()<SDCycleScrollViewDelegate>
+#define kSectionEditCommen  0   //小编推荐
+#define kSectionLive        1   //现场直播
+#define kSectionGuess       2   //猜你喜欢
+#define kSectionCityColumn  3   //城市歌单
+#define kSectionSpecial     4   //精品听单
+#define kSectionAdvertise   5   //推广
+#define kSectionHotCommends 6   //热门推荐
+#define kSectionMore        7   //更多分类
 
-@property(nonatomic,strong)SDCycleScrollView *cycleScrollView; //首页轮播图
+@interface TDHomeRecommendViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,strong)SDCycleScrollView *headerCycleScrollView; //首页轮播图
 @property(nonatomic,strong)NSArray *imagesURLStrings; //图片数组
 @property(nonatomic,strong)NSArray *titleArray;
+@property(nonatomic, strong)UIView *headerView; //头部承载视图
+@property(nonatomic, strong)UITableView *tableView;
+@property(nonatomic, strong)TDHomeRecommendViewModel *viewModel;
 
 @end
 
@@ -21,10 +34,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self.view addSubview:self.cycleScrollView];  //添加轮播图
+     [self.view addSubview:self.tableView];
+    @weakify(self);
+    [self.viewModel.updateContentSignal subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+    [self.viewModel refreshDataSource];
 }
-
 
 #pragma mark ---Private---
 
@@ -32,36 +49,94 @@
 
 
 
-#pragma mark ---Delegate----
+
+
+#pragma mark ---UITableViewDelegate/UITableViewDataSource
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+     return [self.viewModel numberOfSections];
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return [self.viewModel numberOfItemsInSection:section];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.backgroundColor =[UIColor orangeColor];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.viewModel heightForRowAtIndex:indexPath];
+}
+
+
 
 
 
 #pragma mark ---getter--
-//------轮播图
--(SDCycleScrollView *)cycleScrollView
+-(UITableView *)tableView
 {
-    if (!_cycleScrollView) {
+    if (!_tableView) {
+        _tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT -64-49) style:UITableViewStyleGrouped];
+        _tableView.delegate =self;
+        _tableView.dataSource =self;
+        _tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
+        _tableView.tableHeaderView =[self headerView];
+        _tableView.backgroundColor =[UIColor clearColor];
+    }
+    return _tableView;
+}
+
+-(TDHomeRecommendViewModel *)viewModel
+{
+    if (!_viewModel) {
+        _viewModel =[[TDHomeRecommendViewModel alloc] init];
+    }
+    return _viewModel;
+}
+
+-(UIView *)headerView
+{
+    if (!_headerView) {
+        _headerView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/4)];
+        [_headerView addSubview:self.headerCycleScrollView];
+    }
+    return _headerView;
+}
+
+//------轮播图
+-(SDCycleScrollView *)headerCycleScrollView
+{
+    if (!_headerCycleScrollView) {
         
         // 网络加载 --- 创建带标题的图片轮播器
-        _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/4) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
-        _cycleScrollView.backgroundColor =[UIColor whiteColor];
-        _cycleScrollView.infiniteLoop =YES;  //是否无限循环
-        _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight; //page控件是否居中
-        _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
+        _headerCycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/4) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+        _headerCycleScrollView.backgroundColor =[UIColor whiteColor];
+        _headerCycleScrollView.infiniteLoop =YES;  //是否无限循环
+        _headerCycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight; //page控件是否居中
+        _headerCycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
         
         // --- 模拟加载延迟
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            _cycleScrollView.imageURLStringsGroup = self.imagesURLStrings;
-            _cycleScrollView.titlesGroup =self.titleArray;
+            _headerCycleScrollView.imageURLStringsGroup = self.imagesURLStrings;
+            _headerCycleScrollView.titlesGroup =self.titleArray;
         });
         
         // block监听点击方式
-        _cycleScrollView.clickItemOperationBlock = ^(NSInteger index) {
+        _headerCycleScrollView.clickItemOperationBlock = ^(NSInteger index) {
             
             NSLog(@">>>>>  %ld", (long)index);
         };
     }
-    return _cycleScrollView;
+    return _headerCycleScrollView;
 }
 
 //图片数组

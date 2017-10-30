@@ -18,6 +18,7 @@ target '成长之路APP' do
     pod 'SDCycleScrollView'  ,'1.64'        #无限轮播图
     pod 'PYSearch'          ,'0.8.5'        #搜索控制器替代原生
     pod 'AliPay'            ,'2.1.2'        #支付宝支付SDK
+    pod 'ReactiveCocoa'     ,'2.5'          #函数响应式编程框架RAC  适合于MVVM框架
     #以下SDK是在其他比如环信等SDK已经引入故未添加
     #   pod 'MBProgressHUD'          #提示框
     #   pod 'MJRefresh'              #刷新

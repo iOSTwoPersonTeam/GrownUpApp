@@ -39,6 +39,13 @@ PODS:
     - SDWebImage (!= 3.7.2, ~> 3.7)
   - MZTimerLabel (0.5.4)
   - PYSearch (0.8.5)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - SDCycleScrollView (1.64):
     - SDWebImage (~> 3.7)
   - SDWebImage (3.8.2):
@@ -78,6 +85,7 @@ DEPENDENCIES:
   - MOBFoundation (= 3.0.2)
   - MZTimerLabel (= 0.5.4)
   - PYSearch (= 0.8.5)
+  - ReactiveCocoa (= 2.5)
   - SDCycleScrollView (= 1.64)
   - ShareSDK3 (= 4.0.1)
   - ShareSDK3/ShareSDKPlatforms/Copy (= 4.0.1)
@@ -118,11 +126,12 @@ SPEC CHECKSUMS:
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
   PYSearch: 3eca6a4736700076565cd7d3a64343aff8397eea
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
   XHLaunchAd: 13ed8e106406c280dc82f05613ef7c23f5208d07
 
-PODFILE CHECKSUM: 046a04dae980b4f45a74c2bec03e4bae92d4aafd
+PODFILE CHECKSUM: 00e1b5e47e469a16554e6108903f4a6d5f4fdd9f
 
 COCOAPODS: 1.2.1
