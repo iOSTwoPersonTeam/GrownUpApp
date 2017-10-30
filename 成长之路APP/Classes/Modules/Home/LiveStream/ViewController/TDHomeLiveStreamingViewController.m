@@ -7,8 +7,8 @@
 //
 
 #import "TDHomeLiveStreamingViewController.h"
-#import "EaseLiveViewController.h"
-#import "EasePublishViewController.h"
+#import "EaseLiveViewController.h"  //观看直播类
+#import "EasePublishViewController.h" //发起直播类
 
 @interface TDHomeLiveStreamingViewController ()
 
@@ -32,6 +32,7 @@
 
 
 #pragma mark --action
+//观看直播方法
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     DLog(@"观看直播-----");
@@ -50,6 +51,7 @@
     [self.navigationController presentViewController:view animated:YES completion:NULL];
 }
 
+//发布直播方法
 -(void)clickPublish
 {
     DLog(@"发布直播------");
