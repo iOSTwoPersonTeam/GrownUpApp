@@ -8,23 +8,52 @@
 
 #import "TDHomeRecommendViewController.h"
 #import "TDHomeRecommendViewModel.h"
+#import "TDHomeHeaderCollectionViewCell.h"
+#import "TDFindStyleCollectionViewCell.h"
+#import "TDFindLiveStyleCollectionViewCell.h"
+#import "TDFindSpecialStyleCollectionViewCell.h"
 
-#define kSectionEditCommen  0   //小编推荐
-#define kSectionLive        1   //现场直播
-#define kSectionGuess       2   //猜你喜欢
-#define kSectionCityColumn  3   //城市歌单
-#define kSectionSpecial     4   //精品听单
-#define kSectionAdvertise   5   //推广
-#define kSectionHotCommends 6   //热门推荐
-#define kSectionMore        7   //更多分类
+/*
+ 注册cellID
+ */
+#define kSectionADImageCellID    @"kSectionADImageID"   //顶部广告轮播图部分cellID
+#define kSectionEditCommenCellID  @"kSectionEditCommenID"   //小编推荐cellID
+#define kSectionLiveCellID        @"kSectionLiveID"    //现场直播cellID
+#define kSectionGuessCellID       @"kSectionGuessCellID"    //猜你喜欢cellID
+#define kSectionCityColumnCellID  @"kSectionCityColumnCellID" //城市歌单cellID
+#define kSectionSpecialCellID     @"kSectionSpecialCellID"    //精品听单cellID
+#define kSectionAdvertiseCellID   @"kSectionAdvertiseCellID"    //推广cellID
+#define kSectionHotCommendsCellID @"kSectionHotCommendsCellID"  //热门推荐cellID
+#define kSectionMoreCellID        @"kSectionMoreCellID"    //更多分类cellID
 
-@interface TDHomeRecommendViewController ()<SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+/*
+ 注册头部视图ID
+ */
+#define kSectionEditCommenHeaderID  @"kSectionEditCommenHeaderID"   //小编推荐HeaderID
+#define kSectionLiveHeaderID        @"kSectionLiveHeaderID"    //现场直播HeaderID
+#define kSectionGuessHeaderID       @"kSectionGuessHeaderID"    //猜你喜欢HeaderID
+#define kSectionCityColumnHeaderID  @"kSectionCityColumnHeaderID" //城市歌单HeaderID
+#define kSectionSpecialHeaderID     @"kSectionSpecialHeaderID"    //精品听单HeaderID
+#define kSectionAdvertiseHeaderID   @"kSectionAdvertiseHeaderID"    //推广HeaderID
+#define kSectionHotCommendsHeaderID @"kSectionHotCommendsHeaderID"  //热门推荐HeaderID
+#define kSectionMoreHeaderID        @"kSectionMoreHeaderID"    //更多分类HeaderID
 
-@property(nonatomic,strong)SDCycleScrollView *headerCycleScrollView; //首页轮播图
-@property(nonatomic,strong)NSArray *imagesURLStrings; //图片数组
-@property(nonatomic,strong)NSArray *titleArray;
-@property(nonatomic, strong)UIView *headerView; //头部承载视图
-@property(nonatomic, strong)UITableView *tableView;
+/*
+ 分区section
+ */
+#define kSectionADImage     0      //顶部广告轮播图
+#define kSectionEditCommen  1   //小编推荐
+#define kSectionLive        2   //现场直播
+#define kSectionGuess       3   //猜你喜欢
+#define kSectionCityColumn  4   //城市歌单
+#define kSectionSpecial     5   //精品听单
+#define kSectionAdvertise   6   //推广
+#define kSectionHotCommends 7   //热门推荐
+#define kSectionMore        8   //更多分类
+
+@interface TDHomeRecommendViewController ()<SDCycleScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+@property(nonatomic, strong)UICollectionView *collectionView;
 @property(nonatomic, strong)TDHomeRecommendViewModel *viewModel;
 
 @end
@@ -34,11 +63,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-     [self.view addSubview:self.tableView];
+    
     @weakify(self);
     [self.viewModel.updateContentSignal subscribeNext:^(id x) {
         @strongify(self);
-        [self.tableView reloadData];
+        [self.collectionView reloadData];
     }];
     [self.viewModel refreshDataSource];
 }
@@ -51,48 +80,127 @@
 
 
 
-#pragma mark ---UITableViewDelegate/UITableViewDataSource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+#pragma mark ---UICollectionViewDelegate/UICollectionViewDataSource
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-     return [self.viewModel numberOfSections];
+    return 4;
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    
-    return [self.viewModel numberOfItemsInSection:section];
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (!cell) {
-        cell =[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    if (section ==0) {
+        return 1;
+    } else if (section ==1){
+        
+        return 3;
+    } else if (section ==2){
+        return 1;
     }
-    cell.backgroundColor =[UIColor orangeColor];
-    return cell;
+    else if (section ==3){
+        return 2;
+    }
+    return 2;
 }
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.viewModel heightForRowAtIndex:indexPath];
+    if (indexPath.section ==0) {
+        TDHomeHeaderCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionADImageCellID forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.model =self.viewModel.recommendModel.focusImages;
+        cell.discoverModel =self.viewModel.hotGuessModel.discoveryColumns;
+        return cell;
+    }
+   else if (indexPath.section ==1) {
+        TDFindStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionEditCommenCellID forIndexPath:indexPath];
+        cell.backgroundColor =[UIColor purpleColor];
+        cell.model =self.viewModel.recommendModel.editorRecommendAlbums.list[indexPath.row];
+        return cell;
+    }
+   else if (indexPath.section ==2) {
+        TDFindLiveStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionLiveCellID forIndexPath:indexPath];
+        cell.backgroundColor =[UIColor purpleColor];
+       cell.model =[NSDictionary dictionary];
+        return cell;
+    }
+   else if (indexPath.section ==3) {
+       TDFindSpecialStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionGuessCellID forIndexPath:indexPath];
+       cell.backgroundColor =[UIColor orangeColor];
+       cell.model =[NSDictionary dictionary];
+       return cell;
+   }
+    return nil;
 }
 
+#pragma mark ---- UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section ==0) {
+        return CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT/5 +90);
+    } else if (indexPath.section ==1){
+        
+        return CGSizeMake(SCREEN_WIDTH/4, 140);
+    } else if (indexPath.section ==2){
+        
+        return CGSizeMake(SCREEN_WIDTH, 200);
+    } else if (indexPath.section ==3){
+        
+        return CGSizeMake(SCREEN_WIDTH, 140);
+    }
+    return CGSizeMake(SCREEN_WIDTH, 100);
+}
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (section ==0) {
+        return UIEdgeInsetsMake(0, 0, 0, 0);
+    } else if (section ==1){
+        
+        return UIEdgeInsetsMake(5, 10, 5, 10);
+    }
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
 
+// 和UITableView类似，UICollectionView也可设置段头段尾
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+//{
+//
+////    if([kind isEqualToString:UICollectionElementKindSectionHeader])
+////    {
+////        HeaderCollectionView *headerView = (HeaderCollectionView *)[_collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerId forIndexPath:indexPath];
+////        headerView.backgroundColor = [UIColor whiteColor];
+////        headerView.model =self.viewModel.recommendModel.focusImages;
+////        headerView.discoverModel =self.viewModel.hotGuessModel.discoveryColumns;
+////
+////        return headerView;
+////    }
+//    return nil;
+//}
 
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+//{
+//    return (CGSize){SCREEN_WIDTH,SCREEN_HEIGHT/5 +90};
+//}
 
 #pragma mark ---getter--
--(UITableView *)tableView
+-(UICollectionView *)collectionView
 {
-    if (!_tableView) {
-        _tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT -64-49) style:UITableViewStyleGrouped];
-        _tableView.delegate =self;
-        _tableView.dataSource =self;
-        _tableView.separatorStyle =UITableViewCellSeparatorStyleNone;
-        _tableView.tableHeaderView =[self headerView];
-        _tableView.backgroundColor =[UIColor clearColor];
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowlayout =[[UICollectionViewFlowLayout alloc] init];
+        flowlayout.scrollDirection =UICollectionViewScrollDirectionVertical;
+        _collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT -64-49-40) collectionViewLayout:flowlayout];
+        _collectionView.delegate =self;
+        _collectionView.dataSource =self;
+         _collectionView.backgroundColor =[UIColor whiteColor];
+        [self.view addSubview:_collectionView];
+        //注册cell
+ 
+        [_collectionView registerClass:[TDHomeHeaderCollectionViewCell class] forCellWithReuseIdentifier:kSectionADImageCellID];
+        [_collectionView registerClass:[TDFindStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionEditCommenCellID];
+        [_collectionView registerClass:[TDFindLiveStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionLiveCellID];
+        [_collectionView registerClass:[TDFindSpecialStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionGuessCellID];
+       //注册头部view
+//        [_collectionView registerClass:[HeaderCollectionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
     }
-    return _tableView;
+    return _collectionView;
 }
 
 -(TDHomeRecommendViewModel *)viewModel
@@ -101,63 +209,6 @@
         _viewModel =[[TDHomeRecommendViewModel alloc] init];
     }
     return _viewModel;
-}
-
--(UIView *)headerView
-{
-    if (!_headerView) {
-        _headerView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/4)];
-        [_headerView addSubview:self.headerCycleScrollView];
-    }
-    return _headerView;
-}
-
-//------轮播图
--(SDCycleScrollView *)headerCycleScrollView
-{
-    if (!_headerCycleScrollView) {
-        
-        // 网络加载 --- 创建带标题的图片轮播器
-        _headerCycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT/4) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
-        _headerCycleScrollView.backgroundColor =[UIColor whiteColor];
-        _headerCycleScrollView.infiniteLoop =YES;  //是否无限循环
-        _headerCycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight; //page控件是否居中
-        _headerCycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
-        
-        // --- 模拟加载延迟
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            _headerCycleScrollView.imageURLStringsGroup = self.imagesURLStrings;
-            _headerCycleScrollView.titlesGroup =self.titleArray;
-        });
-        
-        // block监听点击方式
-        _headerCycleScrollView.clickItemOperationBlock = ^(NSInteger index) {
-            
-            NSLog(@">>>>>  %ld", (long)index);
-        };
-    }
-    return _headerCycleScrollView;
-}
-
-//图片数组
--(NSArray *)imagesURLStrings
-{
-    if (!_imagesURLStrings) {
-        _imagesURLStrings = @[
-                              @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
-                              @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
-                              @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
-                              ];
-    }
-    return _imagesURLStrings;
-}
-//文字数组
--(NSArray *)titleArray
-{
-    if (!_titleArray) {
-        _titleArray =@[@"终于放假啦,哈哈哈😆",@"众志成城,抗洪救灾!……",@"北京定福庄---亲爱的北京!"];
-    }
-    return _titleArray;
 }
 
 @end

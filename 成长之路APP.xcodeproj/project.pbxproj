@@ -99,6 +99,11 @@
 		046C58401F4AC7C10058364B /* ZYPinYinSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C58311F4AC7C10058364B /* ZYPinYinSearch.m */; };
 		04771A1A1F2B69FC009E5649 /* TDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A191F2B69FC009E5649 /* TDMainViewController.m */; };
 		04771A211F2B6A2C009E5649 /* TDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04771A1F1F2B6A2C009E5649 /* TDHomeViewController.m */; };
+		047846181FA81A40008E4B12 /* TDCategotyCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047846171FA81A40008E4B12 /* TDCategotyCollectionView.m */; };
+		0478461E1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478461D1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.m */; };
+		047846211FA86194008E4B12 /* TDFindStyleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047846201FA86194008E4B12 /* TDFindStyleCollectionViewCell.m */; };
+		047846241FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047846231FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m */; };
+		047846271FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 047846261FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.m */; };
 		047DED0C1F6C018D00FD56FE /* TDWXPaySignAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DED0B1F6C018D00FD56FE /* TDWXPaySignAdaptor.m */; };
 		047DED111F6C050100FD56FE /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 047DED101F6C050100FD56FE /* XMLDictionary.m */; };
 		0485A4CE1F414E9E00C2FA63 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0485A4CD1F414E9E00C2FA63 /* MBProgressHUD+MJ.m */; };
@@ -109,10 +114,6 @@
 		048AE1C51FA711AC008BB230 /* TDHomeRecommendViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1C41FA711AC008BB230 /* TDHomeRecommendViewModel.m */; };
 		048AE1C81FA7238B008BB230 /* TDHomeFindLiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1C71FA7238B008BB230 /* TDHomeFindLiveModel.m */; };
 		048AE1CB1FA72520008BB230 /* TDHomeFindHotGuessModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1CA1FA72520008BB230 /* TDHomeFindHotGuessModel.m */; };
-		048AE1CE1FA73544008BB230 /* TDHomeFindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1CD1FA73544008BB230 /* TDHomeFindCell.m */; };
-		048AE1D11FA73573008BB230 /* TDHomeFIndLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1D01FA73573008BB230 /* TDHomeFIndLiveCell.m */; };
-		048AE1D41FA73596008BB230 /* TDHomeFIndSpecialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1D31FA73596008BB230 /* TDHomeFIndSpecialCell.m */; };
-		048AE1D71FA735B5008BB230 /* TDHomeFindMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 048AE1D61FA735B5008BB230 /* TDHomeFindMoreCell.m */; };
 		049041AD1F4C1012006C1601 /* TDAppIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049041AC1F4C1012006C1601 /* TDAppIntroductionViewController.m */; };
 		049041B41F4C35B6006C1601 /* DHGifImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 049041B01F4C35B6006C1601 /* DHGifImageOperation.m */; };
 		049041B51F4C35B6006C1601 /* DHGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 049041B21F4C35B6006C1601 /* DHGuidePageHUD.m */; };
@@ -476,6 +477,16 @@
 		04771A191F2B69FC009E5649 /* TDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDMainViewController.m; sourceTree = "<group>"; };
 		04771A1E1F2B6A2C009E5649 /* TDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDHomeViewController.h; sourceTree = "<group>"; };
 		04771A1F1F2B6A2C009E5649 /* TDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDHomeViewController.m; sourceTree = "<group>"; };
+		047846161FA81A40008E4B12 /* TDCategotyCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDCategotyCollectionView.h; sourceTree = "<group>"; };
+		047846171FA81A40008E4B12 /* TDCategotyCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDCategotyCollectionView.m; sourceTree = "<group>"; };
+		0478461C1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHomeHeaderCollectionViewCell.h; sourceTree = "<group>"; };
+		0478461D1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeHeaderCollectionViewCell.m; sourceTree = "<group>"; };
+		0478461F1FA86194008E4B12 /* TDFindStyleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDFindStyleCollectionViewCell.h; sourceTree = "<group>"; };
+		047846201FA86194008E4B12 /* TDFindStyleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDFindStyleCollectionViewCell.m; sourceTree = "<group>"; };
+		047846221FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDFindLiveStyleCollectionViewCell.h; sourceTree = "<group>"; };
+		047846231FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDFindLiveStyleCollectionViewCell.m; sourceTree = "<group>"; };
+		047846251FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDFindSpecialStyleCollectionViewCell.h; sourceTree = "<group>"; };
+		047846261FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDFindSpecialStyleCollectionViewCell.m; sourceTree = "<group>"; };
 		047DED0A1F6C018D00FD56FE /* TDWXPaySignAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDWXPaySignAdaptor.h; sourceTree = "<group>"; };
 		047DED0B1F6C018D00FD56FE /* TDWXPaySignAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDWXPaySignAdaptor.m; sourceTree = "<group>"; };
 		047DED0D1F6C034700FD56FE /* TDWXPayConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDWXPayConfig.h; sourceTree = "<group>"; };
@@ -499,14 +510,6 @@
 		048AE1C71FA7238B008BB230 /* TDHomeFindLiveModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeFindLiveModel.m; sourceTree = "<group>"; };
 		048AE1C91FA72520008BB230 /* TDHomeFindHotGuessModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHomeFindHotGuessModel.h; sourceTree = "<group>"; };
 		048AE1CA1FA72520008BB230 /* TDHomeFindHotGuessModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeFindHotGuessModel.m; sourceTree = "<group>"; };
-		048AE1CC1FA73544008BB230 /* TDHomeFindCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHomeFindCell.h; sourceTree = "<group>"; };
-		048AE1CD1FA73544008BB230 /* TDHomeFindCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeFindCell.m; sourceTree = "<group>"; };
-		048AE1CF1FA73573008BB230 /* TDHomeFIndLiveCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHomeFIndLiveCell.h; sourceTree = "<group>"; };
-		048AE1D01FA73573008BB230 /* TDHomeFIndLiveCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeFIndLiveCell.m; sourceTree = "<group>"; };
-		048AE1D21FA73596008BB230 /* TDHomeFIndSpecialCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHomeFIndSpecialCell.h; sourceTree = "<group>"; };
-		048AE1D31FA73596008BB230 /* TDHomeFIndSpecialCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeFIndSpecialCell.m; sourceTree = "<group>"; };
-		048AE1D51FA735B5008BB230 /* TDHomeFindMoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDHomeFindMoreCell.h; sourceTree = "<group>"; };
-		048AE1D61FA735B5008BB230 /* TDHomeFindMoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDHomeFindMoreCell.m; sourceTree = "<group>"; };
 		049041AB1F4C1012006C1601 /* TDAppIntroductionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAppIntroductionViewController.h; sourceTree = "<group>"; };
 		049041AC1F4C1012006C1601 /* TDAppIntroductionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAppIntroductionViewController.m; sourceTree = "<group>"; };
 		049041AF1F4C35B6006C1601 /* DHGifImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHGifImageOperation.h; sourceTree = "<group>"; };
@@ -3221,14 +3224,16 @@
 		04FF39381FA6C46300A0A321 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				048AE1CC1FA73544008BB230 /* TDHomeFindCell.h */,
-				048AE1CD1FA73544008BB230 /* TDHomeFindCell.m */,
-				048AE1CF1FA73573008BB230 /* TDHomeFIndLiveCell.h */,
-				048AE1D01FA73573008BB230 /* TDHomeFIndLiveCell.m */,
-				048AE1D21FA73596008BB230 /* TDHomeFIndSpecialCell.h */,
-				048AE1D31FA73596008BB230 /* TDHomeFIndSpecialCell.m */,
-				048AE1D51FA735B5008BB230 /* TDHomeFindMoreCell.h */,
-				048AE1D61FA735B5008BB230 /* TDHomeFindMoreCell.m */,
+				0478461C1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.h */,
+				0478461D1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.m */,
+				047846161FA81A40008E4B12 /* TDCategotyCollectionView.h */,
+				047846171FA81A40008E4B12 /* TDCategotyCollectionView.m */,
+				0478461F1FA86194008E4B12 /* TDFindStyleCollectionViewCell.h */,
+				047846201FA86194008E4B12 /* TDFindStyleCollectionViewCell.m */,
+				047846221FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.h */,
+				047846231FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m */,
+				047846251FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.h */,
+				047846261FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3524,8 +3529,8 @@
 				045264301F590101001FD38B /* TDMTMapViewController.m in Sources */,
 				047DED111F6C050100FD56FE /* XMLDictionary.m in Sources */,
 				04C1C36E1F3B068F0035F26C /* LRTextField.m in Sources */,
-				048AE1D11FA73573008BB230 /* TDHomeFIndLiveCell.m in Sources */,
 				04927D031FA2CF1E006A2BBA /* EaseGiftFlyView.m in Sources */,
+				047846271FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.m in Sources */,
 				04EE214F1F972E41005110FC /* TDEaseChatViewController.m in Sources */,
 				04AB0C1A1F5016B700599CE0 /* UIViewController+ZJScrollPageController.m in Sources */,
 				046C580E1F4AC19A0058364B /* UIColor+WHE.m in Sources */,
@@ -3584,7 +3589,6 @@
 				046C58361F4AC7C10058364B /* CityItem.m in Sources */,
 				046C58111F4AC19A0058364B /* NJKWebViewProgress.m in Sources */,
 				041ACB2B1F29B895007280ED /* TDRootViewController.m in Sources */,
-				048AE1CE1FA73544008BB230 /* TDHomeFindCell.m in Sources */,
 				04AB0C1D1F5016B700599CE0 /* ZJScrollPageView.m in Sources */,
 				04927D191FA2CF1E006A2BBA /* PlayerManager.m in Sources */,
 				046C58401F4AC7C10058364B /* ZYPinYinSearch.m in Sources */,
@@ -3599,6 +3603,7 @@
 				04E7D5AA1F444EA400E8D9DB /* TDSettingsViewController.m in Sources */,
 				048AE1CB1FA72520008BB230 /* TDHomeFindHotGuessModel.m in Sources */,
 				046C58321F4AC7C10058364B /* ButtonGroupView.m in Sources */,
+				047846241FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m in Sources */,
 				04927D331FA2CF1E006A2BBA /* UCloudMediaViewController.m in Sources */,
 				0440BEB01F3BEE0C00E9DADE /* TDRegisterView.m in Sources */,
 				04927CD61FA2CF1E006A2BBA /* EaseLiveViewController.m in Sources */,
@@ -3608,7 +3613,6 @@
 				046C58101F4AC19A0058364B /* CYWebViewController.m in Sources */,
 				04EE214D1F972E3A005110FC /* TDEaseChatContactListViewController.m in Sources */,
 				04E8E7851F2C2C4200F407A6 /* TDRootModel.m in Sources */,
-				048AE1D71FA735B5008BB230 /* TDHomeFindMoreCell.m in Sources */,
 				04EE214E1F972E3E005110FC /* TDEaseChatTableViewCell.m in Sources */,
 				04927D091FA2CF1E006A2BBA /* EaseBaseSubView.m in Sources */,
 				04927CD81FA2CF1E006A2BBA /* EaseLiveRoom.m in Sources */,
@@ -3623,8 +3627,8 @@
 				04927D001FA2CF1E006A2BBA /* EaseHttpManager.m in Sources */,
 				04406CB81F6E06EC0039010A /* TDPaymentStatusViewController.m in Sources */,
 				04927D351FA2CF1E006A2BBA /* UCloudProgressView.m in Sources */,
+				0478461E1FA85C0A008E4B12 /* TDHomeHeaderCollectionViewCell.m in Sources */,
 				0438D34A1F39B47E00D4ED81 /* UIButton+Additions.m in Sources */,
-				048AE1D41FA73596008BB230 /* TDHomeFIndSpecialCell.m in Sources */,
 				04927D071FA2CF1E006A2BBA /* EaseLiveCollectionViewCell.m in Sources */,
 				046C580F1F4AC19A0058364B /* UIImage+CYButtonIcon.m in Sources */,
 				0438D3441F39A71400D4ED81 /* TDRootTableViewCell.m in Sources */,
@@ -3648,6 +3652,7 @@
 				04EE21491F972E2B005110FC /* TDAddFriendTableViewCell.m in Sources */,
 				0440BEB61F3C0C9100E9DADE /* TDForgetPasswordViewController.m in Sources */,
 				046C58131F4AC19A0058364B /* UINavigationBar+Awesome.m in Sources */,
+				047846181FA81A40008E4B12 /* TDCategotyCollectionView.m in Sources */,
 				04E7D5AD1F44635400E8D9DB /* TDSettingsTableViewCell.m in Sources */,
 				045263EB1F58EEEA001FD38B /* TDAddressProfileView.m in Sources */,
 				04AB0C191F5016B700599CE0 /* UIView+ZJFrame.m in Sources */,
@@ -3685,6 +3690,7 @@
 				041595091F6F9C330057D87F /* TDPaymentTableViewCell.m in Sources */,
 				040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */,
 				048AE1B81FA70694008BB230 /* XMLYBaseAPI.m in Sources */,
+				047846211FA86194008E4B12 /* TDFindStyleCollectionViewCell.m in Sources */,
 				045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */,
 				04927CDA1FA2CF1E006A2BBA /* EaseCreateLiveViewController.m in Sources */,
 				044F79CF1F2B155F00FF7CC4 /* NSString+Additions.m in Sources */,
