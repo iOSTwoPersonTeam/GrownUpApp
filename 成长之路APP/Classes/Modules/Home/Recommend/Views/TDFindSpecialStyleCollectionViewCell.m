@@ -90,7 +90,7 @@
 {
     if (!_tableView) {
         TDSubFindSpecialStyleTableView *tableView =[[TDSubFindSpecialStyleTableView alloc] initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, 180) style:UITableViewStylePlain];
-        tableView.backgroundColor =[UIColor purpleColor];
+        tableView.backgroundColor =[UIColor whiteColor];
         [self.contentView addSubview:tableView];
         _tableView =tableView;
     }
