@@ -1,8 +1,8 @@
 //
-//  TDFindStyleCollectionViewCell.h
+//  TDSubFindStyleCollectionView.h
 //  成长之路APP
 //
-//  Created by mac on 2017/10/31.
+//  Created by mac on 2017/11/1.
 //  Copyright © 2017年 hui. All rights reserved.
 //
 
@@ -10,7 +10,11 @@
 #import "TDHomeRecommendModel.h"
 #import "TDHomeFindHotGuessModel.h"
 
-@interface TDFindStyleCollectionViewCell : UICollectionViewCell
+@interface TDSubContentCollectionViewCell : UICollectionViewCell
+
+@end
+
+@interface TDSubFindStyleCollectionView : UICollectionView
 
 @property(nonatomic, strong)XMLYFindEditorRecommendAlbumModel *model;
 

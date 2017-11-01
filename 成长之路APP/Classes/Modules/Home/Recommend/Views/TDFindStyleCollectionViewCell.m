@@ -7,88 +7,100 @@
 //
 
 #import "TDFindStyleCollectionViewCell.h"
+#import "TDSubFindStyleCollectionView.h"
 
 @interface TDFindStyleCollectionViewCell ()
 
-@property(nonatomic, strong)UIImageView *titileImageView; //标题图片
-@property(nonatomic, strong)UILabel *titleLabel; //标题
-@property(nonatomic, strong)UILabel *detailLabel; //详情
+@property(nonatomic, weak)UIView *titleAndMoreView;
+@property(nonatomic, weak)UILabel *titileLabel; //标题label
+@property(nonatomic, weak)TDSubFindStyleCollectionView *findCollectionView;
 
 @end
 
 @implementation TDFindStyleCollectionViewCell
 
--(void)setModel:(XMLYFindEditorRecommendDetailModel *)model
+-(void)setModel:(XMLYFindEditorRecommendAlbumModel *)model
 {
     _model =model;
-    [self.titileImageView sd_setImageWithURL:[NSURL URLWithString:model.coverMiddle] placeholderImage:[UIImage imageNamed:@""]];
-    self.titleLabel.text = model.intro;
-    self.detailLabel.text =model.title;
+    self.titileLabel.text =_model.title;
+    self.findCollectionView.model =_model;
     
     [self updateConstraintsIfNeeded];
     [self setNeedsUpdateConstraints];
 }
 
+#pragma mark --布局-
 -(void)updateConstraints
 {
     [super updateConstraints];
-    [self.titileImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@10);
-        make.centerX.equalTo(self.contentView.mas_centerX);
-        make.width.equalTo(@70);
-        make.height.equalTo(@70);
-    }];
     
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titileImageView.mas_bottom).offset(10);
+    [self.titleAndMoreView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
         make.left.equalTo(@0);
-        make.right.equalTo(@0);
+        make.right.equalTo(self.contentView.mas_right).offset(0);;
         make.height.equalTo(@40);
     }];
-    
-    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(3);
-        make.left.equalTo(@0);
-        make.right.equalTo(@0);
+    [self.titileLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@10);
+        make.left.equalTo(@10);
+        make.width.equalTo(@80);
         make.height.equalTo(@20);
     }];
+    [self.findCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@40);
+        make.left.equalTo(@0);
+        make.width.equalTo(self.contentView.mas_width);
+        make.height.equalTo(@160);
+    }];
+
 }
 
-#pragma mark --getter--
--(UIImageView *)titileImageView
+#pragma mark --getter
+-(UIView *)titleAndMoreView
 {
-    if (!_titileImageView) {
-        _titileImageView =[[UIImageView alloc] init];
-        _titileImageView.backgroundColor =[UIColor clearColor];
-        [self.contentView addSubview:_titileImageView];
+    if (!_titleAndMoreView) {
+        UIView *titleAndMoreView =[[UIView alloc] init];
+        titleAndMoreView.backgroundColor =[UIColor whiteColor];
+        [self.contentView addSubview:titleAndMoreView];
+        _titleAndMoreView =titleAndMoreView;
+        
+        UIButton *moreButton =[[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60, 15, 50, 15)];
+        [moreButton setTitle:@"更多" forState:UIControlStateNormal];
+        [moreButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        moreButton.titleLabel.font =[UIFont systemFontOfSize:14];
+        [moreButton setImage:[UIImage imageNamed:@"右箭头"] forState:UIControlStateNormal];
+        [moreButton setImagePosition:ImageAndTitlePositionRight WithImageAndTitleSpacing:0];
+        [titleAndMoreView addSubview:moreButton];
     }
-    return _titileImageView;
+    return _titleAndMoreView;
 }
 
--(UILabel *)titleLabel
+-(UILabel *)titileLabel
 {
-    if (!_titleLabel) {
-        _titleLabel =[[UILabel alloc] init];
-        _titleLabel.backgroundColor =[UIColor clearColor];
-        _titleLabel.textAlignment =NSTextAlignmentCenter;
-        _titleLabel.font =[UIFont systemFontOfSize:13];
-        _titleLabel.numberOfLines =0;
-        [self.contentView addSubview:_titleLabel];
+    if (!_titileLabel) {
+        UILabel *titileLabel =[[UILabel alloc] init];
+        titileLabel.backgroundColor =[UIColor clearColor];
+        titileLabel.text =@"小编推荐";
+        titileLabel.font =[UIFont systemFontOfSize:15];
+        [self.titleAndMoreView addSubview:titileLabel];
+        _titileLabel =titileLabel;
     }
-    return _titleLabel;
+    return _titileLabel;
 }
 
--(UILabel *)detailLabel
+-(TDSubFindStyleCollectionView *)findCollectionView
 {
-    if (!_detailLabel) {
-        _detailLabel =[[UILabel alloc] init];
-        _detailLabel.backgroundColor =[UIColor clearColor];
-        _detailLabel.textAlignment =NSTextAlignmentCenter;
-        _detailLabel.textColor =[UIColor grayColor];
-        _detailLabel.font =[UIFont systemFontOfSize:12];
-        [self.contentView addSubview:_detailLabel];
+    if (!_findCollectionView) {
+        UICollectionViewFlowLayout *layout =[[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection =UICollectionViewScrollDirectionHorizontal;
+        TDSubFindStyleCollectionView *findCollectionView =[[TDSubFindStyleCollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 160) collectionViewLayout:layout];
+        [self.contentView addSubview:findCollectionView];
+        _findCollectionView =findCollectionView;
+        findCollectionView.showsHorizontalScrollIndicator =YES;
+        findCollectionView.showsVerticalScrollIndicator =NO;
+        findCollectionView.backgroundColor =[UIColor whiteColor];
     }
-    return _detailLabel;
+    return _findCollectionView;
 }
 
 @end

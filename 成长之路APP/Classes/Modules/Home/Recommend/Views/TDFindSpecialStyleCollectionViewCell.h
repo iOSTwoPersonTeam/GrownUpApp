@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDSubFindSpecialStyleTableView.h"
+#import "TDHomeRecommendModel.h"
+#import "TDHomeFindHotGuessModel.h"
 
 @interface TDFindSpecialStyleCollectionViewCell : UICollectionViewCell
 
 
-@property(nonatomic, strong)NSDictionary *model;
+@property(nonatomic, strong)XMLYSpecialColumnModel *model;
 
 @end

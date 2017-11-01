@@ -91,12 +91,12 @@
         return 1;
     } else if (section ==1){
         
-        return 3;
+        return 1;
     } else if (section ==2){
         return 1;
     }
     else if (section ==3){
-        return 2;
+        return 1;
     }
     return 2;
 }
@@ -111,8 +111,8 @@
     }
    else if (indexPath.section ==1) {
         TDFindStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionEditCommenCellID forIndexPath:indexPath];
-        cell.backgroundColor =[UIColor purpleColor];
-        cell.model =self.viewModel.recommendModel.editorRecommendAlbums.list[indexPath.row];
+        cell.backgroundColor =[UIColor whiteColor];
+        cell.model =self.viewModel.recommendModel.editorRecommendAlbums;
         return cell;
     }
    else if (indexPath.section ==2) {
@@ -123,8 +123,8 @@
     }
    else if (indexPath.section ==3) {
        TDFindSpecialStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionGuessCellID forIndexPath:indexPath];
-       cell.backgroundColor =[UIColor orangeColor];
-       cell.model =[NSDictionary dictionary];
+       cell.backgroundColor =[UIColor whiteColor];
+       cell.model = self.viewModel.recommendModel.specialColumn;
        return cell;
    }
     return nil;
@@ -137,13 +137,13 @@
         return CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT/5 +90);
     } else if (indexPath.section ==1){
         
-        return CGSizeMake(SCREEN_WIDTH/4, 140);
+        return CGSizeMake(SCREEN_WIDTH, 200);
     } else if (indexPath.section ==2){
         
         return CGSizeMake(SCREEN_WIDTH, 200);
     } else if (indexPath.section ==3){
         
-        return CGSizeMake(SCREEN_WIDTH, 140);
+        return CGSizeMake(SCREEN_WIDTH, 180 +40);
     }
     return CGSizeMake(SCREEN_WIDTH, 100);
 }
@@ -158,27 +158,6 @@
     }
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
-
-// 和UITableView类似，UICollectionView也可设置段头段尾
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-//{
-//
-////    if([kind isEqualToString:UICollectionElementKindSectionHeader])
-////    {
-////        HeaderCollectionView *headerView = (HeaderCollectionView *)[_collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerId forIndexPath:indexPath];
-////        headerView.backgroundColor = [UIColor whiteColor];
-////        headerView.model =self.viewModel.recommendModel.focusImages;
-////        headerView.discoverModel =self.viewModel.hotGuessModel.discoveryColumns;
-////
-////        return headerView;
-////    }
-//    return nil;
-//}
-
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-//{
-//    return (CGSize){SCREEN_WIDTH,SCREEN_HEIGHT/5 +90};
-//}
 
 #pragma mark ---getter--
 -(UICollectionView *)collectionView

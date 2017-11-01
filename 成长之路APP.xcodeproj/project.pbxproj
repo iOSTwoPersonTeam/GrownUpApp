@@ -70,6 +70,8 @@
 		045EA55D1F598F6500B0A704 /* TDHistoryAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5541F598F6500B0A704 /* TDHistoryAddressView.m */; };
 		045EA55E1F598F6500B0A704 /* TDNearbyAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5561F598F6500B0A704 /* TDNearbyAddressTableViewCell.m */; };
 		045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 045EA5581F598F6500B0A704 /* TDSearchResultView.m */; };
+		04607B3F1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04607B3E1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.m */; };
+		04607B421FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04607B411FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.m */; };
 		0464B9AF1F4C42EA00E15EB8 /* TDGuidePageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */; };
 		0469EE5F1F4AE6CF0091137D /* TDLaunchAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469EE5E1F4AE6CF0091137D /* TDLaunchAdManager.m */; };
 		046A26B11F39660C0013406B /* HFStretchableTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A26B01F39660C0013406B /* HFStretchableTableHeaderView.m */; };
@@ -420,6 +422,10 @@
 		045EA5561F598F6500B0A704 /* TDNearbyAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDNearbyAddressTableViewCell.m; sourceTree = "<group>"; };
 		045EA5571F598F6500B0A704 /* TDSearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSearchResultView.h; sourceTree = "<group>"; };
 		045EA5581F598F6500B0A704 /* TDSearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSearchResultView.m; sourceTree = "<group>"; };
+		04607B3D1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDSubFindStyleCollectionView.h; sourceTree = "<group>"; };
+		04607B3E1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDSubFindStyleCollectionView.m; sourceTree = "<group>"; };
+		04607B401FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TDSubFindSpecialStyleTableView.h; sourceTree = "<group>"; };
+		04607B411FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDSubFindSpecialStyleTableView.m; sourceTree = "<group>"; };
 		0464B9AD1F4C42EA00E15EB8 /* TDGuidePageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDGuidePageHUD.h; sourceTree = "<group>"; };
 		0464B9AE1F4C42EA00E15EB8 /* TDGuidePageHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDGuidePageHUD.m; sourceTree = "<group>"; };
 		0469EE5D1F4AE6CF0091137D /* TDLaunchAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLaunchAdManager.h; sourceTree = "<group>"; };
@@ -3230,10 +3236,14 @@
 				047846171FA81A40008E4B12 /* TDCategotyCollectionView.m */,
 				0478461F1FA86194008E4B12 /* TDFindStyleCollectionViewCell.h */,
 				047846201FA86194008E4B12 /* TDFindStyleCollectionViewCell.m */,
+				04607B3D1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.h */,
+				04607B3E1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.m */,
 				047846221FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.h */,
 				047846231FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m */,
 				047846251FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.h */,
 				047846261FA87E4C008E4B12 /* TDFindSpecialStyleCollectionViewCell.m */,
+				04607B401FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.h */,
+				04607B411FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3602,6 +3612,7 @@
 				044A780D1F6BD01800A55B53 /* TDWXPayManager.m in Sources */,
 				04E7D5AA1F444EA400E8D9DB /* TDSettingsViewController.m in Sources */,
 				048AE1CB1FA72520008BB230 /* TDHomeFindHotGuessModel.m in Sources */,
+				04607B3F1FA96BB8000D4D07 /* TDSubFindStyleCollectionView.m in Sources */,
 				046C58321F4AC7C10058364B /* ButtonGroupView.m in Sources */,
 				047846241FA874FE008E4B12 /* TDFindLiveStyleCollectionViewCell.m in Sources */,
 				04927D331FA2CF1E006A2BBA /* UCloudMediaViewController.m in Sources */,
@@ -3690,6 +3701,7 @@
 				041595091F6F9C330057D87F /* TDPaymentTableViewCell.m in Sources */,
 				040494581F2992AE0093B269 /* TDTabBarViewController.m in Sources */,
 				048AE1B81FA70694008BB230 /* XMLYBaseAPI.m in Sources */,
+				04607B421FA9BC61000D4D07 /* TDSubFindSpecialStyleTableView.m in Sources */,
 				047846211FA86194008E4B12 /* TDFindStyleCollectionViewCell.m in Sources */,
 				045EA55F1F598F6500B0A704 /* TDSearchResultView.m in Sources */,
 				04927CDA1FA2CF1E006A2BBA /* EaseCreateLiveViewController.m in Sources */,
