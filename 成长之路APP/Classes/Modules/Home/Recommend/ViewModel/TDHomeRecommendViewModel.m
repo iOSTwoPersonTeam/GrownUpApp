@@ -11,19 +11,15 @@
 
 #define kFindRecomUpdateSignalName @"XMLYFindRecomViewModelUpdateContentSignal"
 
-#define kSectionEditCommen  0   //小编推荐
-#define kSectionLive        1   //现场直播
-#define kSectionGuess       2   //猜你喜欢
-#define kSectionCityColumn  3   //城市歌单
-#define kSectionSpecial     4   //精品听单
-#define kSectionAdvertise   5   //推广
-#define kSectionHotCommends 6   //热门推荐
-#define kSectionMore        7   //更多分类
+#define kSectionADImage     0      //顶部广告轮播图
+#define kSectionEditCommen  1   //小编推荐
+#define kSectionLive        2   //现场直播
+#define kSectionSpecial     3   //精品听单
 
-#define kSectionHeight        230.0
-#define kSectionLiveHeight    227.0
-#define kSectionSpecialHeight 219.0
-#define kSectionMoreHeight    60.0
+#define kSectionADImageHeight  SCREEN_HEIGHT/5 +90
+#define kSectionHeight        200.0
+#define kSectionLiveHeight    190.0
+#define kSectionSpecialHeight 220.0
 
 @interface TDHomeRecommendViewModel ()
 
@@ -78,65 +74,41 @@
 
 -(NSInteger)numberOfSections
 {
-    return 8;
+    return 4;
 }
 
 -(NSInteger)numberOfItemsInSection:(NSInteger)section
 {
-    if(section == kSectionEditCommen) {
+    if(section == kSectionADImage) {
+        return 1;
+    }
+    else if(section == kSectionEditCommen) {
         return 1;
     }
     else if(section == kSectionLive) {
         return self.liveModel.data.count == 0 ? 0 : 1;
     }
-    else if(section == kSectionGuess) {
-        return self.hotGuessModel.guess.list.count == 0 ? 0 : 1;
-    }
-    else if(section == kSectionCityColumn) {
-        return self.hotGuessModel.cityColumn.list.count == 0 ? 0 : 1;
-    }
     else if(section == kSectionSpecial) {
         return self.recommendModel.specialColumn.list == 0 ? 0 : 1;
-    }
-    else if(section == kSectionAdvertise) {
-        return 0; //暂时未找到接口
-    }
-    else if(section == kSectionHotCommends) {
-        return self.hotGuessModel.hotRecommends.list.count;
-    }
-    else if(section == kSectionMore) {
-        return 1;
     }
     return 0;
 }
 
--(CGFloat)heightForRowAtIndex:(NSIndexPath *)indexPath
+- (CGSize)sizeForRowAtIndex:(NSIndexPath *)indexPath;
 {
+    if(indexPath.section == kSectionADImage) {
+        return CGSizeMake(SCREEN_WIDTH, kSectionADImageHeight);
+    }
     if(indexPath.section == kSectionEditCommen) {
-        return kSectionHeight;
+        return CGSizeMake(SCREEN_WIDTH, kSectionHeight);
     }
     else if(indexPath.section == kSectionLive) {
-        return self.liveModel.data.count == 0 ? 0 : kSectionLiveHeight;
-    }
-    else if(indexPath.section == kSectionGuess) {
-        return self.hotGuessModel.guess.list.count == 0 ? 0 : kSectionHeight;
-    }
-    else if(indexPath.section == kSectionCityColumn) {
-        return self.hotGuessModel.cityColumn.list.count == 0 ? 0 : kSectionHeight;
+        return CGSizeMake(SCREEN_WIDTH, self.liveModel.data.count == 0 ? 0 : kSectionLiveHeight);
     }
     else if(indexPath.section == kSectionSpecial) {
-        return self.recommendModel.specialColumn.list == 0 ? 0 : kSectionSpecialHeight;
+        return CGSizeMake(SCREEN_WIDTH, self.recommendModel.specialColumn.list == 0 ? 0 : kSectionSpecialHeight);
     }
-    else if(indexPath.section == kSectionAdvertise) {
-        return 0; //暂时未找到接口
-    }
-    else if(indexPath.section == kSectionHotCommends) {
-        return kSectionHeight;
-    }
-    else if(indexPath.section == kSectionMore) {
-        return kSectionMoreHeight;
-    }
-    return 0;
+    return CGSizeMake(0, 0);
 }
 
 #pragma mark - NetRequest

@@ -37,7 +37,7 @@
 
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
-- (CGFloat)heightForRowAtIndex:(NSIndexPath *)indexPath;
+- (CGSize)sizeForRowAtIndex:(NSIndexPath *)indexPath;
 
 @end
 

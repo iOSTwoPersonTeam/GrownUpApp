@@ -19,24 +19,7 @@
 #define kSectionADImageCellID    @"kSectionADImageID"   //顶部广告轮播图部分cellID
 #define kSectionEditCommenCellID  @"kSectionEditCommenID"   //小编推荐cellID
 #define kSectionLiveCellID        @"kSectionLiveID"    //现场直播cellID
-#define kSectionGuessCellID       @"kSectionGuessCellID"    //猜你喜欢cellID
-#define kSectionCityColumnCellID  @"kSectionCityColumnCellID" //城市歌单cellID
 #define kSectionSpecialCellID     @"kSectionSpecialCellID"    //精品听单cellID
-#define kSectionAdvertiseCellID   @"kSectionAdvertiseCellID"    //推广cellID
-#define kSectionHotCommendsCellID @"kSectionHotCommendsCellID"  //热门推荐cellID
-#define kSectionMoreCellID        @"kSectionMoreCellID"    //更多分类cellID
-
-/*
- 注册头部视图ID
- */
-#define kSectionEditCommenHeaderID  @"kSectionEditCommenHeaderID"   //小编推荐HeaderID
-#define kSectionLiveHeaderID        @"kSectionLiveHeaderID"    //现场直播HeaderID
-#define kSectionGuessHeaderID       @"kSectionGuessHeaderID"    //猜你喜欢HeaderID
-#define kSectionCityColumnHeaderID  @"kSectionCityColumnHeaderID" //城市歌单HeaderID
-#define kSectionSpecialHeaderID     @"kSectionSpecialHeaderID"    //精品听单HeaderID
-#define kSectionAdvertiseHeaderID   @"kSectionAdvertiseHeaderID"    //推广HeaderID
-#define kSectionHotCommendsHeaderID @"kSectionHotCommendsHeaderID"  //热门推荐HeaderID
-#define kSectionMoreHeaderID        @"kSectionMoreHeaderID"    //更多分类HeaderID
 
 /*
  分区section
@@ -44,12 +27,7 @@
 #define kSectionADImage     0      //顶部广告轮播图
 #define kSectionEditCommen  1   //小编推荐
 #define kSectionLive        2   //现场直播
-#define kSectionGuess       3   //猜你喜欢
-#define kSectionCityColumn  4   //城市歌单
-#define kSectionSpecial     5   //精品听单
-#define kSectionAdvertise   6   //推广
-#define kSectionHotCommends 7   //热门推荐
-#define kSectionMore        8   //更多分类
+#define kSectionSpecial     3   //精品听单
 
 @interface TDHomeRecommendViewController ()<SDCycleScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -83,46 +61,35 @@
 #pragma mark ---UICollectionViewDelegate/UICollectionViewDataSource
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 4;
+    return [self.viewModel numberOfSections];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (section ==0) {
-        return 1;
-    } else if (section ==1){
-        
-        return 1;
-    } else if (section ==2){
-        return 1;
-    }
-    else if (section ==3){
-        return 1;
-    }
-    return 2;
+    return [self.viewModel numberOfItemsInSection:section];
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section ==0) {
+    if (indexPath.section ==kSectionADImage) {
         TDHomeHeaderCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionADImageCellID forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
         cell.model =self.viewModel.recommendModel.focusImages;
         cell.discoverModel =self.viewModel.hotGuessModel.discoveryColumns;
         return cell;
     }
-   else if (indexPath.section ==1) {
+   else if (indexPath.section ==kSectionEditCommen) {
         TDFindStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionEditCommenCellID forIndexPath:indexPath];
         cell.backgroundColor =[UIColor whiteColor];
         cell.model =self.viewModel.recommendModel.editorRecommendAlbums;
         return cell;
     }
-   else if (indexPath.section ==2) {
+   else if (indexPath.section ==kSectionLive) {
         TDFindLiveStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionLiveCellID forIndexPath:indexPath];
         cell.backgroundColor =[UIColor whiteColor];
        cell.model =self.viewModel.liveModel;
         return cell;
     }
-   else if (indexPath.section ==3) {
-       TDFindSpecialStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionGuessCellID forIndexPath:indexPath];
+   else if (indexPath.section ==kSectionSpecial) {
+       TDFindSpecialStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionSpecialCellID forIndexPath:indexPath];
        cell.backgroundColor =[UIColor whiteColor];
        cell.model = self.viewModel.recommendModel.specialColumn;
        return cell;
@@ -133,19 +100,7 @@
 #pragma mark ---- UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section ==0) {
-        return CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT/5 +90);
-    } else if (indexPath.section ==1){
-        
-        return CGSizeMake(SCREEN_WIDTH, 200);
-    } else if (indexPath.section ==2){
-        
-        return CGSizeMake(SCREEN_WIDTH, 190);
-    } else if (indexPath.section ==3){
-        
-        return CGSizeMake(SCREEN_WIDTH, 180 +40);
-    }
-    return CGSizeMake(SCREEN_WIDTH, 100);
+   return [self.viewModel sizeForRowAtIndex:indexPath];
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -175,7 +130,7 @@
         [_collectionView registerClass:[TDHomeHeaderCollectionViewCell class] forCellWithReuseIdentifier:kSectionADImageCellID];
         [_collectionView registerClass:[TDFindStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionEditCommenCellID];
         [_collectionView registerClass:[TDFindLiveStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionLiveCellID];
-        [_collectionView registerClass:[TDFindSpecialStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionGuessCellID];
+        [_collectionView registerClass:[TDFindSpecialStyleCollectionViewCell class] forCellWithReuseIdentifier:kSectionSpecialCellID];
        //注册头部view
 //        [_collectionView registerClass:[HeaderCollectionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
     }
