@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDHomeRecommendModel.h"
+#import "TDHomeFindHotGuessModel.h"
+#import "TDHomeFindLiveModel.h"
 
 @interface TDFindLiveStyleCollectionViewCell : UICollectionViewCell
 
-
-@property(nonatomic, strong)NSDictionary *model;
+@property(nonatomic, strong)TDHomeFindLiveModel *model;
 
 @end

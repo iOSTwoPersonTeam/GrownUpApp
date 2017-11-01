@@ -117,8 +117,8 @@
     }
    else if (indexPath.section ==2) {
         TDFindLiveStyleCollectionViewCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:kSectionLiveCellID forIndexPath:indexPath];
-        cell.backgroundColor =[UIColor purpleColor];
-       cell.model =[NSDictionary dictionary];
+        cell.backgroundColor =[UIColor whiteColor];
+       cell.model =self.viewModel.liveModel;
         return cell;
     }
    else if (indexPath.section ==3) {
@@ -140,7 +140,7 @@
         return CGSizeMake(SCREEN_WIDTH, 200);
     } else if (indexPath.section ==2){
         
-        return CGSizeMake(SCREEN_WIDTH, 200);
+        return CGSizeMake(SCREEN_WIDTH, 190);
     } else if (indexPath.section ==3){
         
         return CGSizeMake(SCREEN_WIDTH, 180 +40);

@@ -11,7 +11,7 @@
 @interface TDFindSpecialStyleCollectionViewCell ()
 
 @property(nonatomic, weak)UIView *titleAndMoreView;
-@property(nonatomic, weak)UILabel *titileLabel; //标题la
+@property(nonatomic, weak)UILabel *titileLabel; //标题
 @property(nonatomic,weak)TDSubFindSpecialStyleTableView *tableView;
 
 @end

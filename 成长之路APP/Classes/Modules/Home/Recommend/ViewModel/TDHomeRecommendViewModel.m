@@ -148,7 +148,7 @@
         if(success) {
             [TDHomeFindLiveModel mj_setupObjectClassInArray:^NSDictionary *{
                 return @{
-                         @"data":@"XMLYFindLiveDetailModel"
+                         @"data":@"TDHomeFindLiveDetailModel"
                          };
             }];
             self.liveModel = [TDHomeFindLiveModel mj_objectWithKeyValues:responseObject];
