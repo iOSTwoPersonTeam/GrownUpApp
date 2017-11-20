@@ -16,6 +16,7 @@
 @property(nonatomic,strong)ZJScrollPageView *scrollPageView;
 @property(nonatomic,strong)NSArray *themeArray; //主题分类
 @property(nonatomic,strong)NSArray *childViewControllers; //子控制器
+@property(nonatomic, strong)MarqueeLabel *rollWordLabel; //滚动文字
 
 @end
 
@@ -27,6 +28,9 @@
     
     self.view.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:self.scrollPageView]; //添加标题segment
+    
+    NSString *markString =@" 环信聊天登录账号:15712860260,15712860261均可";
+    self.rollWordLabel.text =markString;
 }
 
 #pragma mark ---private---
@@ -64,6 +68,22 @@
 
 
 #pragma mark --getter---
+-(MarqueeLabel *)rollWordLabel
+{
+    if (!_rollWordLabel) {
+        _rollWordLabel =[[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _rollWordLabel.backgroundColor =[UIColor whiteColor];
+        _rollWordLabel.font =[UIFont systemFontOfSize:15];
+        _rollWordLabel.textColor =[UIColor blackColor];
+        _rollWordLabel.marqueeType =MLContinuous;
+        _rollWordLabel.animationCurve =UIViewAnimationOptionCurveLinear;
+        _rollWordLabel.userInteractionEnabled =YES;
+        _rollWordLabel.rate =50;
+        _rollWordLabel.fadeLength =10;
+        [self.view addSubview:_rollWordLabel];
+    }
+    return _rollWordLabel;
+}
 -(ZJScrollPageView *)scrollPageView
 {
     if (!_scrollPageView) {
@@ -88,7 +108,7 @@
         //颜色渐变
         style.gradualChangeTitleColor =YES;
         //初始化
-        _scrollPageView =[[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) segmentStyle:style titles:self.themeArray parentViewController:self delegate:self];
+        _scrollPageView =[[ZJScrollPageView alloc] initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, SCREEN_HEIGHT -40) segmentStyle:style titles:self.themeArray parentViewController:self delegate:self];
         
     }
     return _scrollPageView;

@@ -84,11 +84,11 @@
         _rollWordLabel =[[MarqueeLabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
         _rollWordLabel.backgroundColor =[UIColor whiteColor];
         _rollWordLabel.font =[UIFont systemFontOfSize:15];
-        _rollWordLabel.textColor =[UIColor lightGrayColor];
+        _rollWordLabel.textColor =[UIColor blackColor];
         _rollWordLabel.marqueeType =MLContinuous;
         _rollWordLabel.animationCurve =UIViewAnimationOptionCurveLinear;
         _rollWordLabel.userInteractionEnabled =YES;
-        _rollWordLabel.rate =70;
+        _rollWordLabel.rate =50;
         _rollWordLabel.fadeLength =10;
     }
     return _rollWordLabel;
