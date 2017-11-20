@@ -97,7 +97,7 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"消息",@"联系人",@"朋友圈"];
+        _themeArray =@[@"消息实现",@"联系人实现",@"朋友圈"];
     }
     return _themeArray;
 }

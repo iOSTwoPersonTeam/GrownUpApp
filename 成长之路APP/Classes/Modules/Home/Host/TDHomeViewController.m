@@ -101,7 +101,7 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"推荐",@"分类",@"广播",@"榜单",@"直播"];
+        _themeArray =@[@"推荐实现",@"分类",@"广播",@"榜单",@"直播实现"];
     }
     return _themeArray;
 }

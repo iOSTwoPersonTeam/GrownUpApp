@@ -99,7 +99,7 @@
 -(NSArray *)themeArray
 {
     if (!_themeArray) {
-        _themeArray =@[@"推荐",@"下载",@"购物"];
+        _themeArray =@[@"推荐",@"下载",@"购物实现"];
     }
     return _themeArray;
 }
