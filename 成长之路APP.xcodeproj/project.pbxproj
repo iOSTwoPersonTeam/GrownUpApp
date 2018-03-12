@@ -403,10 +403,10 @@
 		045745891F146770003F4F2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0457458E1F146770003F4F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045745931F146770003F4F2D /* 成长之路APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "成长之路APPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		045745971F146770003F4F2D /* ____APPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____APPTests.m"; sourceTree = "<group>"; };
+		045745971F146770003F4F2D /* ____APPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ____APPTests.m; sourceTree = "<group>"; };
 		045745991F146770003F4F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0457459E1F146770003F4F2D /* 成长之路APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "成长之路APPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		045745A21F146770003F4F2D /* ____APPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____APPUITests.m"; sourceTree = "<group>"; };
+		045745A21F146770003F4F2D /* ____APPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ____APPUITests.m; sourceTree = "<group>"; };
 		045745A41F146770003F4F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045EA5491F598F6500B0A704 /* TDBAddGoodsAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBAddGoodsAddressViewController.h; sourceTree = "<group>"; };
 		045EA54A1F598F6500B0A704 /* TDBAddGoodsAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBAddGoodsAddressViewController.m; sourceTree = "<group>"; };
@@ -3483,9 +3483,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-成长之路APP-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3498,9 +3501,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-成长之路APP/Pods-成长之路APP-resources.sh",
+				"${PODS_ROOT}/AliPay/AlipaySDK.bundle",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+				"${PODS_ROOT}/EaseUI/EaseUI/resources/EaseUIResource.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/MWPhotoBrowser/MWPhotoBrowser.bundle",
+				"${PODS_ROOT}/PYSearch/PYSearch/PYSearch.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3513,9 +3529,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-成长之路APP/Pods-成长之路APP-frameworks.sh",
+				"${PODS_ROOT}/Hyphenate/ios_IM_Hyphenate_sdk_3.3.2/HyphenateFullSDK/Hyphenate.framework",
+				"${PODS_ROOT}/HyphenateLite/ios_IM_HyphenateLite_sdk_3.3.2/HyphenateSDK/HyphenateLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hyphenate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyphenateLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

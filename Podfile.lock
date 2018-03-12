@@ -66,6 +66,7 @@ PODS:
     - MOBFoundation
   - ShareSDK3/ShareSDKUI (4.0.1):
     - MOBFoundation
+  - TDMyAlertKit (0.1.0)
   - XHLaunchAd (3.8.0):
     - FLAnimatedImage (~> 1.0.12)
 
@@ -93,17 +94,23 @@ DEPENDENCIES:
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo (= 4.0.1)
   - ShareSDK3/ShareSDKPlatforms/WeChat (= 4.0.1)
   - ShareSDK3/ShareSDKUI (= 4.0.1)
+  - TDMyAlertKit (from `https://gitee.com/dengui/TDMyAlertKit.git`)
   - XHLaunchAd (= 3.8.0)
 
 EXTERNAL SOURCES:
   EaseUI:
     :git: https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git
     :tag: 3.3.2
+  TDMyAlertKit:
+    :git: https://gitee.com/dengui/TDMyAlertKit.git
 
 CHECKOUT OPTIONS:
   EaseUI:
     :git: https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git
     :tag: 3.3.2
+  TDMyAlertKit:
+    :commit: bbbd34d3143adfbeeed406e2430e91e319159454
+    :git: https://gitee.com/dengui/TDMyAlertKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -130,8 +137,9 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   ShareSDK3: 6983a9b5209b63f2f4297fb0328d9a8dd6abd5f1
+  TDMyAlertKit: 42b0084967c6cfc3a44fb6f53273051ef69b8a60
   XHLaunchAd: 13ed8e106406c280dc82f05613ef7c23f5208d07
 
-PODFILE CHECKSUM: 00e1b5e47e469a16554e6108903f4a6d5f4fdd9f
+PODFILE CHECKSUM: 5a6cd42d71c115d0dcfe152cdfabbda31f430875
 
 COCOAPODS: 1.2.1

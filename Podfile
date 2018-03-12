@@ -39,7 +39,6 @@ target '成长之路APP' do
     #集成环信EaseUI
     pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git', :tag => '3.3.2'
    
-   
 end
 
 
